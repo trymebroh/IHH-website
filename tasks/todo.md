@@ -276,6 +276,30 @@ Rebuild the Intention Holistic Health website (currently on Kajabi) to a custom 
 
 ---
 
+## Pending Tasks (Post-Build)
+
+### Awaiting Client Assets
+- [ ] Receive brand assets from client (fonts, logo files, exact colors, images)
+- [ ] Update all templates with actual brand fonts and colors
+- [ ] Replace placeholder images with actual client images
+- [ ] **Update Superior-style blog template** to coordinate with all brand assets for unified look
+  - Match fonts to brand typography
+  - Verify color palette alignment
+  - Ensure CTA boxes match brand button styles
+  - Test with actual blog images
+
+### Deployment & Testing
+- [ ] Deploy to Netlify via GitHub
+- [ ] Test forms in production environment
+- [ ] Verify SSL certificate
+- [ ] Client review and final approval
+
+### Optional Enhancements
+- [ ] Add AIO/Schema markup for SEO (if requested)
+- [ ] Add additional blog templates (if new styles requested)
+
+---
+
 ## Notes
 
 ### Image Strategy
