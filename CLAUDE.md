@@ -42,3 +42,42 @@ Use `/model` to switch models based on the task phase:
 - Simple file edits
 - Running commands and scripts
 - Straightforward Q&A about the codebase
+
+## Adding New Content (Blog Posts, Copy, etc.)
+
+When adding new content to the site, **always ask about style preferences** before implementing:
+
+### Available Blog Templates
+
+1. **Default Template** (`/blog/post.html`)
+   - Two-column layout with sidebar
+   - Category filtering in sidebar
+   - Newsletter signup in sidebar
+   - Standard blog card format
+
+2. **Superior Style Template** (`/blog/post-superior.html`)
+   - Full-width single column layout
+   - Author block with credentials ("Written by [Name], MSN, APRN, FNP-C")
+   - Reading progress bar at top
+   - In-content CTA boxes (use `[CTA:title|description|link|text]` in content)
+   - Previous/Next post navigation
+   - Optional disclaimer and references sections
+   - More generous spacing and larger typography
+
+### Workflow for New Content
+
+1. **Ask which template/style to use:**
+   - "Would you like to use the default blog style or the Superior-style full-width template?"
+   - "I have two blog templates available: [describe both]. Which would you prefer?"
+
+2. **If a new style is requested:**
+   - Ask for a reference link or detailed description
+   - Create a new template following the existing pattern
+   - Document the new template in this file
+
+3. **For new posts**, gather:
+   - Title and content
+   - Featured image
+   - Categories
+   - Template preference
+   - Any special elements (disclaimer, references, in-content CTAs)
