@@ -7,198 +7,429 @@
 // For simplicity, we define posts here that can be easily updated
 const BLOG_POSTS = [
   {
+    slug: '2024-12-15-holiday-wellness',
+    title: 'Holiday Wellness for Women: Staying Grounded Without Extremes',
+    date: '2024-12-15',
+    author: 'Alicia',
+    excerpt: 'The holidays tend to bring a lot to the surface. Not because anyone is doing something wrong — but because life gets fuller all at once.',
+    image: '/images/blog/alicia-cooking-lemons.jpg',
+    categories: ['wellness', 'foundations'],
+    content: `
+# Holiday Wellness for Women: Staying Grounded Without Extremes
+
+The holidays tend to bring a lot to the surface. Not because anyone is doing something wrong — but because life gets fuller all at once.
+
+Routines naturally shift during busy holiday weeks, and it can be tempting to fall into extremes: either perfectionism about maintaining every health habit, or completely abandoning wellness practices until January.
+
+## Finding Your Middle Ground
+
+There's a better way. Instead of the false choice between rigidity and abandonment, focus on finding small ways to stay supported within the season you're actually living in.
+
+### Managing Pressure and Self-Criticism
+
+The holidays often come with internal pressure — expectations about how things should look, feel, or go. Notice when you're being hard on yourself and practice gentle awareness instead of judgment.
+
+### Choose 1-2 Portable Health Anchors
+
+You don't need to maintain every routine. Pick one or two practices that travel well and help you feel like yourself:
+- Your morning supplements
+- A short walk after meals
+- Staying hydrated
+- Getting to bed at a reasonable hour
+
+### Approach Food Without Guilt
+
+Holiday eating doesn't require compensation or punishment. Enjoy meals mindfully without calculating how you'll "make up for it" later. Your body knows how to handle seasonal variation.
+
+### Gentle Awareness Around Alcohol and Sweets
+
+You don't have to say no to everything, but checking in with yourself helps. Are you reaching for another drink or cookie because you want it, or because it's there? Either answer is okay — the awareness matters.
+
+### Prioritize Rest
+
+Support your circadian rhythm even during busy times:
+- Get morning light when possible
+- Keep bedtime relatively consistent
+- Rest when you can, even if it's imperfect
+
+### Movement That Feels Supportive
+
+Movement during the holidays should feel good, not punitive. A walk with family, gentle stretching, or playing with kids all count. Skip the intense "burn off the pie" mentality.
+
+### Value Joy and Connection
+
+Remember that joy, laughter, and connection are wellness components too. Being fully present with people you love is as valuable as any supplement or workout.
+
+## The Bottom Line
+
+Wellness during the holidays doesn't require perfection, compensation, or January resets. It requires self-compassion and gentle consistency. You're doing better than you think.
+
+Merry Christmas! Stay well my friends,
+Alicia
+    `
+  },
+  {
     slug: '2024-12-01-unmedicated-birth',
     title: 'How I Prepared for an Unmedicated Birth',
     date: '2024-12-01',
     author: 'Alicia',
-    excerpt: 'Sharing my journey and the holistic practices that helped me prepare for an unmedicated birth experience.',
-    image: '/images/blog/alicia-cooking-lemons.jpg',
-    categories: ['foundations', 'preconception'],
+    excerpt: 'My personal story, not medical advice. Preparing for an unmedicated birth wasn\'t about perfection—it was about intention.',
+    image: '/images/blog/hands-chopping.jpg',
+    categories: ['preconception'],
     content: `
 # How I Prepared for an Unmedicated Birth
 
-Preparing for an unmedicated birth was one of the most intentional decisions I made during my pregnancy journey. Today, I want to share the practices and mindset shifts that helped me along the way.
+*My personal story, not medical advice*
 
-## Starting with Education
+Preparing for an unmedicated birth wasn't about perfection—it was about intention. It was about supporting my body and trusting my instincts, not proving anything through enduring labor pain. Here's how I prepared across physical, emotional, and spiritual dimensions.
 
-The first step in my preparation was education. I read books, took courses, and surrounded myself with positive birth stories. Understanding the physiological process of birth helped me trust my body's ability to do what it was designed to do.
+## 1. Birthing Class
 
-## Building My Support Team
+I attended Birthing Naturally (DFW) to understand labor physiology, advocacy, mental techniques, and partner support roles. Education was foundational—understanding the physiological process of birth helped me trust my body's ability to do what it was designed to do.
 
-Having the right support team was crucial. I chose a care provider who supported my birth preferences and hired a doula who would be with me throughout labor. Their belief in my ability to birth naturally gave me confidence.
+## 2. Physical Activity
 
-## Physical Preparation
+I incorporated walking, weightlifting, and functional strength training throughout pregnancy. This wasn't about intense exercise—it was about building labor endurance and setting myself up for postpartum recovery.
 
-I focused on several physical practices:
+## 3. Pelvic Floor Therapy
 
-- **Prenatal yoga** to build strength and flexibility
-- **Walking daily** to keep my body moving
-- **Optimal fetal positioning exercises** to encourage baby into a good position
-- **Perineal massage** in the final weeks
+I worked with My Fit Pelvis-McKinney to develop relaxation techniques, breathing patterns, and personalized exercises optimizing pelvic mobility. Understanding my pelvic floor and how to work with it during labor was invaluable.
 
-## Mental and Emotional Work
+## 4. Mental Preparation
 
-Birth is as much mental as it is physical. I practiced:
+Birth is as much mental as physical. I utilized three meditation approaches:
+- **Hypnobabies** hypnosis-based relaxation program
+- **Christian Hypnobirthing** Scripture-based tracks
+- **Headspace** pregnancy meditations
 
-- Daily affirmations and visualization
-- Breathing techniques for relaxation
-- Addressing any fears that came up through journaling and therapy
+## 5. Spiritual Foundation
 
-## Nutrition and Supplements
+I engaged in Scripture memorization and reflection emphasizing divine design of birth and the body's natural capabilities. This spiritual preparation gave me peace and confidence.
 
-I worked with my practitioner to ensure my body had everything it needed:
+## 6. Nutrition
 
-- Eating protein-rich, nutrient-dense foods
-- Taking high-quality prenatal vitamins
-- Staying well-hydrated
-- Red raspberry leaf tea in the third trimester
+I prioritized protein, choline-rich foods, potassium sources, whole foods, electrolytes, and prenatal supplementation. Nourishing my body well meant I felt strong going into labor.
 
 ## The Result
 
 While every birth is unique and unpredictable, I felt prepared for whatever came my way. The work I did beforehand gave me tools to handle the intensity of labor and the confidence to advocate for myself.
 
 If you're considering an unmedicated birth, know that preparation matters. It's not about being rigid in your plans—it's about building a foundation of knowledge, support, and trust in yourself.
+
+Individual circumstances vary, and all birth types merit respect and validation.
+
+*This article reflects personal experience and isn't medical advice. Always consult with your healthcare provider.*
     `
   },
   {
     slug: '2024-11-15-body-first-home',
-    title: 'Your Body Is the First Home',
+    title: 'Your Body Is the First Home: Returning to the Foundations That Support Fertility and Pregnancy Health',
     date: '2024-11-15',
     author: 'Alicia',
-    excerpt: 'Returning to the foundations that support fertility and pregnancy health.',
-    image: '/images/blog/hands-chopping.jpg',
-    categories: ['foundations', 'preconception'],
+    excerpt: 'You don\'t need perfection to prepare for pregnancy. Here are the six foundations that truly matter.',
+    image: '/images/blog/pouring-olive-oil.jpg',
+    categories: ['preconception', 'foundations'],
     content: `
 # Your Body Is the First Home
 
 Before your baby has a nursery, before they have clothes or toys or a name picked out—they have your body. Your body is their first home.
 
-This perspective shift changed everything for me when I was preparing for pregnancy.
+You don't need perfection to prepare for pregnancy. What matters is returning to the foundations that support fertility and pregnancy health.
 
-## What Does This Mean Practically?
+## The Six Preconception Foundations
 
-Thinking of your body as your baby's first home means:
+### 1. Nourishment for Hormone & Blood Sugar Stability
 
-- **Nourishing yourself** isn't selfish—it's preparation
-- **Reducing toxins** in your environment protects your future child
-- **Managing stress** creates a calmer internal environment
-- **Healing your own health** breaks generational patterns
+Balanced nutrition means protein at breakfast, fiber, and sustained-energy snacks rather than restriction. Stable blood sugar creates a more stable hormonal environment, which supports fertility.
 
-## The Foundations That Matter
+### 2. Mineral Replenishment
 
-### 1. Blood Sugar Balance
+Modern life depletes our minerals. Focus on hydration, electrolytes, and mineral-rich foods. Hair Tissue Mineral Analysis (HTMA) provides a personalized assessment tool to understand your unique mineral status and imbalances.
 
-Stable blood sugar creates a more stable hormonal environment. This means:
-- Eating protein with every meal
-- Not skipping meals
-- Reducing refined sugars and processed carbs
-- Including healthy fats
+### 3. Movement as Rhythm
 
-### 2. Mineral Status
+Consistent physical activity matters more than intense exercise. Focus on gentle strength training, walking, stretching, and mobility work. Movement should feel like rhythm, not punishment.
 
-Minerals are the spark plugs of your body. They're involved in hundreds of processes, including:
-- Hormone production
-- Egg quality
-- Thyroid function
-- Stress response
+### 4. Nervous System Regulation & Rest
 
-This is why I'm passionate about HTMA testing—it gives us a window into your mineral status.
+Sleep and stress management have a profound impact on fertility and hormone balance. Honor your natural rhythms and incorporate practices like breathwork. Rest isn't optional—it's foundational.
 
-### 3. Gut Health
+### 5. Reducing Harmful Exposures
 
-Your gut health affects everything from nutrient absorption to hormone metabolism. Supporting your gut means:
-- Eating diverse, fiber-rich foods
-- Including fermented foods
-- Addressing any digestive issues before pregnancy
+Small changes add up:
+- Avoid microwaving in plastic containers
+- Reduce synthetic fragrances
+- Improve ventilation in your home
 
-### 4. Toxin Reduction
+You don't need perfection here—just awareness and gradual improvements.
 
-We can't control every exposure, but we can reduce our overall burden:
-- Switching to cleaner personal care products
-- Filtering drinking water
-- Choosing organic when possible
-- Using non-toxic cleaning products
+### 6. Prenatal Vitamins
+
+Begin supplementation 3+ months before conception. I specifically recommend methylated folate (5-MTHF) rather than synthetic folic acid. The Needed brand is one I trust.
 
 ## Start Where You Are
 
 You don't have to do everything at once. Pick one foundation and start there. Small, consistent changes add up to big transformations.
 
 Your body is already incredible. These foundations just help it function at its best—for you and for your future little one.
+
+With love + intention,
+Alicia
+
+*This article is for educational purposes only and is not medical advice. Clinical services at Intention Holistic Health PLLC are available only to Kentucky residents.*
     `
   },
   {
-    slug: '2024-11-01-gut-health-pcos',
-    title: 'Gut Health and PCOS',
-    date: '2024-11-01',
+    slug: '2024-11-01-mental-health-pcos',
+    title: 'May is Mental Health Awareness Month',
+    date: '2024-05-01',
     author: 'Alicia',
-    excerpt: 'Understanding the connection between your gut microbiome and hormonal health.',
-    image: '/images/blog/pouring-olive-oil.jpg',
-    categories: ['pcos', 'foundations'],
+    excerpt: 'Women with PCOS experience anxiety and depression 3x more often than women without the condition. Let\'s talk about practical ways to support your mental health.',
+    image: '/images/blog/placeholder.jpg',
+    categories: ['pcos'],
     content: `
-# Gut Health and PCOS
+# May is Mental Health Awareness Month
+
+If you have PCOS, this is especially important for you to hear: your mental health matters, and the struggle is real.
+
+## The Numbers Are Staggering
+
+Research shows that women with PCOS:
+- Are at an **8.5x higher risk of suicide attempt** than those without the condition
+- Experience **anxiety and depression 3x more often** than women without PCOS
+
+These aren't just statistics—they represent real women who are struggling.
+
+## Nine Practical Mental Health Tips
+
+### 1. Hydration
+Consume half your body weight in ounces daily using remineralized water, herbal tea, or coconut water. Proper hydration affects brain function and mood.
+
+### 2. Sleep
+Aim for eight or more hours nightly. Before bed, journal your worries and reflect on five positive moments from your day.
+
+### 3. Sunlight
+Get 15 minutes of morning light exposure within 30 minutes of waking. This regulates your circadian rhythm and supports mood.
+
+### 4. Blood Sugar Regulation
+Eat protein and fats before carbs. Begin meals with protein, fat, and fiber to stabilize blood sugar and reduce mood swings.
+
+### 5. Breathwork
+Practice extended exhale breathing or square breathing techniques. Even a few minutes can shift your nervous system.
+
+### 6. Grounding Exercises
+Use the 5-4-3-2-1 sensory awareness method when feeling overwhelmed:
+- 5 things you can see
+- 4 things you can touch
+- 3 things you can hear
+- 2 things you can smell
+- 1 thing you can taste
+
+### 7. Vitamin D Optimization
+Target levels above 60 with D3+K2 supplementation. Low vitamin D is linked to depression and is common in women with PCOS.
+
+### 8. Omega-3 Supplementation
+Consume low-mercury fish 2-3 times weekly or take quality omega-3 supplements. These support brain health and reduce inflammation.
+
+### 9. Alcohol Awareness
+Limit or eliminate alcohol consumption. Alcohol disrupts sleep, blood sugar, and hormone balance.
+
+## You're Not Alone
+
+If you're struggling with PCOS and mental health, please reach out—to a professional, a friend, or a support group. You don't have to carry this alone.
+
+Want more tips? Download the complimentary **Holistic Habits Checklist** for additional wellness strategies.
+
+*Clinical services available exclusively to Kentucky residents through formal provider-patient relationships.*
+    `
+  },
+  {
+    slug: '2024-10-15-probiotic-smoothie-bowl',
+    title: 'Recipe: Probiotic-Rich Smoothie Bowl',
+    date: '2024-10-15',
+    author: 'Alicia',
+    excerpt: 'A nutritious breakfast featuring coconut water, kefir, yogurt, flax seeds, and hemp hearts for digestive support.',
+    image: '/images/blog/alicia-cooking-lemons.jpg',
+    categories: ['recipes', 'breakfast', 'pcos'],
+    content: `
+# Recipe: Probiotic-Rich Smoothie Bowl
+
+Smoothies are a versatile delivery system for hidden nutrients and adaptogens. This probiotic-rich smoothie bowl supports digestive wellness while tasting delicious. Feel free to personalize the ratios and ingredients based on your preferences!
+
+## Why This Recipe Works
+
+This smoothie bowl is designed to support your gut microbiome with:
+- **Probiotic content** from fermented sources like kefir and yogurt
+- **Fiber** from seeds and vegetables
+- **Protein** from dairy and plant sources
+- **Beneficial fats** including omega-3s from hemp and flax
+- **Hydration** from coconut water
+- **Natural sweetness** from honey (optional)
+
+## Ingredients
+
+- 1 cup coconut water (pure ingredient only)
+- 1/4 cup plain, full-fat kefir (optional)
+- 3/4 cup organic Greek yogurt or dairy-free alternative
+- 1 tablespoon flax seeds
+- 1 tablespoon hemp hearts
+- 1/2-1 cup frozen low-glycemic berries
+- Handful frozen spinach or kale
+
+### Optional Add-ins
+- Collagen powder
+- Protein powder
+- Frozen cauliflower
+- Honey or maple syrup (to taste)
+
+### Toppings
+- Fresh fruits
+- Nuts
+- Seeds
+- Granola (try my Hormone-Friendly Granola recipe!)
+
+## Instructions
+
+1. Add coconut water, kefir, and yogurt to your blender
+2. Add frozen berries, greens, flax seeds, and hemp hearts
+3. Add any optional ingredients (collagen, protein powder, etc.)
+4. Blend until smooth and creamy
+5. Pour into a bowl
+6. Add desired toppings
+7. Enjoy immediately!
+
+## Tips for Success
+
+- Use frozen fruit for a thicker, creamier consistency
+- Make sure your kefir and yogurt contain live active cultures
+- The greens are undetectable in taste but add valuable nutrients
+- Prep toppings ahead for busy mornings
+
+This recipe is PCOS-friendly when made without added sugars and enjoyed as part of a balanced meal.
+    `
+  },
+  {
+    slug: '2024-10-01-gut-health-pcos',
+    title: 'Gut Health and PCOS: The Missing Piece of the Puzzle',
+    date: '2024-10-01',
+    author: 'Alicia',
+    excerpt: 'The trillions of microorganisms in your gut play crucial roles in hormone regulation and inflammation control. Understanding this connection is key to managing PCOS.',
+    image: '/images/blog/pouring-olive-oil.jpg',
+    categories: ['pcos', 'foundations', 'htma'],
+    content: `
+# Gut Health and PCOS: The Missing Piece of the Puzzle
 
 If you have PCOS, you've probably focused on hormones, blood sugar, and maybe even stress. But have you considered your gut health?
 
-The connection between gut health and PCOS is more significant than most people realize.
+The trillions of microorganisms inhabiting your gut play crucial roles in hormone regulation and inflammation control. Understanding this connection is key to managing PCOS effectively.
 
-## The Gut-Hormone Connection
+## Four Key Impact Areas
 
-Your gut does more than digest food. It:
+### 1. Inflammation
+Microbial imbalances may trigger chronic inflammation, contributing to insulin resistance—a core issue in PCOS.
 
-- **Metabolizes hormones** - including estrogen through the estrobolome
-- **Affects inflammation** - gut dysbiosis increases systemic inflammation
-- **Influences insulin sensitivity** - certain gut bacteria affect how you process sugar
-- **Produces neurotransmitters** - affecting mood and stress response
+### 2. Insulin Sensitivity
+A balanced microbiota supports blood sugar regulation. When your gut is off, your blood sugar often is too.
 
-## How Gut Dysbiosis Affects PCOS
+### 3. Hormone Metabolism
+Gut bacteria influence estrogen and testosterone processing. Your gut health directly affects your hormonal balance.
 
-Research shows that women with PCOS often have:
+### 4. Mental Health
+The gut-brain connection affects mood and anxiety. Many women with PCOS struggle with mental health, and gut health plays a role.
 
-- Less microbial diversity
-- Higher levels of certain bacteria linked to inflammation
-- Increased intestinal permeability ("leaky gut")
+## Evidence-Based Recommendations
 
-This creates a cycle: poor gut health worsens PCOS symptoms, and the metabolic dysfunction of PCOS affects gut health.
+### Dietary Approaches
+- Increase fiber intake from whole foods and vegetables
+- Incorporate probiotic sources like yogurt and kombucha
+- Focus on diverse plant foods to feed beneficial bacteria
 
-## Supporting Your Gut with PCOS
+### Lifestyle Modifications
+- Regular exercise supports gut diversity
+- Stress management techniques protect gut lining
+- Adequate hydration supports digestion
 
-### 1. Fiber First
+### Supplementation
+- Omega-3 fatty acids reduce inflammation
+- Specific probiotic strains like Lactobacillus and Bifidobacterium species support gut health
 
-Fiber feeds beneficial bacteria. Aim for:
-- Vegetables at every meal
-- Legumes (if tolerated)
-- Nuts and seeds
-- Some whole grains
+## Listen to Your Body
 
-### 2. Fermented Foods
-
-Include foods that provide beneficial bacteria:
-- Sauerkraut
-- Kimchi
-- Yogurt (if dairy is tolerated)
-- Kefir
-- Kombucha
-
-### 3. Reduce Inflammatory Foods
-
-For many women with PCOS, this means:
-- Reducing refined sugars
-- Limiting processed foods
-- Identifying personal triggers (gluten, dairy, etc.)
-
-### 4. Manage Stress
-
-Chronic stress damages gut lining and disrupts the microbiome. Stress management isn't optional—it's foundational.
-
-### 5. Consider Testing
-
-Functional stool testing can identify specific imbalances that might be affecting your PCOS. This allows for targeted support rather than guessing.
+Pay attention to bodily signals like bloating and skin changes as indicators of microbial health disruption. Your body is always communicating with you.
 
 ## The Bottom Line
 
 Healing PCOS isn't just about hormones. It's about supporting all the systems that influence hormone health—and your gut is a big piece of that puzzle.
 
 If you've been struggling with PCOS and haven't addressed gut health, this might be the missing piece you've been looking for.
+
+If you're ready for personalized one-on-one coaching, I'd love to connect.
+
+*This content is educational only and does not establish provider-patient relationships. Services available to Kentucky residents exclusively.*
+
+## References
+Research supporting these recommendations spans studies from 2016-2021 examining the gut-PCOS connection.
+    `
+  },
+  {
+    slug: '2024-09-15-hormone-friendly-granola',
+    title: 'Recipe: Hormone-Friendly Granola',
+    date: '2024-09-15',
+    author: 'Alicia',
+    excerpt: 'I often opt for grain-free granola for most clients because grains can sometimes exacerbate symptoms such as insulin resistance and inflammation.',
+    image: '/images/blog/hands-chopping.jpg',
+    categories: ['recipes', 'breakfast', 'pcos'],
+    content: `
+# Recipe: Hormone-Friendly Granola
+
+I often opt for grain-free granola for most clients because grains can sometimes exacerbate symptoms such as insulin resistance and inflammation.
+
+This nutrient-dense recipe emphasizes blood sugar stabilization and hormone support through wholesome, additive-free ingredients rather than processed store-bought options.
+
+## Why This Granola is Different
+
+Most store-bought granolas are loaded with refined sugars, inflammatory seed oils, and grains that can spike blood sugar. This recipe uses whole food ingredients that support hormonal balance.
+
+## Ingredients
+
+- 1 cup organic sprouted rolled oats (excludable for grain-free version)
+- 1 cup chopped raw nuts (walnuts, almonds, cashews)
+- 1/2 cup raw hulled pumpkin seeds
+- 1/2 cup raw sunflower seeds
+- 1/2 cup unsweetened shredded coconut
+- 1/4 cup melted coconut oil
+- 1/4 cup pure maple syrup or honey
+- 1 teaspoon vanilla extract
+- 1 teaspoon ground cinnamon
+- Pinch of sea salt
+
+## Instructions
+
+1. Preheat oven to 300°F
+2. In a large bowl, combine oats (if using), nuts, seeds, coconut, cinnamon, and salt
+3. In a small bowl, whisk together melted coconut oil, maple syrup (or honey), and vanilla extract
+4. Pour wet ingredients over dry ingredients and mix until everything is evenly coated
+5. Spread the mixture in an even layer on a parchment-lined baking sheet
+6. Bake for 25-30 minutes, stirring halfway through
+7. Let cool completely on the pan (it will crisp up as it cools)
+8. Store in an airtight container for up to two weeks
+
+## How to Enjoy
+
+- Top your smoothie bowl
+- Add to yogurt
+- Eat as a snack with a handful of berries
+- Sprinkle on baked apples or pears
+
+## Hormone-Supporting Benefits
+
+- **Pumpkin seeds**: Rich in zinc for hormone production
+- **Nuts**: Healthy fats for hormone synthesis
+- **Cinnamon**: Helps with blood sugar regulation
+- **No refined sugar**: Prevents insulin spikes
+- **Coconut oil**: Provides stable energy
+
+Enjoy this nourishing granola as part of your hormone-balancing lifestyle!
     `
   }
 ];
