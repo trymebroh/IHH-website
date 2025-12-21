@@ -3,22 +3,95 @@
    ============================================ */
 
 /* -----------------------------------------
+   CUSTOM FONTS
+   ----------------------------------------- */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -----------------------------------------
    CSS VARIABLES (Design Tokens)
    ----------------------------------------- */
 :root {
-  /* Colors */
-  --color-warm-cream: #f8f2ed;
-  --color-light-cream: #fbfaf9;
-  --color-sage-green: #969b8f;
-  --color-dusty-rose: #d2bfb3;
-  --color-neutral-taupe: #cdcfc0;
-  --color-light-gray: #ece9e7;
-  --color-charcoal: #2d3031;
-  --color-medium-gray: #595959;
+  /* Brand Colors - from Branding Board */
+  --color-cream: #F9F5F0;
+  --color-warm-cream: #F9F5F0;
+  --color-light-cream: #FDFCFA;
+  --color-sage-green: #8D9488;
+  --color-sage-dark: #5A5F56;  /* Darker sage for text contrast (WCAG AA compliant) */
+  --color-sage-light: #CDCFC0;
+  --color-warm-beige: #D6C7B4;
+  --color-taupe: #AD9985;
+  --color-charcoal: #4A4B49;
+  --color-neutral-taupe: #CDCFC0;
+  --color-dusty-rose: #D6C7B4;
+  --color-light-gray: #E8E6E3;
+  --color-medium-gray: #6B6B6B;
   --color-white: #ffffff;
 
   /* Typography */
-  --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-primary: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-size-base: 16px;
   --font-size-sm: 14px;
   --font-size-lg: 18px;
@@ -133,9 +206,11 @@ input, textarea, select {
    TYPOGRAPHY
    ----------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
   font-weight: 400;
   line-height: var(--line-height-heading);
   color: var(--color-charcoal);
+  letter-spacing: 0.02em;
 }
 
 h1 {
@@ -183,7 +258,7 @@ p {
   font-size: var(--font-size-sm);
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: var(--color-sage-green);
+  color: var(--color-sage-dark);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -234,6 +309,7 @@ p {
 .grid {
   display: grid;
   gap: var(--spacing-md);
+  align-items: stretch;
 }
 
 .grid-2 {
@@ -395,11 +471,18 @@ p {
 
 /* Service cards */
 .service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-align: center;
   padding: var(--spacing-lg);
   background-color: var(--color-light-cream);
   border-radius: var(--border-radius-md);
   transition: all var(--transition-base);
+}
+
+.service-card .btn {
+  margin-top: auto;
 }
 
 .service-card:hover {
@@ -664,7 +747,7 @@ p {
 }
 
 .mobile-nav-link.external {
-  color: var(--color-sage-green);
+  color: var(--color-sage-dark);
 }
 
 /* -----------------------------------------
@@ -693,13 +776,15 @@ p {
 }
 
 .footer-logo {
-  height: 40px;
+  width: 100%;
+  height: auto;
   margin-bottom: var(--spacing-sm);
 }
 
 .footer-tagline {
   color: var(--color-medium-gray);
   font-size: var(--font-size-sm);
+  padding-left: 15px;
 }
 
 .footer-heading {
@@ -725,6 +810,7 @@ p {
   display: flex;
   gap: var(--spacing-sm);
   margin-top: var(--spacing-md);
+  padding-left: 15px;
 }
 
 .footer-social a {
@@ -850,19 +936,52 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
-  align-items: center;
+  align-items: start;
 }
 
 @media (min-width: 768px) {
   .who-i-help-content {
     grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
   }
+}
+
+.who-i-help-content > div {
+  min-width: 0;
 }
 
 .who-i-help-image {
   border-radius: var(--border-radius-md);
   width: 100%;
   height: auto;
+  object-fit: contain;
+}
+
+/* Align HTMA chart image - crop out top whitespace */
+.bg-cream .who-i-help-content > div:last-child {
+  align-self: start;
+}
+
+.bg-cream .who-i-help-content > div:first-child {
+  text-align: center;
+}
+
+.bg-cream .who-i-help-image {
+  object-fit: cover;
+  object-position: center bottom;
+  max-height: 500px;
+  max-width: 85%;
+}
+
+/* Reduce padding for sections with side-by-side content */
+.bg-cream:has(.who-i-help-content) {
+  padding: var(--spacing-md) 0 var(--spacing-xl) 0;
+}
+
+@media (min-width: 768px) {
+  .bg-cream:has(.who-i-help-content) {
+    padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
+  }
 }
 
 /* Is This You Section */
@@ -1264,7 +1383,15 @@ p {
 }
 
 .contact-method-icon {
-  color: var(--color-sage-green);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-sage-green);
+  color: var(--color-white);
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 /* -----------------------------------------

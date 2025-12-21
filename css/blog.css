@@ -105,7 +105,7 @@
 .blog-card-link {
   font-size: var(--font-size-sm);
   font-weight: 500;
-  color: var(--color-sage-green);
+  color: var(--color-sage-dark);
   text-transform: uppercase;
   letter-spacing: 1px;
 }

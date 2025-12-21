@@ -12,7 +12,7 @@ const BLOG_POSTS = [
     date: '2024-12-01',
     author: 'Alicia',
     excerpt: 'Sharing my journey and the holistic practices that helped me prepare for an unmedicated birth experience.',
-    image: '/images/blog/unmedicated-birth.jpg',
+    image: '/images/blog/alicia-cooking-lemons.jpg',
     categories: ['foundations', 'preconception'],
     content: `
 # How I Prepared for an Unmedicated Birth
@@ -66,7 +66,7 @@ If you're considering an unmedicated birth, know that preparation matters. It's 
     date: '2024-11-15',
     author: 'Alicia',
     excerpt: 'Returning to the foundations that support fertility and pregnancy health.',
-    image: '/images/blog/body-first-home.jpg',
+    image: '/images/blog/hands-chopping.jpg',
     categories: ['foundations', 'preconception'],
     content: `
 # Your Body Is the First Home
@@ -132,7 +132,7 @@ Your body is already incredible. These foundations just help it function at its 
     date: '2024-11-01',
     author: 'Alicia',
     excerpt: 'Understanding the connection between your gut microbiome and hormonal health.',
-    image: '/images/blog/gut-health-pcos.jpg',
+    image: '/images/blog/pouring-olive-oil.jpg',
     categories: ['pcos', 'foundations'],
     content: `
 # Gut Health and PCOS
