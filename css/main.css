@@ -595,7 +595,7 @@ p {
 }
 
 .logo {
-  height: 50px;
+  height: 60px;
   width: auto;
 }
 
@@ -729,6 +729,7 @@ p {
   transform: translateX(100%);
   transition: transform var(--transition-base);
   overflow-y: auto;
+  z-index: 999;
 }
 
 .mobile-nav.active {
@@ -776,15 +777,18 @@ p {
 }
 
 .footer-logo {
-  width: 100%;
+  width: 96px;
   height: auto;
   margin-bottom: var(--spacing-sm);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer-tagline {
   color: var(--color-medium-gray);
   font-size: var(--font-size-sm);
-  padding-left: 15px;
+  text-align: center;
 }
 
 .footer-heading {
