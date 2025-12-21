@@ -81,3 +81,13 @@ When adding new content to the site, **always ask about style preferences** befo
    - Categories
    - Template preference
    - Any special elements (disclaimer, references, in-content CTAs)
+
+## Branch Merges
+
+- Before merging any branch (including draft → live), explicitly confirm readiness with the requester/owner.
+- Ensure a rollback path exists (e.g., source branch retained or a pre-merge tag/commit reference recorded) so the merge can be reversed if issues arise.
+
+## Communication for Codex Users
+
+- Assume many users are non-technical. When explaining technical terms or steps, use clear, plain language and supportive analogies to make concepts approachable.
+- Remind Codex users to push their updates to GitHub if they haven't yet, so work doesn't get lost in the temporary workspace.
