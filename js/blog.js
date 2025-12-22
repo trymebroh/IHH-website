@@ -12,7 +12,7 @@ const BLOG_POSTS = [
     date: '2024-12-15',
     author: 'Alicia',
     excerpt: 'The holidays tend to bring a lot to the surface. Not because anyone is doing something wrong — but because life gets fuller all at once.',
-    image: '/images/blog/alicia-cooking-lemons.jpg',
+    image: '/images/blog/holiday-wellness.jpeg',
     categories: ['wellness', 'foundations'],
     content: `
 # Holiday Wellness for Women: Staying Grounded Without Extremes
@@ -74,7 +74,7 @@ Alicia
     date: '2024-12-01',
     author: 'Alicia',
     excerpt: 'My personal story, not medical advice. Preparing for an unmedicated birth wasn\'t about perfection—it was about intention.',
-    image: '/images/blog/hands-chopping.jpg',
+    image: '/images/blog/unmedicated-birth-new.png',
     categories: ['preconception'],
     content: `
 # How I Prepared for an Unmedicated Birth
@@ -127,7 +127,7 @@ Individual circumstances vary, and all birth types merit respect and validation.
     date: '2024-11-15',
     author: 'Alicia',
     excerpt: 'You don\'t need perfection to prepare for pregnancy. Here are the six foundations that truly matter.',
-    image: '/images/blog/pouring-olive-oil.jpg',
+    image: '/images/blog/body-first-home-new.jpeg',
     categories: ['preconception', 'foundations'],
     content: `
 # Your Body Is the First Home
@@ -185,7 +185,7 @@ Alicia
     date: '2024-05-01',
     author: 'Alicia',
     excerpt: 'Women with PCOS experience anxiety and depression 3x more often than women without the condition. Let\'s talk about practical ways to support your mental health.',
-    image: '/images/blog/placeholder.jpg',
+    image: '/images/blog/mental-health-pcos.png',
     categories: ['pcos'],
     content: `
 # May is Mental Health Awareness Month
@@ -249,7 +249,7 @@ Want more tips? Download the complimentary **Holistic Habits Checklist** for add
     date: '2024-10-15',
     author: 'Alicia',
     excerpt: 'A nutritious breakfast featuring coconut water, kefir, yogurt, flax seeds, and hemp hearts for digestive support.',
-    image: '/images/blog/alicia-cooking-lemons.jpg',
+    image: '/images/blog/smoothie-bowl-resized.png',
     categories: ['recipes', 'breakfast', 'pcos'],
     content: `
 # Recipe: Probiotic-Rich Smoothie Bowl
@@ -314,7 +314,7 @@ This recipe is PCOS-friendly when made without added sugars and enjoyed as part 
     date: '2024-10-01',
     author: 'Alicia',
     excerpt: 'The trillions of microorganisms in your gut play crucial roles in hormone regulation and inflammation control. Understanding this connection is key to managing PCOS.',
-    image: '/images/blog/pouring-olive-oil.jpg',
+    image: '/images/blog/gut-health-pcos-new.png',
     categories: ['pcos', 'foundations', 'htma'],
     content: `
 # Gut Health and PCOS: The Missing Piece of the Puzzle
@@ -377,7 +377,7 @@ Research supporting these recommendations spans studies from 2016-2021 examining
     date: '2024-09-15',
     author: 'Alicia',
     excerpt: 'I often opt for grain-free granola for most clients because grains can sometimes exacerbate symptoms such as insulin resistance and inflammation.',
-    image: '/images/blog/hands-chopping.jpg',
+    image: '/images/blog/granola.png',
     categories: ['recipes', 'breakfast', 'pcos'],
     content: `
 # Recipe: Hormone-Friendly Granola
@@ -635,6 +635,50 @@ function renderSinglePost() {
 
   // Set up share buttons
   setupShareButtons(post);
+
+  // Render related posts
+  renderRelatedPosts(post);
+}
+
+function renderRelatedPosts(currentPost) {
+  const relatedPostsGrid = document.querySelector('.related-posts-grid');
+  if (!relatedPostsGrid) return;
+
+  // Find posts with matching categories, excluding current post
+  let relatedPosts = BLOG_POSTS.filter(function(post) {
+    if (post.slug === currentPost.slug) return false;
+
+    // Check if any categories match
+    return post.categories.some(function(category) {
+      return currentPost.categories.includes(category);
+    });
+  });
+
+  // If not enough related posts, add other posts
+  if (relatedPosts.length < 3) {
+    const otherPosts = BLOG_POSTS.filter(function(post) {
+      return post.slug !== currentPost.slug && !relatedPosts.includes(post);
+    });
+    relatedPosts = relatedPosts.concat(otherPosts);
+  }
+
+  // Limit to 3 posts
+  relatedPosts = relatedPosts.slice(0, 3);
+
+  // Render the related posts
+  let html = '';
+  relatedPosts.forEach(function(post) {
+    html += `
+      <a href="/blog/post.html?post=${post.slug}" class="related-post-card">
+        <img src="${post.image}" alt="${post.title}" loading="lazy" onerror="this.src='/images/blog/placeholder.jpg'">
+        <div class="related-post-card-body">
+          <p class="related-post-card-title">${post.title}</p>
+        </div>
+      </a>
+    `;
+  });
+
+  relatedPostsGrid.innerHTML = html;
 }
 
 function setupShareButtons(post) {
