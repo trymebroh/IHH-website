@@ -224,6 +224,64 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // -----------------------------------------
+  // BLOG CAROUSEL
+  // -----------------------------------------
+  const blogCarousel = document.querySelector('.blog-carousel');
+
+  if (blogCarousel) {
+    const track = blogCarousel.querySelector('.blog-carousel-track');
+    const leftArrow = blogCarousel.querySelector('.carousel-arrow-left');
+    const rightArrow = blogCarousel.querySelector('.carousel-arrow-right');
+
+    if (track && leftArrow && rightArrow) {
+      // Calculate scroll amount (one card width + gap)
+      function getScrollAmount() {
+        const card = track.querySelector('.card');
+        if (card) {
+          const cardStyle = window.getComputedStyle(card);
+          const cardWidth = card.offsetWidth;
+          const gap = parseInt(window.getComputedStyle(track).gap) || 24;
+          return cardWidth + gap;
+        }
+        return 300;
+      }
+
+      // Update arrow visibility based on scroll position
+      function updateArrows() {
+        const scrollLeft = track.scrollLeft;
+        const maxScroll = track.scrollWidth - track.clientWidth;
+
+        leftArrow.disabled = scrollLeft <= 0;
+        rightArrow.disabled = scrollLeft >= maxScroll - 1;
+      }
+
+      // Scroll handlers
+      leftArrow.addEventListener('click', function() {
+        track.scrollBy({
+          left: -getScrollAmount(),
+          behavior: 'smooth'
+        });
+      });
+
+      rightArrow.addEventListener('click', function() {
+        track.scrollBy({
+          left: getScrollAmount(),
+          behavior: 'smooth'
+        });
+      });
+
+      // Update arrows on scroll
+      track.addEventListener('scroll', updateArrows);
+
+      // Initial arrow state
+      updateArrows();
+
+      // Update on resize
+      window.addEventListener('resize', updateArrows);
+    }
+  }
+
+  // -----------------------------------------
   // CURRENT YEAR IN FOOTER
   // -----------------------------------------
   const yearSpan = document.querySelector('.current-year');

@@ -82,6 +82,21 @@ When adding new content to the site, **always ask about style preferences** befo
    - Template preference
    - Any special elements (disclaimer, references, in-content CTAs)
 
+4. **Before publishing any new blog post:**
+   - Verify the post includes appropriate disclosures (Educational & Imagery Disclaimer)
+   - If disclaimer is missing, prompt Alicia to add one or use the standard disclaimer
+   - Always ask before pushing to GitHub
+
+### Standard Blog Disclaimer
+
+All blog posts should include this disclaimer (or similar) at the end:
+
+> This content is for educational and informational purposes only and is not intended to diagnose, treat, cure, or prevent any disease. It does not replace individualized medical advice, diagnosis, or treatment. Readers should consult their licensed healthcare provider regarding personal health concerns.
+>
+> Any individuals depicted in images on this website or associated content are models or stock photography subjects and are not patients, clients, or recipients of services from Intention Holistic Health. Images are used for illustrative purposes only and do not represent clinical relationships, medical outcomes, or specific health conditions.
+>
+> Intention Holistic Health provides educational wellness guidance and, where applicable, Kentucky-based nurse practitioner services within scope and licensure.
+
 ## Branch Merges
 
 - Before merging any branch (including draft → live), explicitly confirm readiness with the requester/owner.
