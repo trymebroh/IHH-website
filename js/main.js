@@ -44,12 +44,19 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // -----------------------------------------
-  // EXIT-INTENT POPUP
+  // EXIT-INTENT & ENGAGEMENT POPUP
   // -----------------------------------------
   const popupOverlay = document.querySelector('.popup-overlay');
   const popupClose = document.querySelector('.popup-close');
   const POPUP_STORAGE_KEY = 'intentionPopupShown';
   const POPUP_EXPIRY_DAYS = 7;
+  const IDLE_TIMEOUT = 45000; // 45 seconds of inactivity
+  const PAGE_TIME_TRIGGER = 60000; // 60 seconds on page
+
+  var popupShown = false;
+  var idleTimer = null;
+  var pageTimer = null;
+  var lastActivity = Date.now();
 
   // Check if popup was already shown recently
   function wasPopupShownRecently() {
@@ -65,10 +72,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Show popup
   function showPopup() {
-    if (popupOverlay && !wasPopupShownRecently()) {
+    if (popupOverlay && !wasPopupShownRecently() && !popupShown) {
+      popupShown = true;
       popupOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
       localStorage.setItem(POPUP_STORAGE_KEY, new Date().toISOString());
+      // Clear timers when popup shows
+      if (idleTimer) clearTimeout(idleTimer);
+      if (pageTimer) clearTimeout(pageTimer);
     }
   }
 
@@ -80,13 +91,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Exit intent detection (mouse leaves viewport from top)
+  // Reset idle timer on user activity
+  function resetIdleTimer() {
+    lastActivity = Date.now();
+    if (idleTimer) clearTimeout(idleTimer);
+    if (!popupShown && !wasPopupShownRecently()) {
+      idleTimer = setTimeout(function() {
+        showPopup();
+      }, IDLE_TIMEOUT);
+    }
+  }
+
   if (popupOverlay) {
+    // Exit intent detection (mouse leaves viewport from top)
     document.addEventListener('mouseout', function(e) {
       if (e.clientY < 10 && e.relatedTarget === null) {
         showPopup();
       }
     });
+
+    // Idle timer - show popup after inactivity
+    ['mousemove', 'keydown', 'scroll', 'touchstart', 'click'].forEach(function(event) {
+      document.addEventListener(event, resetIdleTimer, { passive: true });
+    });
+    resetIdleTimer(); // Start the idle timer
+
+    // Page time trigger - show popup after spending time on page
+    if (!wasPopupShownRecently()) {
+      pageTimer = setTimeout(function() {
+        showPopup();
+      }, PAGE_TIME_TRIGGER);
+    }
 
     // Close popup on button click
     if (popupClose) {

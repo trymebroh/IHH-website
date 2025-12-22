@@ -249,7 +249,9 @@ Want more tips? Download the complimentary **Holistic Habits Checklist** for add
     date: '2024-10-15',
     author: 'Alicia',
     excerpt: 'A nutritious breakfast featuring coconut water, kefir, yogurt, flax seeds, and hemp hearts for digestive support.',
-    image: '/images/blog/smoothie-bowl-resized.png',
+    image: '/images/blog/smoothie-bowl-cropped.webp',
+    imageStyle: 'max-height: 400px; width: auto; margin: 0 auto; display: block;',
+    cardImageStyle: 'object-position: left center;',
     categories: ['recipes', 'breakfast', 'pcos'],
     content: `
 # Recipe: Probiotic-Rich Smoothie Bowl
@@ -497,9 +499,10 @@ function renderBlogListing() {
   // Render posts
   let html = '';
   sortedPosts.forEach(function(post) {
+    const cardImgStyle = post.cardImageStyle ? ` style="${post.cardImageStyle}"` : '';
     html += `
       <article class="blog-card">
-        <img src="${post.image}" alt="${post.title}" class="blog-card-image" loading="lazy" onerror="this.src='/images/blog/placeholder.jpg'">
+        <img src="${post.image}" alt="${post.title}" class="blog-card-image" loading="lazy"${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
         <div class="blog-card-body">
           <p class="blog-card-date">${formatDate(post.date)}</p>
           <h2 class="blog-card-title">
@@ -546,9 +549,10 @@ function setupCategoryFiltering(posts) {
       } else {
         let html = '';
         filteredPosts.forEach(function(post) {
+          const cardImgStyle = post.cardImageStyle ? ` style="${post.cardImageStyle}"` : '';
           html += `
             <article class="blog-card">
-              <img src="${post.image}" alt="${post.title}" class="blog-card-image" loading="lazy" onerror="this.src='/images/blog/placeholder.jpg'">
+              <img src="${post.image}" alt="${post.title}" class="blog-card-image" loading="lazy"${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
               <div class="blog-card-body">
                 <p class="blog-card-date">${formatDate(post.date)}</p>
                 <h2 class="blog-card-title">
@@ -617,7 +621,8 @@ function renderSinglePost() {
   // Render featured image
   const postImage = document.getElementById('post-image');
   if (postImage) {
-    postImage.innerHTML = `<img src="${post.image}" alt="${post.title}" loading="lazy" onerror="this.parentElement.style.display='none'">`;
+    const customStyle = post.imageStyle ? ` style="${post.imageStyle}"` : '';
+    postImage.innerHTML = `<img src="${post.image}" alt="${post.title}" loading="lazy"${customStyle} onerror="this.parentElement.style.display='none'">`;
   }
 
   // Render content
@@ -683,7 +688,43 @@ function renderRelatedPosts(currentPost) {
 
 function setupShareButtons(post) {
   const pageUrl = encodeURIComponent(window.location.href);
+  const rawUrl = window.location.href;
   const pageTitle = encodeURIComponent(post.title);
+  const rawTitle = post.title;
+
+  // Copy Link button
+  const copyLinkBtn = document.getElementById('copy-link');
+  const copyConfirmation = document.getElementById('copy-confirmation');
+  if (copyLinkBtn) {
+    copyLinkBtn.addEventListener('click', function() {
+      navigator.clipboard.writeText(rawUrl).then(function() {
+        copyConfirmation.classList.add('show');
+        setTimeout(function() {
+          copyConfirmation.classList.remove('show');
+        }, 2000);
+      }).catch(function() {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = rawUrl;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        copyConfirmation.classList.add('show');
+        setTimeout(function() {
+          copyConfirmation.classList.remove('show');
+        }, 2000);
+      });
+    });
+  }
+
+  // Email share
+  const emailBtn = document.getElementById('share-email');
+  if (emailBtn) {
+    const emailSubject = encodeURIComponent('Check out this article: ' + rawTitle);
+    const emailBody = encodeURIComponent('I thought you might find this helpful:\n\n' + rawTitle + '\n\n' + rawUrl);
+    emailBtn.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+  }
 
   const facebookBtn = document.getElementById('share-facebook');
   if (facebookBtn) {
