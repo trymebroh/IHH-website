@@ -106,3 +106,11 @@ All blog posts should include this disclaimer (or similar) at the end:
 
 - Assume many users are non-technical. When explaining technical terms or steps, use clear, plain language and supportive analogies to make concepts approachable.
 - Remind Codex users to push their updates to GitHub if they haven't yet, so work doesn't get lost in the temporary workspace.
+
+## Git Configuration
+
+- **Use SSH for GitHub pushes** (not HTTPS). The remote should be `git@github.com:trymebroh/IHH-website.git`
+- If push fails with credential errors, check the remote with `git remote -v` and switch to SSH if needed:
+  ```bash
+  git remote set-url origin git@github.com:trymebroh/IHH-website.git
+  ```

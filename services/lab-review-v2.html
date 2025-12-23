@@ -14,8 +14,13 @@
 
   <title>Functional Lab Review | Intention Holistic Health</title>
 
+  <!-- Preload critical resources -->
   <link rel="preload" href="/fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/images/services/lab-review-hero-bg.png" as="image">
+  <link rel="preload" href="/images/services/horizontal-elements.png" as="image">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/services-v2.css">
   <link rel="icon" type="image/png" href="/images/favicon.png">
@@ -27,7 +32,7 @@
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="Intention Holistic Health Home">
-        <img src="/images/logo2.png" alt="Intention Holistic Health">
+        <img src="/images/logo2.webp" alt="Intention Holistic Health">
       </a>
 
       <nav class="nav" aria-label="Main navigation">
@@ -196,7 +201,7 @@
         <div class="container">
           <div class="v2-empathy-content" style="max-width: 900px;">
             <div>
-              <img src="/images/services/lab-review-horizontal.png" alt="Mother and child" class="v2-empathy-image">
+              <img src="/images/services/lab-review-horizontal.png" alt="Mother and child" class="v2-empathy-image" loading="lazy">
             </div>
             <div>
               <p>If you've been told your labs are "normal," yet you still don't feel like yourself, you're not alone.</p>
@@ -308,6 +313,27 @@
         </div>
       </section>
 
+      <!-- How to Get Started -->
+      <section class="v2-get-started" data-track-section="cta" data-funnel-stage="intent">
+        <div class="container">
+          <div class="v2-get-started-layout">
+            <div class="v2-get-started-image">
+              <img src="/images/services/lab-review-cta-image.png" alt="Alicia reviewing lab results" loading="lazy">
+            </div>
+            <div class="v2-get-started-content">
+              <h2>How To Get Started</h2>
+              <p class="v2-get-started-lead">If you're ready to finally understand your labs — and feel confident in your next steps — schedule your session below.</p>
+              <ul class="v2-get-started-list">
+                <li>Clear guidance</li>
+                <li>Meaningful insight</li>
+                <li>Support you can trust</li>
+              </ul>
+              <a href="https://my.practicebetter.io/#/signin" class="v2-btn v2-btn-primary" data-track-cta="final-cta" target="_blank" rel="noopener">Schedule Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- About This Service -->
       <section class="v2-disclaimer" data-track-section="disclaimer">
         <div class="container">
@@ -316,21 +342,6 @@
           <p class="mt-sm" style="font-style: normal;">I do not treat or manage acute/chronic medical conditions.</p>
           <p class="mt-sm" style="font-style: normal;">Men and women must maintain care with a PCP and/or specialist for comprehensive management.</p>
           <p class="mt-md" style="font-style: normal;">Services are provided by a Kentucky-licensed Nurse Practitioner within the scope of professional nursing practice and focus on clinical interpretation to support patient-specific care planning. This is not primary care or emergency care.</p>
-        </div>
-      </section>
-
-      <!-- How to Get Started -->
-      <section class="v2-cta" style="background-color: #dacec1;" data-track-section="cta" data-funnel-stage="intent">
-        <div class="container">
-          <div class="v2-cta-content">
-            <h2>How To Get Started</h2>
-            <hr>
-            <h3>If you're ready to finally understand your labs — and feel confident in your next steps — schedule your session below.</h3>
-            <p class="mt-lg">Clear guidance.</p>
-            <p>Meaningful insight.</p>
-            <p>Support you can trust.</p>
-            <a href="https://my.practicebetter.io/#/signin" class="v2-btn v2-btn-white mt-lg" data-track-cta="final-cta" target="_blank" rel="noopener">Schedule Now</a>
-          </div>
         </div>
       </section>
 
@@ -348,7 +359,7 @@
           <div class="v3-hero-content">
             <div class="v3-hero-text">
               <span class="v3-hero-badge">Open to Men & Women</span>
-              <h1 class="v3-hero-title">Your Labs Say "Normal"<br><span>But You Feel Anything But</span></h1>
+              <h1 class="v3-hero-title">Your Labs Say "Normal"<br><span>You Feel Anything But</span></h1>
               <p class="v3-hero-subtitle">Get a functional interpretation of your lab work that goes beyond reference ranges—and finally understand what your body is trying to tell you.</p>
 
               <div class="v3-hero-cta">
@@ -376,7 +387,8 @@
         <div class="container">
           <div class="v3-problem-header">
             <h2>This Might Be You...</h2>
-            <p>You've been to the doctor. Your labs came back "fine." But something still feels off.</p>
+            <p>You've been to the doctor. Your labs came back "fine."</p>
+            <p class="v3-problem-emphasis">But something still feels off.</p>
           </div>
 
           <div class="v3-problem-grid">
@@ -396,6 +408,10 @@
               <h4>Brain Fog</h4>
               <p>Difficulty concentrating, forgetting things, feeling "mentally slow."</p>
             </div>
+            <div class="v3-problem-card">
+              <h4>Dismissed by Doctors</h4>
+              <p>"Everything looks normal" — but you know something isn't right.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -405,58 +421,79 @@
         <div class="container">
           <div class="v3-solution-content">
             <div class="v3-solution-image">
-              <img src="/images/services/alicia-portrait-services.png" alt="Alicia Harrison, NP">
+              <img src="/images/services/alicia-lab-review-story.webp" alt="Alicia Harrison, NP" loading="lazy">
             </div>
             <div class="v3-solution-text">
               <h2>There's More to the Story</h2>
               <p>Standard lab ranges are based on averages—not optimal health. "Normal" doesn't mean you're thriving.</p>
               <p>In this 40-minute session, I'll walk you through your labs line-by-line using functional ranges and clinical context. You'll finally understand what each marker means, what patterns are emerging, and what steps you can take.</p>
-              <p><strong>No mentorship required. No commitment. Just clarity.</strong></p>
+              <p><strong>One session. No strings attached. Just clarity.</strong></p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- What's Included -->
-      <section class="v3-packages" data-track-section="included">
+      <section class="v3-included-section" data-track-section="included">
         <div class="container">
-          <div class="v3-packages-header">
-            <h2>What You Get for $298</h2>
-            <p>Everything you need to finally understand your lab work.</p>
-          </div>
-
-          <div class="v3-packages-grid" style="grid-template-columns: 1fr;">
-            <div class="v3-package-card" style="max-width: 800px; margin: 0 auto;">
-              <div class="v3-package-header">
-                <h3>Functional Lab Review Session</h3>
-                <p class="subtitle">40-Minute Video Consultation</p>
-              </div>
-              <div class="v3-package-features">
-                <ul>
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                    <strong>Comprehensive Intake</strong> — Share your symptoms, history, and goals
-                  </li>
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                    <strong>Lab Upload</strong> — Send your bloodwork, thyroid, hormones, metabolic panels
-                  </li>
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                    <strong>Line-by-Line Review</strong> — Walk through every marker with functional context
-                  </li>
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                    <strong>Personalized Recommendations</strong> — Nutrition, lifestyle, supplements
-                  </li>
-                  <li>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                    <strong>Clear Next Steps</strong> — Know exactly what to do and when
-                  </li>
-                </ul>
-              </div>
-              <div class="v3-package-cta">
+          <div class="v3-included-layout">
+            <div class="v3-included-features">
+              <h2>What You Get</h2>
+              <ul>
+                <li>
+                  <div class="v3-feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                  </div>
+                  <div>
+                    <strong>Comprehensive Intake</strong>
+                    <span>Share your symptoms, history, and goals</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="v3-feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  </div>
+                  <div>
+                    <strong>Lab Upload</strong>
+                    <span>Send your bloodwork, thyroid, hormones, metabolic panels</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="v3-feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  </div>
+                  <div>
+                    <strong>Line-by-Line Review</strong>
+                    <span>Walk through every marker with functional context</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="v3-feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                  </div>
+                  <div>
+                    <strong>Personalized Recommendations</strong>
+                    <span>Nutrition, lifestyle, and supplement guidance</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="v3-feature-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                  </div>
+                  <div>
+                    <strong>Clear Next Steps</strong>
+                    <span>Know exactly what to do and when</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="v3-included-cta">
+              <div class="v3-included-cta-card">
+                <p class="v3-included-label">40-Minute Video Session</p>
+                <p class="v3-included-price">$298</p>
+                <p class="v3-included-note">One-time investment</p>
                 <a href="https://my.practicebetter.io/#/signin" class="v3-btn v3-btn-primary" data-track-cta="pkg-main" target="_blank" rel="noopener">Book Your Session</a>
+                <p class="v3-included-guarantee">Licensed NP · Secure · Personalized</p>
               </div>
             </div>
           </div>
@@ -552,6 +589,11 @@
           <div class="v3-final-cta-content">
             <h2>Ready for Clarity?</h2>
             <p>Stop wondering what your labs mean. Book your functional review and finally get answers.</p>
+            <ul class="v3-trust-list">
+              <li>Clear guidance</li>
+              <li>Meaningful insight</li>
+              <li>Support you can trust</li>
+            </ul>
             <a href="https://my.practicebetter.io/#/signin" class="v3-btn" data-track-cta="final-cta" target="_blank" rel="noopener">
               Book Your Review — $298
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -578,8 +620,8 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logos">
-            <img src="/images/logo.png" alt="Intention Holistic Health" class="footer-logo">
-            <img src="/images/bhpcc-seal.png" alt="Board Certified Health Professional" class="footer-seal">
+            <img src="/images/logo.webp" alt="Intention Holistic Health" class="footer-logo" loading="lazy">
+            <img src="/images/bhpcc-seal.webp" alt="Board Certified Health Professional" class="footer-seal" loading="lazy">
           </div>
           <p class="footer-tagline">
             Holistic wellness support for women through pregnancy, postpartum, and motherhood.

@@ -97,11 +97,11 @@ Merry Christmas! Stay well my friends,
 
 Alicia
     `,
-    disclaimer: \`This content is for educational and informational purposes only and is not intended to diagnose, treat, cure, or prevent any disease. It does not replace individualized medical advice, diagnosis, or treatment. Readers should consult their licensed healthcare provider regarding personal health concerns.
+    disclaimer: `This content is for educational and informational purposes only and is not intended to diagnose, treat, cure, or prevent any disease. It does not replace individualized medical advice, diagnosis, or treatment. Readers should consult their licensed healthcare provider regarding personal health concerns.
 
 Any individuals depicted in images on this website or associated content are models or stock photography subjects and are not patients, clients, or recipients of services from Intention Holistic Health. Images are used for illustrative purposes only and do not represent clinical relationships, medical outcomes, or specific health conditions.
 
-Intention Holistic Health provides educational wellness guidance and, where applicable, Kentucky-based nurse practitioner services within scope and licensure.\`
+Intention Holistic Health provides educational wellness guidance and, where applicable, Kentucky-based nurse practitioner services within scope and licensure.`
   },
   {
     slug: '2024-12-01-unmedicated-birth',
@@ -109,7 +109,7 @@ Intention Holistic Health provides educational wellness guidance and, where appl
     date: '2024-12-01',
     author: 'Alicia',
     excerpt: 'My personal story, not medical advice. Preparing for an unmedicated birth wasn\'t about perfection—it was about intention.',
-    image: '/images/blog/unmedicated-birth-new.png',
+    image: '/images/blog/unmedicated-birth-new.webp',
     categories: ['preconception'],
     content: `
 # How I Prepared for an Unmedicated Birth
@@ -217,7 +217,7 @@ All my love,
 
 Alicia
     `,
-    disclaimer: \`This blog is for informational and educational purposes only. It reflects my personal experience and is not medical advice or a substitute for individualized care. Always consult a qualified healthcare provider before making decisions about pregnancy, labor, or medical care.\`
+    disclaimer: `This blog is for informational and educational purposes only. It reflects my personal experience and is not medical advice or a substitute for individualized care. Always consult a qualified healthcare provider before making decisions about pregnancy, labor, or medical care.`
   },
   {
     slug: '2024-11-15-body-first-home',
@@ -312,7 +312,7 @@ With love + intention,
 
 Alicia
     `,
-    disclaimer: \`This article is for educational purposes only and is not medical advice. It does not establish a provider–patient relationship. Always consult your healthcare provider for guidance about your personal health. Clinical services at Intention Holistic Health PLLC are available only to Kentucky residents.\`
+    disclaimer: `This article is for educational purposes only and is not medical advice. It does not establish a provider–patient relationship. Always consult your healthcare provider for guidance about your personal health. Clinical services at Intention Holistic Health PLLC are available only to Kentucky residents.`
   },
   {
     slug: '2024-05-15-mental-health-pcos',
@@ -320,7 +320,7 @@ Alicia
     date: '2024-05-15',
     author: 'Alicia',
     excerpt: 'Women with PCOS experience anxiety and depression 3x more often than women without the condition. Let\'s talk about practical ways to support your mental health.',
-    image: '/images/blog/mental-health-pcos.png',
+    image: '/images/blog/mental-health-pcos.webp',
     categories: ['pcos', 'wellness'],
     content: `
 # May is Mental Health Awareness Month
@@ -373,7 +373,7 @@ If you're struggling with PCOS and mental health, please reach out—to a profes
 
 Want more tips? Download the complimentary **Holistic Habits Checklist** for additional wellness strategies focused on mood support and brain health.
     `,
-    disclaimer: \`The information provided in this blog is for educational and informational purposes only and is not intended to serve as medical advice, diagnosis, or treatment. Health decisions require partnership with licensed providers familiar with individual circumstances. Clinical services are available exclusively to Kentucky residents through formal provider-patient relationships.\`
+    disclaimer: `The information provided in this blog is for educational and informational purposes only and is not intended to serve as medical advice, diagnosis, or treatment. Health decisions require partnership with licensed providers familiar with individual circumstances. Clinical services are available exclusively to Kentucky residents through formal provider-patient relationships.`
   },
   {
     slug: '2024-10-15-probiotic-smoothie-bowl',
@@ -425,7 +425,7 @@ All my love,
 
 Intention Holistic Health
     `,
-    disclaimer: \`Note: Always consult with a healthcare professional before making significant changes to your diet, especially if you have specific health concerns or conditions.\`
+    disclaimer: `Note: Always consult with a healthcare professional before making significant changes to your diet, especially if you have specific health concerns or conditions.`
   },
   {
     slug: '2024-10-01-gut-health-pcos',
@@ -433,7 +433,7 @@ Intention Holistic Health
     date: '2024-10-01',
     author: 'Alicia',
     excerpt: 'The trillions of microorganisms in your gut play crucial roles in hormone regulation and inflammation control. Understanding this connection is key to managing PCOS.',
-    image: '/images/blog/gut-health-pcos-new.png',
+    image: '/images/blog/gut-health-pcos-new.webp',
     categories: ['pcos', 'foundations'],
     content: `
 # Gut Health and PCOS: The Missing Piece of the Puzzle
@@ -505,11 +505,11 @@ With love and digestive-healing energy,
 Alicia
 Intention Holistic Health
     `,
-    disclaimer: \`This blog provides educational information only and doesn't constitute medical advice, diagnosis, or treatment. Health decisions require partnership with licensed healthcare providers familiar with your individual circumstances and medical history.
+    disclaimer: `This blog provides educational information only and doesn't constitute medical advice, diagnosis, or treatment. Health decisions require partnership with licensed healthcare providers familiar with your individual circumstances and medical history.
 
 Topics discussing nutrition, supplements, and wellness practices aren't personalized clinical guidance. Don't disregard professional medical advice based on this content.
 
-Clinical services at Intention Holistic Health PLLC serve Kentucky residents only through formal provider-patient relationships. Educational content doesn't replace medical care, prenatal/postpartum services, or emergency services.\`
+Clinical services at Intention Holistic Health PLLC serve Kentucky residents only through formal provider-patient relationships. Educational content doesn't replace medical care, prenatal/postpartum services, or emergency services.`
   },
   {
     slug: '2024-09-15-hormone-friendly-granola',
@@ -517,7 +517,7 @@ Clinical services at Intention Holistic Health PLLC serve Kentucky residents onl
     date: '2024-09-15',
     author: 'Alicia',
     excerpt: 'An all-time-favorite snack: granola that is both delicious and packed with hormone-friendly ingredients to support health and wellbeing from the inside out.',
-    image: '/images/blog/granola.png',
+    image: '/images/blog/granola.webp',
     categories: ['recipes', 'breakfast', 'pcos'],
     content: `
 # Recipe: Hormone-Friendly Granola
@@ -568,7 +568,7 @@ All my love,
 Alicia
 Intention Holistic Health
     `,
-    disclaimer: \`The information provided in this blog is for educational and informational purposes only and is not intended to serve as medical advice, diagnosis, or treatment. Health decisions require partnership with licensed providers familiar with individual circumstances. Clinical services are available exclusively to Kentucky residents through formal provider-patient relationships.\`
+    disclaimer: `The information provided in this blog is for educational and informational purposes only and is not intended to serve as medical advice, diagnosis, or treatment. Health decisions require partnership with licensed providers familiar with individual circumstances. Clinical services are available exclusively to Kentucky residents through formal provider-patient relationships.`
   }
 ];
 

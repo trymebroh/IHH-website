@@ -27,7 +27,7 @@
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="Intention Holistic Health Home">
-        <img src="/images/logo2.png" alt="Intention Holistic Health">
+        <img src="/images/logo2.webp" alt="Intention Holistic Health">
       </a>
 
       <nav class="nav" aria-label="Main navigation">
@@ -563,7 +563,7 @@
             </div>
 
             <div class="v3-hero-image">
-              <img src="/images/services/alicia-portrait-services.png" alt="Alicia Harrison, NP - Your Wellness Partner">
+              <img src="/images/services/alicia-solution-section.webp" alt="Alicia Harrison, NP - Your Wellness Partner">
               <div class="v3-hero-stats">
                 <div class="v3-hero-stat">
                   <div class="v3-hero-stat-number">100+</div>
@@ -608,6 +608,14 @@
               <h4>"I want to prepare my body for pregnancy"</h4>
               <p>Fertility starts with mineral balance. Most women don't realize how depleted they are until testing.</p>
             </div>
+            <div class="v3-problem-card">
+              <h4>"I've tried everything and nothing works"</h4>
+              <p>Supplements, diets, protocols—none of it sticks because you're guessing. HTMA removes the guesswork.</p>
+            </div>
+            <div class="v3-problem-card">
+              <h4>"I'm anxious, irritable, or just <em>off</em> "</h4>
+              <p>Mood issues are often rooted in copper-zinc imbalance, magnesium depletion, or adrenal stress patterns.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -617,13 +625,13 @@
         <div class="container">
           <div class="v3-solution-content">
             <div class="v3-solution-image">
-              <img src="/images/services/htma-offerings-hero.png" alt="Holistic wellness approach">
+              <img src="/images/services/alicia-better-way.webp" alt="Alicia - Holistic wellness approach">
             </div>
             <div class="v3-solution-text">
               <h2>There's a Better Way</h2>
               <p>Hi, I'm Alicia—a nurse practitioner, mom, and holistic wellness consultant. I help women connect the dots between hormones, minerals, and daily habits so they can finally feel balanced and confident.</p>
               <p>Through HTMA testing and personalized 1:1 support, we'll uncover what's actually going on in your body and create a clear plan to get you feeling like yourself again.</p>
-              <p><strong>No guessing. No generic protocols. Just real answers and real support.</strong></p>
+              <p><strong>No guessing. No generic protocols.<br>Just real answers and real support.</strong></p>
               <a href="#packages" class="v3-btn v3-btn-primary" data-track-cta="solution-cta">See How I Can Help</a>
             </div>
           </div>
@@ -631,20 +639,45 @@
       </section>
 
       <!-- Service Quiz -->
-      <section class="section" data-track-section="quiz" data-funnel-stage="consideration">
+      <section class="v3-quiz-section" data-track-section="quiz" data-funnel-stage="consideration">
         <div class="container">
           <div class="v3-service-quiz">
-            <h3>Not Sure Which Package Is Right For You?</h3>
-            <p>Answer one question and I'll point you in the right direction:</p>
+            <div class="v3-quiz-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+              Quick Quiz
+            </div>
+            <h3>Not Sure Where to Start?</h3>
+            <p>Click the option that sounds most like you — I'll show you the best fit:</p>
             <div class="v3-quiz-options">
               <div class="v3-quiz-option" onclick="showRecommendation('foundations')">
-                <strong>I want to learn the basics first</strong> — I'm looking for foundational education on hormones, nutrition, and low-tox living before deeper testing.
+                <div class="v3-quiz-option-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                </div>
+                <div class="v3-quiz-option-text">
+                  <strong>"I want to learn the basics first"</strong>
+                  <span>Foundational education on hormones, nutrition, and low-tox living</span>
+                </div>
+                <div class="v3-quiz-option-arrow">→</div>
               </div>
               <div class="v3-quiz-option" onclick="showRecommendation('mineral')">
-                <strong>I want to know what's going on</strong> — I need clarity on my mineral balance and a personalized mini-plan to move forward.
+                <div class="v3-quiz-option-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </div>
+                <div class="v3-quiz-option-text">
+                  <strong>"I want to know what's going on"</strong>
+                  <span>Clarity on my mineral balance with a personalized mini-plan</span>
+                </div>
+                <div class="v3-quiz-option-arrow">→</div>
               </div>
               <div class="v3-quiz-option" onclick="showRecommendation('signature')">
-                <strong>I'm ready for full support</strong> — I want comprehensive 1:1 guidance, testing, and ongoing support for lasting transformation.
+                <div class="v3-quiz-option-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                </div>
+                <div class="v3-quiz-option-text">
+                  <strong>"I'm ready for full support"</strong>
+                  <span>Comprehensive 1:1 guidance, testing, and ongoing support</span>
+                </div>
+                <div class="v3-quiz-option-arrow">→</div>
               </div>
             </div>
           </div>
@@ -806,14 +839,14 @@
             </div>
             <div class="v3-process-step">
               <div class="v3-process-step-number">4</div>
-              <h4>Feel Better</h4>
+              <h4>Take Action</h4>
               <p>Implement changes with ongoing support and guidance</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Testimonials -->
+      <!-- Testimonials - HIDDEN pending HIPAA/KY Board review
       <section class="v3-testimonials" data-track-section="testimonials">
         <div class="container">
           <div class="v3-testimonials-header">
@@ -864,6 +897,7 @@
           </div>
         </div>
       </section>
+      END Testimonials -->
 
       <!-- FAQ -->
       <section class="v3-faq" data-track-section="faq">
@@ -958,8 +992,8 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logos">
-            <img src="/images/logo.png" alt="Intention Holistic Health" class="footer-logo">
-            <img src="/images/bhpcc-seal.png" alt="Board Certified Health Professional" class="footer-seal">
+            <img src="/images/logo.webp" alt="Intention Holistic Health" class="footer-logo">
+            <img src="/images/bhpcc-seal.webp" alt="Board Certified Health Professional" class="footer-seal">
           </div>
           <p class="footer-tagline">
             Holistic wellness support for women through pregnancy, postpartum, and motherhood.
