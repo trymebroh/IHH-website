@@ -1097,20 +1097,31 @@ p {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 600px;
+  max-width: 100%;
+  padding-right: var(--spacing-md);
 }
 
-.hero-greeting {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--spacing-sm);
+@media (min-width: 1024px) {
+  .hero-content {
+    max-width: 45%;
+  }
 }
 
 .hero-title {
-  font-size: var(--font-size-3xl);
-  margin-bottom: var(--spacing-xs);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-sm);
 }
 
 @media (min-width: 768px) {
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (min-width: 1024px) {
   .hero-title {
     font-size: var(--font-size-hero);
   }
