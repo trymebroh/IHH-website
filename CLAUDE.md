@@ -134,6 +134,10 @@ Only use colors from the official brand palette (see `/brand/Branding Board.pdf`
 
 - Assume many users are non-technical. When explaining technical terms or steps, use clear, plain language and supportive analogies to make concepts approachable.
 - Remind Codex users to push their updates to GitHub if they haven't yet, so work doesn't get lost in the temporary workspace.
+- **Save/Backup Requests:** If the user asks to "save," "backup," or similar, clarify the intent:
+  - **Commit** = Create a save point (like a checkpoint in a video game)
+  - **Push** = Send it to the backup database/library (GitHub) so it's stored remotely
+  - Ask: "Would you like me to commit (create a save point) and push (send to the backup)?"
 
 ## Git Configuration
 
