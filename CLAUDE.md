@@ -89,6 +89,29 @@ When adding new content to the site, **always ask about style preferences** befo
    - If disclaimer is missing, prompt Alicia to add one or use the standard disclaimer
    - Always ask before pushing to GitHub
 
+### Internal Linking Strategy
+
+**Proactively offer to add internal links** in blog posts to relevant service pages. This helps:
+- Guide readers to services that can help them
+- Increase conversion from visitor to client
+- Improve SEO through internal linking
+
+**Key pages to link to:**
+| Topic in Blog Post | Link To |
+|--------------------|---------|
+| HTMA, mineral testing, hair analysis | `/htma.html` (What is HTMA?) |
+| Lab work, blood tests, "normal" results | `/services/lab-review.html` |
+| Wellness consulting, hormone support | `/services/htma-consulting.html` |
+| Getting started, booking | `/apply.html` or `/contact.html` |
+
+**When to suggest links:**
+- After writing or reviewing blog content
+- When a post mentions services Alicia offers
+- When a post discusses problems that her services solve
+
+**Example prompt to user:**
+> "This post discusses HTMA testing. Would you like me to add a link to the 'What is HTMA?' page so readers can learn more and potentially book a consultation?"
+
 ### Standard Blog Disclaimer
 
 All blog posts should include this disclaimer (or similar) at the end:

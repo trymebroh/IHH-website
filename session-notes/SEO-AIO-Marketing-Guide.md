@@ -15,10 +15,11 @@
 4. [AI Optimization (AIO) Strategy](#ai-optimization-aio-strategy)
 5. [Content Strategy & Editorial Calendar](#content-strategy--editorial-calendar)
 6. [High-ROI Quick Wins](#high-roi-quick-wins)
-7. [Technical SEO Checklist](#technical-seo-checklist)
-8. [Social Media Integration](#social-media-integration)
-9. [Measurement & KPIs](#measurement--kpis)
-10. [Implementation Timeline](#implementation-timeline)
+7. [Internal Linking Audit & Implementation Guide](#internal-linking-audit--implementation-guide)
+8. [Technical SEO Checklist](#technical-seo-checklist)
+9. [Social Media Integration](#social-media-integration)
+10. [Measurement & KPIs](#measurement--kpis)
+11. [Implementation Timeline](#implementation-timeline)
 
 ---
 
@@ -422,6 +423,152 @@ These actions will generate the fastest results:
     - Preconception Checklist
     - HTMA Prep Guide
     - Postpartum Recovery Roadmap
+
+---
+
+## Internal Linking Audit & Implementation Guide
+
+*Audit completed December 2025*
+
+### Current State
+- Navigation menus provide basic cross-linking
+- **Blog posts contain NO contextual internal links** (biggest gap)
+- Service pages have minimal cross-references
+- Homepage sections don't link to related blog content
+
+**50+ internal linking opportunities identified across the site.**
+
+### CTA Hierarchy (Important)
+
+**HTMA and 1:1 services require an application.** The user journey should be:
+
+1. **Learn More First** → Link to educational content
+   - `/htma.html` - What is HTMA?
+   - Relevant blog posts
+   - `/services/htma-consulting.html` - Service details
+
+2. **Then Apply** → `/apply.html`
+   - Only after they understand what they're applying for
+   - CTAs should read "Apply to Work Together" not "Book Now"
+
+**Example flow in content:**
+> "If you're curious about what HTMA can reveal, [learn more about HTMA testing](/htma.html). When you're ready to take the next step, [apply to work together](/apply.html)."
+
+### Priority 1: Blog Post Links (Highest Impact)
+
+Each blog post should link to 2-3 relevant pages. Here are the specific recommendations:
+
+#### "Your Body Is the First Home" (preconception, foundations)
+| Text to Link | Target Page | Anchor Text |
+|--------------|-------------|-------------|
+| "Hair Tissue Mineral Analysis (HTMA)" | `/htma.html` | "Hair Tissue Mineral Analysis (HTMA)" |
+| "HTMA is a great tool" | `/htma.html` | "HTMA testing" |
+| "Mama Mentorship and Lab Review" | `/services/htma-consulting.html` | "Mentorship services" |
+| "Lab Review Services" | `/services/lab-review.html` | "Lab Review" |
+
+#### "Gut Health and PCOS" (pcos, foundations)
+| Text to Link | Target Page | Anchor Text |
+|--------------|-------------|-------------|
+| "personalized one-on-one coaching" | `/services/htma-consulting.html` | "personalized coaching" |
+| "PCOS symptom management" | `/services/htma-consulting.html` | "PCOS support" |
+| Recipe mentions | `/blog/post.html?post=2024-10-15-probiotic-smoothie-bowl` | "probiotic smoothie bowl" |
+| Mental health connection | `/blog/post.html?post=2024-05-15-mental-health-pcos` | "mental health and PCOS" |
+
+#### "May is Mental Health Awareness Month" (pcos, wellness)
+| Text to Link | Target Page | Anchor Text |
+|--------------|-------------|-------------|
+| "women with PCOS" | `/blog/post.html?post=2024-10-01-gut-health-pcos` | "PCOS and gut health" |
+| "Blood sugar regulation" | `/services/lab-review.html` | "understanding your labs" |
+| "Functional Health support" | `/services/htma-consulting.html` | "holistic wellness support" |
+
+#### "How I Prepared for an Unmedicated Birth" (preconception)
+| Text to Link | Target Page | Anchor Text |
+|--------------|-------------|-------------|
+| Service mention | `/services/htma-consulting.html` | "preconception support" |
+| Nutrition discussion | `/blog/post.html?post=2024-11-15-body-first-home` | "preparing your body" |
+
+#### "Probiotic-Rich Smoothie Bowl" (recipes, pcos)
+| Text to Link | Target Page | Anchor Text |
+|--------------|-------------|-------------|
+| "gut health" | `/blog/post.html?post=2024-10-01-gut-health-pcos` | "gut health and PCOS" |
+| "blood sugar" | `/services/lab-review.html` | "blood sugar balance" |
+| Related recipe | `/blog/post.html?post=2024-09-15-hormone-friendly-granola` | "Hormone-Friendly Granola" |
+
+#### "Hormone-Friendly Granola" (recipes, pcos)
+| Text to Link | Target Page | Anchor Text |
+|--------------|-------------|-------------|
+| PCOS mention | `/blog/post.html?post=2024-10-01-gut-health-pcos` | "PCOS nutrition" |
+| Related recipe | `/blog/post.html?post=2024-10-15-probiotic-smoothie-bowl` | "Probiotic Smoothie Bowl" |
+
+#### "Holiday Wellness for Women" (wellness, foundations)
+| Text to Link | Target Page | Anchor Text |
+|--------------|-------------|-------------|
+| Blood sugar | `/services/lab-review.html` | "lab insights" |
+| Breakfast mention | `/blog/post.html?post=2024-10-15-probiotic-smoothie-bowl` | "nourishing breakfast ideas" |
+
+### Priority 2: Service Page Cross-Links
+
+#### HTMA Consulting Page (`/services/htma-consulting.html`)
+- Add: "Learn more about what HTMA reveals" → `/htma.html`
+- Add: "Complement with Lab Review" → `/services/lab-review.html`
+
+#### Lab Review Page (`/services/lab-review.html`)
+- Add: "Pair with HTMA for complete picture" → `/services/htma-consulting.html`
+- Add: "Understand HTMA testing" → `/htma.html`
+
+#### HTMA Educational Page (`/htma.html`)
+- Add journey stage links to relevant blog posts:
+  - Preconception → "Your Body Is the First Home" blog post
+  - Pregnancy → "How I Prepared for an Unmedicated Birth"
+
+### Priority 3: Homepage & About Page
+
+#### Homepage (`/index.html`)
+- "Who I Help" section: Link specific pain points to relevant blog posts
+- "The Intention Process" section: Link to blog posts about foundations
+
+#### About Page (`/about.html`)
+- Philosophy section: Link daily rhythms, nourishment, non-toxic living to blog content
+- HTMA training mention: Link to `/htma.html`
+
+### Anchor Text Best Practices
+
+**For HTMA/Educational links:**
+- "learn more about HTMA"
+- "what HTMA reveals"
+- "understand your minerals"
+
+**For Apply/CTA links:**
+- "apply to work together"
+- "start the application"
+- "apply for mentorship"
+
+**For Lab Review links (direct booking OK):**
+- "book a lab review"
+- "understand your labs"
+
+**For Blog links:**
+- "[Topic] guide" or "read more about [topic]"
+- Natural phrases from the content
+
+### Implementation Checklist
+
+```
+[ ] Update blog.js with internal links in post content (7 posts)
+[ ] Add cross-links to htma-consulting.html
+[ ] Add cross-links to lab-review.html
+[ ] Add journey links to htma.html
+[ ] Add contextual links to homepage sections
+[ ] Add philosophy links to about.html
+[ ] Test all links work correctly
+```
+
+### Expected SEO Impact
+
+- **Improved page authority flow** - Link equity passes to key conversion pages
+- **Better crawlability** - Search engines discover and index pages more effectively
+- **Reduced bounce rate** - Contextual links keep users on site
+- **Higher conversions** - More touchpoints guide users to services
 
 ---
 
