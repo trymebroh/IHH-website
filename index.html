@@ -137,7 +137,7 @@
             <p class="who-i-help-intro">Maybe you're…</p>
             <ul class="who-i-help-list">
               <li>Preparing your body for conception and want to support fertility and egg quality naturally</li>
-              <li>Pregnant and seeking more support in nutrition, mindfulness for birth, or low-tox home prep</li>
+              <li><span id="easter-egg-trigger">Pregnant</span> and seeking more support in nutrition, mindfulness for birth, or low-tox home prep</li>
               <li>Postpartum and trying to feel like yourself again — physically, mentally, and hormonally</li>
               <li>Or building a low-tox home to support your whole family's long-term wellness</li>
             </ul>
@@ -492,6 +492,70 @@
         }
       }
     });
+  </script>
+
+  <!-- Easter Egg Popup -->
+  <div id="easter-egg-popup" class="easter-egg-popup" aria-hidden="true">
+    <div class="easter-egg-content">
+      <p>pregananant?</p>
+      <p>pregante?</p>
+      <p>gregnant?</p>
+      <p>pregat?</p>
+      <p>pargent?</p>
+      <p>pergenat?</p>
+      <p class="easter-egg-final">...how is babby formed?</p>
+    </div>
+  </div>
+
+  <script>
+    // Easter egg: 3-second hover/long-press on "Pregnant"
+    (function() {
+      const trigger = document.getElementById('easter-egg-trigger');
+      const popup = document.getElementById('easter-egg-popup');
+      if (!trigger || !popup) return;
+
+      let timer = null;
+      const HOLD_TIME = 3000; // 3 seconds
+
+      function showPopup() {
+        popup.classList.add('active');
+        popup.setAttribute('aria-hidden', 'false');
+        // Auto-hide after 5 seconds
+        setTimeout(hidePopup, 5000);
+      }
+
+      function hidePopup() {
+        popup.classList.remove('active');
+        popup.setAttribute('aria-hidden', 'true');
+      }
+
+      function startTimer() {
+        timer = setTimeout(showPopup, HOLD_TIME);
+      }
+
+      function cancelTimer() {
+        if (timer) {
+          clearTimeout(timer);
+          timer = null;
+        }
+      }
+
+      // Desktop: mouseenter/mouseleave
+      trigger.addEventListener('mouseenter', startTimer);
+      trigger.addEventListener('mouseleave', cancelTimer);
+
+      // Mobile: touchstart/touchend for long-press
+      trigger.addEventListener('touchstart', function(e) {
+        startTimer();
+      }, { passive: true });
+
+      trigger.addEventListener('touchend', cancelTimer);
+      trigger.addEventListener('touchcancel', cancelTimer);
+      trigger.addEventListener('touchmove', cancelTimer);
+
+      // Click popup to dismiss
+      popup.addEventListener('click', hidePopup);
+    })();
   </script>
 </body>
 </html>
