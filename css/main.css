@@ -2031,6 +2031,22 @@ p {
   animation-delay: 0.8s !important;
 }
 
+.easter-egg-club {
+  margin-top: 1.2rem !important;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem !important;
+  opacity: 0.9;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.02em;
+  animation: fadeIn 0.5s ease-in-out 1s both !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 0.9; }
+}
+
 @keyframes wobble {
   0% {
     opacity: 0;

@@ -504,6 +504,7 @@
       <p>pargent?</p>
       <p>pergenat?</p>
       <p class="easter-egg-final">IYKYK</p>
+      <p id="easter-egg-club" class="easter-egg-club"></p>
     </div>
   </div>
 
@@ -512,6 +513,7 @@
     (function() {
       const trigger = document.getElementById('easter-egg-trigger');
       const popup = document.getElementById('easter-egg-popup');
+      const clubMsg = document.getElementById('easter-egg-club');
       if (!trigger || !popup) return;
 
       let timer = null;
@@ -527,20 +529,33 @@
         return deviceId;
       }
 
-      // Track easter egg trigger (silent, non-blocking)
+      // Track easter egg trigger and show club count
       function trackTrigger() {
-        try {
-          fetch('/.netlify/functions/easter-egg-track', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ deviceId: getDeviceId() })
-          }).catch(() => {}); // Silently fail
-        } catch (e) { /* ignore */ }
+        fetch('/.netlify/functions/easter-egg-track', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deviceId: getDeviceId() })
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (clubMsg && data.uniqueDevices) {
+            const others = data.uniqueDevices - 1;
+            if (others > 0) {
+              clubMsg.textContent = `You + ${others} other${others === 1 ? '' : 's'} found this. Welcome to the club.`;
+            } else {
+              clubMsg.textContent = `You're the first to find this. Welcome to the club.`;
+            }
+          }
+        })
+        .catch(() => {
+          if (clubMsg) clubMsg.textContent = `Welcome to the club.`;
+        });
       }
 
       function showPopup() {
         popup.classList.add('active');
         popup.setAttribute('aria-hidden', 'false');
+        if (clubMsg) clubMsg.textContent = ''; // Clear while loading
         trackTrigger(); // Track when popup is shown
         // Auto-hide after 5 seconds
         setTimeout(hidePopup, 5000);
