@@ -99,6 +99,32 @@ All blog posts should include this disclaimer (or similar) at the end:
 >
 > Intention Holistic Health provides educational wellness guidance and, where applicable, Kentucky-based nurse practitioner services within scope and licensure.
 
+## Brand & Style Preferences
+
+### Typography
+
+**Stylized Section Titles (Alicia's Preference)**
+- Font: Playfair Display
+- Style: Italic
+- Transform: Uppercase (all caps)
+- Letter-spacing: 0.08em
+- CSS class: `.ir-styled-title`
+
+Use this style for section headings throughout service pages and landing pages where an elegant, editorial feel is desired.
+
+### Brand Colors
+
+Only use colors from the official brand palette (see `/brand/Branding Board.pdf`):
+
+| Color | Hex | Usage |
+|-------|-----|-------|
+| Light Sage | `#CDCFC0` | Backgrounds, badges |
+| Warm Tan | `#D6C7B4` | Accents, buttons |
+| Taupe | `#AD9985` | Secondary accents |
+| Sage Green | `#8D9488` | Primary brand color |
+| Charcoal | `#4A4B49` | Text, dark elements |
+| Cream | `#F9F5F0` | Backgrounds, header |
+
 ## Branch Merges
 
 - Before merging any branch (including draft → live), explicitly confirm readiness with the requester/owner.
