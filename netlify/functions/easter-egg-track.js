@@ -55,19 +55,24 @@ exports.handler = async (event, context) => {
       deviceIds: []
     };
 
-    // Increment total triggers
-    stats.totalTriggers += 1;
+    // Check if device is excluded (developers/testers)
+    const isExcluded = deviceId.startsWith("exclude_");
 
-    // Check if this is a new device
-    if (!stats.deviceIds.includes(deviceId)) {
-      stats.deviceIds.push(deviceId);
-      stats.uniqueDevices = stats.deviceIds.length;
+    if (!isExcluded) {
+      // Increment total triggers
+      stats.totalTriggers += 1;
+
+      // Check if this is a new device
+      if (!stats.deviceIds.includes(deviceId)) {
+        stats.deviceIds.push(deviceId);
+        stats.uniqueDevices = stats.deviceIds.length;
+      }
+
+      stats.lastUpdated = new Date().toISOString();
+
+      // Save updated stats
+      await store.setJSON("counts", stats);
     }
-
-    stats.lastUpdated = new Date().toISOString();
-
-    // Save updated stats
-    await store.setJSON("counts", stats);
 
     return {
       statusCode: 200,
