@@ -1120,7 +1120,7 @@ p {
 /* Top headline - "HOLISTIC MOTHERHOOD" - spans full width */
 .hero-banner-headline-top {
   font-family: 'Playfair Display SC', 'Playfair Display', var(--font-heading);
-  font-size: clamp(1.2rem, 4.5vw, 3.2rem);
+  font-size: 4.5vw;
   font-weight: 400;
   font-style: italic;
   text-transform: uppercase;
@@ -1156,7 +1156,7 @@ p {
   height: auto;
   display: block;
   object-fit: cover;
-  max-height: 380px;
+  max-height: 33vw;
   object-position: center top;
 }
 
@@ -1171,7 +1171,7 @@ p {
 /* Bottom headline - "WELLNESS" - aligned with text column */
 .hero-banner-headline-bottom {
   font-family: 'Playfair Display SC', 'Playfair Display', var(--font-heading);
-  font-size: clamp(1.2rem, 4.5vw, 3.2rem);
+  font-size: 4.5vw;
   font-weight: 400;
   font-style: italic;
   text-transform: uppercase;
@@ -1183,7 +1183,7 @@ p {
 
 .hero-banner-body {
   font-family: 'Glacial Indifference', 'Poppins', var(--font-body);
-  font-size: clamp(0.5rem, 1.4vw, 1rem);
+  font-size: 1.4vw;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -1195,7 +1195,7 @@ p {
 
 .hero-banner-script {
   font-family: 'Beautifully Delicious Script', cursive;
-  font-size: clamp(1.8rem, 4.9vw, 3.6rem);
+  font-size: 4.9vw;
   font-weight: 400;
   color: var(--color-charcoal);
   font-style: normal;
@@ -1203,23 +1203,9 @@ p {
 }
 
 /*
-  Proportional scaling - NO vertical stacking on mobile.
-  The layout shrinks proportionally while maintaining structure.
+  Proportional scaling - The entire banner scales as a fixed unit.
+  No typography overrides - all text scales proportionally with viewport.
 */
-@media (max-width: 600px) {
-  .hero-banner-v2 {
-    padding: 4vw 3%;
-  }
-
-  .hero-banner-content {
-    gap: 3%;
-  }
-
-  .hero-banner-body {
-    letter-spacing: 0.08em;
-    line-height: 1.6;
-  }
-}
 
 /* -----------------------------------------
    HERO SECTION
