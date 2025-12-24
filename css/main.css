@@ -1107,11 +1107,14 @@ p {
 .hero-banner-v2 {
   width: 100%;
   margin-top: 80px; /* Account for fixed header */
-  padding: 3vw 5%;
+  padding: 3vw 8%;
   background-color: var(--color-cream);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Top headline - "HOLISTIC MOTHERHOOD" - spans full width */
@@ -1124,22 +1127,28 @@ p {
   letter-spacing: 0.15em;
   color: var(--color-charcoal);
   text-align: center;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.1em;
   line-height: 1.2;
+  width: 100%;
+  max-width: 65vw;
+  white-space: nowrap;
 }
 
 /* Two-column layout: image left, text right */
 .hero-banner-content {
   display: flex;
   align-items: flex-start;
+  justify-content: flex-start;
   gap: 4%;
-  max-width: 1200px;
+  max-width: 65vw;
+  width: 100%;
   margin: 0 auto;
 }
 
 .hero-banner-image-wrapper {
-  flex: 0 0 40%;
+  flex: 0 0 32%;
   min-width: 0; /* Allows flex item to shrink below content size */
+  align-self: flex-start;
 }
 
 .hero-banner-photo {
@@ -1147,6 +1156,8 @@ p {
   height: auto;
   display: block;
   object-fit: cover;
+  max-height: 380px;
+  object-position: center top;
 }
 
 .hero-banner-text {
@@ -1166,20 +1177,20 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--color-charcoal);
-  margin-bottom: 0.8em;
+  margin-bottom: 0.4em;
   line-height: 1.2;
 }
 
 .hero-banner-body {
   font-family: 'Glacial Indifference', 'Poppins', var(--font-body);
-  font-size: clamp(0.65rem, 1.6vw, 1.15rem);
+  font-size: clamp(0.5rem, 1.4vw, 1rem);
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  line-height: 1.9;
+  letter-spacing: 0.15em;
+  line-height: 1.5;
   color: var(--color-charcoal);
-  margin-bottom: 1.5em;
-  max-width: 100%; /* Constrain width to force 6-line wrap */
+  margin-bottom: 1.2em;
+  white-space: nowrap;
 }
 
 .hero-banner-script {
@@ -1242,28 +1253,28 @@ p {
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-xl);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
 }
 
 @media (min-width: 768px) {
   .hero-title {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-2xl);
   }
 }
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
 }
 
 .hero-subtitle {
   font-size: var(--font-size-base);
   color: var(--color-medium-gray);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
   letter-spacing: 0.5px;
 }
 
@@ -1304,7 +1315,7 @@ p {
   width: 40%;
   height: 70%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center bottom;
   border-radius: var(--radius-lg);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
