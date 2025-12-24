@@ -517,9 +517,31 @@
       let timer = null;
       const HOLD_TIME = 3000; // 3 seconds
 
+      // Generate or retrieve unique device ID
+      function getDeviceId() {
+        let deviceId = localStorage.getItem('ihh_device_id');
+        if (!deviceId) {
+          deviceId = 'dev_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+          localStorage.setItem('ihh_device_id', deviceId);
+        }
+        return deviceId;
+      }
+
+      // Track easter egg trigger (silent, non-blocking)
+      function trackTrigger() {
+        try {
+          fetch('/.netlify/functions/easter-egg-track', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ deviceId: getDeviceId() })
+          }).catch(() => {}); // Silently fail
+        } catch (e) { /* ignore */ }
+      }
+
       function showPopup() {
         popup.classList.add('active');
         popup.setAttribute('aria-hidden', 'false');
+        trackTrigger(); // Track when popup is shown
         // Auto-hide after 5 seconds
         setTimeout(hidePopup, 5000);
       }
