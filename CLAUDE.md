@@ -112,6 +112,13 @@ All blog posts should include this disclaimer (or similar) at the end:
 
 Use this style for section headings throughout service pages and landing pages where an elegant, editorial feel is desired.
 
+**Home Page Banner Fonts (top to bottom)**
+1. **Playfair Display SC** - Small caps variant for headlines
+2. **Glacial Indifference** - Clean sans-serif for body/subtext
+3. **Beautifully Delicious Script** - Script font for accent/signature text
+
+These are the specific fonts used in the hero banner design and should be used when recreating banner elements in HTML/CSS.
+
 ### Brand Colors
 
 Only use colors from the official brand palette (see `/brand/Branding Board.pdf`):
