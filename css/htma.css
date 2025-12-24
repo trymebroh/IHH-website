@@ -234,10 +234,23 @@
 }
 
 .comparison-icon svg {
-  stroke: var(--color-charcoal);
+  stroke: #4A4B49;
 }
 
-.comparison-item.highlight .comparison-icon svg {
+.comparison-icon svg path,
+.comparison-icon svg circle,
+.comparison-icon svg polyline,
+.comparison-icon svg line,
+.comparison-icon svg rect {
+  stroke: #4A4B49;
+}
+
+.comparison-item.highlight .comparison-icon svg,
+.comparison-item.highlight .comparison-icon svg path,
+.comparison-item.highlight .comparison-icon svg circle,
+.comparison-item.highlight .comparison-icon svg polyline,
+.comparison-item.highlight .comparison-icon svg line,
+.comparison-item.highlight .comparison-icon svg rect {
   stroke: white;
 }
 
@@ -284,11 +297,19 @@
 
 .journey-icon {
   margin-bottom: 1rem;
-  color: var(--color-sage);
+  color: #8B9A82;
 }
 
 .journey-icon svg {
-  stroke: var(--color-sage);
+  stroke: #8B9A82;
+}
+
+.journey-icon svg path,
+.journey-icon svg circle,
+.journey-icon svg polyline,
+.journey-icon svg line,
+.journey-icon svg rect {
+  stroke: #8B9A82;
 }
 
 .htma-journey-card h3 {
@@ -406,11 +427,19 @@
 .quiz-result-icon {
   display: block;
   margin-bottom: 1rem;
-  color: var(--color-sage);
+  color: #8B9A82;
 }
 
 .quiz-result-icon svg {
-  stroke: var(--color-sage);
+  stroke: #8B9A82;
+}
+
+.quiz-result-icon svg path,
+.quiz-result-icon svg circle,
+.quiz-result-icon svg polyline,
+.quiz-result-icon svg line,
+.quiz-result-icon svg rect {
+  stroke: #8B9A82;
 }
 
 .quiz-result-text {
@@ -457,11 +486,19 @@
 .benefit-icon {
   display: block;
   margin-bottom: 0.75rem;
-  color: var(--color-sage);
+  color: #8B9A82;
 }
 
 .benefit-icon svg {
-  stroke: var(--color-sage);
+  stroke: #8B9A82;
+}
+
+.benefit-icon svg path,
+.benefit-icon svg circle,
+.benefit-icon svg polyline,
+.benefit-icon svg line,
+.benefit-icon svg rect {
+  stroke: #8B9A82;
 }
 
 .htma-benefit-card h4 {
@@ -600,11 +637,19 @@
 .research-icon {
   display: block;
   margin-bottom: 1rem;
-  color: var(--color-sage);
+  color: #8B9A82;
 }
 
 .research-icon svg {
-  stroke: var(--color-sage);
+  stroke: #8B9A82;
+}
+
+.research-icon svg path,
+.research-icon svg circle,
+.research-icon svg polyline,
+.research-icon svg line,
+.research-icon svg rect {
+  stroke: #8B9A82;
 }
 
 .research-card h4 {
