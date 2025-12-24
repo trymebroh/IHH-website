@@ -1191,6 +1191,8 @@ p {
   color: var(--color-charcoal);
   margin-bottom: 1.2em;
   white-space: nowrap;
+  text-align: justify;
+  text-align-last: justify;
 }
 
 .hero-banner-script {
