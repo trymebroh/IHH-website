@@ -2217,6 +2217,15 @@
   text-align: center;
 }
 
+/* Stylized section title - Playfair Display, all caps, italic */
+.ir-styled-title {
+  font-family: var(--font-heading);
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+}
+
 .ir-v3-timeline .v3-section-header {
   text-align: center;
   margin-bottom: var(--spacing-lg);
@@ -2337,7 +2346,11 @@
   margin-top: var(--spacing-xs);
 }
 
-/* Timeline step value badges */
+/* Timeline step title and value alignment */
+.ir-step-title {
+  flex: 1;
+}
+
 .ir-step-value {
   font-size: var(--font-size-xs);
   font-weight: 500;
@@ -2347,6 +2360,8 @@
   border-radius: 12px;
   white-space: nowrap;
   flex-shrink: 0;
+  min-width: 75px;
+  text-align: center;
 }
 
 /* Timeline total section */
@@ -2403,8 +2418,7 @@
 
 /* V3 Provider Section */
 .ir-v3-provider {
-  padding: var(--spacing-4xl) 0;
-  margin: var(--spacing-xl) 0;
+  padding: 5rem 0;
   background-color: var(--color-warm-cream);
 }
 
@@ -2422,14 +2436,15 @@
   }
 }
 
-.ir-provider-image {
+.ir-v3-provider .ir-provider-image {
   display: flex;
   justify-content: center;
+  max-width: none;
 }
 
-.ir-provider-image img {
+.ir-v3-provider .ir-provider-image img {
   width: 100%;
-  max-width: 350px;
+  max-width: 420px;
   height: auto;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
