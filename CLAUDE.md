@@ -17,6 +17,8 @@ Update `session-notes/YYYY-MM-DD.md` at the end of each working session:
 - **Pending**: What remains to be done
 - **Notes**: Any relevant context for future sessions
 
+**IMPORTANT**: Session notes MUST be updated before committing and pushing to GitHub. This is a prerequisite for any commit/push operation.
+
 ## Model Selection
 
 **Default Model:** claude-sonnet-4-5-20250929 (Sonnet 4.5)
