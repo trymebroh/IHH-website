@@ -138,54 +138,14 @@
 
 .htma-hero-image {
   position: relative;
-  padding-bottom: 3rem;
 }
 
 .htma-hero-image img {
   width: 100%;
-  max-width: 500px;
-  height: auto;
+  max-height: 65vh;
+  object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  margin: 0 auto;
-  display: block;
-}
-
-.htma-hero-stats {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.htma-hero-stat {
-  text-align: center;
-  padding: 1rem 1.5rem;
-  border-right: 1px solid #F0F0F0;
-}
-
-.htma-hero-stat:last-child {
-  border-right: none;
-}
-
-.htma-hero-stat-number {
-  font-family: var(--font-heading, 'Playfair Display', serif);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #8B9A82;
-}
-
-.htma-hero-stat-label {
-  font-size: 0.7rem;
-  color: #6B6B6B;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 @media (max-width: 991px) {
