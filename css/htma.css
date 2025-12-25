@@ -187,7 +187,7 @@
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--color-charcoal);
