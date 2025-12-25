@@ -67,6 +67,7 @@
 .htma-hero-title span {
   color: #6B7A62;
   font-style: italic;
+  display: block;
 }
 
 .htma-hero-subtitle {
