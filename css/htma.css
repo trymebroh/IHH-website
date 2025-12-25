@@ -188,8 +188,8 @@
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 400;
   font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: none;
+  letter-spacing: 0.02em;
   color: var(--color-charcoal);
   text-align: center;
   margin-bottom: 1rem;
