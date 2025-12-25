@@ -2221,8 +2221,8 @@
 .ir-styled-title {
   font-family: var(--font-heading);
   font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: none;
+  letter-spacing: 0.02em;
   font-weight: 400;
 }
 
