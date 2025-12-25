@@ -2134,7 +2134,7 @@
 
 .ir-quiz-result {
   margin-top: var(--spacing-lg);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-xl);
   background: linear-gradient(135deg, var(--color-sage-green), var(--color-sage-dark));
   color: var(--color-white);
   text-align: center;
@@ -2145,6 +2145,25 @@
 .ir-quiz-result.visible {
   display: block;
   animation: fadeIn 0.3s ease;
+}
+
+.ir-quiz-result-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.ir-quiz-result-text {
+  font-size: var(--font-size-base);
+  margin: 0 0 1.5rem 0;
+  opacity: 0.95;
+}
+
+.ir-quiz-result-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 @keyframes fadeIn {
