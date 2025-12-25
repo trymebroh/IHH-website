@@ -289,4 +289,111 @@ document.addEventListener('DOMContentLoaded', function() {
     yearSpan.textContent = new Date().getFullYear();
   }
 
+  // -----------------------------------------
+  // GOOGLE ANALYTICS 4 EVENT TRACKING
+  // -----------------------------------------
+
+  // Helper function to send GA4 events
+  function trackEvent(eventName, params) {
+    if (typeof gtag === 'function') {
+      gtag('event', eventName, params);
+    }
+  }
+
+  // Track CTA button clicks
+  document.querySelectorAll('[data-track-cta]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const ctaName = this.getAttribute('data-track-cta') || this.textContent.trim();
+      const section = this.closest('[data-track-section]');
+      const sectionName = section ? section.getAttribute('data-track-section') : 'unknown';
+
+      trackEvent('cta_click', {
+        cta_name: ctaName,
+        section: sectionName,
+        page_path: window.location.pathname
+      });
+    });
+  });
+
+  // Track section visibility (scroll tracking)
+  if ('IntersectionObserver' in window) {
+    const trackedSections = document.querySelectorAll('[data-track-section]');
+    const sectionsSeen = new Set();
+
+    const sectionObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const sectionName = entry.target.getAttribute('data-track-section');
+
+          // Only track first view of each section per page load
+          if (!sectionsSeen.has(sectionName)) {
+            sectionsSeen.add(sectionName);
+            trackEvent('section_view', {
+              section_name: sectionName,
+              page_path: window.location.pathname
+            });
+          }
+        }
+      });
+    }, {
+      threshold: 0.5 // Section must be 50% visible
+    });
+
+    trackedSections.forEach(function(section) {
+      sectionObserver.observe(section);
+    });
+  }
+
+  // Track form submissions
+  document.querySelectorAll('form').forEach(function(form) {
+    form.addEventListener('submit', function() {
+      const formName = this.getAttribute('name') || this.getAttribute('data-form') || 'unknown_form';
+      const formAction = this.getAttribute('action') || 'unknown';
+
+      trackEvent('form_submit', {
+        form_name: formName,
+        form_action: formAction,
+        page_path: window.location.pathname
+      });
+    });
+  });
+
+  // Track popup interactions
+  if (popupOverlay) {
+    // Track when popup is shown (override showPopup to add tracking)
+    const originalShowPopup = showPopup;
+    showPopup = function() {
+      originalShowPopup();
+      if (popupShown) {
+        trackEvent('popup_shown', {
+          popup_type: 'exit_intent',
+          page_path: window.location.pathname
+        });
+      }
+    };
+
+    // Track popup close
+    if (popupClose) {
+      popupClose.addEventListener('click', function() {
+        trackEvent('popup_closed', {
+          popup_type: 'exit_intent',
+          page_path: window.location.pathname
+        });
+      });
+    }
+  }
+
+  // Track outbound link clicks
+  document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+    if (!link.href.includes(window.location.hostname)) {
+      link.addEventListener('click', function() {
+        trackEvent('outbound_click', {
+          link_url: this.href,
+          link_text: this.textContent.trim().substring(0, 50),
+          page_path: window.location.pathname
+        });
+      });
+    }
+  });
+
 });
