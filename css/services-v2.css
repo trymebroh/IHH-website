@@ -2254,16 +2254,20 @@
   padding-left: 70px;
   padding-bottom: var(--spacing-lg);
   cursor: pointer;
-  opacity: 0.6;
-  transition: opacity var(--transition-base);
+  transition: all var(--transition-base);
 }
 
 .ir-timeline-step:last-child {
   padding-bottom: 0;
 }
 
-.ir-timeline-step.active,
-.ir-timeline-step:hover {
+.ir-timeline-step .ir-timeline-content {
+  opacity: 0.6;
+  transition: opacity var(--transition-base);
+}
+
+.ir-timeline-step.active .ir-timeline-content,
+.ir-timeline-step:hover .ir-timeline-content {
   opacity: 1;
 }
 
