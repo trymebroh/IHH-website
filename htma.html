@@ -16,6 +16,7 @@
 
   <link rel="preload" href="/fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/PlayfairDisplay-Italic.ttf" as="font" type="font/ttf" crossorigin>
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/htma.css">
@@ -540,6 +541,23 @@
             result.classList.add('active');
           } else {
             result.classList.remove('active');
+          }
+        });
+      });
+
+      // Timeline Click Interaction
+      const timelineItems = document.querySelectorAll('.htma-timeline-item');
+      timelineItems.forEach(item => {
+        item.addEventListener('click', function() {
+          // Toggle active class on clicked item
+          const isActive = this.classList.contains('active');
+
+          // Remove active from all items
+          timelineItems.forEach(i => i.classList.remove('active'));
+
+          // If wasn't active, make it active
+          if (!isActive) {
+            this.classList.add('active');
           }
         });
       });

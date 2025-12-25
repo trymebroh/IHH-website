@@ -608,7 +608,8 @@
   transition: opacity 0.3s ease;
 }
 
-.htma-timeline-item:hover {
+.htma-timeline-item:hover,
+.htma-timeline-item.active {
   opacity: 1;
 }
 
@@ -645,7 +646,8 @@
   }
 }
 
-.htma-timeline-item:hover .timeline-number {
+.htma-timeline-item:hover .timeline-number,
+.htma-timeline-item.active .timeline-number {
   background: var(--color-sage-green, #8B9A82);
   transform: scale(1.1);
 }
@@ -659,7 +661,8 @@
   transition: all 0.3s ease;
 }
 
-.htma-timeline-item:hover .timeline-content {
+.htma-timeline-item:hover .timeline-content,
+.htma-timeline-item.active .timeline-content {
   background: var(--color-warm-cream, #F5F0E8);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
