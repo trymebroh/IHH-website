@@ -2246,6 +2246,7 @@
   bottom: 0;
   width: 3px;
   background: var(--color-sage-light);
+  z-index: 0;
 }
 
 .ir-timeline-step {
@@ -2271,7 +2272,7 @@
   left: 0;
   width: 50px;
   height: 50px;
-  background: var(--color-white);
+  background-color: #FFFFFF;
   border: 3px solid var(--color-sage-green);
   border-radius: 50%;
   display: flex;
@@ -2281,11 +2282,11 @@
   font-size: var(--font-size-lg);
   color: var(--color-sage-dark);
   transition: all var(--transition-base);
-  z-index: 1;
+  z-index: 2;
 }
 
 .ir-timeline-step.active .ir-timeline-marker {
-  background: var(--color-sage-green);
+  background-color: #8B9A82;
   color: var(--color-white);
   transform: scale(1.1);
 }
