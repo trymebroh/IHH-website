@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GFCR5ZRMZ"></script>
+  <!-- Google Analytics 4 with Consent Mode v2 -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    if (localStorage.getItem('cookie_consent') === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GFCR5ZRMZ"></script>
+  <script>
     gtag('js', new Date());
     gtag('config', 'G-3GFCR5ZRMZ');
   </script>
@@ -1152,6 +1163,40 @@
         });
       });
     });
+  </script>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-consent" id="cookie-consent" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
+    <div class="cookie-consent-inner">
+      <div class="cookie-consent-text">
+        <h4 id="cookie-title">Your Privacy Matters</h4>
+        <p id="cookie-description">We use cookies to analyze site traffic and improve your experience. Your data is never sold. <a href="/legal/privacy.html">Privacy Policy</a></p>
+      </div>
+      <div class="cookie-consent-buttons">
+        <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Accept</button>
+        <button class="cookie-btn cookie-btn-decline" id="cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var banner = document.getElementById('cookie-consent');
+      var acceptBtn = document.getElementById('cookie-accept');
+      var declineBtn = document.getElementById('cookie-decline');
+      var consent = localStorage.getItem('cookie_consent');
+      if (!consent) {
+        setTimeout(function() { banner.classList.add('show'); }, 1000);
+      }
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie_consent', 'accepted');
+        gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        banner.classList.remove('show');
+      });
+      declineBtn.addEventListener('click', function() {
+        localStorage.setItem('cookie_consent', 'declined');
+        banner.classList.remove('show');
+      });
+    })();
   </script>
 </body>
 </html>

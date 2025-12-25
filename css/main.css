@@ -2060,3 +2060,120 @@ p {
     transform: translateX(0) rotate(0);
   }
 }
+
+/* -----------------------------------------
+   COOKIE CONSENT BANNER
+   ----------------------------------------- */
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  padding: var(--spacing-md) var(--spacing-lg);
+  z-index: 10000;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cookie-consent.show {
+  transform: translateY(0);
+}
+
+.cookie-consent-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.cookie-consent-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.cookie-consent-text h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-white);
+}
+
+.cookie-consent-text p {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cookie-consent-text a {
+  color: var(--color-dusty-rose);
+  text-decoration: underline;
+}
+
+.cookie-consent-text a:hover {
+  color: var(--color-white);
+}
+
+.cookie-consent-buttons {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-sm);
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.cookie-btn-accept {
+  background: var(--color-sage-green);
+  color: var(--color-white);
+}
+
+.cookie-btn-accept:hover {
+  background: var(--color-sage-dark);
+}
+
+.cookie-btn-decline {
+  background: transparent;
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cookie-btn-decline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 600px) {
+  .cookie-consent {
+    padding: var(--spacing-md);
+  }
+
+  .cookie-consent-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cookie-consent-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cookie-btn {
+    flex: 1;
+    max-width: 150px;
+  }
+}
