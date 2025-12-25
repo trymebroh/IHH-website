@@ -457,17 +457,19 @@
 }
 
 .htma-quiz-result {
-  margin-top: 2rem;
+  margin-top: 0;
   opacity: 0;
   transform: translateY(10px);
-  transition: all 0.4s ease;
-  visibility: hidden;
+  transition: all 0.4s ease, max-height 0.4s ease, margin-top 0.4s ease;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .htma-quiz-result.active {
   opacity: 1;
   transform: translateY(0);
-  visibility: visible;
+  max-height: 300px;
+  margin-top: 2rem;
 }
 
 .quiz-result-content {
