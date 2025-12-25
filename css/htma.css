@@ -885,10 +885,15 @@
    FINAL CTA SECTION
    ----------------------------------------- */
 .htma-cta-section {
-  background: var(--color-sage-green);
+  background: linear-gradient(135deg, var(--color-sage-dark, #5A5F56) 0%, var(--color-sage-green, #8B9A82) 100%);
   color: white;
   padding: 5rem 0;
   text-align: center;
+}
+
+.htma-cta-content {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .htma-cta-section h2 {
@@ -904,40 +909,55 @@
 
 .htma-cta-section p {
   font-size: 1.1rem;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 1.5rem;
   color: rgba(255, 255, 255, 0.95);
 }
 
-.htma-cta-buttons {
+.htma-trust-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
-.htma-cta-section .btn-primary {
-  background: white;
-  color: var(--color-sage-green);
-  border: 2px solid white;
-}
-
-.htma-cta-section .btn-primary:hover {
-  background: transparent;
+.htma-trust-list li {
+  position: relative;
+  padding-left: 1.5em;
   color: white;
 }
 
-.btn-outline-light {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
+.htma-trust-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
 }
 
-.btn-outline-light:hover {
+.htma-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   background: white;
-  color: var(--color-sage-green);
+  color: var(--color-sage-dark, #5A5F56);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.htma-cta-btn:hover {
+  background: var(--color-warm-cream, #F5F0E8);
+  transform: translateY(-2px);
+}
+
+.htma-cta-btn svg {
+  stroke: currentColor;
 }
 
 /* -----------------------------------------
