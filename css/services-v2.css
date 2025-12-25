@@ -2220,7 +2220,7 @@
 /* Stylized section title - Playfair Display, all caps, italic */
 .ir-styled-title {
   font-family: var(--font-heading);
-  font-style: italic;
+  font-style: normal;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 400;
