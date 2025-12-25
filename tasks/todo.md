@@ -300,6 +300,60 @@ Rebuild the Intention Holistic Health website (currently on Kajabi) to a custom 
 
 ---
 
+## Lighthouse Optimization (After Page Versions Selected)
+
+*Run after Alicia selects final page versions (About v1/v2, Services V1/V2/V3)*
+
+### Priority 1: Critical SEO (Low Effort, High Impact)
+- [ ] Create `robots.txt` with sitemap reference
+- [ ] Create `sitemap.xml` with all public pages
+- [ ] Add `<link rel="preconnect" href="https://www.googletagmanager.com">` to all pages
+
+### Priority 2: Structured Data (Medium Effort, High Impact)
+- [ ] Add JSON-LD `LocalBusiness` schema to homepage
+- [ ] Add JSON-LD `Organization` schema to about page
+- [ ] Add JSON-LD `Service` schema to service pages
+- [ ] Add JSON-LD `Article` schema to blog posts
+- [ ] Add JSON-LD `FAQPage` schema to pages with FAQ sections
+
+### Priority 3: Image Optimization (High Effort, High Impact)
+**Large images to convert/compress (target <200KB each):**
+- [ ] `blog/placeholder-original.jpg` (8.1 MB)
+- [ ] `blog/alicia-cooking-lemons-original.jpg` (8.1 MB)
+- [ ] `blog/hands-chopping-original.jpg` (6.5 MB)
+- [ ] `blog/pouring-olive-oil-original.jpg` (6.4 MB)
+- [ ] `about/about-hero-clean.png` (3.4 MB)
+- [ ] `services/htma-chart-display.png` (1.8 MB)
+- [ ] Convert remaining PNGs >500KB to WebP
+- [ ] Delete unused images in `/images/fallback/` and `/images/graphics/`
+
+### Priority 4: Performance Polish (Low Effort)
+- [ ] Add `loading="lazy"` to all below-fold images
+- [ ] Audit all pages for missing `width`/`height` on images
+- [ ] Add `fetchpriority="high"` to LCP images on each page
+
+### Current Lighthouse Estimate
+| Category | Score | After Optimization |
+|----------|-------|-------------------|
+| Performance | 75-85 | 90-95 |
+| Accessibility | 90-95 | 95+ |
+| Best Practices | 90-95 | 95+ |
+| SEO | 70-80 | 95+ |
+
+### What's Already Done ✓
+- Font preloading
+- LCP image preload on homepage
+- `font-display: swap` on all fonts
+- Scripts with `defer` attribute
+- Netlify compression (CSS, JS, images)
+- Strong caching headers (1 year static assets)
+- Skip link for accessibility
+- ARIA attributes on navigation
+- Security headers configured
+- Cookie consent with Consent Mode v2
+
+---
+
 ## Notes
 
 ### Image Strategy
