@@ -885,7 +885,7 @@
    FINAL CTA SECTION
    ----------------------------------------- */
 .htma-cta-section {
-  background: var(--color-sage);
+  background: var(--color-sage-green);
   color: white;
   padding: 5rem 0;
   text-align: center;
@@ -895,9 +895,9 @@
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 400;
-  font-style: italic;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: 0.02em;
   margin-bottom: 1rem;
   color: white;
 }
@@ -920,7 +920,7 @@
 
 .htma-cta-section .btn-primary {
   background: white;
-  color: var(--color-sage);
+  color: var(--color-sage-green);
   border: 2px solid white;
 }
 
@@ -937,7 +937,7 @@
 
 .btn-outline-light:hover {
   background: white;
-  color: var(--color-sage);
+  color: var(--color-sage-green);
 }
 
 /* -----------------------------------------
