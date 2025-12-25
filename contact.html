@@ -16,6 +16,7 @@
   <link rel="preload" href="/fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/services-v2.css">
   <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
@@ -148,27 +149,42 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="section bg-cream">
+    <section class="v3-faq" data-track-section="faq">
       <div class="container">
-        <div class="text-center mb-lg">
-          <h2>Quick Answers</h2>
+        <div class="v3-faq-header">
+          <h2>Frequently Asked Questions</h2>
         </div>
 
-        <div class="about-section">
-          <h4 class="mb-sm">How quickly will I hear back?</h4>
-          <p class="mb-lg">
-            I typically respond to inquiries within 1-2 business days. If you're reaching out about becoming a client, I'll send you information about next steps and scheduling a discovery call.
-          </p>
+        <div class="v3-faq-grid">
+          <div class="v3-faq-item">
+            <button class="v3-faq-question" onclick="toggleFaq(this)">
+              <h4>How quickly will I hear back?</h4>
+              <span class="v3-faq-icon">+</span>
+            </button>
+            <div class="v3-faq-answer">
+              <p>I typically respond to inquiries within 1-2 business days. If you're reaching out about becoming a client, I'll send you information about next steps and scheduling a discovery call.</p>
+            </div>
+          </div>
 
-          <h4 class="mb-sm">I'm not in Kentucky. Can I still work with you?</h4>
-          <p class="mb-lg">
-            Clinical NP services are only available to Kentucky residents. However, non-clinical coaching and educational services (like courses and group programs) are available to anyone.
-          </p>
+          <div class="v3-faq-item">
+            <button class="v3-faq-question" onclick="toggleFaq(this)">
+              <h4>I'm not in Kentucky. Can I still work with you?</h4>
+              <span class="v3-faq-icon">+</span>
+            </button>
+            <div class="v3-faq-answer">
+              <p>Clinical NP services are only available to Kentucky residents. However, non-clinical coaching and educational services (like courses and group programs) are available to anyone.</p>
+            </div>
+          </div>
 
-          <h4 class="mb-sm">How do I book a free consultation?</h4>
-          <p>
-            You can apply to work together through the <a href="https://my.practicebetter.io/#/signin" target="_blank" rel="noopener">client portal</a>, and I'll reach out to schedule a free 20-minute discovery call to discuss your goals and see if we're a good fit.
-          </p>
+          <div class="v3-faq-item">
+            <button class="v3-faq-question" onclick="toggleFaq(this)">
+              <h4>How do I book a free consultation?</h4>
+              <span class="v3-faq-icon">+</span>
+            </button>
+            <div class="v3-faq-answer">
+              <p>You can apply to work together through the <a href="https://my.practicebetter.io/#/signin" target="_blank" rel="noopener">client portal</a>, and I'll reach out to schedule a free 20-minute discovery call to discuss your goals and see if we're a good fit.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -235,5 +251,12 @@
   </footer>
 
   <script src="/js/main.js" defer></script>
+  <script>
+    // FAQ Toggle
+    function toggleFaq(button) {
+      const item = button.closest('.v3-faq-item');
+      item.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>

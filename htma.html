@@ -20,6 +20,7 @@
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/htma.css">
+  <link rel="stylesheet" href="/css/services-v2.css">
   <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
@@ -381,17 +382,19 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="htma-section bg-cream">
+    <section class="v3-faq" data-track-section="faq">
       <div class="container">
-        <h2 class="htma-section-title">Common Questions</h2>
+        <div class="v3-faq-header">
+          <h2>Frequently Asked Questions</h2>
+        </div>
 
-        <div class="htma-faq-container">
-          <div class="htma-faq-item">
-            <button class="htma-faq-question" aria-expanded="false">
-              <span>Is there scientific research backing the validity of HTMA?</span>
-              <span class="faq-icon">+</span>
+        <div class="v3-faq-grid">
+          <div class="v3-faq-item">
+            <button class="v3-faq-question" onclick="toggleFaq(this)">
+              <h4>Is there scientific research backing the validity of HTMA?</h4>
+              <span class="v3-faq-icon">+</span>
             </button>
-            <div class="htma-faq-answer">
+            <div class="v3-faq-answer">
               <p>Yes. Extensive research has established the link between trace element levels in hair and internal organs. Several peer-reviewed studies and government reports validate the use of hair for biological monitoring:</p>
               <ul>
                 <li><strong>EPA Validation:</strong> The Environmental Protection Agency (EPA) stated that human hair can be effectively used for biological monitoring of toxic metals, noting that if analyzed correctly, "the data are reliable" (EPA, 1979).</li>
@@ -402,23 +405,23 @@
             </div>
           </div>
 
-          <div class="htma-faq-item">
-            <button class="htma-faq-question" aria-expanded="false">
-              <span>Which lab service do you use?</span>
-              <span class="faq-icon">+</span>
+          <div class="v3-faq-item">
+            <button class="v3-faq-question" onclick="toggleFaq(this)">
+              <h4>Which lab service do you use?</h4>
+              <span class="v3-faq-icon">+</span>
             </button>
-            <div class="htma-faq-answer">
+            <div class="v3-faq-answer">
               <p>We use <strong>Trace Elements, Inc. (TEI)</strong>, a leading independent testing laboratory that has been in operation since 1984. They specialize exclusively in hair tissue mineral analysis (HTMA) for healthcare professionals worldwide.</p>
               <p>Specialized laboratories are preferred over general labs because they focus solely on the unique preparation and analysis required for hair, such as avoiding "washing" procedures that can strip water-soluble minerals.</p>
             </div>
           </div>
 
-          <div class="htma-faq-item">
-            <button class="htma-faq-question" aria-expanded="false">
-              <span>Are Trace Elements and HTMA labs regulated?</span>
-              <span class="faq-icon">+</span>
+          <div class="v3-faq-item">
+            <button class="v3-faq-question" onclick="toggleFaq(this)">
+              <h4>Are Trace Elements and HTMA labs regulated?</h4>
+              <span class="v3-faq-icon">+</span>
             </button>
-            <div class="htma-faq-answer">
+            <div class="v3-faq-answer">
               <p>Yes. Trace Elements, Inc. is a fully licensed and certified clinical laboratory that meets rigorous federal and state regulatory standards:</p>
               <ul>
                 <li><strong>CLIA Certification:</strong> Certified under the Clinical Laboratory Improvement Amendments (CLIA) of 1988, ensuring federal standards for accuracy, reliability, and timeliness.</li>
@@ -429,12 +432,12 @@
             </div>
           </div>
 
-          <div class="htma-faq-item">
-            <button class="htma-faq-question" aria-expanded="false">
-              <span>Where can I learn more about HTMA?</span>
-              <span class="faq-icon">+</span>
+          <div class="v3-faq-item">
+            <button class="v3-faq-question" onclick="toggleFaq(this)">
+              <h4>Where can I learn more about HTMA?</h4>
+              <span class="v3-faq-icon">+</span>
             </button>
-            <div class="htma-faq-answer">
+            <div class="v3-faq-answer">
               <p>For more information about HTMA, you can visit these resources from Trace Elements:</p>
               <ul>
                 <li><a href="https://www.traceelements.com/EducationalResources/FAQ.aspx" target="_blank" rel="noopener">Trace Elements FAQ</a></li>
@@ -536,6 +539,12 @@
 
   <script src="/js/main.js" defer></script>
   <script>
+    // FAQ Toggle (V3 format)
+    function toggleFaq(button) {
+      const item = button.closest('.v3-faq-item');
+      item.classList.toggle('open');
+    }
+
     // Interactive Quiz Checklist
     document.addEventListener('DOMContentLoaded', function() {
       const checkboxes = document.querySelectorAll('.htma-quiz-checkbox');
@@ -565,26 +574,6 @@
           // If wasn't active, make it active
           if (!isActive) {
             this.classList.add('active');
-          }
-        });
-      });
-
-      // FAQ Accordion
-      const faqButtons = document.querySelectorAll('.htma-faq-question');
-      faqButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const isExpanded = this.getAttribute('aria-expanded') === 'true';
-
-          // Close all other FAQs
-          faqButtons.forEach(btn => {
-            btn.setAttribute('aria-expanded', 'false');
-            btn.parentElement.classList.remove('active');
-          });
-
-          // Toggle current FAQ
-          if (!isExpanded) {
-            this.setAttribute('aria-expanded', 'true');
-            this.parentElement.classList.add('active');
           }
         });
       });

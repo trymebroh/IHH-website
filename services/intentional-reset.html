@@ -448,7 +448,7 @@
               <p><strong>Only then do we build a protocol</strong> - one that's intentional, appropriate, and supportive instead of overwhelming.</p>
             </div>
             <div class="v3-solution-image portrait">
-              <img src="/images/services/intentional-reset/solution-photo.webp" alt="Alicia Harrison - Holistic health assessment" loading="lazy">
+              <img src="/images/services/intentional-reset/solution-photo-new.webp" alt="Alicia Harrison - Holistic health assessment" loading="lazy">
             </div>
           </div>
         </div>
@@ -562,54 +562,54 @@
       </section>
 
       <!-- FAQ Section -->
-      <section class="ir-v3-faq" data-track-section="faq">
+      <section class="v3-faq" data-track-section="faq">
         <div class="container">
-          <div class="v3-section-header">
-            <h2 class="ir-styled-title">Common Questions</h2>
+          <div class="v3-faq-header">
+            <h2>Frequently Asked Questions</h2>
           </div>
-          <div class="ir-faq-list">
-            <div class="ir-faq-item">
-              <button class="ir-faq-question" onclick="toggleFaq(this)">
-                <span>Do I have to live in Kentucky?</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          <div class="v3-faq-grid">
+            <div class="v3-faq-item">
+              <button class="v3-faq-question" onclick="toggleFaq(this)">
+                <h4>Do I have to live in Kentucky?</h4>
+                <span class="v3-faq-icon">+</span>
               </button>
-              <div class="ir-faq-answer">
+              <div class="v3-faq-answer">
                 <p>Yes. Because this package includes clinical services provided by a Nurse Practitioner, participants must be Kentucky residents. This allows me to provide the full scope of care within my licensure.</p>
               </div>
             </div>
-            <div class="ir-faq-item">
-              <button class="ir-faq-question" onclick="toggleFaq(this)">
-                <span>Is this a replacement for my primary care provider?</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            <div class="v3-faq-item">
+              <button class="v3-faq-question" onclick="toggleFaq(this)">
+                <h4>Is this a replacement for my primary care provider?</h4>
+                <span class="v3-faq-icon">+</span>
               </button>
-              <div class="ir-faq-answer">
+              <div class="v3-faq-answer">
                 <p>No. The Intentional Health Reset is designed for specialized functional health support—not primary care. I don't prescribe medications or manage chronic drug therapies. You should continue seeing your PCP for standard medical care.</p>
               </div>
             </div>
-            <div class="ir-faq-item">
-              <button class="ir-faq-question" onclick="toggleFaq(this)">
-                <span>How long does the full program take?</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            <div class="v3-faq-item">
+              <button class="v3-faq-question" onclick="toggleFaq(this)">
+                <h4>How long does the full program take?</h4>
+                <span class="v3-faq-icon">+</span>
               </button>
-              <div class="ir-faq-answer">
+              <div class="v3-faq-answer">
                 <p>The complete Reset spans approximately 8-10 weeks from intake to follow-up reassessment. This includes time for lab work, HTMA collection, your interpretation visit, and a meaningful integration period before we reassess.</p>
               </div>
             </div>
-            <div class="ir-faq-item">
-              <button class="ir-faq-question" onclick="toggleFaq(this)">
-                <span>What if I've already had labs done recently?</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            <div class="v3-faq-item">
+              <button class="v3-faq-question" onclick="toggleFaq(this)">
+                <h4>What if I've already had labs done recently?</h4>
+                <span class="v3-faq-icon">+</span>
               </button>
-              <div class="ir-faq-answer">
+              <div class="v3-faq-answer">
                 <p>Great! If you have recent labs (within 3-6 months), I can review those instead of ordering new ones. We'll discuss what you have and whether any additional markers would be helpful during your intake.</p>
               </div>
             </div>
-            <div class="ir-faq-item">
-              <button class="ir-faq-question" onclick="toggleFaq(this)">
-                <span>What's included in the personalized protocol?</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            <div class="v3-faq-item">
+              <button class="v3-faq-question" onclick="toggleFaq(this)">
+                <h4>What's included in the personalized protocol?</h4>
+                <span class="v3-faq-icon">+</span>
               </button>
-              <div class="ir-faq-answer">
+              <div class="v3-faq-answer">
                 <p>Your protocol is a written care plan tailored to your specific needs. It includes nutrition guidance, lifestyle recommendations, nervous system support strategies, and—if appropriate—targeted supplementation. Everything is prioritized so you know exactly where to start.</p>
               </div>
             </div>
@@ -728,18 +728,10 @@
       }
     }
 
-    // FAQ Toggle
+    // FAQ Toggle (V3 format)
     function toggleFaq(button) {
-      const item = button.closest('.ir-faq-item');
-      const isActive = item.classList.contains('active');
-
-      // Close all other items
-      document.querySelectorAll('.ir-faq-item').forEach(i => i.classList.remove('active'));
-
-      // Toggle current item
-      if (!isActive) {
-        item.classList.add('active');
-      }
+      const item = button.closest('.v3-faq-item');
+      item.classList.toggle('open');
     }
 
     // V3 Quiz Checklist

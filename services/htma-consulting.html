@@ -16,6 +16,7 @@
   <link rel="preload" href="/fonts/Poppins-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/services-v2.css">
   <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
@@ -231,38 +232,62 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="section">
+    <section class="v3-faq" data-track-section="faq">
       <div class="container">
-        <div class="text-center mb-lg">
-          <p class="section-label">FAQ</p>
-          <h2>Common Questions</h2>
+        <div class="v3-faq-header">
+          <h2>Frequently Asked Questions</h2>
         </div>
 
-        <div class="about-section">
-          <h3 class="mb-sm">Who are these services for?</h3>
-          <p class="mb-lg">
-            My services are designed for women in their childbearing years—whether you're preparing for pregnancy, currently pregnant, postpartum, or simply wanting to optimize your hormone health. One-off lab reviews are available for others outside this demographic.
-          </p>
+        <div class="v3-faq-grid">
+          <div class="v3-faq-item">
+            <button class="v3-faq-question" onclick="toggleFaq(this)">
+              <h4>Who are these services for?</h4>
+              <span class="v3-faq-icon">+</span>
+            </button>
+            <div class="v3-faq-answer">
+              <p>My services are designed for women in their childbearing years—whether you're preparing for pregnancy, currently pregnant, postpartum, or simply wanting to optimize your hormone health. One-off lab reviews are available for others outside this demographic.</p>
+            </div>
+          </div>
 
-          <h3 class="mb-sm">Do I need to be a Kentucky resident?</h3>
-          <p class="mb-lg">
-            Clinical NP services are only available to Kentucky residents who are physically located in Kentucky during telehealth appointments. However, non-clinical coaching and educational services are available to anyone.
-          </p>
+          <div class="v3-faq-item">
+            <button class="v3-faq-question" onclick="toggleFaq(this)">
+              <h4>Do I need to be a Kentucky resident?</h4>
+              <span class="v3-faq-icon">+</span>
+            </button>
+            <div class="v3-faq-answer">
+              <p>Clinical NP services are only available to Kentucky residents who are physically located in Kentucky during telehealth appointments. However, non-clinical coaching and educational services are available to anyone.</p>
+            </div>
+          </div>
 
-          <h3 class="mb-sm">Is HTMA offered as a standalone service?</h3>
-          <p class="mb-lg">
-            HTMA is always paired with coaching and interpretation—it's not offered as a standalone test. This ensures you receive proper context and guidance for your results.
-          </p>
+          <div class="v3-faq-item">
+            <button class="v3-faq-question" onclick="toggleFaq(this)">
+              <h4>Is HTMA offered as a standalone service?</h4>
+              <span class="v3-faq-icon">+</span>
+            </button>
+            <div class="v3-faq-answer">
+              <p>HTMA is always paired with coaching and interpretation—it's not offered as a standalone test. This ensures you receive proper context and guidance for your results.</p>
+            </div>
+          </div>
 
-          <h3 class="mb-sm">Will you replace my primary care provider?</h3>
-          <p class="mb-lg">
-            No. My services complement (not replace) your primary care, OB-GYN, or midwife. I work alongside your existing care team to provide additional functional and wellness support.
-          </p>
+          <div class="v3-faq-item">
+            <button class="v3-faq-question" onclick="toggleFaq(this)">
+              <h4>Will you replace my primary care provider?</h4>
+              <span class="v3-faq-icon">+</span>
+            </button>
+            <div class="v3-faq-answer">
+              <p>No. My services complement (not replace) your primary care, OB-GYN, or midwife. I work alongside your existing care team to provide additional functional and wellness support.</p>
+            </div>
+          </div>
 
-          <h3 class="mb-sm">How do I get started?</h3>
-          <p>
-            Start with a free 20-minute consultation to discuss your goals and determine which program is the best fit for you.
-          </p>
+          <div class="v3-faq-item">
+            <button class="v3-faq-question" onclick="toggleFaq(this)">
+              <h4>How do I get started?</h4>
+              <span class="v3-faq-icon">+</span>
+            </button>
+            <div class="v3-faq-answer">
+              <p>Start with a free 20-minute consultation to discuss your goals and determine which program is the best fit for you.</p>
+            </div>
+          </div>
         </div>
 
         <div class="text-center mt-lg">
@@ -333,5 +358,12 @@
   </footer>
 
   <script src="/js/main.js" defer></script>
+  <script>
+    // FAQ Toggle
+    function toggleFaq(button) {
+      const item = button.closest('.v3-faq-item');
+      item.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
