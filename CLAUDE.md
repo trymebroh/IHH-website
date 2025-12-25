@@ -176,3 +176,86 @@ Only use colors from the official brand palette (see `/brand/Branding Board.pdf`
   ```bash
   git remote set-url origin git@github.com:trymebroh/IHH-website.git
   ```
+
+## Google Analytics 4 (GA4) Tracking
+
+**Measurement ID:** `G-3GFCR5ZRMZ`
+
+### Required for ALL New Pages
+
+Every new HTML page MUST include the GA4 tracking code in the `<head>` section:
+
+```html
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GFCR5ZRMZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3GFCR5ZRMZ');
+</script>
+```
+
+### Tracking Attributes for Funnel Analytics
+
+Add these data attributes to enable detailed funnel tracking:
+
+**Section Tracking** - Add to important page sections:
+```html
+<section data-track-section="hero">...</section>
+<section data-track-section="services-overview">...</section>
+<section data-track-section="pricing">...</section>
+<section data-track-section="faq">...</section>
+```
+
+**CTA Tracking** - Add to buttons and important links:
+```html
+<a href="/apply.html" class="btn" data-track-cta="apply-hero">Apply Now</a>
+<a href="/htma.html" data-track-cta="learn-htma">Learn More</a>
+```
+
+### Events Automatically Tracked
+
+The following events are already tracked in `/js/main.js`:
+
+| Event | Description |
+|-------|-------------|
+| `cta_click` | Any element with `data-track-cta` attribute |
+| `section_view` | When sections with `data-track-section` scroll 50% into view |
+| `form_submit` | All form submissions |
+| `popup_shown` | Exit-intent popup displays |
+| `popup_closed` | Exit-intent popup dismissed |
+| `outbound_click` | Clicks on external links |
+
+### Checklist for New Pages
+
+When creating any new page:
+
+1. [ ] Add GA4 tracking code to `<head>`
+2. [ ] Add `data-track-section` to key sections (hero, services, pricing, CTA, FAQ)
+3. [ ] Add `data-track-cta` to all CTA buttons
+4. [ ] Ensure page includes `/js/main.js` script
+5. [ ] Test tracking with GA4 Realtime reports
+
+### Checklist for New Blog Posts
+
+Blog posts use JavaScript rendering in `/js/blog.js`, so:
+
+1. [ ] GA4 is already loaded on blog pages (`/blog/post.html`, `/blog/post-superior.html`)
+2. [ ] Add tracking attributes to any inline CTAs in blog content
+3. [ ] Form tracking is automatic for newsletter signup
+
+### Recommended Sections to Track
+
+| Page Type | Recommended Sections |
+|-----------|---------------------|
+| Service pages | hero, problem, solution, process, pricing, faq, final-cta |
+| Landing pages | hero, features, benefits, testimonials, cta |
+| Blog posts | content, related-posts, newsletter-signup |
+| Apply/Contact | form-start, form-submit |
+
+### Viewing Analytics
+
+- **Realtime:** GA4 > Reports > Realtime (see live visitors)
+- **Events:** GA4 > Reports > Engagement > Events
+- **Conversions:** Set up conversion events in GA4 > Admin > Events > Mark as conversion
