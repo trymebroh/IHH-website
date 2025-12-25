@@ -435,6 +435,19 @@
   justify-content: center;
 }
 
+/* Faint checkmark on hover (before checked) */
+.htma-quiz-item:hover .htma-quiz-checkbox:not(:checked) + .htma-quiz-checkmark::after {
+  content: '';
+  width: 6px;
+  height: 12px;
+  border: solid var(--color-sage, #8B9A82);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
+
 .htma-quiz-checkbox:checked + .htma-quiz-checkmark {
   background: var(--color-sage, #8B9A82);
   border-color: var(--color-sage, #8B9A82);
@@ -448,6 +461,7 @@
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
   margin-bottom: 2px;
+  opacity: 1;
 }
 
 .htma-quiz-text {

@@ -2177,6 +2177,16 @@
   justify-content: center;
   flex-shrink: 0;
   transition: all var(--transition-fast);
+  position: relative;
+}
+
+/* Faint checkmark on hover (before checked) */
+.ir-quiz-item:hover input:not(:checked) + .ir-quiz-checkmark::after {
+  content: "\2713";
+  color: var(--color-sage-green);
+  font-weight: 700;
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
 }
 
 .ir-quiz-item input:checked + .ir-quiz-checkmark {
@@ -2187,6 +2197,7 @@
   content: "\2713";
   color: var(--color-white);
   font-weight: 700;
+  opacity: 1;
 }
 
 .ir-quiz-text {
