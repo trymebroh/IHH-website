@@ -1106,6 +1106,9 @@
 .v3-process {
   padding: var(--spacing-2xl) 0;
   background: var(--color-warm-cream);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
 }
 
 .v3-process-header {
