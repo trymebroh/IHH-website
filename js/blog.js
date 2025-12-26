@@ -12,7 +12,7 @@ const BLOG_POSTS = [
     date: '2024-12-15',
     author: 'Alicia',
     excerpt: 'The holidays tend to bring a lot to the surface. Not because anyone is doing something wrong — but because life gets fuller all at once.',
-    image: '/images/blog/holiday-wellness.jpeg',
+    image: '/images/blog/holiday-wellness.webp',
     categories: ['wellness', 'foundations'],
     content: `
 # Holiday Wellness for Women: Staying Grounded Without Extremes
@@ -225,7 +225,7 @@ Alicia
     date: '2024-11-15',
     author: 'Alicia',
     excerpt: 'You don\'t need perfection to prepare for pregnancy — you need foundations.',
-    image: '/images/blog/body-first-home-new.jpeg',
+    image: '/images/blog/body-first-home-new.webp',
     categories: ['preconception', 'foundations'],
     content: `
 # Your Body Is the First Home: Returning to the Foundations That Support Fertility and Pregnancy Health
