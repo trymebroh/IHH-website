@@ -448,7 +448,7 @@
         <p>
           Join my newsletter for holistic health tips, recipes, and updates on new offerings. Plus, get my free Holistic Habits Checklist!
         </p>
-        <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" data-validate>
+        <form class="newsletter-form" name="newsletter" method="POST" action="/?subscribed=true" data-netlify="true" data-validate>
           <input type="hidden" name="form-name" value="newsletter">
           <input type="email" name="email" class="form-input" placeholder="Enter your email" required aria-label="Email address" autocomplete="email">
           <button type="submit" class="btn btn-secondary">Subscribe</button>
@@ -530,7 +530,7 @@
           <p class="popup-text">
             Here to start creating sustainable, intentional change? Grab the Holistic Habits Checklist as a first step!
           </p>
-          <form class="popup-form" name="popup-newsletter" method="POST" data-netlify="true">
+          <form class="popup-form" name="popup-newsletter" method="POST" action="/?subscribed=true" data-netlify="true">
             <input type="hidden" name="form-name" value="popup-newsletter">
             <input type="text" name="first-name" class="form-input" placeholder="First name" required aria-label="First name" autocomplete="given-name">
             <input type="email" name="email" class="form-input" placeholder="Email address" required aria-label="Email address" autocomplete="email">
