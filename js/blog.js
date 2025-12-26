@@ -294,7 +294,7 @@ Simple rhythms — stepping outside for morning light, winding down before bed, 
 
 Environmental exposures like synthetic fragrances, plasticizers, and certain household chemicals can disrupt endocrine function and increase the body's detoxification burden. Evidence shows that prenatal and preconception exposure to endocrine-disrupting chemicals may influence fetal development and maternal health markers.
 
-ACOG recommends minimizing avoidable environmental exposures during preconception and pregnancy to support fertility and healthy fetal development.
+[ACOG recommends](https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2013/10/exposure-to-toxic-environmental-agents) minimizing avoidable environmental exposures during preconception and pregnancy to support fertility and healthy fetal development.
 
 Small changes make meaningful impact:
 
@@ -309,7 +309,7 @@ These shifts gently reduce physiological stress without demanding perfection.
 
 One of the most impactful steps in preparing for pregnancy is beginning a prenatal vitamin before conceiving. Neural tube development occurs within the first 3–4 weeks of pregnancy — often before a woman knows she is pregnant. Adequate folate during this period is essential for reducing neural tube defect risk.
 
-The U.S. Preventive Services Task Force recommends that all pregnant-capable women take folate to support early fetal development.
+The [U.S. Preventive Services Task Force recommends](https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/folic-acid-for-the-prevention-of-neural-tube-defects-preventive-medication) that all pregnant-capable women take folate to support early fetal development.
 
 Choosing a prenatal with methylated folate (5-MTHF) supports women who may not efficiently convert synthetic folic acid — a concern affecting up to 40% of the population. High-quality formulas provide methyl-folate, choline, minerals, and omega-3 fatty acids that align with evidence-based nutrient needs.
 
@@ -411,7 +411,7 @@ Limit or eliminate alcohol consumption, which functions as a depressant and trig
 
 ## You're Not Alone
 
-If you're struggling with PCOS and mental health, please reach out—to a professional, a friend, or a support group. You don't have to carry this alone.
+If you're struggling with PCOS and mental health, please reach out—to a professional, a friend, or a support group. You don't have to carry this alone. If you're in crisis, the [988 Suicide & Crisis Lifeline](https://988lifeline.org/) is available 24/7 by calling or texting 988.
 
 Want more tips? Download the complimentary **Holistic Habits Checklist** for additional wellness strategies focused on mood support and brain health.
     `,
@@ -744,7 +744,9 @@ function renderBlogListing() {
     const cardImgStyle = post.cardImageStyle ? ` style="${post.cardImageStyle}"` : '';
     html += `
       <article class="blog-card">
-        <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" loading="lazy"${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
+        <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link">
+          <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" loading="lazy"${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
+        </a>
         <div class="blog-card-body">
           <p class="blog-card-date">${formatDate(post.date)}</p>
           <h2 class="blog-card-title">
@@ -794,7 +796,9 @@ function setupCategoryFiltering(posts) {
           const cardImgStyle = post.cardImageStyle ? ` style="${post.cardImageStyle}"` : '';
           html += `
             <article class="blog-card">
-              <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" loading="lazy"${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
+              <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link">
+                <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" loading="lazy"${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
+              </a>
               <div class="blog-card-body">
                 <p class="blog-card-date">${formatDate(post.date)}</p>
                 <h2 class="blog-card-title">
@@ -938,7 +942,7 @@ function renderFAQs(post) {
   // Create FAQ section with V3 styling
   let faqHtml = `
     <section class="blog-faq-section">
-      <h2 class="blog-faq-title">Common Questions</h2>
+      <h2 class="blog-faq-title">Frequently Asked Questions</h2>
       <div class="blog-faq-list">
   `;
 
