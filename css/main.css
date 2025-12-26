@@ -2179,6 +2179,91 @@ p {
   }
 }
 
+/* Easter Egg Balloons */
+.easter-egg-balloons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -60px;
+  width: 30px;
+  height: 38px;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  opacity: 0;
+}
+
+.balloon::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid inherit;
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.easter-egg-popup.active .balloon {
+  animation: floatUp 3s ease-out forwards;
+}
+
+.balloon:nth-child(1) { left: 5%; background: #ff6b6b; animation-delay: 0s; }
+.balloon:nth-child(1)::before { border-top-color: #ff6b6b; }
+.balloon:nth-child(2) { left: 20%; background: #ffd93d; animation-delay: 0.2s; }
+.balloon:nth-child(2)::before { border-top-color: #ffd93d; }
+.balloon:nth-child(3) { left: 35%; background: #6bcb77; animation-delay: 0.1s; }
+.balloon:nth-child(3)::before { border-top-color: #6bcb77; }
+.balloon:nth-child(4) { left: 50%; background: #4d96ff; animation-delay: 0.3s; }
+.balloon:nth-child(4)::before { border-top-color: #4d96ff; }
+.balloon:nth-child(5) { left: 65%; background: #ff6bd6; animation-delay: 0.15s; }
+.balloon:nth-child(5)::before { border-top-color: #ff6bd6; }
+.balloon:nth-child(6) { left: 80%; background: #a66cff; animation-delay: 0.25s; }
+.balloon:nth-child(6)::before { border-top-color: #a66cff; }
+.balloon:nth-child(7) { left: 95%; background: #ff9f43; animation-delay: 0.35s; }
+.balloon:nth-child(7)::before { border-top-color: #ff9f43; }
+
+@keyframes floatUp {
+  0% {
+    opacity: 0.9;
+    bottom: -60px;
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(10px) rotate(5deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-3deg);
+  }
+  100% {
+    opacity: 0;
+    bottom: 120%;
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
 /* -----------------------------------------
    COOKIE CONSENT BANNER
    ----------------------------------------- */
