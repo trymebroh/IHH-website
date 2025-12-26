@@ -41,7 +41,7 @@ It can also help to remind yourself that progress isn't erased by a season. Your
 
 During the holidays, it's rarely realistic to keep every routine in place. What is realistic is choosing a few simple anchors — familiar habits that help your body feel steady even when schedules are unpredictable.
 
-An anchor might be eating a nourishing breakfast most mornings so blood sugar doesn't swing all day. It could be drinking water consistently before noon, stepping outside for a short walk or sunlight exposure, or keeping a familiar bedtime window when possible.
+An anchor might be eating a [nourishing breakfast](/blog/post.html?post=2024-10-15-probiotic-smoothie-bowl) most mornings so blood sugar doesn't swing all day. It could be drinking water consistently before noon, stepping outside for a short walk or sunlight exposure, or keeping a familiar bedtime window when possible.
 
 These anchors work best when they're portable. Something you can do whether you're at home, traveling, or hosting. You don't need many — one or two is enough to keep your nervous system oriented.
 
@@ -211,7 +211,7 @@ This is simply my story, and the practices that helped me feel supported and ali
 
 Preparing for an unmedicated birth wasn't about perfection—it was about intention. I focused on practices that supported my body, strengthened my mind, and grounded me spiritually. And while birth unfolded in its own way, these preparations helped me enter the experience feeling peaceful, equipped, and deeply connected to my baby and my Creator.
 
-If you're exploring pregnancy or preparing for birth and want guidance on building a nourishing foundation, Intention Holistic Health offers support that meets you where you are in preconception, pregnancy, and postpartum.
+If you're exploring pregnancy or preparing for birth and want guidance on building a nourishing foundation, [Intention Holistic Health offers support](/services/services.html) that meets you where you are in preconception, pregnancy, and postpartum. Learn more about [preparing your body for pregnancy](/blog/post.html?post=2024-11-15-body-first-home).
 
 All my love,
 
@@ -248,7 +248,7 @@ Simple shifts such as beginning the day with protein, adding fiber and color to 
 
 Hydration is more than drinking water — it's about restoring electrolytes and minerals that influence blood volume, energy production, thyroid health, and early pregnancy physiology. Minerals are crucial during preconception because blood volume expansion and hormonal changes begin early and require adequate micronutrients.
 
-Modern stress, heavy menstrual periods, and nutrient-depleted diets can leave women running on low reserves. Hair Tissue Mineral Analysis (HTMA) is a great tool used at Intention for providing insights into individual mineral needs. Restoring minerals through mineral-rich water, leafy greens, beans, nuts, seeds, and dried fruit provides foundational support for hormone balance and whole-body resilience.
+Modern stress, heavy menstrual periods, and nutrient-depleted diets can leave women running on low reserves. [Hair Tissue Mineral Analysis (HTMA)](/htma.html) is a great tool used at Intention for providing insights into individual mineral needs. Restoring minerals through mineral-rich water, leafy greens, beans, nuts, seeds, and dried fruit provides foundational support for hormone balance and whole-body resilience.
 
 ## Foundation 3: Movement as Rhythm — Not Perfection
 
@@ -304,7 +304,7 @@ Women who learn these foundations before pregnancy often feel more grounded, mor
 
 Preconception care does not need to be overwhelming. It's about reconnecting with the rhythms your physiology is already built upon and nourishing your body with intention.
 
-If you want personalized support during preconception, pregnancy, or postpartum, the Intentional Mama Programs and Lab Review Services at Intention Holistic Health provide individualized guidance to honor your body's physiology and your season of life.
+If you want personalized support during preconception, pregnancy, or postpartum, the [Intentional Mama Programs](/services/services.html) and [Lab Review Services](/services/lab-review.html) at Intention Holistic Health provide individualized guidance to honor your body's physiology and your season of life.
 
 Your body is the first home your baby will ever know. Caring for it with intention is an act of love that extends far beyond pregnancy — shaping the health of generations to come.
 
@@ -325,7 +325,7 @@ Alicia
     content: `
 # May is Mental Health Awareness Month
 
-May is Mental Health Month—a topic that is personally meaningful to me. The statistics are concerning: women with PCOS face an 8.5x higher risk of suicide attempt than those without the condition and experience anxiety and depression 3x more often than women without PCOS.
+May is Mental Health Month—a topic that is personally meaningful to me. The statistics are concerning: women with PCOS face an 8.5x higher risk of suicide attempt than those without the condition and experience anxiety and depression 3x more often than women without PCOS. Understanding the [gut-brain connection](/blog/post.html?post=2024-10-01-gut-health-pcos) is key to understanding why.
 
 These aren't just statistics—they represent real women who are struggling. Understanding the intersection of hormone health and mental wellness through holistic approaches that consider biological factors is essential.
 
@@ -345,7 +345,7 @@ Get 15+ minutes of direct eye exposure within 30 minutes of waking to boost ener
 
 ### 4. Blood Sugar Regulation
 
-Consume protein and healthy fats before carbs. Break fasts with protein-fat-fiber combinations and move ten minutes post-meals to support stable blood sugar and reduce mood swings.
+Consume protein and healthy fats before carbs. Break fasts with protein-fat-fiber combinations and move ten minutes post-meals to support stable blood sugar and reduce mood swings. Getting a [lab review](/services/lab-review.html) can help you understand your blood sugar patterns.
 
 ### 5. Breathwork
 
@@ -402,7 +402,7 @@ Looking for a delicious and nutritious way to start your day? Try this refreshin
 - Optional: unflavored collagen, unflavored or vanilla protein powder for extra protein
 - Optional: ½ cup frozen cauliflower (for extra fiber & nutrients)
 - Optional: ½ tablespoon honey or maple syrup
-- Toppings: sliced fruits, nuts, seeds, unsweetened coconut or granola (check out our Grain-Free Granola Recipe blog!)
+- Toppings: sliced fruits, nuts, seeds, unsweetened coconut or granola (check out our [Hormone-Friendly Granola Recipe](/blog/post.html?post=2024-09-15-hormone-friendly-granola)!)
 
 ## Instructions
 
@@ -412,7 +412,7 @@ Looking for a delicious and nutritious way to start your day? Try this refreshin
 
 ## Why You'll Love It
 
-- **Probiotic Boost:** Kefir and yogurt are excellent sources of probiotics, which support gut health and digestion.
+- **Probiotic Boost:** Kefir and yogurt are excellent sources of probiotics, which support [gut health](/blog/post.html?post=2024-10-01-gut-health-pcos) and digestion.
 - **Fiber-Packed:** Flax seeds and hemp hearts are rich in fiber, promoting satiety, digestive regularity, and blood sugar regulation. Adding cauliflower or other veg increases fiber even more.
 - **High Protein:** Greek yogurt is a great source of protein, calcium & vitamin D. Hemp hearts add plant-based protein, perfect for a satisfying breakfast or post-workout snack. Adding collagen or protein powder increases the protein content of the smoothie, supporting muscle repair and satiety.
 - **Beneficial Fats:** Flax seeds are rich in alpha-linolenic acid (ALA), a type of omega-3 fatty acid that supports heart health and inflammation reduction. Hemp hearts contain a balanced ratio of omega-3 and omega-6 fatty acids, which are important for brain health and inflammation control.
@@ -498,7 +498,7 @@ Your digestive system isn't isolated; it's intricately connected to overall heal
 
 ## Closing Thoughts
 
-If ready to deepen your digestive wellness journey while managing PCOS, reach out for personalized one-on-one support at Intention Holistic Health. We'll explore strategies resonating with your unique body and goals.
+If ready to deepen your digestive wellness journey while managing PCOS, reach out for [personalized one-on-one support](/services/services.html) at Intention Holistic Health. We'll explore strategies resonating with your unique body and goals.
 
 With love and digestive-healing energy,
 
@@ -524,7 +524,7 @@ Clinical services at Intention Holistic Health PLLC serve Kentucky residents onl
 
 An all-time-favorite snack: granola that is both delicious and packed with hormone-friendly ingredients to support health and wellbeing from the inside out.
 
-I often opt for grain-free granola for most clients because grains can sometimes exacerbate symptoms such as insulin resistance and inflammation.
+I often opt for grain-free granola for most clients because grains can sometimes exacerbate symptoms such as insulin resistance and inflammation. This is especially helpful for women managing [PCOS](/blog/post.html?post=2024-10-01-gut-health-pcos).
 
 ## Ingredients
 
@@ -556,7 +556,7 @@ This granola provides essential vitamins, minerals, and healthy fats through nut
 
 ## How to Enjoy
 
-- Top your smoothie bowl
+- Top your [smoothie bowl](/blog/post.html?post=2024-10-15-probiotic-smoothie-bowl)
 - Add to yogurt
 - Eat as a snack with a handful of berries
 - Sprinkle on baked apples or pears
@@ -584,6 +584,9 @@ function parseMarkdown(markdown) {
   html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
   html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
   html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+
+  // Links [text](url)
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2">$1</a>');
 
   // Bold
   html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');

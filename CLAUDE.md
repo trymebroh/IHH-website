@@ -259,3 +259,301 @@ Blog posts use JavaScript rendering in `/js/blog.js`, so:
 - **Realtime:** GA4 > Reports > Realtime (see live visitors)
 - **Events:** GA4 > Reports > Engagement > Events
 - **Conversions:** Set up conversion events in GA4 > Admin > Events > Mark as conversion
+
+---
+
+## Site Architecture & Structure
+
+### Page Hierarchy
+
+```
+/ (index.html)                    # Homepage - main entry point
+├── /about.html                   # About Alicia page
+├── /contact.html                 # Contact form page
+├── /apply.html                   # Application form for services
+├── /htma.html                    # Educational: What is HTMA?
+├── /services/
+│   ├── services.html             # Main services page (HTMA packages)
+│   ├── lab-review.html           # Lab Review service
+│   └── intentional-reset.html    # Limited-time offer (no nav link)
+├── /blog/
+│   ├── index.html                # Blog listing page
+│   ├── post.html                 # Default blog post template
+│   └── post-superior.html        # Full-width blog post template
+├── /legal/
+│   ├── terms.html                # Terms of Service
+│   ├── privacy.html              # Privacy Policy
+│   └── disclaimer.html           # Medical Disclaimer
+├── /drafts/                      # Draft versions (not indexed)
+├── /archive/                     # Archived pages (not indexed)
+├── /tasks/                       # Internal task files (not indexed)
+└── /session-notes/               # Session documentation (not indexed)
+```
+
+### Navigation Structure
+
+**Desktop Navigation:**
+- Home | About | Blog | Services (dropdown) | Contact | Supplements | Patient Portal
+
+**Services Dropdown:**
+- What is HTMA? → `/htma.html`
+- Services → `/services/services.html`
+- Lab Review → `/services/lab-review.html`
+
+**Mobile Navigation:**
+- Same structure in hamburger menu
+
+**Footer Links:**
+- Services section: Services, Lab Review, What is HTMA?
+- Resources section: Blog, Apply, Supplements, Patient Portal
+- Legal section: Terms, Privacy, Disclaimer
+- Social icons: Instagram, Facebook, Pinterest, LinkedIn
+
+### User Flow
+
+```
+Homepage → Learn (HTMA page, Blog) → Service Page → Apply Page → Patient Portal
+                                         ↓
+                               Lab Review (direct booking OK)
+```
+
+**Key Conversion Points:**
+1. **HTMA/Wellness Services:** Require application first → `/apply.html`
+2. **Lab Review:** Can book directly (no application required)
+3. **Intentional Reset:** Landing page only (direct link, not in nav)
+
+---
+
+## SEO & Technical SEO
+
+### Implemented SEO Components
+
+| Component | File/Location | Status |
+|-----------|---------------|--------|
+| robots.txt | `/robots.txt` | Implemented |
+| sitemap.xml | `/sitemap.xml` | Implemented |
+| LocalBusiness Schema | `/index.html` | Implemented |
+| Service Schema | `/services/services.html` | Implemented |
+| Article Schema | `/htma.html` | Implemented |
+| Person Schema | `/about.html` | Implemented |
+| FAQPage Schema | Multiple pages | Implemented |
+| Meta descriptions | All pages | Implemented |
+| Open Graph tags | All pages | Implemented |
+| Canonical URLs | Via og:url | Implemented |
+
+### Schema Markup Guidelines
+
+When adding new pages, include appropriate JSON-LD schemas:
+
+**Service Pages:** Use `Service` + `FAQPage` schemas
+**Educational/Article Pages:** Use `Article` + `FAQPage` schemas
+**About/Team Pages:** Use `Person` schema
+**Homepage:** Use `LocalBusiness` schema (already done)
+
+### Sitemap Maintenance
+
+When adding new public pages:
+1. Add entry to `/sitemap.xml`
+2. Set appropriate `priority` (1.0 homepage, 0.9 services, 0.8 main pages, 0.7 blog, 0.3 legal)
+3. Update `lastmod` date
+
+### robots.txt Rules
+
+Currently blocked directories:
+- `/drafts/` - Draft page versions
+- `/archive/` - Archived pages
+- `/tasks/` - Internal task files
+- `/session-notes/` - Session documentation
+- `/blog/post.html` - Template files (actual posts are dynamic)
+
+---
+
+## Data & Integrations
+
+### Netlify
+
+**Deployment:** Auto-deploys from `drafts-website-edits` branch
+**Forms:** Netlify Forms handles all form submissions
+**Functions:** `/netlify/functions/` for serverless functions
+
+**Netlify Forms Used:**
+- Contact form (`contact.html`)
+- Application form (`apply.html`)
+- Newsletter signup (blog pages)
+- Exit-intent popup signup
+
+### External Integrations
+
+| Service | Purpose | Integration Point |
+|---------|---------|-------------------|
+| Practice Better | Patient portal, scheduling | External link |
+| Fullscript | Supplements store | External link |
+| Google Analytics 4 | Analytics | JS tracking code |
+| Netlify Blobs | Easter egg tracking | Serverless function |
+
+### Cookie Consent
+
+- **Consent Mode v2** implemented for GA4
+- Cookies stored in `localStorage`:
+  - `cookie_consent` - 'accepted' or 'declined'
+  - `popup_dismissed` - exit-intent popup state
+  - `newsletter_subscribed` - blog popup state
+  - `device_id` - easter egg tracking ID
+
+---
+
+## Compliance Requirements
+
+### Terminology Restrictions
+
+**NEVER use these terms in user-facing content:**
+- "coach" / "coaching"
+- "mentor" / "mentorship"
+- "consult" / "consulting"
+
+**Use instead:**
+- "wellness practitioner"
+- "wellness support"
+- "guidance"
+- "program" (e.g., "Signature Program")
+
+### Results/Outcomes Language
+
+Avoid definitive claims. Use qualifying language:
+- "may help" instead of "will help"
+- "designed to support" instead of "treats"
+- "individual results vary" disclaimers
+
+### Service Availability
+
+- **Kentucky residents only** for all clinical services
+- Update any "available anywhere" language to reflect this
+
+### Legal Pages
+
+Legal pages (`/legal/*.html`) require attorney review before changes.
+See `/tasks/legal-attorney-review.md` for pending items.
+
+---
+
+## Audit Checklists
+
+### New Page Checklist
+
+When creating any new page, verify:
+
+```
+[ ] Page added to navigation (if public)
+[ ] Page added to sitemap.xml
+[ ] GA4 tracking code in <head>
+[ ] Cookie consent banner included
+[ ] data-track-section on key sections
+[ ] data-track-cta on CTA buttons
+[ ] Meta description (150-160 chars)
+[ ] og:title, og:description, og:image tags
+[ ] Appropriate JSON-LD schema
+[ ] Mobile responsive design
+[ ] BHPCC seal in footer (if applicable)
+[ ] External links have target="_blank" rel="noopener"
+[ ] Font preloads included
+[ ] /js/main.js included
+```
+
+### New Blog Post Checklist
+
+```
+[ ] Post added to blog.js posts array
+[ ] Featured image optimized (<200KB WebP)
+[ ] Categories assigned
+[ ] Internal links to relevant service pages
+[ ] Disclaimer at end of post
+[ ] No prohibited terminology
+[ ] Image in /images/blog/ folder
+```
+
+### Content Revision Checklist
+
+Before publishing any content changes:
+
+```
+[ ] Terminology compliance check (no coach/mentor/consult)
+[ ] Kentucky-only language for services
+[ ] Results/outcomes language is qualified
+[ ] Internal links are working
+[ ] No broken images
+[ ] Mobile preview looks correct
+```
+
+### SEO Audit Checklist (Periodic)
+
+Run this audit when making significant changes:
+
+```
+[ ] All pages have unique meta descriptions
+[ ] No duplicate H1 tags on any page
+[ ] All images have alt text
+[ ] Internal links are not broken
+[ ] External links work and open in new tab
+[ ] Schema markup validates (use Google Rich Results Test)
+[ ] Sitemap is up to date
+[ ] robots.txt is correct
+[ ] Page speed acceptable (use Lighthouse)
+[ ] Mobile-friendly (use Google Mobile-Friendly Test)
+```
+
+---
+
+## File Organization
+
+### CSS Files
+
+| File | Purpose |
+|------|---------|
+| `/css/main.css` | Global styles, header, footer, components |
+| `/css/blog.css` | Blog listing and post styles |
+| `/css/htma.css` | HTMA educational page styles |
+| `/css/services-v2.css` | V3 service page styles |
+| `/css/about-v2.css` | About page styles |
+
+### JavaScript Files
+
+| File | Purpose |
+|------|---------|
+| `/js/main.js` | Global: mobile nav, popups, GA4 events, cookie consent |
+| `/js/blog.js` | Blog: post rendering, search, newsletter |
+
+### Image Folders
+
+| Folder | Purpose |
+|--------|---------|
+| `/images/` | General site images |
+| `/images/hero/` | Hero banner images |
+| `/images/blog/` | Blog post images |
+| `/images/services/` | Service page images |
+| `/images/about/` | About page images |
+| `/images/graphics/` | Decorative graphics |
+| `/brand/` | Brand assets (logo, branding board)
+
+---
+
+## Quick Reference
+
+### Key URLs
+
+- **Live Site:** https://www.intentionholistichealth.com
+- **GitHub Repo:** git@github.com:trymebroh/IHH-website.git
+- **Netlify Dashboard:** (via Alicia's account)
+- **GA4 Property:** G-3GFCR5ZRMZ
+- **Practice Better:** https://my.practicebetter.io
+- **Fullscript:** https://us.fullscript.com/welcome/intentionholistichealth
+
+### Contact Email
+
+`alicia.harrison@intentionholistichealth.com`
+
+### Credentials (Alicia Harrison)
+
+- MSN - Master of Science in Nursing
+- APRN - Advanced Practice Registered Nurse
+- FNP-C - Family Nurse Practitioner - Board Certified
+- BHPCC - Board of Holistic Practitioners Certification Council

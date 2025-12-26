@@ -1,0 +1,18 @@
+# Robots.txt for Intention Holistic Health
+# https://www.intentionholistichealth.com
+
+User-agent: *
+Allow: /
+
+# Disallow internal/development directories
+Disallow: /drafts/
+Disallow: /archive/
+Disallow: /tasks/
+Disallow: /session-notes/
+
+# Disallow template files (content loaded dynamically)
+Disallow: /blog/post.html
+Disallow: /blog/post-superior.html
+
+# Sitemap location
+Sitemap: https://www.intentionholistichealth.com/sitemap.xml
