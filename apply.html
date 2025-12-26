@@ -235,6 +235,15 @@
 
           <!-- Application Form -->
           <div>
+            <!-- HTMA Info Message (shown when coming from HTMA page) -->
+            <div id="htma-info-message" class="apply-info-message" style="display: none;">
+              <div class="apply-info-icon">💡</div>
+              <div class="apply-info-content">
+                <strong>Interested in HTMA?</strong>
+                <p>Hair Tissue Mineral Analysis is included in the <strong>Intention Mineral Insight Package</strong> and the <strong>Intention Signature Mentorship</strong>. Just mention HTMA in your message below!</p>
+              </div>
+            </div>
+
             <form name="consultation-application" method="POST" data-netlify="true" action="https://my.practicebetter.io/#/signin" class="apply-form">
               <input type="hidden" name="form-name" value="consultation-application">
 
@@ -289,6 +298,10 @@
                 <strong>What happens next?</strong> After submitting, you'll be redirected to schedule your free 20-minute discovery call. I'll review your application and we'll discuss your goals during our call.
               </div>
             </form>
+
+            <p class="text-muted mt-md" style="font-size: 14px;">
+              <strong>Note:</strong> Please do not submit protected health information (PHI) through this form. For health-related discussions, please use the secure client portal.
+            </p>
           </div>
 
         </div>
@@ -357,6 +370,19 @@
   </footer>
 
   <script src="/js/main.js" defer></script>
+
+  <!-- HTMA Referral Message -->
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('from') === 'htma') {
+        var message = document.getElementById('htma-info-message');
+        if (message) {
+          message.style.display = 'flex';
+        }
+      }
+    })();
+  </script>
 
   <!-- Cookie Consent Banner -->
   <div class="cookie-consent" id="cookie-consent" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
