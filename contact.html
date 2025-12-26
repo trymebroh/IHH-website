@@ -38,7 +38,9 @@
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/services-v2.css">
-  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -89,9 +91,24 @@
 
   <main id="main">
 
-    <!-- Contact Hero Banner -->
-    <section class="contact-hero-banner" data-track-section="hero">
-      <img src="/images/contact-hero.webp" alt="Contact Alicia - Get in touch to learn how we can work together!" class="contact-hero-image" width="1400" height="788" fetchpriority="high">
+    <!-- Contact Hero Section -->
+    <section class="contact-hero" data-track-section="hero">
+      <div class="container">
+        <div class="contact-hero-content">
+          <h1 class="contact-hero-title">Contact Alicia</h1>
+          <div class="contact-hero-line"></div>
+          <p class="contact-hero-subtitle">GET IN TOUCH TO LEARN HOW WE CAN WORK TOGETHER</p>
+        </div>
+      </div>
+      <img src="/images/about/alicia-portrait-mug.webp"
+           srcset="/images/about/alicia-portrait-mug-small.webp 400w,
+                   /images/about/alicia-portrait-mug-medium.webp 800w,
+                   /images/about/alicia-portrait-mug.webp 1200w"
+           sizes="(max-width: 480px) 400px, (max-width: 768px) 800px, 1200px"
+           alt="Alicia Harrison, Nurse Practitioner"
+           class="contact-hero-image"
+           width="1200" height="1800"
+           fetchpriority="high">
     </section>
 
     <!-- Contact Content -->
@@ -111,15 +128,15 @@
 
             <div class="mt-lg">
               <div class="contact-method">
-                <a href="https://www.instagram.com/intentionholistichealth" target="_blank" rel="noopener" class="contact-method-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <a href="https://www.instagram.com/intentionholistichealth" target="_blank" rel="noopener" class="contact-method-icon" aria-label="Instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
                 <a href="https://www.instagram.com/intentionholistichealth" target="_blank" rel="noopener">@intentionholistichealth</a>
               </div>
 
               <div class="contact-method">
-                <a href="mailto:alicia.harrison@intentionholistichealth.com" class="contact-method-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <a href="mailto:alicia.harrison@intentionholistichealth.com" class="contact-method-icon" aria-label="Email">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 </a>
                 <a href="mailto:alicia.harrison@intentionholistichealth.com">alicia.harrison@intentionholistichealth.com</a>
               </div>

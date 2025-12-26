@@ -87,7 +87,7 @@
 
 @font-face {
   font-family: 'Beautifully Delicious Script';
-  /* Subset font: only contains "intentional. simple. holistic." characters */
+  /* Subset font: contains "intentional. simple. holistic. Contact Alicia" */
   src: url('../fonts/BDScript-subset.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
@@ -1991,26 +1991,127 @@ p {
   text-align: center;
 }
 
-/* Contact Hero Banner (image-based) */
-.contact-hero-banner {
-  margin-top: 80px; /* Account for fixed header */
-  width: 100%;
+/* Contact Hero Section (matching homepage intro layout) */
+.contact-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px; /* Account for fixed header */
   background-color: var(--color-warm-cream);
+  overflow: hidden;
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  padding-right: var(--spacing-md);
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .contact-hero-content {
+    max-width: 50%;
+    padding-top: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+  }
+}
+
+.contact-hero-title {
+  font-family: 'Beautifully Delicious Script', cursive;
+  font-size: 3.6rem;
+  font-weight: 400;
+  color: var(--color-charcoal);
+  margin-bottom: var(--spacing-sm);
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 768px) {
+  .contact-hero-title {
+    font-size: 4.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-hero-title {
+    font-size: 6rem;
+  }
+}
+
+.contact-hero-line {
+  width: 150px;
+  height: 2px;
+  background-color: var(--color-sage-green);
+  margin: 0 auto var(--spacing-md) auto;
+}
+
+.contact-hero-subtitle {
+  font-family: var(--font-body);
+  font-size: calc(var(--font-size-sm) * 1.2);
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1.6;
+  max-width: 480px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .contact-hero-subtitle {
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
 }
 
 .contact-hero-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-height: 500px;
+  position: absolute;
+  right: var(--spacing-xl);
+  top: calc(50% + 40px);
+  transform: translateY(-50%);
+  width: 38%;
+  height: 65%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 75%;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
+  .contact-hero {
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 0;
+  }
+
+  .contact-hero-content {
+    padding-bottom: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .contact-hero-line {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .contact-hero-image {
-    max-height: 350px;
-    object-position: center top;
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    height: 350px;
+    object-position: center 85%;
+    border-radius: 0;
+    box-shadow: none;
   }
 }
 
