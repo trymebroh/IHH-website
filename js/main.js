@@ -5,6 +5,57 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   // -----------------------------------------
+  // FORM SUCCESS MESSAGES
+  // -----------------------------------------
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var message = null;
+
+    if (params.get('success') === 'true') {
+      message = 'Thank you! Your message has been sent successfully.';
+    } else if (params.get('subscribed') === 'true') {
+      message = 'Thank you for subscribing! Check your inbox for updates.';
+    }
+
+    if (message) {
+      // Create success banner
+      var banner = document.createElement('div');
+      banner.className = 'form-success-banner';
+      banner.innerHTML = '<span>' + message + '</span><button class="form-success-close" aria-label="Close">&times;</button>';
+      document.body.insertBefore(banner, document.body.firstChild);
+
+      // Show with animation
+      setTimeout(function() {
+        banner.classList.add('visible');
+      }, 100);
+
+      // Close button
+      banner.querySelector('.form-success-close').addEventListener('click', function() {
+        banner.classList.remove('visible');
+        setTimeout(function() {
+          banner.remove();
+        }, 300);
+      });
+
+      // Auto-hide after 8 seconds
+      setTimeout(function() {
+        if (banner.classList.contains('visible')) {
+          banner.classList.remove('visible');
+          setTimeout(function() {
+            banner.remove();
+          }, 300);
+        }
+      }, 8000);
+
+      // Clean URL without reload
+      if (window.history.replaceState) {
+        var cleanUrl = window.location.pathname;
+        window.history.replaceState({}, document.title, cleanUrl);
+      }
+    }
+  })();
+
+  // -----------------------------------------
   // MOBILE MENU TOGGLE
   // -----------------------------------------
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');

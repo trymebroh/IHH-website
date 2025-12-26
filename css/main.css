@@ -1626,6 +1626,48 @@ p {
 }
 
 /* -----------------------------------------
+   FORM SUCCESS BANNER
+   ----------------------------------------- */
+.form-success-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-sage);
+  color: var(--color-white);
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  z-index: 1001;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  text-align: center;
+  font-weight: 500;
+}
+
+.form-success-banner.visible {
+  transform: translateY(0);
+}
+
+.form-success-close {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.form-success-close:hover {
+  opacity: 1;
+}
+
+/* -----------------------------------------
    POPUP / MODAL
    ----------------------------------------- */
 .popup-overlay {
