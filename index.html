@@ -93,8 +93,14 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="icon" type="image/png" href="/images/favicon.png">
 
-  <!-- Preload LCP image for better performance -->
-  <link rel="preload" as="image" href="/images/hero-mother-baby.webp" fetchpriority="high">
+  <!-- Preload LCP image for better performance - responsive -->
+  <link rel="preload" as="image"
+        href="/images/hero-mother-baby.webp"
+        imagesrcset="/images/hero-mother-baby-small.webp 250w,
+                     /images/hero-mother-baby-medium.webp 500w,
+                     /images/hero-mother-baby.webp 800w"
+        imagesizes="(max-width: 480px) 250px, (max-width: 768px) 500px, 800px"
+        fetchpriority="high">
 </head>
 <body>
   <!-- Skip to main content for accessibility -->
@@ -104,7 +110,7 @@
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="Intention Holistic Health Home">
-        <img src="/images/logo2.webp" alt="Intention Holistic Health" width="192" height="75">
+        <img src="/images/logo2-small.webp" alt="Intention Holistic Health" width="192" height="75">
       </a>
 
       <!-- Desktop Navigation -->
@@ -155,7 +161,13 @@
       <h1 class="hero-banner-headline-top">Holistic Motherhood <span class="sr-only">Wellness</span></h1>
       <div class="hero-banner-content">
         <div class="hero-banner-image-wrapper">
-          <img src="/images/hero-mother-baby.webp" alt="Mother holding baby wrapped in cozy knit blanket" class="hero-banner-photo" width="1646" height="1643" fetchpriority="high">
+          <img src="/images/hero-mother-baby.webp"
+               srcset="/images/hero-mother-baby-small.webp 250w,
+                       /images/hero-mother-baby-medium.webp 500w,
+                       /images/hero-mother-baby.webp 800w"
+               sizes="(max-width: 480px) 250px, (max-width: 768px) 500px, 800px"
+               alt="Mother holding baby wrapped in cozy knit blanket"
+               class="hero-banner-photo" width="800" height="799" fetchpriority="high">
         </div>
         <div class="hero-banner-text">
           <p class="hero-banner-headline-bottom" aria-hidden="true">Wellness</p>
