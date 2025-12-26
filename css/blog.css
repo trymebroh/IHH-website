@@ -233,39 +233,47 @@
   }
 }
 
-/* Featured Image */
+/* Featured Image - uses padding-bottom technique for reliable aspect ratio */
 .post-featured-image {
+  position: relative;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 var(--container-padding-mobile);
   margin-top: calc(-1 * var(--spacing-lg));
-  /* Reserve space for 16:9 image to prevent CLS */
-  /* Calculate height based on container width minus padding */
-  min-height: calc((100vw - 2 * var(--container-padding-mobile)) * 9 / 16);
-  max-height: calc(900px * 9 / 16); /* Cap at max-width aspect ratio */
-  background-color: var(--color-light-cream); /* Placeholder color */
+  padding: 0 var(--container-padding-mobile);
+  background-color: var(--color-light-cream);
+}
+
+.post-featured-image::before {
+  content: '';
+  display: block;
+  /* 16:9 aspect ratio = 9/16 = 56.25% */
+  padding-bottom: 56.25%;
 }
 
 @media (min-width: 768px) {
   .post-featured-image {
     padding: 0 var(--container-padding-desktop);
-    min-height: calc((100vw - 2 * var(--container-padding-desktop)) * 9 / 16);
-  }
-}
-
-@media (min-width: 932px) {
-  .post-featured-image {
-    /* At max-width, height is fixed */
-    min-height: calc((900px - 2 * var(--container-padding-desktop)) * 9 / 16);
   }
 }
 
 .post-featured-image img {
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: var(--container-padding-mobile);
+  right: var(--container-padding-mobile);
+  width: calc(100% - 2 * var(--container-padding-mobile));
   height: 100%;
   object-fit: cover;
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+  .post-featured-image img {
+    left: var(--container-padding-desktop);
+    right: var(--container-padding-desktop);
+    width: calc(100% - 2 * var(--container-padding-desktop));
+  }
 }
 
 /* Post Content */
