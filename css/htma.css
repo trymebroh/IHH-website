@@ -106,10 +106,18 @@
 .htma-btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(139, 154, 130, 0.4);
+  color: white;
 }
 
 .htma-btn-primary svg {
   stroke: white;
+}
+
+/* Section CTA - centered button after section content */
+.htma-section-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
 }
 
 .htma-btn-secondary {
@@ -968,6 +976,7 @@
 .htma-cta-btn:hover {
   background: var(--color-warm-cream, #F5F0E8);
   transform: translateY(-2px);
+  color: var(--color-sage-dark, #5A5F56);
 }
 
 .htma-cta-btn svg {
