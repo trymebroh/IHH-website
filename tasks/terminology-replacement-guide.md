@@ -43,16 +43,16 @@
 
 ## SECTION 2: "MENTOR / MENTORSHIP" (User-Facing Content)
 
-### Homepage & About Page
+### Homepage & About Page (Title: "Wellness Practitioner" CONFIRMED)
 
-| File | Current Text | Suggested Replacement |
-|------|--------------|----------------------|
-| `index.html` (intro) | "wellness **mentor**, and mom" | "wellness **practitioner**, and mom" |
-| `about.html` (hero subtitle) | "Nurse Practitioner \| Wellness **Mentor** \| Mom" | "Nurse Practitioner \| Wellness **Practitioner** \| Mom" |
-| `about.html` (meta description) | "holistic wellness **mentor** helping women" | "holistic wellness **practitioner** helping women" |
-| `about.html` (meta keywords) | "wellness **mentor**" | "wellness **practitioner**" |
-| `about.html` (OG description) | "holistic wellness **mentor**" | "holistic wellness **practitioner**" |
-| `blog/post.html` (author bio) | "holistic wellness **mentor** helping women" | "holistic wellness **practitioner** helping women" |
+| File | Current Text | Replacement |
+|------|--------------|-------------|
+| `index.html` (intro) | "wellness **mentor**, and mom" | "wellness **practitioner**, and mom" ✓ |
+| `about.html` (hero subtitle) | "Nurse Practitioner \| Wellness **Mentor** \| Mom" | "Nurse Practitioner \| Wellness **Practitioner** \| Mom" ✓ |
+| `about.html` (meta description) | "holistic wellness **mentor** helping women" | "holistic wellness **practitioner** helping women" ✓ |
+| `about.html` (meta keywords) | "wellness **mentor**" | "wellness **practitioner**" ✓ |
+| `about.html` (OG description) | "holistic wellness **mentor**" | "holistic wellness **practitioner**" ✓ |
+| `blog/post.html` (author bio) | "holistic wellness **mentor** helping women" | "holistic wellness **practitioner** helping women" ✓ |
 
 ### Blog Posts (in js/blog.js)
 
@@ -82,10 +82,10 @@
 
 ### Drafts (for reference)
 
-| File | Current Text | Suggested Replacement |
-|------|--------------|----------------------|
-| `drafts/about-v2.html` (meta) | "wellness **mentor** passionate about" | "wellness **practitioner** passionate about" |
-| `drafts/about-v2.html` (hero alt) | "nurse practitioner, mom and wellness **mentor**" | "nurse practitioner, mom and wellness **practitioner**" |
+| File | Current Text | Replacement |
+|------|--------------|-------------|
+| `drafts/about-v2.html` (meta) | "wellness **mentor** passionate about" | "wellness **practitioner** passionate about" ✓ |
+| `drafts/about-v2.html` (hero alt) | "nurse practitioner, mom and wellness **mentor**" | "nurse practitioner, mom and wellness **practitioner**" ✓ |
 
 ---
 
@@ -93,11 +93,11 @@
 
 ### Navigation (Affects 15+ pages)
 
-| Element | Current Text | Suggested Replacement |
+| Element | Current Text | Selected Replacement |
 |---------|--------------|----------------------|
-| Desktop nav dropdown | "HTMA + **Consulting**" | "HTMA + **Wellness**" or "HTMA + **Support**" |
+| Desktop nav dropdown | "HTMA + **Consulting**" | "**Services**" or "**Ongoing Services**" ← TBD |
 | Mobile nav | "HTMA + **Consulting**" | (same as above) |
-| Footer links | Services link text | (no text change needed, just file reference) |
+| Footer links | Services link text | (will update to match new filename) |
 
 **Pages with navigation to update:**
 - index.html, about.html, contact.html, apply.html, htma.html
@@ -133,7 +133,7 @@
 | `services/htma-consulting.html` (meta keywords) | "wellness **consulting**" | "wellness **support**" |
 | `services/htma-consulting.html` (OG title) | "HTMA + **Consulting** Services" | "HTMA + **Wellness** Services" |
 | `services/htma-consulting.html` (page title) | "HTMA + **Consulting** Services" | "HTMA + **Wellness** Services" |
-| `services/htma-consulting.html` (solution section) | "holistic wellness **consultant**" | "holistic wellness **practitioner**" |
+| `services/htma-consulting.html` (solution section) | "holistic wellness **consultant**" | "holistic wellness **practitioner**" ✓ |
 
 ---
 
@@ -168,23 +168,21 @@
 
 ---
 
-## SECTION 5: FILE RENAME CONSIDERATION
+## SECTION 5: FILE RENAME (CONFIRMED)
 
-If Alicia wants to rename the file `htma-consulting.html`:
+**Decision:** File WILL be renamed. Navigation text will use "Services" or "Ongoing Services".
 
 **Current:** `/services/htma-consulting.html`
-**Options:**
-- `/services/htma-wellness.html`
-- `/services/htma-support.html`
-- `/services/htma-services.html`
+**New name options:**
+- `/services/ongoing-services.html`
+- `/services/services.html`
+- Other: _______________
 
-**Impact if renamed:**
-- Need to update links in 15+ HTML files
-- Set up 301 redirect from old URL
-- Update Google Search Console
-- May temporarily affect SEO
-
-**Recommendation:** Keep filename as-is for now, just update displayed text.
+**Implementation steps when ready:**
+1. Rename the file
+2. Update links in 15+ HTML files
+3. Set up 301 redirect in `netlify.toml` from old URL
+4. Update Google Search Console after deploy
 
 ---
 
@@ -201,9 +199,7 @@ These are in internal files (tasks, session notes, drafts) and don't affect user
 
 ---
 
-## ALICIA'S DECISIONS NEEDED
-
-Please review and fill in your preferences:
+## ALICIA'S DECISIONS
 
 ### 1. Replacement for "coach/coaching"
 - [ ] **support** (e.g., "1:1 support sessions")
@@ -216,25 +212,33 @@ Please review and fill in your preferences:
 - [ ] Other: _______________
 
 ### 3. Replacement for "consulting" in navigation
+- [ ] **Services** ← SELECTED (nav text will say "Services" or "Ongoing Services")
 - [ ] **HTMA + Wellness**
 - [ ] **HTMA + Support**
-- [ ] **HTMA Services**
 - [ ] Other: _______________
 
+**Clarification needed:** Prefer "Services" or "Ongoing Services" for navigation text?
+
 ### 4. Your title (replacing "Wellness Mentor")
-- [ ] **Wellness Practitioner**
-- [ ] **Holistic Practitioner**
-- [ ] **Wellness Provider**
-- [ ] Other: _______________
+- [x] **Wellness Practitioner** ← SELECTED
 
 ### 5. Legal pages
 - [ ] Update legal pages with same terminology
 - [ ] Keep legal pages as-is (consult attorney first)
-- [ ] Other: _______________
+- [ ] **Pending decision** - will add notes below
+
+**Alicia's notes on legal pages:**
+_[Add notes here]_
 
 ### 6. File rename
-- [ ] Keep filename `htma-consulting.html` (recommended)
-- [ ] Rename to: _______________
+- [x] **YES - Rename file** ← SELECTED
+- Current: `/services/htma-consulting.html`
+- New name options:
+  - `/services/ongoing-services.html`
+  - `/services/services.html`
+  - Other: _______________
+
+**Clarification needed:** What should the new filename be?
 
 ---
 
