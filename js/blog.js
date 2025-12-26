@@ -304,7 +304,7 @@ Women who learn these foundations before pregnancy often feel more grounded, mor
 
 Preconception care does not need to be overwhelming. It's about reconnecting with the rhythms your physiology is already built upon and nourishing your body with intention.
 
-If you want personalized support during preconception, pregnancy, or postpartum, the Mama Mentorship and Lab Review Services at Intention Holistic Health provide individualized guidance to honor your body's physiology and your season of life.
+If you want personalized support during preconception, pregnancy, or postpartum, the Intentional Mama Programs and Lab Review Services at Intention Holistic Health provide individualized guidance to honor your body's physiology and your season of life.
 
 Your body is the first home your baby will ever know. Caring for it with intention is an act of love that extends far beyond pregnancy — shaping the health of generations to come.
 
@@ -440,7 +440,7 @@ Intention Holistic Health
 
 You might wonder about the connection between your digestive system and PCOS, but this relationship proves crucial for reclaiming vitality when managing this condition.
 
-As a nurse practitioner and health coach, I've witnessed how prioritizing digestive wellness transforms PCOS symptom management and overall health. Let's explore why this matters.
+As a nurse practitioner and wellness practitioner, I've witnessed how prioritizing digestive wellness transforms PCOS symptom management and overall health. Let's explore why this matters.
 
 ## The Gut-PCOS Connection
 
@@ -498,7 +498,7 @@ Your digestive system isn't isolated; it's intricately connected to overall heal
 
 ## Closing Thoughts
 
-If ready to deepen your digestive wellness journey while managing PCOS, reach out for personalized one-on-one coaching at Intention Holistic Health. We'll explore strategies resonating with your unique body and goals.
+If ready to deepen your digestive wellness journey while managing PCOS, reach out for personalized one-on-one support at Intention Holistic Health. We'll explore strategies resonating with your unique body and goals.
 
 With love and digestive-healing energy,
 

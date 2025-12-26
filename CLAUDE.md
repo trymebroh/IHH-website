@@ -101,7 +101,7 @@ When adding new content to the site, **always ask about style preferences** befo
 |--------------------|---------|
 | HTMA, mineral testing, hair analysis | `/htma.html` (What is HTMA?) |
 | Lab work, blood tests, "normal" results | `/services/lab-review.html` |
-| Wellness consulting, hormone support | `/services/htma-consulting.html` |
+| Wellness support, hormone support | `/services/services.html` |
 | Getting started, booking | `/apply.html` or `/contact.html` |
 
 **When to suggest links:**

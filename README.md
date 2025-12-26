@@ -18,7 +18,7 @@ A custom-built website for Intention Holistic Health PLLC - a holistic wellness 
 ├── about.html              # About page
 ├── contact.html            # Contact page
 ├── services/
-│   ├── htma-consulting.html    # HTMA + Consulting services
+│   ├── services.html           # Services (HTMA + Wellness)
 │   └── lab-review.html         # Lab Review service
 ├── blog/
 │   ├── index.html          # Blog listing page

@@ -199,57 +199,38 @@ These are in internal files (tasks, session notes, drafts) and don't affect user
 
 ---
 
-## ALICIA'S DECISIONS
+## IMPLEMENTATION STATUS: COMPLETED
+
+**Date Implemented:** December 25, 2025
 
 ### 1. Replacement for "coach/coaching"
-- [ ] **support** (e.g., "1:1 support sessions")
-- [ ] **guidance** (e.g., "1:1 guidance sessions")
-- [ ] Other: _______________
+- [x] **support** - IMPLEMENTED
 
 ### 2. Replacement for "mentor/mentorship"
-- [ ] **program** (e.g., "Intention Signature Program")
-- [ ] **journey** (e.g., "Intention Signature Journey")
-- [ ] Other: _______________
+- [x] **program** (e.g., "Intention Signature Program") - IMPLEMENTED
+- [x] **Intentional Mama Programs** for blog reference - IMPLEMENTED
 
 ### 3. Replacement for "consulting" in navigation
-- [ ] **Services** ← SELECTED (nav text will say "Services" or "Ongoing Services")
-- [ ] **HTMA + Wellness**
-- [ ] **HTMA + Support**
-- [ ] Other: _______________
-
-**Clarification needed:** Prefer "Services" or "Ongoing Services" for navigation text?
+- [x] **Services** - IMPLEMENTED
+- File renamed to `/services/services.html`
+- 301 redirect configured in netlify.toml
 
 ### 4. Your title (replacing "Wellness Mentor")
-- [x] **Wellness Practitioner** ← SELECTED
+- [x] **Wellness Practitioner** - IMPLEMENTED
 
 ### 5. Legal pages
-- [ ] Update legal pages with same terminology
-- [ ] Keep legal pages as-is (consult attorney first)
-- [ ] **Pending decision** - will add notes below
-
-**Alicia's notes on legal pages:**
-_[Add notes here]_
+- [ ] **Pending attorney review** - see `/tasks/legal-attorney-review.md`
 
 ### 6. File rename
-- [x] **YES - Rename file** ← SELECTED
-- Current: `/services/htma-consulting.html`
-- New name options:
-  - `/services/ongoing-services.html`
-  - `/services/services.html`
-  - Other: _______________
-
-**Clarification needed:** What should the new filename be?
+- [x] **COMPLETED**: `/services/htma-consulting.html` → `/services/services.html`
 
 ---
 
-## TOTAL COUNT
+## SUMMARY
 
-| Term | User-Facing Instances | Legal Page Instances | Internal Doc Instances |
-|------|----------------------|---------------------|----------------------|
-| coach/coaching | ~10 | ~8 | ~5 |
-| mentor/mentorship | ~15 | 0 | ~10 |
-| consult/consulting | ~25 (incl. nav) | ~2 | ~15 |
-
----
-
-*Once Alicia provides her preferences, Claude will implement all changes across the site.*
+| Term | Status |
+|------|--------|
+| coach/coaching | ✅ Replaced with "support" |
+| mentor/mentorship | ✅ Replaced with "program/practitioner" |
+| consult/consulting | ✅ Replaced with "support/services" |
+| Legal pages | ⏳ Pending attorney review |

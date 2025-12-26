@@ -57,7 +57,7 @@ Rebuild the Intention Holistic Health website (currently on Kajabi) to a custom 
 
 ### Services
 1. **Intention Mineral Insight Package** - $398 (HTMA + consultation)
-2. **Intention Signature Mentorship** - 6 or 12-month comprehensive program
+2. **Intention Signature Program** - 6 or 12-month comprehensive program
 3. **Functional Lab Review** - $298 (40-min review session)
 4. **Intention Foundations** - Coming soon (self-paced course)
 
@@ -126,11 +126,11 @@ Rebuild the Intention Holistic Health website (currently on Kajabi) to a custom 
 
 ## Phase 4: Service Pages
 
-### 4.1 HTMA + Consulting (services/htma-consulting.html)
+### 4.1 Services (services/services.html)
 - [ ] Page structure with SEO
 - [ ] Hero/intro section
 - [ ] Intention Mineral Insight Package details ($398)
-- [ ] Intention Signature Mentorship details (6/12 month)
+- [ ] Intention Signature Program details (6/12 month)
 - [ ] Intention Foundations (coming soon/waitlist)
 - [ ] "What's Included" sections
 - [ ] FAQ section
