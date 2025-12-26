@@ -2906,6 +2906,10 @@
   font-weight: 400;
 }
 
+.v3-section-title-italic {
+  font-style: italic;
+}
+
 /* Empathy Section (under hero) */
 .v3-empathy {
   padding: var(--spacing-2xl) 0;
