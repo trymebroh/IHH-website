@@ -1858,6 +1858,16 @@ p {
   background-color: var(--color-light-cream);
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-sm);
+  cursor: help;
+}
+
+.credentials-expanded {
+  margin-top: var(--spacing-sm);
+  color: var(--color-medium-gray);
+}
+
+.credentials-expanded small {
+  font-size: var(--font-size-xs);
 }
 
 /* About CTA Section */
