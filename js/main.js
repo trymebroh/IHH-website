@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (params.get('success') === 'true') {
       message = 'Thank you! Your message has been sent successfully.';
+    } else if (params.get('success') === 'application') {
+      message = 'Thank you! Your application has been submitted. We\'ll be in touch soon!';
     } else if (params.get('subscribed') === 'true') {
       message = 'Thank you for subscribing! Check your inbox for updates.';
     }
