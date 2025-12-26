@@ -1,14 +1,40 @@
-# Terminology Review: "Mentorship" and "Consulting"
+# Terminology Review: Prohibited Words
 
 **Created:** December 24, 2025
+**Updated:** December 25, 2025
 **Status:** Awaiting Alicia's review
-**Priority:** Medium
+**Priority:** HIGH
+
+---
+
+## Prohibited Words List
+
+The following words/phrases should NOT be used on the website for compliance reasons:
+
+| Prohibited Term | Suggested Replacements |
+|-----------------|------------------------|
+| **coach** | practitioner, provider, guide |
+| **mentor / mentorship** | program, journey, support |
+| **consult / consulting** | support, services, guidance |
+
+### Results/Outcomes Language to Avoid
+
+The following phrases should be avoided to prevent misleading claims:
+
+| Avoid | Use Instead |
+|-------|-------------|
+| "will get pregnant" | "support your body in preparing for pregnancy" |
+| "guarantee results" | "results may vary" |
+| "ensure conception" | "optimize your wellness for conception" |
+| "you will conceive" | "support your preconception journey" |
+
+**Note:** Legal pages already include "No Guarantee of Results" (terms.html) and "No Outcome Guarantees" (disclaimer.html) sections.
 
 ---
 
 ## Overview
 
-This document lists all instances of "mentorship" and "consulting" across the website, with suggested replacements for Alicia to review and approve.
+This document lists all instances of prohibited terminology across the website, with suggested replacements for Alicia to review and approve.
 
 ---
 
@@ -130,6 +156,30 @@ These files would need to be renamed if changing terminology:
 - [ ] Rename files? (Yes/No) → _______________
 - [ ] Update navigation text to? → _______________
 - [ ] Any terms to keep as-is? → _______________
+
+---
+
+## "COACH/COACHING" Occurrences (15+ instances)
+
+### User-Facing Content
+
+| File | Current Text | Suggested Replacement |
+|------|--------------|----------------------|
+| `js/blog.js` | "nurse practitioner and health coach" | "nurse practitioner and wellness practitioner" |
+| `js/blog.js` | "personalized one-on-one coaching" | "personalized one-on-one support" |
+| `contact.html` | "non-clinical coaching and educational services" | "non-clinical wellness support and educational services" |
+| `apply.html` | "Non-clinical coaching is available everywhere" | "Non-clinical wellness support is available everywhere" |
+| `services/htma-consulting.html` | "1:1 coaching, and low-tox living guidance" | "1:1 support, and low-tox living guidance" |
+| `services/htma-consulting.html` | "Ongoing 1:1 coaching sessions" | "Ongoing 1:1 support sessions" |
+| `services/htma-consulting.html` | "non-clinical coaching and educational programs" | "non-clinical wellness programs" |
+
+### Legal Pages (may need legal review before changing)
+
+| File | Current Text | Notes |
+|------|--------------|-------|
+| `legal/privacy.html` | "Coaching Services", "coaching services" | 4 occurrences - legal language |
+| `legal/terms.html` | "Health coaching", "coaching" | 3 occurrences - legal language |
+| `legal/disclaimer.html` | "Health Coaching Distinction", "coaching offerings" | Section heading + content |
 
 ---
 
