@@ -2897,10 +2897,10 @@
    V3 HTMA CONSULTING - REDESIGN STYLES
    ----------------------------------------- */
 
-/* Section Title - All Caps, Italic, Playfair Display */
+/* Section Title - All Caps, Playfair Display (not italic) */
 .v3-section-title {
   font-family: var(--font-heading);
-  font-style: italic;
+  font-style: normal;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 400;
