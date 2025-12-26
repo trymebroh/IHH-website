@@ -58,6 +58,51 @@ document.addEventListener('DOMContentLoaded', function() {
   })();
 
   // -----------------------------------------
+  // PORTAL REDIRECT OVERLAY
+  // -----------------------------------------
+  (function() {
+    var PORTAL_URL = 'https://my.practicebetter.io/#/65f9b5add14abe8b539487a6/forms?f=661efbf14a1d3d6613c89cf0';
+    var REDIRECT_DELAY = 1500; // 1.5 seconds
+
+    // Find all portal links (with data-portal attribute)
+    var portalLinks = document.querySelectorAll('[data-portal]');
+
+    portalLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Create overlay
+        var overlay = document.createElement('div');
+        overlay.className = 'portal-redirect-overlay';
+        overlay.innerHTML =
+          '<div class="portal-redirect-content">' +
+            '<img src="/images/logo.webp" alt="Intention Holistic Health" class="portal-redirect-logo">' +
+            '<h2 class="portal-redirect-title">Continuing to Secure Portal</h2>' +
+            '<div class="portal-redirect-dots"><span></span><span></span><span></span></div>' +
+            '<div class="portal-redirect-badge">' +
+              '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+                '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>' +
+              '</svg>' +
+              '<span>HIPAA Compliant & Secure</span>' +
+            '</div>' +
+          '</div>';
+
+        document.body.appendChild(overlay);
+
+        // Trigger animation
+        setTimeout(function() {
+          overlay.classList.add('active');
+        }, 10);
+
+        // Redirect after delay
+        setTimeout(function() {
+          window.location.href = PORTAL_URL;
+        }, REDIRECT_DELAY);
+      });
+    });
+  })();
+
+  // -----------------------------------------
   // MOBILE MENU TOGGLE
   // -----------------------------------------
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
