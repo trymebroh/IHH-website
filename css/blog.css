@@ -72,11 +72,16 @@
 .blog-card-image-link {
   display: block;
   overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%; /* Default 16:9, can be overridden inline */
 }
 
 .blog-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
   transition: transform var(--transition-base);
 }
@@ -216,10 +221,17 @@
 
 .post-meta {
   display: flex;
-  gap: var(--spacing-md);
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
   font-size: var(--font-size-sm);
   color: var(--color-medium-gray);
   margin-bottom: var(--spacing-sm);
+}
+
+.post-author {
+  text-align: right;
 }
 
 .post-title {
@@ -235,6 +247,7 @@
 
 /* Featured Image - uses padding-bottom technique for reliable aspect ratio */
 .post-featured-image {
+  --image-aspect-ratio: 56.25%; /* Default 16:9, can be overridden via JS */
   position: relative;
   max-width: 900px;
   margin: 0 auto;
@@ -246,8 +259,8 @@
 .post-featured-image::before {
   content: '';
   display: block;
-  /* 16:9 aspect ratio = 9/16 = 56.25% */
-  padding-bottom: 56.25%;
+  /* Uses CSS variable for flexible aspect ratios */
+  padding-bottom: var(--image-aspect-ratio);
 }
 
 @media (min-width: 768px) {

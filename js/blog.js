@@ -13,6 +13,8 @@ const BLOG_POSTS = [
     author: 'Alicia Harrison, MSN, APRN, FNP-C',
     excerpt: 'The holidays tend to bring a lot to the surface. Not because anyone is doing something wrong — but because life gets fuller all at once.',
     image: '/images/blog/holiday-wellness.webp',
+    cardAspectRatio: '56.22%',    // 900x506 image
+    imageAspectRatio: '56.22%',
     categories: ['wellness', 'foundations'],
     content: `
 # Holiday Wellness for Women: Staying Grounded Without Extremes
@@ -124,6 +126,8 @@ Intention Holistic Health provides educational wellness guidance and, where appl
     author: 'Alicia Harrison, MSN, APRN, FNP-C',
     excerpt: 'My personal story, not medical advice. Preparing for an unmedicated birth wasn\'t about perfection—it was about intention.',
     image: '/images/blog/unmedicated-birth-new.webp',
+    cardAspectRatio: '56.27%',    // 949x534 image
+    imageAspectRatio: '56.27%',
     categories: ['preconception'],
     content: `
 # How I Prepared for an Unmedicated Birth
@@ -254,6 +258,8 @@ Alicia
     author: 'Alicia Harrison, MSN, APRN, FNP-C',
     excerpt: 'You don\'t need perfection to prepare for pregnancy — you need foundations.',
     image: '/images/blog/body-first-home-new.webp',
+    cardAspectRatio: '56.22%',    // 900x506 image
+    imageAspectRatio: '56.22%',
     categories: ['preconception', 'foundations'],
     content: `
 # Your Body Is the First Home: Returning to the Foundations That Support Fertility and Pregnancy Health
@@ -363,6 +369,8 @@ Alicia
     author: 'Alicia Harrison, MSN, APRN, FNP-C',
     excerpt: 'Women with PCOS experience anxiety and depression 3x more often than women without the condition. Let\'s talk about practical ways to support your mental health.',
     image: '/images/blog/mental-health-pcos.webp',
+    cardAspectRatio: '56.27%',    // 949x534 image
+    imageAspectRatio: '56.27%',
     categories: ['pcos', 'wellness'],
     content: `
 # May is Mental Health Awareness Month
@@ -438,7 +446,8 @@ Want more tips? Download the complimentary **Holistic Habits Checklist** for add
     author: 'Alicia Harrison, MSN, APRN, FNP-C',
     excerpt: 'Looking for a delicious and nutritious way to start your day? This smoothie bowl is packed with fiber, protein, and gut-friendly ingredients.',
     image: '/images/blog/smoothie-bowl-cropped.webp',
-    cardImageStyle: 'object-position: left center;',
+    cardAspectRatio: '83.33%',    // 600x500 image (nearly square)
+    imageAspectRatio: '83.33%',   // Match on single post page
     categories: ['recipes', 'breakfast', 'pcos'],
     content: `
 # Recipe: Probiotic-Rich Smoothie Bowl
@@ -503,6 +512,8 @@ Intention Holistic Health
     author: 'Alicia Harrison, MSN, APRN, FNP-C',
     excerpt: 'The trillions of microorganisms in your gut play crucial roles in hormone regulation and inflammation control. Understanding this connection is key to managing PCOS.',
     image: '/images/blog/gut-health-pcos-new.webp',
+    cardAspectRatio: '56.27%',    // 949x534 image
+    imageAspectRatio: '56.27%',
     categories: ['pcos', 'foundations'],
     content: `
 # Gut Health and PCOS: The Missing Piece of the Puzzle
@@ -601,6 +612,8 @@ Clinical services at Intention Holistic Health PLLC serve Kentucky residents onl
     author: 'Alicia Harrison, MSN, APRN, FNP-C',
     excerpt: 'An all-time-favorite snack: granola that is both delicious and packed with hormone-friendly ingredients to support health and wellbeing from the inside out.',
     image: '/images/blog/granola.webp',
+    cardAspectRatio: '56.22%',    // 900x506 image
+    imageAspectRatio: '56.22%',
     categories: ['recipes', 'breakfast', 'pcos'],
     content: `
 # Recipe: Hormone-Friendly Granola
@@ -677,6 +690,9 @@ Intention Holistic Health
 function parseMarkdown(markdown) {
   let html = markdown;
 
+  // Strip leading H1 (title is already displayed by the template)
+  html = html.replace(/^\s*#\s+[^\n]+\n*/m, '');
+
   // Headers
   html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
   html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
@@ -741,11 +757,14 @@ function renderBlogListing() {
   let html = '';
   sortedPosts.forEach(function(post, index) {
     const cardImgStyle = post.cardImageStyle ? ` style="${post.cardImageStyle}"` : '';
+    // Support custom aspect ratio per post (default 16:9 = 56.25%)
+    const aspectRatio = post.cardAspectRatio || '56.25%';
+    const linkStyle = ` style="padding-bottom: ${aspectRatio};"`;
     // First image is LCP - use fetchpriority="high" instead of lazy loading
     const imgLoadAttr = index === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
     html += `
       <article class="blog-card">
-        <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link">
+        <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link"${linkStyle}>
           <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" ${imgLoadAttr}${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
         </a>
         <div class="blog-card-body">
@@ -795,11 +814,14 @@ function setupCategoryFiltering(posts) {
         let html = '';
         filteredPosts.forEach(function(post, index) {
           const cardImgStyle = post.cardImageStyle ? ` style="${post.cardImageStyle}"` : '';
+          // Support custom aspect ratio per post (default 16:9 = 56.25%)
+          const aspectRatio = post.cardAspectRatio || '56.25%';
+          const linkStyle = ` style="padding-bottom: ${aspectRatio};"`;
           // First image gets priority loading
           const imgLoadAttr = index === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
           html += `
             <article class="blog-card">
-              <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link">
+              <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link"${linkStyle}>
                 <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" ${imgLoadAttr}${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
               </a>
               <div class="blog-card-body">
@@ -872,6 +894,10 @@ function renderSinglePost() {
   const postImage = document.getElementById('post-image');
   if (postImage) {
     const customStyle = post.imageStyle ? ` style="${post.imageStyle}"` : '';
+    // Support custom aspect ratio for featured image (default 16:9 = 56.25%)
+    if (post.imageAspectRatio) {
+      postImage.style.setProperty('--image-aspect-ratio', post.imageAspectRatio);
+    }
     postImage.innerHTML = `<img src="${post.image}" alt="${post.title}" width="1280" height="720" fetchpriority="high"${customStyle} onerror="this.parentElement.style.display='none'">`;
   }
 

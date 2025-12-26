@@ -483,12 +483,42 @@ When creating any new page, verify:
 ```
 [ ] Post added to blog.js posts array
 [ ] Featured image optimized (<200KB WebP)
+[ ] Image dimensions checked and aspect ratio set (see below)
 [ ] Categories assigned
 [ ] Internal links to relevant service pages
 [ ] Disclaimer at end of post
 [ ] No prohibited terminology
 [ ] Image in /images/blog/ folder
 ```
+
+### Blog Image Aspect Ratios
+
+**Always check image dimensions** when adding a new blog post and set appropriate aspect ratios:
+
+```bash
+identify -format '%wx%h' /path/to/image.webp
+```
+
+Calculate aspect ratio: `height / width * 100%`
+
+| Aspect Ratio | Percentage | When to Use |
+|--------------|------------|-------------|
+| 16:9 | 56.25% | Default - most landscape images |
+| 3:2 | 66.67% | Standard photo format |
+| 4:3 | 75% | Classic/square-ish |
+| 1:1 | 100% | Square images |
+
+**Add to blog post object in blog.js:**
+```javascript
+{
+  slug: 'post-slug',
+  // ... other properties
+  cardAspectRatio: '75%',      // For blog listing cards
+  imageAspectRatio: '75%',     // For featured image on post page
+}
+```
+
+**Note:** Only add these properties if the image differs from 16:9. The default (56.25%) is used automatically if not specified.
 
 ### Content Revision Checklist
 
