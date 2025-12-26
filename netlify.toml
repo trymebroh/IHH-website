@@ -37,6 +37,11 @@
     Cache-Control = "public, max-age=3600, must-revalidate"
 
 [[redirects]]
+  from = "/services/htma-consulting.html"
+  to = "/services/services.html"
+  status = 301
+
+[[redirects]]
   from = "/blog/posts/*"
   to = "/blog/post.html"
   status = 200
