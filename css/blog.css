@@ -238,14 +238,25 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 0 var(--container-padding-mobile);
-  /* Reserve space for image to prevent CLS */
-  aspect-ratio: 16 / 9;
   margin-top: calc(-1 * var(--spacing-lg));
+  /* Reserve space for 16:9 image to prevent CLS */
+  /* Calculate height based on container width minus padding */
+  min-height: calc((100vw - 2 * var(--container-padding-mobile)) * 9 / 16);
+  max-height: calc(900px * 9 / 16); /* Cap at max-width aspect ratio */
+  background-color: var(--color-light-cream); /* Placeholder color */
 }
 
 @media (min-width: 768px) {
   .post-featured-image {
     padding: 0 var(--container-padding-desktop);
+    min-height: calc((100vw - 2 * var(--container-padding-desktop)) * 9 / 16);
+  }
+}
+
+@media (min-width: 932px) {
+  .post-featured-image {
+    /* At max-width, height is fixed */
+    min-height: calc((900px - 2 * var(--container-padding-desktop)) * 9 / 16);
   }
 }
 
@@ -261,6 +272,8 @@
 .post-content {
   max-width: 700px;
   margin: 0 auto;
+  /* Reserve minimum space to reduce CLS when JS loads content */
+  min-height: 50vh;
 }
 
 .post-content h2 {
