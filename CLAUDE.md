@@ -364,7 +364,10 @@ Currently blocked directories:
 - `/archive/` - Archived pages
 - `/tasks/` - Internal task files
 - `/session-notes/` - Session documentation
-- `/blog/post.html` - Template files (actual posts are dynamic)
+
+Explicitly allowed (for JS-rendered content):
+- `/blog/post.html` - Blog post template (Googlebot renders JS)
+- `/blog/post-superior.html` - Full-width blog post template
 
 ---
 
@@ -433,6 +436,22 @@ Avoid definitive claims. Use qualifying language:
 
 Legal pages (`/legal/*.html`) require attorney review before changes.
 See `/tasks/legal-attorney-review.md` for pending items.
+
+### External Links (Global Rule)
+
+**ALL external links MUST open in a new tab.** This is a non-negotiable requirement.
+
+When adding any link that goes to an external website:
+1. Add `target="_blank"` to open in new tab
+2. Add `rel="noopener noreferrer"` for security
+3. This applies to blog posts, service pages, footer links, and all content
+
+**Example:**
+```html
+<a href="https://example.com" target="_blank" rel="noopener noreferrer">External Link</a>
+```
+
+**In blog.js markdown:** External links are automatically detected and rendered with proper attributes. Any link starting with `http://` or `https://` will get `target="_blank" rel="noopener noreferrer"` added automatically.
 
 ---
 

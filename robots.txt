@@ -10,9 +10,10 @@ Disallow: /archive/
 Disallow: /tasks/
 Disallow: /session-notes/
 
-# Disallow template files (content loaded dynamically)
-Disallow: /blog/post.html
-Disallow: /blog/post-superior.html
+# Allow blog posts (content loaded dynamically via JavaScript)
+# Googlebot renders JS and can index the full content
+Allow: /blog/post.html
+Allow: /blog/post-superior.html
 
 # Sitemap location
 Sitemap: https://www.intentionholistichealth.com/sitemap.xml

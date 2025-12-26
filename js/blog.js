@@ -101,7 +101,21 @@ Alicia
 
 Any individuals depicted in images on this website or associated content are models or stock photography subjects and are not patients, clients, or recipients of services from Intention Holistic Health. Images are used for illustrative purposes only and do not represent clinical relationships, medical outcomes, or specific health conditions.
 
-Intention Holistic Health provides educational wellness guidance and, where applicable, Kentucky-based nurse practitioner services within scope and licensure.`
+Intention Holistic Health provides educational wellness guidance and, where applicable, Kentucky-based nurse practitioner services within scope and licensure.`,
+    faqs: [
+      {
+        question: "How can I maintain my health goals during the holidays?",
+        answer: "Focus on choosing a few simple anchors—familiar habits that help your body feel steady even when schedules are unpredictable. An anchor might be eating a nourishing breakfast most mornings, drinking water consistently before noon, or keeping a familiar bedtime window when possible. You don't need many—one or two is enough."
+      },
+      {
+        question: "How do I handle food guilt during holiday gatherings?",
+        answer: "There is no moral scorecard attached to what you eat. Enjoying holiday food doesn't mean you've stepped away from your health. Try to eat regularly throughout the day rather than skipping meals to 'balance things out' later, and return to familiar foods the next day without compensating or 'resetting.'"
+      },
+      {
+        question: "What's the most important wellness habit to maintain during busy seasons?",
+        answer: "Rest is one of the most impactful habits to protect. Sleep directly influences fertility, cortisol rhythms, metabolic health, and emotional wellbeing. Small efforts still matter—try keeping wake times similar from day to day, getting morning light exposure, and creating a simple wind-down cue before bed."
+      }
+    ]
   },
   {
     slug: '2024-12-01-unmedicated-birth',
@@ -124,7 +138,7 @@ Below are some ways I prepped physically, emotionally, and spiritually for birth
 
 ## 1. A Birthing Class Designed for an Unmedicated Birth
 
-There are countless birthing classes out there, but I intentionally chose one that aligned with my goal of an unmedicated labor—Birthing Naturally (DFW).
+There are countless birthing classes out there, but I intentionally chose one that aligned with my goal of an unmedicated labor—[Birthing Naturally](https://www.birthingnaturallydfw.com/) (DFW).
 
 This multi-week course was incredibly valuable for me, but also for my husband. It helped us better understand:
 
@@ -147,7 +161,7 @@ I wasn't chasing fitness goals—I was nurturing a body that would sustain me th
 
 ## 3. Pelvic Floor Therapy: Creating Space & Strength
 
-One of the most impactful things I did throughout pregnancy was pelvic floor therapy (shoutout to My Fit Pelvis- McKinney).
+One of the most impactful things I did throughout pregnancy was pelvic floor therapy (shoutout to [The Fit Pelvis](https://www.thefitpelvis.com/) - McKinney).
 
 Working with a pelvic floor therapist helped me understand what true relaxation feels like (which is just as important as strength). I learned how my breathing patterns influence pelvic floor mobility, practiced positions to create more space in the pelvis, and gained tools that made the pushing stage feel more instinctive and effective. I learned how to work with my body instead of against it.
 
@@ -155,19 +169,19 @@ I also received valuable feedback about areas of weakness and tension in the pel
 
 ## 4. Meditation & Mental Preparation
 
-Like I mentioned earlier, so much of labor is mental. It's fascinating the effects that our minds have on the physical processes of labor and delivery. In her book *Hypnobirthing: Practical Ways to Make Your Birth Better*, Siobhan Miller walks readers through the physiological ramifications of fear on pelvic floor tension and hormone secretion during labor. Reading the details of that process further encouraged me to mentally prepare for birth. Here are a few tools that helped me do this:
+Like I mentioned earlier, so much of labor is mental. It's fascinating the effects that our minds have on the physical processes of labor and delivery. In her book [*Hypnobirthing: Practical Ways to Make Your Birth Better*](https://www.amazon.com/Hypnobirthing-Practical-Ways-Birth-Better/dp/0349419388), Siobhan Miller walks readers through the physiological ramifications of fear on pelvic floor tension and hormone secretion during labor. Reading the details of that process further encouraged me to mentally prepare for birth. Here are a few tools that helped me do this:
 
 ### Hypnobabies Course
 
-I completed the Hypnobabies program during pregnancy, which taught me hypnosis-based relaxation techniques and scripts that supported comfort and calm. These tools became a huge part of my mental preparation, and became part of my nightly routine that helped with my sleep the last month of pregnancy.
+I completed the [Hypnobabies](https://www.hypnobabies.com/) program during pregnancy, which taught me hypnosis-based relaxation techniques and scripts that supported comfort and calm. These tools became a huge part of my mental preparation, and became part of my nightly routine that helped with my sleep the last month of pregnancy.
 
 ### Christian Hypnobirthing (Used During Labor)
 
-During labor, I used the Christian Hypnobirthing tracks, which grounded me in Scripture, truth, and peace. Hearing affirmations rooted in God's design for birth helped quiet fear and helped me lean fully into the process.
+During labor, I used the [Christian Hypnobirthing](https://www.christianhypnobirthing.com/) tracks, which grounded me in Scripture, truth, and peace. Hearing affirmations rooted in God's design for birth helped quiet fear and helped me lean fully into the process.
 
 ### Headspace Pregnancy & Labor Meditations
 
-I also used Headspace Pregnancy and Labor meditations. They helped me practice mindful breathing, body awareness, and surrender—skills that translated beautifully into labor.
+I also used [Headspace](https://www.headspace.com/) Pregnancy and Labor meditations. They helped me practice mindful breathing, body awareness, and surrender—skills that translated beautifully into labor.
 
 These practices didn't remove intensity. But they reframed it and helped me stay anchored through each wave.
 
@@ -189,7 +203,7 @@ Throughout pregnancy, I focused on nutrient-dense meals and specifically increas
 - Choline-rich foods — eggs, salmon, beef
 - Potassium-rich foods — bananas, potatoes, coconut water, leafy greens
 
-I also incorporated plenty of whole foods, electrolytes, a high-quality prenatal, and simple meals that were easy to digest as I moved closer to my due date. These weren't strict rules—just intentional choices that helped me feel nourished and supported as my due date approached. *Nine Golden Months* was a great resource for recipes and education as it relates to diet during pregnancy too.
+I also incorporated plenty of whole foods, electrolytes, a high-quality prenatal, and simple meals that were easy to digest as I moved closer to my due date. These weren't strict rules—just intentional choices that helped me feel nourished and supported as my due date approached. [*Nine Golden Months*](https://www.amazon.com/Nine-Golden-Months-Mother-Be/dp/1419751484) was a great resource for recipes and education as it relates to diet during pregnancy too.
 
 ## Every Woman's Path is Different
 
@@ -217,7 +231,21 @@ All my love,
 
 Alicia
     `,
-    disclaimer: `This blog is for informational and educational purposes only. It reflects my personal experience and is not medical advice or a substitute for individualized care. Always consult a qualified healthcare provider before making decisions about pregnancy, labor, or medical care.`
+    disclaimer: `This blog is for informational and educational purposes only. It reflects my personal experience and is not medical advice or a substitute for individualized care. Always consult a qualified healthcare provider before making decisions about pregnancy, labor, or medical care.`,
+    faqs: [
+      {
+        question: "Is it possible to have an unmedicated birth?",
+        answer: "Yes, many women have unmedicated births. Every woman's pregnancy, preferences, and medical needs are different, and no two birth stories look the same. With proper preparation—physical, mental, and spiritual—many women find they can work with their body through labor using relaxation techniques, breathing, and support from their birth team."
+      },
+      {
+        question: "How important is mental preparation for labor?",
+        answer: "Mental preparation is crucial. So much of labor is mental—our minds have fascinating effects on the physical processes of labor and delivery. Fear can increase pelvic floor tension and affect hormone secretion during labor. Tools like hypnobirthing, meditation, and Scripture can help quiet fear and help you lean into the process."
+      },
+      {
+        question: "Do I need a special class for unmedicated birth?",
+        answer: "While not required, taking a class designed specifically for unmedicated birth can be incredibly valuable. These classes teach what's physiologically happening during labor, mental techniques, natural pain management tools, and ways your partner can support you. They also help build confidence that your body knows what to do."
+      }
+    ]
   },
   {
     slug: '2024-11-15-body-first-home',
@@ -312,7 +340,21 @@ With love + intention,
 
 Alicia
     `,
-    disclaimer: `This article is for educational purposes only and is not medical advice. It does not establish a provider–patient relationship. Always consult your healthcare provider for guidance about your personal health. Clinical services at Intention Holistic Health PLLC are available only to Kentucky residents.`
+    disclaimer: `This article is for educational purposes only and is not medical advice. It does not establish a provider–patient relationship. Always consult your healthcare provider for guidance about your personal health. Clinical services at Intention Holistic Health PLLC are available only to Kentucky residents.`,
+    faqs: [
+      {
+        question: "How long before trying to conceive should I start preparing?",
+        answer: "Ideally, begin preconception preparation 3-6 months before trying to conceive. This gives time for egg maturation (which takes about 90 days), allows you to replenish nutrient stores, establish healthy habits, and begin a prenatal vitamin. Neural tube development occurs within the first 3-4 weeks of pregnancy—often before a woman knows she's pregnant—so early preparation is valuable."
+      },
+      {
+        question: "Is it too late to start preconception care?",
+        answer: "It's never too late to start. While 3-6 months is ideal, any amount of preparation is beneficial. The foundations discussed—nourishment, mineral replenishment, movement, nervous system regulation, reducing harmful exposures, and prenatal vitamins—support not just fertility but lifelong hormone health and generational wellness."
+      },
+      {
+        question: "Do I need special supplements for preconception?",
+        answer: "At minimum, begin a prenatal vitamin with methylated folate (5-MTHF) before conceiving. Up to 40% of the population doesn't efficiently convert synthetic folic acid. High-quality formulas include methylated folate, choline, minerals, and omega-3 fatty acids. HTMA testing can also help identify individual mineral needs."
+      }
+    ]
   },
   {
     slug: '2024-05-15-mental-health-pcos',
@@ -373,7 +415,21 @@ If you're struggling with PCOS and mental health, please reach out—to a profes
 
 Want more tips? Download the complimentary **Holistic Habits Checklist** for additional wellness strategies focused on mood support and brain health.
     `,
-    disclaimer: `The information provided in this blog is for educational and informational purposes only and is not intended to serve as medical advice, diagnosis, or treatment. Health decisions require partnership with licensed providers familiar with individual circumstances. Clinical services are available exclusively to Kentucky residents through formal provider-patient relationships.`
+    disclaimer: `The information provided in this blog is for educational and informational purposes only and is not intended to serve as medical advice, diagnosis, or treatment. Health decisions require partnership with licensed providers familiar with individual circumstances. Clinical services are available exclusively to Kentucky residents through formal provider-patient relationships.`,
+    faqs: [
+      {
+        question: "Why is mental health more challenging with PCOS?",
+        answer: "Women with PCOS face an 8.5x higher risk of suicide attempt and experience anxiety and depression 3x more often than women without PCOS. This is connected to the gut-brain axis—microbiota imbalances link to mood changes. Hormonal fluctuations, insulin resistance, and inflammation also contribute to mental health challenges."
+      },
+      {
+        question: "What's one thing I can do today to support my mental health?",
+        answer: "Start with morning sunlight—get 15+ minutes of direct eye exposure within 30 minutes of waking. This simple habit boosts energy, mood, and sleep quality. Morning light exposure is one of the most powerful regulators of your circadian rhythm and has downstream effects on mental wellbeing."
+      },
+      {
+        question: "Should I consider supplements for mood support?",
+        answer: "Vitamin D and omega-3 fatty acids are two supplements with research supporting their role in mental health. Have your vitamin D levels checked and target 60+ ng/mL with appropriate D3+K2 supplementation. Omega-3s from fatty fish or quality supplements support brain health and reduce inflammation."
+      }
+    ]
   },
   {
     slug: '2024-10-15-probiotic-smoothie-bowl',
@@ -425,7 +481,21 @@ All my love,
 
 Intention Holistic Health
     `,
-    disclaimer: `Note: Always consult with a healthcare professional before making significant changes to your diet, especially if you have specific health concerns or conditions.`
+    disclaimer: `Note: Always consult with a healthcare professional before making significant changes to your diet, especially if you have specific health concerns or conditions.`,
+    faqs: [
+      {
+        question: "Can I make this smoothie dairy-free?",
+        answer: "Yes! Use a dairy-free yogurt alternative (check the label for minimal ingredients) and skip the kefir or use a dairy-free version. Coconut yogurt or almond milk yogurt work well. The coconut water, hemp hearts, and flax seeds still provide plenty of nutrition."
+      },
+      {
+        question: "How can I increase the protein content?",
+        answer: "Add unflavored collagen or protein powder (as noted in the optional ingredients). Greek yogurt is already a great protein source, and hemp hearts add plant-based protein. Together, these can give you 20-30g of protein per bowl—perfect for a satisfying breakfast or post-workout snack."
+      },
+      {
+        question: "Is this smoothie good for blood sugar balance?",
+        answer: "Yes! This recipe is designed for blood sugar stability. The combination of protein (yogurt, hemp hearts), healthy fats (flax seeds, hemp hearts), and fiber (berries, vegetables, seeds) helps slow glucose absorption. Using low-glycemic berries like blueberries also supports steady blood sugar levels."
+      }
+    ]
   },
   {
     slug: '2024-10-01-gut-health-pcos',
@@ -509,7 +579,21 @@ Intention Holistic Health
 
 Topics discussing nutrition, supplements, and wellness practices aren't personalized clinical guidance. Don't disregard professional medical advice based on this content.
 
-Clinical services at Intention Holistic Health PLLC serve Kentucky residents only through formal provider-patient relationships. Educational content doesn't replace medical care, prenatal/postpartum services, or emergency services.`
+Clinical services at Intention Holistic Health PLLC serve Kentucky residents only through formal provider-patient relationships. Educational content doesn't replace medical care, prenatal/postpartum services, or emergency services.`,
+    faqs: [
+      {
+        question: "How long does it take to improve gut health?",
+        answer: "Gut health improvements can begin within days to weeks, but lasting change typically takes 3-6 months of consistent effort. The microbiome is adaptable—dietary changes can shift bacterial populations within 24 hours. However, building a diverse, resilient gut ecosystem takes sustained attention to diet, stress management, and lifestyle factors."
+      },
+      {
+        question: "What's the first step to improving gut health?",
+        answer: "Start with increasing fiber intake through fruits, vegetables, whole grains, and legumes. Research shows higher fiber correlates with improved insulin sensitivity and reduced inflammation. Probiotic-rich foods like yogurt, kefir, and fermented vegetables also support beneficial bacteria. Stay hydrated—drink at least half your body weight in ounces of water daily."
+      },
+      {
+        question: "Are probiotics necessary for PCOS?",
+        answer: "While not strictly necessary, probiotic supplements (especially Lactobacillus and Bifidobacterium species) show therapeutic potential for PCOS. Studies suggest they may improve insulin sensitivity and menstrual regularity. However, probiotic-rich foods combined with prebiotic foods (garlic, onions, leeks) may be equally effective for many women."
+      }
+    ]
   },
   {
     slug: '2024-09-15-hormone-friendly-granola',
@@ -568,7 +652,21 @@ All my love,
 Alicia
 Intention Holistic Health
     `,
-    disclaimer: `The information provided in this blog is for educational and informational purposes only and is not intended to serve as medical advice, diagnosis, or treatment. Health decisions require partnership with licensed providers familiar with individual circumstances. Clinical services are available exclusively to Kentucky residents through formal provider-patient relationships.`
+    disclaimer: `The information provided in this blog is for educational and informational purposes only and is not intended to serve as medical advice, diagnosis, or treatment. Health decisions require partnership with licensed providers familiar with individual circumstances. Clinical services are available exclusively to Kentucky residents through formal provider-patient relationships.`,
+    faqs: [
+      {
+        question: "Can I make this granola grain-free?",
+        answer: "Yes! Simply exclude the organic sprouted rolled oats. The recipe works well with just nuts, seeds, and coconut. Many women managing PCOS benefit from grain-free options since grains can sometimes exacerbate symptoms like insulin resistance and inflammation."
+      },
+      {
+        question: "How long does this granola stay fresh?",
+        answer: "Store in an airtight container at room temperature for up to two weeks, or in the refrigerator for longer shelf life. The coconut oil and natural ingredients mean it may soften over time in humid conditions—keeping it in the fridge helps maintain crunch."
+      },
+      {
+        question: "Can I substitute the maple syrup?",
+        answer: "Yes! Honey is a great alternative and is already listed as an option in the recipe. For a lower-sugar version, you can reduce the sweetener amount or use a sugar-free alternative like monk fruit sweetener. The granola may be slightly less clumpy with less sweetener."
+      }
+    ]
   }
 ];
 
@@ -585,8 +683,13 @@ function parseMarkdown(markdown) {
   html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
   html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
 
-  // Links [text](url)
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, '<a href="$2">$1</a>');
+  // Links [text](url) - external links open in new tab
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/gim, function(match, text, url) {
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+      return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + text + '</a>';
+    }
+    return '<a href="' + url + '">' + text + '</a>';
+  });
 
   // Bold
   html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
@@ -641,7 +744,7 @@ function renderBlogListing() {
     const cardImgStyle = post.cardImageStyle ? ` style="${post.cardImageStyle}"` : '';
     html += `
       <article class="blog-card">
-        <img src="${post.image}" alt="${post.title}" class="blog-card-image" loading="lazy"${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
+        <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" loading="lazy"${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
         <div class="blog-card-body">
           <p class="blog-card-date">${formatDate(post.date)}</p>
           <h2 class="blog-card-title">
@@ -691,7 +794,7 @@ function setupCategoryFiltering(posts) {
           const cardImgStyle = post.cardImageStyle ? ` style="${post.cardImageStyle}"` : '';
           html += `
             <article class="blog-card">
-              <img src="${post.image}" alt="${post.title}" class="blog-card-image" loading="lazy"${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
+              <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" loading="lazy"${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
               <div class="blog-card-body">
                 <p class="blog-card-date">${formatDate(post.date)}</p>
                 <h2 class="blog-card-title">
@@ -757,11 +860,11 @@ function renderSinglePost() {
     `;
   }
 
-  // Render featured image
+  // Render featured image with explicit dimensions to prevent CLS
   const postImage = document.getElementById('post-image');
   if (postImage) {
     const customStyle = post.imageStyle ? ` style="${post.imageStyle}"` : '';
-    postImage.innerHTML = `<img src="${post.image}" alt="${post.title}" loading="lazy"${customStyle} onerror="this.parentElement.style.display='none'">`;
+    postImage.innerHTML = `<img src="${post.image}" alt="${post.title}" width="1280" height="720" loading="lazy"${customStyle} onerror="this.parentElement.style.display='none'">`;
   }
 
   // Render content
@@ -776,6 +879,9 @@ function renderSinglePost() {
     });
     postTags.innerHTML = tagsHtml;
   }
+
+  // Render FAQ section (if post has FAQs)
+  renderFAQs(post);
 
   // Set up share buttons
   setupShareButtons(post);
@@ -809,12 +915,12 @@ function renderRelatedPosts(currentPost) {
   // Limit to 3 posts
   relatedPosts = relatedPosts.slice(0, 3);
 
-  // Render the related posts
+  // Render the related posts with explicit dimensions to prevent CLS
   let html = '';
   relatedPosts.forEach(function(post) {
     html += `
       <a href="/blog/post.html?post=${post.slug}" class="related-post-card">
-        <img src="${post.image}" alt="${post.title}" loading="lazy" onerror="this.src='/images/blog/placeholder.jpg'">
+        <img src="${post.image}" alt="${post.title}" width="400" height="225" loading="lazy" onerror="this.src='/images/blog/placeholder.jpg'">
         <div class="related-post-card-body">
           <p class="related-post-card-title">${post.title}</p>
         </div>
@@ -823,6 +929,72 @@ function renderRelatedPosts(currentPost) {
   });
 
   relatedPostsGrid.innerHTML = html;
+}
+
+function renderFAQs(post) {
+  const postContent = document.getElementById('post-content');
+  if (!postContent || !post.faqs || post.faqs.length === 0) return;
+
+  // Create FAQ section with V3 styling
+  let faqHtml = `
+    <section class="blog-faq-section">
+      <h2 class="blog-faq-title">Common Questions</h2>
+      <div class="blog-faq-list">
+  `;
+
+  post.faqs.forEach(function(faq, index) {
+    faqHtml += `
+      <div class="blog-faq-item">
+        <button class="blog-faq-question" aria-expanded="false" aria-controls="blog-faq-answer-${index}">
+          <span class="blog-faq-icon">+</span>
+          <span>${faq.question}</span>
+        </button>
+        <div class="blog-faq-answer" id="blog-faq-answer-${index}">
+          <p>${faq.answer}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  faqHtml += `
+      </div>
+    </section>
+  `;
+
+  // Insert FAQ before disclaimer or at end of content
+  postContent.insertAdjacentHTML('beforeend', faqHtml);
+
+  // Add accordion functionality
+  const faqButtons = postContent.querySelectorAll('.blog-faq-question');
+  faqButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      const answer = this.nextElementSibling;
+      const icon = this.querySelector('.blog-faq-icon');
+
+      // Close all other FAQs
+      faqButtons.forEach(function(otherButton) {
+        if (otherButton !== button) {
+          otherButton.setAttribute('aria-expanded', 'false');
+          otherButton.nextElementSibling.style.maxHeight = null;
+          otherButton.querySelector('.blog-faq-icon').textContent = '+';
+          otherButton.querySelector('.blog-faq-icon').style.transform = 'rotate(0deg)';
+        }
+      });
+
+      // Toggle current FAQ
+      this.setAttribute('aria-expanded', !isExpanded);
+      if (!isExpanded) {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.textContent = '−';
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        answer.style.maxHeight = null;
+        icon.textContent = '+';
+        icon.style.transform = 'rotate(0deg)';
+      }
+    });
+  });
 }
 
 function setupShareButtons(post) {
