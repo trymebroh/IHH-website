@@ -865,10 +865,11 @@ function renderSinglePost() {
   }
 
   // Render featured image with explicit dimensions to prevent CLS
+  // Use fetchpriority="high" for LCP image (not lazy load)
   const postImage = document.getElementById('post-image');
   if (postImage) {
     const customStyle = post.imageStyle ? ` style="${post.imageStyle}"` : '';
-    postImage.innerHTML = `<img src="${post.image}" alt="${post.title}" width="1280" height="720" loading="lazy"${customStyle} onerror="this.parentElement.style.display='none'">`;
+    postImage.innerHTML = `<img src="${post.image}" alt="${post.title}" width="1280" height="720" fetchpriority="high"${customStyle} onerror="this.parentElement.style.display='none'">`;
   }
 
   // Render content
