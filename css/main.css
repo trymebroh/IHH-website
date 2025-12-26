@@ -1633,7 +1633,7 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--color-sage);
+  background-color: var(--color-sage-green);
   color: var(--color-white);
   padding: var(--spacing-md) var(--spacing-lg);
   display: flex;
@@ -2047,6 +2047,12 @@ p {
   color: var(--color-white);
   border-radius: 50%;
   flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-method-icon:hover {
+  background-color: var(--color-charcoal);
+  transform: scale(1.05);
 }
 
 /* -----------------------------------------
