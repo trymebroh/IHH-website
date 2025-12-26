@@ -638,7 +638,8 @@
 .v3-hero {
   background: linear-gradient(135deg, var(--color-warm-cream) 0%, #F9F5F0 100%);
   padding: calc(80px + 45px + var(--spacing-md)) 0 var(--spacing-xl);
-  min-height: auto;
+  /* min-height prevents CLS from ::before pseudo-element shifting during font load */
+  min-height: 90vh;
   display: flex;
   align-items: flex-start;
   position: relative;

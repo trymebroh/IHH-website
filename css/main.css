@@ -79,7 +79,8 @@
 
 @font-face {
   font-family: 'Beautifully Delicious Script';
-  src: url('../fonts/BDScript-Regular.ttf') format('truetype');
+  /* Subset font: only contains "intentional. simple. holistic." characters */
+  src: url('../fonts/BDScript-subset.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

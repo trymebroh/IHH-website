@@ -739,12 +739,14 @@ function renderBlogListing() {
 
   // Render posts
   let html = '';
-  sortedPosts.forEach(function(post) {
+  sortedPosts.forEach(function(post, index) {
     const cardImgStyle = post.cardImageStyle ? ` style="${post.cardImageStyle}"` : '';
+    // First image is LCP - use fetchpriority="high" instead of lazy loading
+    const imgLoadAttr = index === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
     html += `
       <article class="blog-card">
         <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link">
-          <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" loading="lazy"${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
+          <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" ${imgLoadAttr}${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
         </a>
         <div class="blog-card-body">
           <p class="blog-card-date">${formatDate(post.date)}</p>
@@ -791,12 +793,14 @@ function setupCategoryFiltering(posts) {
         blogPostsContainer.innerHTML = '<p class="loading-message">No posts found in this category.</p>';
       } else {
         let html = '';
-        filteredPosts.forEach(function(post) {
+        filteredPosts.forEach(function(post, index) {
           const cardImgStyle = post.cardImageStyle ? ` style="${post.cardImageStyle}"` : '';
+          // First image gets priority loading
+          const imgLoadAttr = index === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
           html += `
             <article class="blog-card">
               <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link">
-                <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" loading="lazy"${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
+                <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" ${imgLoadAttr}${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
               </a>
               <div class="blog-card-body">
                 <p class="blog-card-date">${formatDate(post.date)}</p>

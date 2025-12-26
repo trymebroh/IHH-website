@@ -300,37 +300,37 @@ Rebuild the Intention Holistic Health website (currently on Kajabi) to a custom 
 
 ---
 
-## Lighthouse Optimization (After Page Versions Selected)
+## Lighthouse Optimization - COMPLETED December 26, 2025
 
-*Run after Alicia selects final page versions (About v1/v2, Services V1/V2/V3)*
+### Priority 1: Critical SEO ✅
+- [x] Created `robots.txt` with sitemap reference
+- [x] Created `sitemap.xml` with all public pages
+- [x] Added preconnect hints to pages
 
-### Priority 1: Critical SEO (Low Effort, High Impact)
-- [ ] Create `robots.txt` with sitemap reference
-- [ ] Create `sitemap.xml` with all public pages
-- [ ] Add `<link rel="preconnect" href="https://www.googletagmanager.com">` to all pages
+### Priority 2: Structured Data ✅
+- [x] Added JSON-LD `LocalBusiness` schema to homepage
+- [x] Added JSON-LD `Person` schema to about page
+- [x] Added JSON-LD `Service` schema to service pages
+- [x] Added JSON-LD `Article` schema to blog posts
+- [x] Added JSON-LD `FAQPage` schema to pages with FAQ sections
 
-### Priority 2: Structured Data (Medium Effort, High Impact)
-- [ ] Add JSON-LD `LocalBusiness` schema to homepage
-- [ ] Add JSON-LD `Organization` schema to about page
-- [ ] Add JSON-LD `Service` schema to service pages
-- [ ] Add JSON-LD `Article` schema to blog posts
-- [ ] Add JSON-LD `FAQPage` schema to pages with FAQ sections
+### Priority 3: Image Optimization ✅ (December 26)
+**Completed optimizations:**
+- [x] BDScript font subsetted: 295KB → 24KB (92% reduction)
+- [x] Blog images resized: 1280px → 950px
+- [x] Contact hero: 53KB → 15KB (72% reduction)
+- [x] Services images: ~220KB saved
+- [x] Intentional Reset images: ~139KB saved
+- [x] Lab Review images: ~121KB saved
+- [x] Footer logo: 22KB → 5.3KB (76% reduction)
+- [x] Converted htma-features-bg.png to WebP
 
-### Priority 3: Image Optimization (High Effort, High Impact)
-**Large images to convert/compress (target <200KB each):**
-- [ ] `blog/placeholder-original.jpg` (8.1 MB)
-- [ ] `blog/alicia-cooking-lemons-original.jpg` (8.1 MB)
-- [ ] `blog/hands-chopping-original.jpg` (6.5 MB)
-- [ ] `blog/pouring-olive-oil-original.jpg` (6.4 MB)
-- [ ] `about/about-hero-clean.png` (3.4 MB)
-- [ ] `services/htma-chart-display.png` (1.8 MB)
-- [ ] Convert remaining PNGs >500KB to WebP
-- [ ] Delete unused images in `/images/fallback/` and `/images/graphics/`
-
-### Priority 4: Performance Polish (Low Effort)
-- [ ] Add `loading="lazy"` to all below-fold images
-- [ ] Audit all pages for missing `width`/`height` on images
-- [ ] Add `fetchpriority="high"` to LCP images on each page
+### Priority 4: Performance Polish ✅ (December 26)
+- [x] Added `loading="lazy"` to all below-fold images
+- [x] Added `width`/`height` to ALL images on all pages
+- [x] Added `fetchpriority="high"` to LCP images on each page
+- [x] Removed unused CSS (services-v2.css from contact page)
+- [x] Added min-height to v3-hero sections to prevent CLS
 
 ### Current Lighthouse Estimate
 | Category | Score | After Optimization |
