@@ -666,3 +666,117 @@
   background-color: var(--color-light-cream);
   color: var(--color-charcoal);
 }
+
+/* -----------------------------------------
+   BLOG NEWSLETTER POPUP
+   ----------------------------------------- */
+.blog-newsletter-popup {
+  position: fixed;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-white);
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  padding: 1.25rem 1.5rem;
+  z-index: 999;
+  transition: bottom 0.4s ease;
+  max-width: 500px;
+  width: calc(100% - 2rem);
+}
+
+.blog-newsletter-popup.show {
+  bottom: 0;
+}
+
+.blog-newsletter-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-medium-gray);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+}
+
+.blog-newsletter-close:hover {
+  color: var(--color-charcoal);
+}
+
+.blog-newsletter-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.blog-newsletter-text {
+  flex: 1;
+  min-width: 180px;
+}
+
+.blog-newsletter-text h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--color-charcoal);
+  margin: 0 0 0.25rem 0;
+}
+
+.blog-newsletter-text p {
+  font-size: 0.85rem;
+  color: var(--color-medium-gray);
+  margin: 0;
+}
+
+.blog-newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.blog-newsletter-form input[type="email"] {
+  flex: 1;
+  padding: 0.6rem 0.875rem;
+  border: 1px solid var(--color-neutral-taupe);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  min-width: 0;
+}
+
+.blog-newsletter-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--color-sage-green);
+}
+
+.blog-newsletter-form button {
+  background: var(--color-sage-green);
+  color: var(--color-white);
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.blog-newsletter-form button:hover {
+  background: var(--color-sage-dark);
+}
+
+@media (max-width: 480px) {
+  .blog-newsletter-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .blog-newsletter-form {
+    width: 100%;
+  }
+}

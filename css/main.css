@@ -1826,6 +1826,67 @@ p {
   font-size: var(--font-size-sm);
 }
 
+/* About CTA Section */
+.about-cta {
+  background: linear-gradient(135deg, var(--color-sage-green) 0%, var(--color-sage-dark) 100%);
+  color: var(--color-white);
+  padding: 100px 0;
+}
+
+.about-cta h2 {
+  color: var(--color-white);
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+.about-cta-subtitle {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.9;
+}
+
+.about-cta p {
+  font-size: var(--font-size-lg);
+  max-width: 600px;
+  margin: 0 auto var(--spacing-lg);
+  opacity: 0.95;
+}
+
+.about-cta-buttons {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-cta .btn-primary {
+  background: var(--color-white);
+  color: var(--color-sage-dark);
+}
+
+.about-cta .btn-primary:hover {
+  background: var(--color-warm-cream);
+  color: var(--color-sage-dark);
+}
+
+.about-cta .btn-outline {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.about-cta .btn-outline:hover {
+  background: var(--color-white);
+  color: var(--color-sage-dark);
+}
+
+@media (max-width: 767px) {
+  .about-cta h2 {
+    font-size: var(--font-size-2xl);
+  }
+}
+
 /* -----------------------------------------
    CONTACT PAGE STYLES
    ----------------------------------------- */

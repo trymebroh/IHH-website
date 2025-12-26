@@ -224,6 +224,46 @@
   <script src="/js/main.js" defer></script>
   <script src="/js/blog.js" defer></script>
 
+  <!-- Newsletter Popup Banner -->
+  <div class="blog-newsletter-popup" id="blog-newsletter-popup">
+    <button class="blog-newsletter-close" id="blog-newsletter-close" aria-label="Close newsletter signup">&times;</button>
+    <div class="blog-newsletter-content">
+      <div class="blog-newsletter-text">
+        <h4>Stay Updated</h4>
+        <p>Get holistic health tips delivered to your inbox.</p>
+      </div>
+      <form class="blog-newsletter-form" name="blog-newsletter" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="blog-newsletter">
+        <input type="email" name="email" placeholder="Your email" required autocomplete="email">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var popup = document.getElementById('blog-newsletter-popup');
+      var closeBtn = document.getElementById('blog-newsletter-close');
+      var form = popup.querySelector('form');
+      var dismissed = localStorage.getItem('blog_newsletter_dismissed');
+      var subscribed = localStorage.getItem('blog_newsletter_subscribed');
+
+      // Show popup after 5 seconds if not dismissed or subscribed
+      if (!dismissed && !subscribed) {
+        setTimeout(function() { popup.classList.add('show'); }, 5000);
+      }
+
+      closeBtn.addEventListener('click', function() {
+        popup.classList.remove('show');
+        localStorage.setItem('blog_newsletter_dismissed', 'true');
+      });
+
+      form.addEventListener('submit', function() {
+        localStorage.setItem('blog_newsletter_subscribed', 'true');
+        popup.classList.remove('show');
+      });
+    })();
+  </script>
+
   <!-- Cookie Consent Banner -->
   <div class="cookie-consent" id="cookie-consent" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description">
     <div class="cookie-consent-inner">
