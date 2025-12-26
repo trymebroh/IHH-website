@@ -2892,3 +2892,196 @@
 .ir-v3-final-cta .v3-trust-list li::before {
   color: var(--color-sage-light);
 }
+
+/* -----------------------------------------
+   V3 HTMA CONSULTING - REDESIGN STYLES
+   ----------------------------------------- */
+
+/* Section Title - All Caps, Italic, Playfair Display */
+.v3-section-title {
+  font-family: var(--font-heading);
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+}
+
+/* Empathy Section (under hero) */
+.v3-empathy {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--color-white);
+}
+
+.v3-empathy-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .v3-empathy-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.v3-empathy-image-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.v3-empathy-image {
+  width: 100%;
+  max-width: 450px;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.v3-empathy-text h2 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-charcoal);
+  line-height: 1.4;
+}
+
+.v3-empathy-text p {
+  font-size: var(--font-size-base);
+  color: var(--color-medium-gray);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Packages Header Image */
+.v3-packages-header-image {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto var(--spacing-md);
+  display: block;
+}
+
+/* Package Card Redesign */
+.v3-package-card-redesign .v3-package-header {
+  border-bottom: none;
+}
+
+.v3-package-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-xl);
+  font-weight: 400 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-charcoal);
+}
+
+.v3-package-card-redesign .v3-package-features {
+  flex-grow: 1;
+}
+
+/* Price at bottom - more discrete */
+.v3-package-price-bottom {
+  border-top: 1px solid var(--color-light-gray);
+  border-bottom: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-top: auto;
+}
+
+.v3-package-price-bottom .amount {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--color-medium-gray);
+}
+
+.v3-package-price-bottom .period {
+  font-size: var(--font-size-xs);
+  color: var(--color-medium-gray);
+}
+
+/* Process Section - Box Format */
+.v3-process-boxes {
+  background: var(--color-warm-cream);
+}
+
+.v3-process-boxes .v3-process-header h2 {
+  margin-bottom: var(--spacing-sm);
+}
+
+.v3-process-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .v3-process-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .v3-process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.v3-process-box {
+  background: var(--color-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.v3-process-box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.v3-process-box-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.v3-process-star {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.v3-process-step-label {
+  display: block;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-sage-green);
+  margin-bottom: var(--spacing-xs);
+}
+
+.v3-process-box h4 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-charcoal);
+}
+
+.v3-process-box p {
+  font-size: var(--font-size-sm);
+  color: var(--color-medium-gray);
+  line-height: 1.5;
+}
