@@ -19,6 +19,18 @@ Update `session-notes/YYYY-MM-DD.md` at the end of each working session:
 
 **IMPORTANT**: Session notes MUST be updated before committing and pushing to GitHub. This is a prerequisite for any commit/push operation.
 
+## Deployment Workflow
+
+**IMPORTANT: Only push to `drafts-website-edits` branch.**
+
+Netlify's free plan has limited build tokens. Each push to `main` triggers a deploy and burns tokens quickly.
+
+- **After edits**: Push only to `drafts-website-edits`
+- **Preview changes**: User will test on localhost
+- **Deploy to production**: User will merge branches in bulk to minimize deploys
+
+**DO NOT** push to main after every change. Let the user handle merges to main.
+
 ## Model Selection
 
 **Default Model:** claude-sonnet-4-5-20250929 (Sonnet 4.5)
