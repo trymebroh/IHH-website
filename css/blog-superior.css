@@ -4,14 +4,25 @@
    Superior Health Wellness blog design
    ============================================ */
 
-/* Post Hero - Full Width */
-.superior-post .post-hero {
+/* Post Hero - Minimal (back link only) */
+.superior-post .post-hero.post-hero-minimal {
   background-color: var(--color-warm-cream);
-  padding: calc(80px + var(--spacing-xl)) 0 var(--spacing-xl);
+  padding: calc(80px + var(--spacing-md)) 0 var(--spacing-sm);
+  text-align: left;
+}
+
+.superior-post .post-hero.post-hero-minimal .container {
+  max-width: 1000px;
+}
+
+/* Post Title Section (below featured image) */
+.superior-post .post-title-hero {
+  background-color: var(--color-white);
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
   text-align: center;
 }
 
-.superior-post .post-hero .container {
+.superior-post .post-title-hero .container {
   max-width: 900px;
 }
 
@@ -95,7 +106,6 @@
   max-height: 500px;
   object-fit: cover;
   border-radius: var(--border-radius-lg);
-  margin-top: calc(-1 * var(--spacing-xl));
   box-shadow: var(--shadow-xl);
 }
 

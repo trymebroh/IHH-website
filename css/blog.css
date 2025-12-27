@@ -202,21 +202,28 @@
    SINGLE POST STYLES
    ============================================ */
 
-/* Post Header */
+/* Post Header (back link only) */
 .post-header {
   background-color: var(--color-warm-cream);
-  padding: calc(80px + var(--spacing-lg)) 0 var(--spacing-lg);
+  padding: calc(80px + var(--spacing-md)) 0 var(--spacing-sm);
 }
 
 .back-link {
   display: inline-block;
   font-size: var(--font-size-sm);
   color: var(--color-sage-green);
-  margin-bottom: var(--spacing-md);
 }
 
 .back-link:hover {
   color: var(--color-charcoal);
+}
+
+/* Post Title Section (below featured image) */
+.post-title-section {
+  background-color: var(--color-white);
+  padding: var(--spacing-lg) 0 var(--spacing-md);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .post-meta {
@@ -251,7 +258,6 @@
   position: relative;
   max-width: 900px;
   margin: 0 auto;
-  margin-top: calc(-1 * var(--spacing-lg));
   padding: 0 var(--container-padding-mobile);
   background-color: var(--color-light-cream);
 }
@@ -1177,4 +1183,43 @@
     opacity: 1;
     visibility: visible;
   }
+}
+
+/* ============================================
+   BLOG DISCLAIMER (FDA/FTC/Kentucky BON Compliant)
+   ============================================ */
+
+.blog-disclaimer {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--color-light-sage);
+  border-radius: var(--border-radius-md);
+  border-left: 4px solid var(--color-sage-green);
+}
+
+.blog-disclaimer-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.blog-disclaimer p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-charcoal);
+  margin-bottom: var(--spacing-sm);
+  opacity: 0.9;
+}
+
+.blog-disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-disclaimer strong {
+  font-weight: 600;
+  color: var(--color-charcoal);
 }
