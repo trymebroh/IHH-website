@@ -78,6 +78,7 @@
 
   <link rel="preload" href="/fonts/Poppins-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/images/about/alicia-professional-small.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/about-v2.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
@@ -97,7 +98,7 @@
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="Intention Holistic Health Home">
-        <img src="/images/logo2.webp" alt="Intention Holistic Health" width="192" height="75">
+        <img src="/images/logo2-tiny.webp" alt="Intention Holistic Health" width="192" height="75">
       </a>
 
       <nav class="nav" aria-label="Main navigation">
@@ -144,7 +145,14 @@
       <div class="container">
         <div class="about-hero-content">
           <div>
-            <img src="/images/about/alicia-professional.jpg" alt="Alicia Harrison, MSN, APRN, FNP-C" class="about-hero-image" loading="lazy">
+            <img src="/images/about/alicia-professional-small.webp"
+                 srcset="/images/about/alicia-professional-small.webp 500w,
+                         /images/about/alicia-professional.jpg 1200w"
+                 sizes="(max-width: 768px) 100vw, 500px"
+                 alt="Alicia Harrison, MSN, APRN, FNP-C"
+                 class="about-hero-image"
+                 width="500" height="750"
+                 fetchpriority="high">
           </div>
           <div>
             <p class="section-label">About Me</p>
@@ -185,7 +193,7 @@
           </p>
         </div>
         <div class="about-passion-image">
-          <img src="/images/about/pappy.webp" alt="Pappy - Alicia's grandfather who inspired her holistic health journey" loading="lazy">
+          <img src="/images/about/pappy.webp" alt="Pappy - Alicia's grandfather who inspired her holistic health journey" width="400" height="567" loading="lazy">
           <p class="image-caption">My Pappy - where it all began</p>
         </div>
       </div>
@@ -205,7 +213,16 @@
         </div>
 
         <div class="philosophy-image text-center">
-          <img src="/images/the-process.webp" alt="The Intention Process - Assess, Educate, Implement, Evaluate" class="process-graphic" loading="lazy" style="max-width: 600px; width: 100%; height: auto; margin: var(--spacing-lg) auto;">
+          <img src="/images/the-process-small.webp"
+               srcset="/images/the-process-small.webp 500w,
+                       /images/the-process-medium.webp 720w,
+                       /images/the-process.webp 1440w"
+               sizes="(max-width: 600px) 100vw, 600px"
+               alt="The Intention Process - Assess, Educate, Implement, Evaluate"
+               class="process-graphic"
+               width="500" height="500"
+               loading="lazy"
+               style="max-width: 600px; width: 100%; height: auto; margin: var(--spacing-lg) auto;">
         </div>
 
         <div class="about-section text-center" style="margin-top: var(--spacing-xl);">
@@ -220,7 +237,14 @@
     <section class="section about-facts bg-cream" data-track-section="fun-facts">
       <div class="container">
         <div class="facts-header">
-          <img src="/images/about/lifestyle-brand.webp" alt="Get to know me - Fun Facts!" class="facts-title-image">
+          <img src="/images/about/lifestyle-brand-small.webp"
+               srcset="/images/about/lifestyle-brand-small.webp 500w,
+                       /images/about/lifestyle-brand.webp 1760w"
+               sizes="(max-width: 768px) 100vw, 500px"
+               alt="Get to know me - Fun Facts!"
+               class="facts-title-image"
+               width="500" height="131"
+               loading="lazy">
         </div>
         <div class="facts-grid">
           <div class="fact-card">
