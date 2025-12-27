@@ -1086,6 +1086,112 @@ function setupShareButtons(post) {
     const imageUrl = encodeURIComponent(window.location.origin + post.image);
     pinterestBtn.href = `https://pinterest.com/pin/create/button/?url=${pageUrl}&media=${imageUrl}&description=${pageTitle}`;
   }
+
+  // -----------------------------------------
+  // FLOATING SHARE SIDEBAR
+  // -----------------------------------------
+
+  const floatingShare = document.getElementById('floating-share');
+  const floatingToggle = document.getElementById('floating-share-toggle');
+  const floatingCopyBtn = document.getElementById('floating-copy-link');
+  const floatingCopyConfirm = document.getElementById('floating-copy-confirm');
+  const floatingEmailBtn = document.getElementById('floating-share-email');
+  const floatingFacebookBtn = document.getElementById('floating-share-facebook');
+
+  // Mobile toggle
+  if (floatingToggle && floatingShare) {
+    floatingToggle.addEventListener('click', function() {
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      floatingShare.classList.toggle('active');
+    });
+
+    // Close on click outside
+    document.addEventListener('click', function(e) {
+      if (!floatingShare.contains(e.target) && floatingShare.classList.contains('active')) {
+        floatingToggle.setAttribute('aria-expanded', 'false');
+        floatingShare.classList.remove('active');
+      }
+    });
+  }
+
+  // Floating copy link
+  if (floatingCopyBtn) {
+    floatingCopyBtn.addEventListener('click', function() {
+      navigator.clipboard.writeText(rawUrl).then(function() {
+        floatingCopyConfirm.classList.add('visible');
+        setTimeout(function() {
+          floatingCopyConfirm.classList.remove('visible');
+        }, 2000);
+      }).catch(function() {
+        // Fallback
+        const textArea = document.createElement('textarea');
+        textArea.value = rawUrl;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        floatingCopyConfirm.classList.add('visible');
+        setTimeout(function() {
+          floatingCopyConfirm.classList.remove('visible');
+        }, 2000);
+      });
+    });
+  }
+
+  // Floating email share
+  if (floatingEmailBtn) {
+    const emailSubject = encodeURIComponent('Check out this article: ' + rawTitle);
+    const emailBody = encodeURIComponent('I thought you might find this helpful:\n\n' + rawTitle + '\n\n' + rawUrl);
+    floatingEmailBtn.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+  }
+
+  // Floating Facebook share
+  if (floatingFacebookBtn) {
+    floatingFacebookBtn.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+  }
+
+  // Floating Twitter share
+  const floatingTwitterBtn = document.getElementById('floating-share-twitter');
+  if (floatingTwitterBtn) {
+    floatingTwitterBtn.href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+  }
+
+  // Floating Pinterest share
+  const floatingPinterestBtn = document.getElementById('floating-share-pinterest');
+  if (floatingPinterestBtn) {
+    const imageUrl = encodeURIComponent(window.location.origin + post.image);
+    floatingPinterestBtn.href = `https://pinterest.com/pin/create/button/?url=${pageUrl}&media=${imageUrl}&description=${pageTitle}`;
+  }
+
+  // -----------------------------------------
+  // FLOATING SHARE VISIBILITY ON SCROLL
+  // -----------------------------------------
+  const postContent = document.getElementById('post-content');
+
+  if (floatingShare && postContent) {
+    function updateFloatingShareVisibility() {
+      const contentRect = postContent.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      // Show when post content is in view (top of content has passed top of viewport
+      // and bottom of content hasn't passed top of viewport)
+      const contentTopVisible = contentRect.top < viewportHeight * 0.3;
+      const contentBottomVisible = contentRect.bottom > 100;
+
+      if (contentTopVisible && contentBottomVisible) {
+        floatingShare.classList.add('visible');
+      } else {
+        floatingShare.classList.remove('visible');
+      }
+    }
+
+    // Initial check
+    updateFloatingShareVisibility();
+
+    // Update on scroll
+    window.addEventListener('scroll', updateFloatingShareVisibility, { passive: true });
+  }
 }
 
 // -----------------------------------------
