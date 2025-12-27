@@ -23,11 +23,27 @@ Update `session-notes/YYYY-MM-DD.md` at the end of each working session:
 
 **IMPORTANT: Only push to `drafts-website-edits` branch.**
 
-Netlify's free plan has limited build tokens. Each push to `main` triggers a deploy and burns tokens quickly.
+Netlify uses credit-based pricing. Each production deploy costs 15 credits.
 
+| Plan | Credits/Month | Cost |
+|------|---------------|------|
+| Free | 300 | $0 |
+| Personal | 1,000 | $9/month |
+
+**Credit costs:**
+- Production deploy: 15 credits
+- Bandwidth: 10 credits/GB
+- Web requests: 3 credits/10,000
+- Form submission: 1 credit
+- Deploy previews: FREE
+- Branch deploys: FREE
+
+**Workflow to minimize costs:**
 - **After edits**: Push only to `drafts-website-edits`
-- **Preview changes**: User will test on localhost
-- **Deploy to production**: User will merge branches in bulk to minimize deploys
+- **Preview changes**: User tests on localhost (free)
+- **Deploy to production**: User merges to main in bulk (1-2x/week max)
+
+**Free tier target:** 4-5 production deploys/month = 60-75 credits, leaving ~225 for traffic.
 
 **DO NOT** push to main after every change. Let the user handle merges to main.
 
