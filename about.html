@@ -78,7 +78,10 @@
 
   <link rel="preload" href="/fonts/Poppins-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/images/about/alicia-professional-small.webp" as="image" type="image/webp">
+  <link rel="preload" href="/images/about/alicia-professional-medium.webp" as="image" type="image/webp"
+        media="(min-width: 769px)">
+  <link rel="preload" href="/images/about/alicia-professional-small.webp" as="image" type="image/webp"
+        media="(max-width: 768px)">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/about-v2.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
@@ -147,11 +150,12 @@
           <div>
             <img src="/images/about/alicia-professional-small.webp"
                  srcset="/images/about/alicia-professional-small.webp 500w,
+                         /images/about/alicia-professional-medium.webp 850w,
                          /images/about/alicia-professional.jpg 1200w"
-                 sizes="(max-width: 768px) 100vw, 500px"
+                 sizes="(max-width: 768px) 100vw, 850px"
                  alt="Alicia Harrison, MSN, APRN, FNP-C"
                  class="about-hero-image"
-                 width="500" height="750"
+                 width="850" height="1275"
                  fetchpriority="high">
           </div>
           <div>
