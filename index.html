@@ -88,7 +88,7 @@
   <!-- Preload critical fonts (subset versions) to reduce layout shifts -->
   <link rel="preload" href="/fonts/Poppins-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
-  <!-- Note: GlacialIndifference and BDScript load via @font-face with font-display:swap -->
+  <link rel="preload" href="/fonts/BDScript-subset.ttf" as="font" type="font/ttf" crossorigin>
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
@@ -97,12 +97,12 @@
 
   <!-- Preload LCP image for better performance - responsive -->
   <link rel="preload" as="image"
-        href="/images/hero-mother-baby.webp"
+        href="/images/hero-mother-baby-small.webp"
         imagesrcset="/images/hero-mother-baby-tiny.webp 120w,
                      /images/hero-mother-baby-small.webp 250w,
                      /images/hero-mother-baby-medium.webp 500w,
                      /images/hero-mother-baby.webp 800w"
-        imagesizes="(max-width: 480px) 120px, (max-width: 768px) 250px, 800px"
+        imagesizes="(max-width: 480px) 120px, 250px"
         fetchpriority="high">
 </head>
 <body>
@@ -164,14 +164,14 @@
       <h1 class="hero-banner-headline-top">Holistic Motherhood <span class="sr-only">Wellness</span></h1>
       <div class="hero-banner-content">
         <div class="hero-banner-image-wrapper">
-          <img src="/images/hero-mother-baby.webp"
+          <img src="/images/hero-mother-baby-small.webp"
                srcset="/images/hero-mother-baby-tiny.webp 120w,
                        /images/hero-mother-baby-small.webp 250w,
                        /images/hero-mother-baby-medium.webp 500w,
                        /images/hero-mother-baby.webp 800w"
-               sizes="(max-width: 480px) 120px, (max-width: 768px) 250px, 800px"
+               sizes="(max-width: 480px) 120px, 250px"
                alt="Mother holding baby wrapped in cozy knit blanket"
-               class="hero-banner-photo" width="800" height="799" fetchpriority="high">
+               class="hero-banner-photo" width="250" height="250" fetchpriority="high">
         </div>
         <div class="hero-banner-text">
           <p class="hero-banner-headline-bottom" aria-hidden="true">Wellness</p>
