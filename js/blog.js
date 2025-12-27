@@ -445,9 +445,10 @@ Want more tips? Download the complimentary **Holistic Habits Checklist** for add
     date: '2024-10-15',
     author: 'Alicia Harrison, MSN, APRN, FNP-C',
     excerpt: 'Looking for a delicious and nutritious way to start your day? This smoothie bowl is packed with fiber, protein, and gut-friendly ingredients.',
-    image: '/images/blog/smoothie-bowl-cropped.webp',
-    cardAspectRatio: '83.33%',    // 600x500 image (nearly square)
-    imageAspectRatio: '83.33%',   // Match on single post page
+    image: '/images/blog/smoothie-bowl-new.webp',
+    thumbnail: '/images/blog/smoothie-bowl-new-small.webp',
+    cardAspectRatio: '56.22%',    // 900x506 image (16:9 like other posts)
+    imageAspectRatio: '56.22%',
     categories: ['recipes', 'breakfast', 'pcos'],
     content: `
 # Recipe: Probiotic-Rich Smoothie Bowl
