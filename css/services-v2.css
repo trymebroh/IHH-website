@@ -630,6 +630,42 @@
   line-height: 1.6;
 }
 
+/* FDA/FTC/Kentucky BON Compliant Disclaimer */
+.v2-disclaimer-compliant {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-light-sage);
+  border-top: 4px solid var(--color-sage-green);
+}
+
+.v2-disclaimer-compliant .v2-disclaimer-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.v2-disclaimer-compliant p {
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--color-charcoal);
+  opacity: 0.9;
+  text-align: left;
+  margin-bottom: var(--spacing-sm);
+}
+
+.v2-disclaimer-compliant p:last-child {
+  margin-bottom: 0;
+}
+
+.v2-disclaimer-compliant strong {
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
 /* -----------------------------------------
    VERSION 3 - OPTIMIZED CONVERSION DESIGN
    ----------------------------------------- */
