@@ -132,13 +132,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const header = document.querySelector('.header');
 
   if (header) {
+    let ticking = false;
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
-    });
+    }, { passive: true });
   }
 
   // -----------------------------------------
@@ -332,16 +339,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const rightArrow = blogCarousel.querySelector('.carousel-arrow-right');
 
     if (track && leftArrow && rightArrow) {
+      // Cache scroll amount (recalculated on resize)
+      let cachedScrollAmount = 300;
+
       // Calculate scroll amount (one card width + gap)
-      function getScrollAmount() {
+      function updateScrollAmount() {
         const card = track.querySelector('.card');
         if (card) {
-          const cardStyle = window.getComputedStyle(card);
           const cardWidth = card.offsetWidth;
           const gap = parseInt(window.getComputedStyle(track).gap) || 24;
-          return cardWidth + gap;
+          cachedScrollAmount = cardWidth + gap;
         }
-        return 300;
       }
 
       // Update arrow visibility based on scroll position
@@ -356,26 +364,34 @@ document.addEventListener('DOMContentLoaded', function() {
       // Scroll handlers
       leftArrow.addEventListener('click', function() {
         track.scrollBy({
-          left: -getScrollAmount(),
+          left: -cachedScrollAmount,
           behavior: 'smooth'
         });
       });
 
       rightArrow.addEventListener('click', function() {
         track.scrollBy({
-          left: getScrollAmount(),
+          left: cachedScrollAmount,
           behavior: 'smooth'
         });
       });
 
-      // Update arrows on scroll
-      track.addEventListener('scroll', updateArrows);
+      // Update arrows on scroll with passive listener
+      track.addEventListener('scroll', updateArrows, { passive: true });
 
-      // Initial arrow state
+      // Initial state
+      updateScrollAmount();
       updateArrows();
 
-      // Update on resize
-      window.addEventListener('resize', updateArrows);
+      // Debounced resize handler
+      let resizeTimeout;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+          updateScrollAmount();
+          updateArrows();
+        }, 150);
+      }, { passive: true });
     }
   }
 
