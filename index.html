@@ -98,10 +98,11 @@
   <!-- Preload LCP image for better performance - responsive -->
   <link rel="preload" as="image"
         href="/images/hero-mother-baby.webp"
-        imagesrcset="/images/hero-mother-baby-small.webp 250w,
+        imagesrcset="/images/hero-mother-baby-tiny.webp 120w,
+                     /images/hero-mother-baby-small.webp 250w,
                      /images/hero-mother-baby-medium.webp 500w,
                      /images/hero-mother-baby.webp 800w"
-        imagesizes="(max-width: 480px) 250px, (max-width: 768px) 500px, 800px"
+        imagesizes="(max-width: 480px) 120px, (max-width: 768px) 250px, 800px"
         fetchpriority="high">
 </head>
 <body>
@@ -112,7 +113,7 @@
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="Intention Holistic Health Home">
-        <img src="/images/logo2-small.webp" alt="Intention Holistic Health" width="192" height="75">
+        <img src="/images/logo2-tiny.webp" alt="Intention Holistic Health" width="192" height="75">
       </a>
 
       <!-- Desktop Navigation -->
@@ -164,10 +165,11 @@
       <div class="hero-banner-content">
         <div class="hero-banner-image-wrapper">
           <img src="/images/hero-mother-baby.webp"
-               srcset="/images/hero-mother-baby-small.webp 250w,
+               srcset="/images/hero-mother-baby-tiny.webp 120w,
+                       /images/hero-mother-baby-small.webp 250w,
                        /images/hero-mother-baby-medium.webp 500w,
                        /images/hero-mother-baby.webp 800w"
-               sizes="(max-width: 480px) 250px, (max-width: 768px) 500px, 800px"
+               sizes="(max-width: 480px) 120px, (max-width: 768px) 250px, 800px"
                alt="Mother holding baby wrapped in cozy knit blanket"
                class="hero-banner-photo" width="800" height="799" fetchpriority="high">
         </div>
@@ -237,7 +239,11 @@
             <a href="/about.html" class="btn btn-outline" data-track-cta="learn-more-about">Learn More About Me</a>
           </div>
           <div>
-            <img src="/images/who-i-help.webp" alt="Mother and child wellness" class="who-i-help-image" width="800" height="537" loading="lazy">
+            <img src="/images/who-i-help.webp"
+                 srcset="/images/who-i-help-small.webp 480w,
+                         /images/who-i-help.webp 950w"
+                 sizes="(max-width: 768px) 480px, 475px"
+                 alt="Mother and child wellness" class="who-i-help-image" width="950" height="638" loading="lazy">
           </div>
         </div>
       </div>
