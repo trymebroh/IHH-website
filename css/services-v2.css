@@ -1328,7 +1328,7 @@
   background: var(--color-light-cream);
 }
 
-.v3-faq-question h4 {
+.v3-faq-question h3 {
   font-size: var(--font-size-base);
   font-weight: 500;
   color: var(--color-charcoal);
@@ -1337,7 +1337,7 @@
   transition: color 0.25s ease;
 }
 
-.v3-faq-item.open .v3-faq-question h4 {
+.v3-faq-item.open .v3-faq-question h3 {
   color: var(--color-sage-dark);
 }
 
