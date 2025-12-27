@@ -762,10 +762,12 @@ function renderBlogListing() {
     const linkStyle = ` style="padding-bottom: ${aspectRatio};"`;
     // First image is LCP - use fetchpriority="high" instead of lazy loading
     const imgLoadAttr = index === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
+    // Use small thumbnail for cards (if available)
+    const thumbImage = post.thumbnail || post.image.replace('.webp', '-small.webp');
     html += `
       <article class="blog-card">
         <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link"${linkStyle}>
-          <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" ${imgLoadAttr}${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
+          <img src="${thumbImage}" alt="${post.title}" class="blog-card-image" width="400" height="225" ${imgLoadAttr}${cardImgStyle} onerror="this.src='${post.image}'">
         </a>
         <div class="blog-card-body">
           <p class="blog-card-date">${formatDate(post.date)}</p>
@@ -819,10 +821,12 @@ function setupCategoryFiltering(posts) {
           const linkStyle = ` style="padding-bottom: ${aspectRatio};"`;
           // First image gets priority loading
           const imgLoadAttr = index === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
+          // Use small thumbnail for cards
+          const thumbImage = post.thumbnail || post.image.replace('.webp', '-small.webp');
           html += `
             <article class="blog-card">
               <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link"${linkStyle}>
-                <img src="${post.image}" alt="${post.title}" class="blog-card-image" width="400" height="225" ${imgLoadAttr}${cardImgStyle} onerror="this.src='/images/blog/placeholder.jpg'">
+                <img src="${thumbImage}" alt="${post.title}" class="blog-card-image" width="400" height="225" ${imgLoadAttr}${cardImgStyle} onerror="this.src='${post.image}'">
               </a>
               <div class="blog-card-body">
                 <p class="blog-card-date">${formatDate(post.date)}</p>
@@ -952,9 +956,10 @@ function renderRelatedPosts(currentPost) {
   // Render the related posts with explicit dimensions to prevent CLS
   let html = '';
   relatedPosts.forEach(function(post) {
+    const thumbImage = post.thumbnail || post.image.replace('.webp', '-small.webp');
     html += `
       <a href="/blog/post.html?post=${post.slug}" class="related-post-card">
-        <img src="${post.image}" alt="${post.title}" width="400" height="225" loading="lazy" onerror="this.src='/images/blog/placeholder.jpg'">
+        <img src="${thumbImage}" alt="${post.title}" width="400" height="225" loading="lazy" onerror="this.src='${post.image}'">
         <div class="related-post-card-body">
           <p class="related-post-card-title">${post.title}</p>
         </div>
