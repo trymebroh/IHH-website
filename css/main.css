@@ -1535,7 +1535,26 @@ p {
 
 @media (max-width: 1023px) {
   .hero-image {
-    display: none;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 150px;
+    height: 200px;
+    margin: var(--spacing-md) auto 0;
+    display: block;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
   }
 }
 
