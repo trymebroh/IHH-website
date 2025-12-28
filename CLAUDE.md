@@ -645,7 +645,7 @@ Run this audit when making significant changes:
 
 ### Contact Email
 
-`alicia.harrison@intentionholistichealth.com`
+`info@intentionholistichealth.com`
 
 ### Credentials (Alicia Harrison)
 
