@@ -1370,7 +1370,7 @@ p {
 }
 
 .section-header-lifestyle--smaller .subtitle {
-  margin-top: -1.5rem;
+  margin-top: -0.5rem;
 }
 
 @media (max-width: 991px) {
@@ -1378,7 +1378,7 @@ p {
     font-size: 8.16rem;
   }
   .section-header-lifestyle--smaller .subtitle {
-    margin-top: -1.8rem;
+    margin-top: -0.8rem;
   }
 }
 
@@ -1387,7 +1387,7 @@ p {
     font-size: 5.7rem;
   }
   .section-header-lifestyle--smaller .subtitle {
-    margin-top: -1.4rem;
+    margin-top: -0.5rem;
   }
 }
 
