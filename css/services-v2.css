@@ -3024,6 +3024,10 @@
   letter-spacing: 0.05em;
   margin-bottom: var(--spacing-xs);
   color: var(--color-charcoal);
+  min-height: 2.4em; /* Ensures uniform header height across all cards */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .v3-package-card-redesign .v3-package-features {
