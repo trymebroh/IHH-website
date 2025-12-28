@@ -1364,6 +1364,33 @@ p {
   }
 }
 
+/* Smaller variant for Intention Process (original size before 50% increase) */
+.section-header-lifestyle--smaller .script-title {
+  font-size: 11.2rem;
+}
+
+.section-header-lifestyle--smaller .subtitle {
+  margin-top: -1.5rem;
+}
+
+@media (max-width: 991px) {
+  .section-header-lifestyle--smaller .script-title {
+    font-size: 8.16rem;
+  }
+  .section-header-lifestyle--smaller .subtitle {
+    margin-top: -1.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-header-lifestyle--smaller .script-title {
+    font-size: 5.7rem;
+  }
+  .section-header-lifestyle--smaller .subtitle {
+    margin-top: -1.4rem;
+  }
+}
+
 /*
   Proportional scaling - The entire banner scales as a fixed unit.
   No typography overrides - all text scales proportionally with viewport.
