@@ -41,14 +41,9 @@
   transform: scale(1.02);
 }
 
-/* Adjust header for toggle banner */
-.header {
-  top: 40px;
-}
-
 /* Hero Banner */
 .about-hero {
-  padding-top: calc(80px + 40px); /* header + toggle banner */
+  padding-top: 80px; /* header height */
   background-color: var(--color-warm-cream);
 }
 
