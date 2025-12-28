@@ -449,6 +449,7 @@ Want more tips? Download the complimentary **Holistic Habits Checklist** for add
     thumbnail: '/images/blog/smoothie-bowl-new-small.webp',
     cardAspectRatio: '56.22%',    // 900x506 image (16:9 like other posts)
     imageAspectRatio: '56.22%',
+    cardImageStyle: 'object-position: center center;',
     categories: ['recipes', 'breakfast', 'pcos'],
     content: `
 # Recipe: Probiotic-Rich Smoothie Bowl
