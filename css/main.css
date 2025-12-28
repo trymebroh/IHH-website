@@ -87,8 +87,8 @@
 
 @font-face {
   font-family: 'Beautifully Delicious Script';
-  /* Subset font: contains "intentional. simple. holistic. Contact Alicia" */
-  src: url('../fonts/BDScript-subset.ttf') format('truetype');
+  /* Full font: needed for Services, The Intention Process, etc. */
+  src: url('../fonts/BDScript-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
