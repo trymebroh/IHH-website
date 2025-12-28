@@ -324,18 +324,37 @@ Blog posts use JavaScript rendering in `/js/blog.js`, so:
 - Home | About | Blog | Services (dropdown) | Contact | Supplements | Patient Portal
 
 **Services Dropdown:**
+- Sessions → `/services/lab-review.html`
+- Packages and Programs → `/services/services.html`
 - What is HTMA? → `/htma.html`
-- Services → `/services/services.html`
-- Lab Review → `/services/lab-review.html`
 
 **Mobile Navigation:**
 - Same structure in hamburger menu
 
-**Footer Links:**
-- Services section: Services, Lab Review, What is HTMA?
-- Resources section: Blog, Apply, Supplements, Patient Portal
-- Legal section: Terms, Privacy, Disclaimer
+**Footer Quick Links:**
+- About, Blog, Sessions, Packages and Programs, What is HTMA?, Contact
+
+**Footer Resources:**
+- Supplements, Patient Portal
+
+**Footer Legal:**
+- Terms, Privacy, Disclaimer
 - Social icons: Instagram, Facebook, Pinterest, LinkedIn
+
+### Service Menu Structure (3-Tier)
+
+The homepage presents services in three categories:
+
+| Type | Description | Links To |
+|------|-------------|----------|
+| **Sessions** | One-time consultations for quick clarity | `/services/lab-review.html` |
+| **Packages** | Structured offerings with defined scope | `/services/services.html` |
+| **Personalized Programs** | Ongoing, tailored patient-provider support | `/services/services.html` |
+
+**Homepage Card Copy:**
+1. **Sessions**: "Focused, one-time consultations designed to bring clarity to a specific question or concern — no long-term commitment required."
+2. **Packages**: "Structured offerings with a clear scope — including testing, interpretation, and actionable guidance to build your wellness foundation."
+3. **Personalized Programs**: "Ongoing, tailored support with a patient-provider partnership — for those ready for deeper, long-term wellness guidance."
 
 ### User Flow
 

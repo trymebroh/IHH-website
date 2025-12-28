@@ -1442,7 +1442,7 @@ p {
 }
 
 .who-i-help-image {
-  border-radius: var(--border-radius-md);
+  border-radius: 24px;
   width: 100%;
   height: auto;
   object-fit: contain;
