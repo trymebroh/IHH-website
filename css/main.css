@@ -1295,6 +1295,48 @@ p {
   text-align: left;
 }
 
+/* Mobile: Hero banner fills full width */
+@media (max-width: 767px) {
+  .hero-banner-v2 {
+    padding: 4vw 4%;
+  }
+
+  .hero-banner-headline-top {
+    font-size: 6.5vw;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .hero-banner-content {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-banner-image-wrapper {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+
+  .hero-banner-text {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-banner-headline-bottom {
+    font-size: 10vw;
+  }
+
+  .hero-banner-body {
+    font-size: 3.5vw;
+  }
+
+  .hero-banner-script {
+    font-size: 8vw;
+  }
+}
+
 .hero-banner-script {
   font-family: 'Beautifully Delicious Script', cursive;
   font-size: 4.9vw;
