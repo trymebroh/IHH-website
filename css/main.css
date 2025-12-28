@@ -1455,6 +1455,22 @@ p {
   font-weight: 500;
 }
 
+.hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-cta-group .btn {
+    text-align: center;
+  }
+}
+
 .hero-image {
   position: absolute;
   right: var(--spacing-xl);
