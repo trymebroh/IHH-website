@@ -150,6 +150,95 @@ All blog posts should include this disclaimer (or similar) at the end:
 >
 > Intention Holistic Health provides educational wellness guidance and, where applicable, Kentucky-based nurse practitioner services within scope and licensure.
 
+---
+
+## Promotional System Template
+
+**Reference:** "Design this like the Intentional Reset promo" - Use this template for future promotions.
+
+### Overview
+
+The promotional system consists of two components:
+1. **Bottom Floating Bar** - Persistent, non-intrusive bar at bottom of screen
+2. **Info Popup Modal** - Detailed information shown when bar is clicked
+
+### Design Specifications
+
+#### Bottom Promo Bar
+
+| Breakpoint | Height | Elements Shown |
+|------------|--------|----------------|
+| **Desktop** (>1024px) | 60px | Thumbnail + "NEW" badge + Text + "See Details" button |
+| **Tablet** (768-1024px) | 55px | Thumbnail + "NEW" badge + Text + "See Details" button |
+| **Mobile** (<768px) | 50px | "NEW" badge + Text + Dismiss X (no thumbnail, no button) |
+
+**Styling:**
+- Background: Sage green (`--color-sage-green` / #8D9488)
+- Text: Cream (`--color-cream` / #F9F5F0)
+- Badge: Cream background with sage text
+- Hover: Darker sage (`--color-sage-dark`)
+- Position: Fixed to bottom, z-index 1000
+
+**Behavior:**
+- Clicking anywhere on bar opens the modal (except dismiss button)
+- Dismiss button: **Mobile only** - saves to sessionStorage so it doesn't reappear that session
+- Desktop/Tablet: Always visible (no dismiss option)
+
+#### Popup Modal
+
+**Content Structure:**
+1. Hero image from the promotion (full width, top)
+2. "NEW" badge
+3. Title (Playfair Display)
+4. Subtitle (italic)
+5. Description (2-3 sentences)
+6. Two CTAs:
+   - Primary: "Learn More" → Links to promotion page
+   - Secondary: "Apply Now" → Links to `/apply.html`
+
+**Styling:**
+- Background: Cream
+- Max-width: 420px (95% on mobile)
+- Border-radius: 12px
+- Overlay: Semi-transparent black (60% opacity)
+
+**Behavior:**
+- Opens with fade-in + slide-up animation
+- Closes via: X button, clicking overlay, or Escape key
+- Body scroll locked when open
+
+### Implementation Checklist for New Promotions
+
+When creating a new promotion:
+
+1. [ ] Create promotional hero image (portrait orientation works best, ~950x1188)
+2. [ ] Update bar thumbnail reference in HTML
+3. [ ] Update modal image reference in HTML
+4. [ ] Update "NEW" badge text if needed (or change to "LIMITED TIME", etc.)
+5. [ ] Update bar text copy
+6. [ ] Update modal title, subtitle, and description
+7. [ ] Update CTA links (primary → promo page, secondary → apply page)
+8. [ ] Add promo HTML/JS to desired pages (before cookie consent banner)
+
+### Files Modified for Promotions
+
+| File | Purpose |
+|------|---------|
+| `/css/main.css` | Contains `.promo-bottom-bar` and `.promo-modal` styles |
+| Target pages | HTML for bar + modal + inline JS (added before `</body>`) |
+
+### Current Promotion: Intentional Reset
+
+**Active on pages:**
+- `index.html` (Homepage)
+- `htma.html` (What is HTMA?)
+- `services/services.html` (Packages & Programs)
+- `services/lab-review.html` (Lab Review)
+
+**Promo page:** `/services/intentional-reset.html`
+
+---
+
 ## Brand & Style Preferences
 
 ### Typography

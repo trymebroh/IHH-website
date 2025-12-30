@@ -703,7 +703,7 @@
   margin: 0 auto;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .v3-hero-content {
     grid-template-columns: 1fr 1fr;
   }
@@ -778,6 +778,81 @@
   object-fit: cover;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
+}
+
+/* Mobile hero image - hidden by default */
+.v3-hero-image-mobile {
+  display: none;
+}
+
+/* Mobile empathy image - hidden by default */
+.v3-empathy-image-mobile {
+  display: none;
+}
+
+/* Mobile solution image - hidden by default */
+.v3-solution-image-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  /* Hide desktop images on mobile */
+  .v3-hero-image {
+    display: none;
+  }
+
+  .v3-empathy-image-wrap {
+    display: none;
+  }
+
+  /* Show mobile hero image */
+  .v3-hero-image-mobile {
+    display: block;
+    width: 233px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: var(--spacing-md) auto;
+  }
+
+  /* Show mobile empathy image */
+  .v3-empathy-image-mobile {
+    display: block;
+    width: 233px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: var(--spacing-md) auto;
+  }
+
+  /* Hide desktop solution image on mobile */
+  .v3-solution-image {
+    display: none;
+  }
+
+  /* Show mobile solution image */
+  .v3-solution-image-mobile {
+    display: block;
+    width: 233px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: var(--spacing-md) auto;
+  }
+
+  /* Center solution section title on mobile */
+  .v3-solution-text .v3-section-title {
+    text-align: center;
+  }
+
+  /* Center solution section CTA button on mobile */
+  .v3-solution-text {
+    text-align: center;
+  }
+
+  .v3-solution-text .v3-btn {
+    display: inline-block;
+  }
 }
 
 .v3-hero-stats {
@@ -2974,6 +3049,12 @@
 .v3-empathy-image-wrap {
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .v3-empathy-image-wrap {
+    display: none !important;
+  }
 }
 
 .v3-empathy-image {

@@ -130,7 +130,13 @@
           <div class="v3-hero-content">
             <div class="v3-hero-text">
               <span class="v3-hero-badge">Open to Men & Women</span>
+              <span class="v3-hero-badge">Telehealth</span>
               <h1 class="v3-hero-title">Your Labs Say "Normal"<br><span>You Feel Anything But</span></h1>
+              <img src="/images/services/horizontal-elements.webp"
+                   alt="Holistic health support"
+                   class="v3-hero-image-mobile"
+                   width="233" height="189"
+                   loading="eager">
               <p class="v3-hero-subtitle">Get a functional interpretation of your lab work that goes beyond reference ranges—and finally understand what your body is trying to tell you.</p>
 
               <div class="v3-hero-cta">
@@ -196,6 +202,11 @@
             </div>
             <div class="v3-solution-text">
               <h2>There's More to the Story</h2>
+              <img src="/images/services/alicia-lab-review-story.webp"
+                   alt="Alicia Harrison, NP"
+                   class="v3-solution-image-mobile"
+                   width="233" height="330"
+                   loading="lazy">
               <p>Standard lab ranges are based on averages—not optimal health. "Normal" doesn't mean you're thriving.</p>
               <p>In this 40-minute session, I'll walk you through your labs line-by-line using functional ranges and clinical context. You'll finally understand what each marker means, what patterns are emerging, and what steps you can take.</p>
               <p><strong>One session. No strings attached. Just clarity.</strong></p>
@@ -260,7 +271,7 @@
             </div>
             <div class="v3-included-cta">
               <div class="v3-included-cta-card">
-                <p class="v3-included-label">40-Minute Video Session</p>
+                <p class="v3-included-label">40-Minute Telehealth Video Session</p>
                 <p class="v3-included-price">$298</p>
                 <p class="v3-included-note">One-time investment</p>
                 <a href="#" class="v3-btn v3-btn-primary" data-track-cta="pkg-main" data-portal-lab-review>Book Your Session</a>
@@ -379,7 +390,7 @@
           <h4 class="v2-disclaimer-title">Educational & Imagery Disclaimer</h4>
           <p>This service provides functional lab interpretation for educational and informational purposes only. It is not intended to diagnose, treat, cure, or prevent any disease and does not replace individualized medical advice, diagnosis, or treatment from your primary care provider. Lab interpretation uses functional reference ranges for educational insight—not clinical diagnosis. Individual results may vary.</p>
           <p>Any individuals depicted in images on this website are models or stock photography subjects and are not patients or clients of Intention Holistic Health. Images are used for illustrative purposes only and do not represent clinical relationships or health outcomes.</p>
-          <p><strong>Scope of Services:</strong> Services are provided by a Kentucky-licensed Nurse Practitioner for educational wellness guidance. We do not prescribe medications or manage chronic conditions. Maintain care with your primary care physician for comprehensive medical management, emergencies, and pharmaceutical needs. This service is available to all states for educational purposes.</p>
+          <p><strong>Scope of Services:</strong> Services are provided by a Kentucky-licensed Nurse Practitioner for educational wellness guidance. We do not prescribe medications or manage chronic conditions. Maintain care with your primary care physician for comprehensive medical management, emergencies, and pharmaceutical needs.</p>
         </div>
       </section>
 
@@ -433,7 +444,7 @@
 
       <div class="footer-bottom">
         <p class="footer-disclaimer">
-          Services for Kentucky Residents Only. This website does not provide medical advice. All content is for informational purposes only.
+          Telehealth services for Kentucky residents only. This website does not provide medical advice. All content is for informational purposes only.
         </p>
         <p class="footer-copyright">
           &copy; <span class="current-year">2025</span> Intention Holistic Health, PLLC. All rights reserved.
@@ -494,6 +505,90 @@
         });
       });
     });
+  </script>
+
+  <!-- Bottom Promo Bar -->
+  <div class="promo-bottom-bar" id="promo-bar" data-track-section="promo-bar">
+    <div class="promo-bar-content">
+      <img src="/images/services/intentional-reset/intention-reset.webp" alt="Intentional Reset" class="promo-bar-thumbnail" width="45" height="56">
+      <span class="promo-bar-badge">New Package</span>
+      <span class="promo-bar-text">The Intentional Health Reset — Pause. Assess. Move forward intentionally.</span>
+      <button class="promo-bar-cta" data-track-cta="promo-bar-details">See Details</button>
+      <button class="promo-bar-dismiss" aria-label="Dismiss promotion">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Promo Popup Modal -->
+  <div class="promo-modal-overlay" id="promo-modal">
+    <div class="promo-modal">
+      <button class="promo-modal-close" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="promo-modal-inner">
+        <img src="/images/services/intentional-reset/intention-reset.webp" alt="The Intentional Health Reset" class="promo-modal-image" width="420" height="525">
+        <div class="promo-modal-content">
+          <span class="promo-modal-badge">New Package</span>
+          <h3 class="promo-modal-title">The Intentional Health Reset</h3>
+          <p class="promo-modal-subtitle">Pause. Assess. Move forward intentionally.</p>
+          <p class="promo-modal-description">A clinician-guided 7-step foundations assessment covering intake, lab work, HTMA testing, a personalized protocol, and follow-up support — everything you need to understand your body and move forward with a clear plan.</p>
+          <div class="promo-modal-ctas">
+            <a href="/services/intentional-reset.html" class="promo-modal-cta-primary" data-track-cta="promo-modal-learn-more">Learn More</a>
+            <a href="#" class="promo-modal-cta-secondary" data-track-cta="promo-modal-apply" data-portal>Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Promo Bar & Modal Logic
+    (function() {
+      var promoBar = document.getElementById('promo-bar');
+      var promoModal = document.getElementById('promo-modal');
+      var dismissBtn = promoBar ? promoBar.querySelector('.promo-bar-dismiss') : null;
+      var modalClose = promoModal ? promoModal.querySelector('.promo-modal-close') : null;
+
+      if (!promoBar || !promoModal) return;
+
+      if (sessionStorage.getItem('promo_dismissed') === 'true') {
+        promoBar.classList.add('dismissed');
+      }
+
+      promoBar.addEventListener('click', function(e) {
+        if (e.target.closest('.promo-bar-dismiss')) return;
+        promoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      function closeModal() {
+        promoModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (modalClose) modalClose.addEventListener('click', closeModal);
+
+      promoModal.addEventListener('click', function(e) {
+        if (e.target === promoModal) closeModal();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && promoModal.classList.contains('active')) closeModal();
+      });
+
+      if (dismissBtn) {
+        dismissBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          promoBar.classList.add('dismissed');
+          sessionStorage.setItem('promo_dismissed', 'true');
+        });
+      }
+    })();
   </script>
 
   <!-- Cookie Consent Banner -->

@@ -646,7 +646,7 @@
 
       <div class="footer-bottom">
         <p class="footer-disclaimer">
-          Services for Kentucky Residents Only. This website does not provide medical advice. All content is for informational purposes only.
+          Telehealth services for Kentucky residents only. This website does not provide medical advice. All content is for informational purposes only.
         </p>
         <p class="footer-copyright">
           &copy; <span class="current-year">2025</span> Intention Holistic Health, PLLC. All rights reserved.
@@ -701,6 +701,90 @@
         });
       });
     });
+  </script>
+
+  <!-- Bottom Promo Bar -->
+  <div class="promo-bottom-bar" id="promo-bar" data-track-section="promo-bar">
+    <div class="promo-bar-content">
+      <img src="/images/services/intentional-reset/intention-reset.webp" alt="Intentional Reset" class="promo-bar-thumbnail" width="45" height="56">
+      <span class="promo-bar-badge">New Package</span>
+      <span class="promo-bar-text">The Intentional Health Reset — Pause. Assess. Move forward intentionally.</span>
+      <button class="promo-bar-cta" data-track-cta="promo-bar-details">See Details</button>
+      <button class="promo-bar-dismiss" aria-label="Dismiss promotion">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Promo Popup Modal -->
+  <div class="promo-modal-overlay" id="promo-modal">
+    <div class="promo-modal">
+      <button class="promo-modal-close" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="promo-modal-inner">
+        <img src="/images/services/intentional-reset/intention-reset.webp" alt="The Intentional Health Reset" class="promo-modal-image" width="420" height="525">
+        <div class="promo-modal-content">
+          <span class="promo-modal-badge">New Package</span>
+          <h3 class="promo-modal-title">The Intentional Health Reset</h3>
+          <p class="promo-modal-subtitle">Pause. Assess. Move forward intentionally.</p>
+          <p class="promo-modal-description">A clinician-guided 7-step foundations assessment covering intake, lab work, HTMA testing, a personalized protocol, and follow-up support — everything you need to understand your body and move forward with a clear plan.</p>
+          <div class="promo-modal-ctas">
+            <a href="/services/intentional-reset.html" class="promo-modal-cta-primary" data-track-cta="promo-modal-learn-more">Learn More</a>
+            <a href="#" class="promo-modal-cta-secondary" data-track-cta="promo-modal-apply" data-portal>Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Promo Bar & Modal Logic
+    (function() {
+      var promoBar = document.getElementById('promo-bar');
+      var promoModal = document.getElementById('promo-modal');
+      var dismissBtn = promoBar ? promoBar.querySelector('.promo-bar-dismiss') : null;
+      var modalClose = promoModal ? promoModal.querySelector('.promo-modal-close') : null;
+
+      if (!promoBar || !promoModal) return;
+
+      if (sessionStorage.getItem('promo_dismissed') === 'true') {
+        promoBar.classList.add('dismissed');
+      }
+
+      promoBar.addEventListener('click', function(e) {
+        if (e.target.closest('.promo-bar-dismiss')) return;
+        promoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      function closeModal() {
+        promoModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (modalClose) modalClose.addEventListener('click', closeModal);
+
+      promoModal.addEventListener('click', function(e) {
+        if (e.target === promoModal) closeModal();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && promoModal.classList.contains('active')) closeModal();
+      });
+
+      if (dismissBtn) {
+        dismissBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          promoBar.classList.add('dismissed');
+          sessionStorage.setItem('promo_dismissed', 'true');
+        });
+      }
+    })();
   </script>
 
   <!-- Cookie Consent Banner -->

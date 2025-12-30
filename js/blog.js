@@ -447,8 +447,8 @@ Want more tips? Download the complimentary **Holistic Habits Checklist** for add
     excerpt: 'Looking for a delicious and nutritious way to start your day? This smoothie bowl is packed with fiber, protein, and gut-friendly ingredients.',
     image: '/images/blog/smoothie-bowl-square.webp',
     thumbnail: '/images/blog/smoothie-bowl-square-small.webp',
-    cardAspectRatio: '100%',    // 506x506 square image
-    imageAspectRatio: '100%',
+    cardAspectRatio: '56.25%',    // 1280x720 (16:9) image
+    imageAspectRatio: '56.25%',
     categories: ['recipes', 'breakfast', 'pcos'],
     content: `
 # Recipe: Probiotic-Rich Smoothie Bowl

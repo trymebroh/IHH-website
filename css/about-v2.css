@@ -59,6 +59,16 @@
   display: none;
 }
 
+/* Mobile passion/story image - hidden by default */
+.about-passion-image-mobile {
+  display: none;
+}
+
+/* Mobile passion caption - hidden by default */
+.image-caption-mobile {
+  display: none;
+}
+
 @media (max-width: 767px) {
   /* Hide desktop image on mobile */
   .about-hero-content > div:first-child {
@@ -68,13 +78,13 @@
   /* Show mobile image matching who-i-help-image-mobile styling */
   .about-hero-image-mobile {
     display: block;
-    width: 194px;
-    height: 259px;
+    width: 233px;
+    height: 311px;
     object-fit: cover;
     object-position: center top;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin: var(--spacing-md) auto;
+    margin: var(--spacing-sm) auto var(--spacing-md);
   }
 
   /* Center CTA button on mobile */
@@ -82,16 +92,29 @@
     text-align: center;
   }
 
-  /* Shadow under My Story section on mobile */
-  .about-passion {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    position: relative;
-    z-index: 1;
-  }
-
   /* Center "My Story" heading on mobile */
   .about-passion-content h2 {
     text-align: center;
+  }
+
+  /* Hide desktop passion image on mobile */
+  .about-passion-image {
+    display: none;
+  }
+
+  /* Show mobile passion image */
+  .about-passion-image-mobile {
+    display: block;
+    width: 233px;
+    height: auto;
+    border-radius: 0;
+    margin: var(--spacing-md) auto var(--spacing-xs);
+  }
+
+  /* Show mobile passion caption */
+  .image-caption-mobile {
+    display: block;
+    margin-bottom: var(--spacing-md);
   }
 
   /* Button layout in Why Intention section on mobile */
@@ -176,6 +199,12 @@
 }
 
 /* A Passion For Holistic Healing / My Story */
+.about-passion {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
 .about-passion .container {
   display: grid;
   grid-template-columns: 1fr;
@@ -530,7 +559,7 @@
   }
 
   .about-hero {
-    padding-top: calc(80px + 60px);
+    padding-top: 90px;
   }
 
   .about-intro-image,
@@ -541,6 +570,10 @@
 
   .about-intro-content h1 {
     font-size: var(--font-size-2xl);
+  }
+
+  .about-cta {
+    padding: 60px 0;
   }
 
   .about-cta h2 {

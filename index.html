@@ -95,15 +95,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
 
-  <!-- Preload LCP image for better performance - responsive -->
-  <link rel="preload" as="image"
-        href="/images/hero-mother-baby-small.webp"
-        imagesrcset="/images/hero-mother-baby-tiny.webp 120w,
-                     /images/hero-mother-baby-small.webp 250w,
-                     /images/hero-mother-baby-360.webp 360w,
-                     /images/hero-mother-baby-medium.webp 500w"
-        imagesizes="(max-width: 480px) 120px, 180px"
-        fetchpriority="high">
+  <!-- Preload LCP image for better performance -->
+  <link rel="preload" as="image" href="/images/hero-mother-baby.webp" fetchpriority="high">
 </head>
 <body>
   <!-- Skip to main content for accessibility -->
@@ -166,17 +159,13 @@
 
     <!-- Hero Banner -->
     <section class="hero-banner-v2" data-track-section="hero-banner">
-      <h1 class="hero-banner-headline-top">Holistic Motherhood <span class="sr-only">Wellness</span></h1>
-      <div class="hero-banner-content">
+      <div class="container">
+        <h1 class="hero-banner-headline-top">Holistic Motherhood <span class="sr-only">Wellness</span></h1>
+        <div class="hero-banner-content">
         <div class="hero-banner-image-wrapper">
-          <img src="/images/hero-mother-baby-small.webp"
-               srcset="/images/hero-mother-baby-tiny.webp 120w,
-                       /images/hero-mother-baby-small.webp 250w,
-                       /images/hero-mother-baby-360.webp 360w,
-                       /images/hero-mother-baby-medium.webp 500w"
-               sizes="(max-width: 480px) 120px, 180px"
+          <img src="/images/hero-mother-baby.webp"
                alt="Mother holding baby wrapped in cozy knit blanket"
-               class="hero-banner-photo" width="180" height="180" fetchpriority="high">
+               class="hero-banner-photo">
         </div>
         <div class="hero-banner-text">
           <p class="hero-banner-headline-bottom" aria-hidden="true">Wellness</p>
@@ -189,6 +178,7 @@
           </p>
           <p class="hero-banner-script">intentional. simple. holistic.</p>
         </div>
+      </div>
       </div>
     </section>
 
@@ -207,7 +197,7 @@
             I help women in Kentucky connect the dots between their hormones, energy, and environment so they can move into motherhood feeling balanced, nourished, and confident.
           </p>
           <p class="hero-text">
-            Through clinical assessment, selective testing (like HTMA), and evidence-informed lifestyle recommendations, we help you uncover what your body truly needs to thrive — before, during, and after baby.
+            Through clinical assessment, selective testing (like HTMA), and evidence-informed lifestyle recommendations via telehealth, we help you uncover what your body truly needs to thrive — before, during, and after baby.
           </p>
           <p class="hero-text hero-cta-text">
             Let's chat and take the first step toward intentional, lasting wellness.
@@ -229,6 +219,8 @@
           <div>
             <p class="section-label">Who I Help</p>
             <h2>Kentucky Women Ready to Approach Health + Motherhood Differently — With Clarity, Confidence, & Intention</h2>
+            <img src="/images/who-i-help-mother.webp"
+                 alt="Mother and child wellness" class="who-i-help-image-mobile" width="162" height="216" loading="lazy">
             <p class="who-i-help-intro">Maybe you're…</p>
             <ul class="who-i-help-list">
               <li>Preparing your body for conception and want to support fertility and egg quality naturally</li>
@@ -490,7 +482,7 @@
 
       <div class="footer-bottom">
         <p class="footer-disclaimer">
-          Services for Kentucky Residents Only. This website does not provide medical advice. All content is for informational purposes only.
+          Telehealth services for Kentucky residents only. This website does not provide medical advice. All content is for informational purposes only.
         </p>
         <p class="footer-copyright">
           &copy; <span class="current-year">2025</span> Intention Holistic Health, PLLC. All rights reserved.
@@ -678,6 +670,102 @@
 
       // Click popup to dismiss
       popup.addEventListener('click', hidePopup);
+    })();
+  </script>
+
+  <!-- Bottom Promo Bar -->
+  <div class="promo-bottom-bar" id="promo-bar" data-track-section="promo-bar">
+    <div class="promo-bar-content">
+      <img src="/images/services/intentional-reset/intention-reset.webp" alt="Intentional Reset" class="promo-bar-thumbnail" width="45" height="56">
+      <span class="promo-bar-badge">New Package</span>
+      <span class="promo-bar-text">The Intentional Health Reset — Pause. Assess. Move forward intentionally.</span>
+      <button class="promo-bar-cta" data-track-cta="promo-bar-details">See Details</button>
+      <button class="promo-bar-dismiss" aria-label="Dismiss promotion">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Promo Popup Modal -->
+  <div class="promo-modal-overlay" id="promo-modal">
+    <div class="promo-modal">
+      <button class="promo-modal-close" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="promo-modal-inner">
+        <img src="/images/services/intentional-reset/intention-reset.webp" alt="The Intentional Health Reset" class="promo-modal-image" width="420" height="525">
+        <div class="promo-modal-content">
+          <span class="promo-modal-badge">New Package</span>
+          <h3 class="promo-modal-title">The Intentional Health Reset</h3>
+          <p class="promo-modal-subtitle">Pause. Assess. Move forward intentionally.</p>
+          <p class="promo-modal-description">A clinician-guided 7-step foundations assessment covering intake, lab work, HTMA testing, a personalized protocol, and follow-up support — everything you need to understand your body and move forward with a clear plan.</p>
+          <div class="promo-modal-ctas">
+            <a href="/services/intentional-reset.html" class="promo-modal-cta-primary" data-track-cta="promo-modal-learn-more">Learn More</a>
+            <a href="#" class="promo-modal-cta-secondary" data-track-cta="promo-modal-apply" data-portal>Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Promo Bar & Modal Logic
+    (function() {
+      var promoBar = document.getElementById('promo-bar');
+      var promoModal = document.getElementById('promo-modal');
+      var dismissBtn = promoBar ? promoBar.querySelector('.promo-bar-dismiss') : null;
+      var modalClose = promoModal ? promoModal.querySelector('.promo-modal-close') : null;
+
+      if (!promoBar || !promoModal) return;
+
+      // Check if dismissed in this session
+      if (sessionStorage.getItem('promo_dismissed') === 'true') {
+        promoBar.classList.add('dismissed');
+      }
+
+      // Open modal when clicking the bar (but not dismiss button)
+      promoBar.addEventListener('click', function(e) {
+        if (e.target.closest('.promo-bar-dismiss')) return;
+        promoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Close modal
+      function closeModal() {
+        promoModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+      }
+
+      // Close on overlay click
+      promoModal.addEventListener('click', function(e) {
+        if (e.target === promoModal) {
+          closeModal();
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && promoModal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+
+      // Dismiss bar (mobile only, but button hidden on desktop via CSS)
+      if (dismissBtn) {
+        dismissBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          promoBar.classList.add('dismissed');
+          sessionStorage.setItem('promo_dismissed', 'true');
+        });
+      }
     })();
   </script>
 

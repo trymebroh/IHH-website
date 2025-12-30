@@ -36,7 +36,6 @@
 
   <link rel="preload" href="/fonts/Poppins-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/BDScript-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/images/about/alicia-portrait-mug-medium.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/services-v2.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
@@ -99,21 +98,21 @@
 
     <!-- Contact Hero Section -->
     <section class="contact-hero" data-track-section="hero">
-      <div class="container">
+      <div class="contact-hero-wrapper">
         <div class="contact-hero-content">
           <h1 class="contact-hero-title">Contact Alicia</h1>
           <div class="contact-hero-line"></div>
           <p class="contact-hero-subtitle">GET IN TOUCH TO LEARN HOW WE CAN WORK TOGETHER</p>
         </div>
+        <img src="/images/about/alicia-portrait-mug-medium.webp"
+             srcset="/images/about/alicia-portrait-mug-small.webp 400w,
+                     /images/about/alicia-portrait-mug-medium.webp 800w"
+             sizes="(max-width: 1023px) 412px, 320px"
+             alt="Alicia Harrison, Nurse Practitioner"
+             class="contact-hero-image"
+             width="800" height="1200"
+             fetchpriority="high">
       </div>
-      <img src="/images/about/alicia-portrait-mug-medium.webp"
-           srcset="/images/about/alicia-portrait-mug-small.webp 400w,
-                   /images/about/alicia-portrait-mug-medium.webp 800w"
-           sizes="(max-width: 1023px) 412px, 38vw"
-           alt="Alicia Harrison, Nurse Practitioner"
-           class="contact-hero-image"
-           width="800" height="1200"
-           fetchpriority="high">
     </section>
 
     <!-- Contact Content -->
@@ -215,7 +214,7 @@
               <span class="v3-faq-icon">+</span>
             </button>
             <div class="v3-faq-answer">
-              <p>Services are available to Kentucky residents only.</p>
+              <p>All telehealth services require Kentucky residency due to licensure requirements.</p>
             </div>
           </div>
 
@@ -281,7 +280,7 @@
 
       <div class="footer-bottom">
         <p class="footer-disclaimer">
-          Services for Kentucky Residents Only. This website does not provide medical advice. All content is for informational purposes only.
+          Telehealth services for Kentucky residents only. This website does not provide medical advice. All content is for informational purposes only.
         </p>
         <p class="footer-copyright">
           &copy; <span class="current-year">2025</span> Intention Holistic Health, PLLC. All rights reserved.
