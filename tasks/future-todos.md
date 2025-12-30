@@ -49,6 +49,33 @@
 4. Create pin graphics for blog posts
 5. Start pinning content
 
+### Email List Growth & Content Marketing Plan
+**Status:** Not started
+**Action:** Develop comprehensive strategy to grow email subscribers while maintaining deliverability and domain health.
+
+**Channels to develop:**
+- Website: Additional lead magnets (preconception guide, postpartum checklist, HTMA quiz)
+- Website: Content upgrades within blog posts
+- Social media: Instagram/Facebook lead magnet promotion
+- Pinterest: Pin graphics linking to opt-in pages
+- Video: YouTube/Reels content with CTA to lead magnets
+- Podcast features: Guest appearances with listener offer
+- Offline: QR codes on business cards, brochures, clinic materials
+
+**Email health considerations:**
+- Use double opt-in to maintain list quality
+- Segment inactive subscribers for re-engagement campaigns
+- Monitor bounce rates and clean list regularly
+- Warm up sending gradually (don't blast full list immediately)
+- Authenticate domain properly (SPF, DKIM, DMARC)
+- Keep complaint rate below 0.1%
+
+**Lead magnet ideas by journey stage:**
+- Preconception: "Fertility Foundations Checklist" or "30-Day Preconception Prep Guide"
+- Pregnancy: "Low-Tox Pregnancy Swaps" or "Nutrition Guide by Trimester"
+- Postpartum: "Postpartum Recovery Roadmap" or "Hormone Rebalancing Guide"
+- General: "Is HTMA Right For Me?" quiz
+
 ---
 
 ## LOW Priority / Optional Enhancements
