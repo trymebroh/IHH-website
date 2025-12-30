@@ -76,6 +76,17 @@
 - Postpartum: "Postpartum Recovery Roadmap" or "Hormone Rebalancing Guide"
 - General: "Is HTMA Right For Me?" quiz
 
+**Lead magnet access control options (when hosting on website):**
+
+| Option | Security | Complexity | Notes |
+|--------|----------|------------|-------|
+| Email-only delivery | Medium | Low | MailerLite sends PDF link; not publicly discoverable but link can be shared |
+| Time-limited signed URLs | High | Medium | Netlify Function generates expiring links (e.g., 24hr); shared links stop working |
+| Email verification gate | High | Medium | Landing page checks if email exists in MailerLite before showing download |
+| Single-use token system | Highest | Higher | Unique tokens in email URLs; Netlify Function validates before serving; tokens expire after use |
+
+**Recommendation:** Start with email-only delivery (Option 1). Upgrade to signed URLs or verification gate if link sharing becomes an issue.
+
 ---
 
 ## LOW Priority / Optional Enhancements
