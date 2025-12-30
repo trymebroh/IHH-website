@@ -61,14 +61,16 @@ document.addEventListener('DOMContentLoaded', function() {
   // PORTAL REDIRECT OVERLAY
   // -----------------------------------------
   (function() {
-    // Portal URLs - update these when Practice Better links change
+    // Portal URLs - update these when links change
     var PORTAL_URLS = {
       default: 'https://my.practicebetter.io/#/65f9b5add14abe8b539487a6/forms?f=661efbf14a1d3d6613c89cf0',
-      labReview: 'https://my.practicebetter.io/#/signin' // TODO: Replace with actual Lab Review intake form URL
+      labReview: 'https://my.practicebetter.io/#/signin', // TODO: Replace with actual Lab Review intake form URL
+      signin: 'https://my.practicebetter.io/#/signin', // Patient Portal signin page
+      fullscript: 'https://us.fullscript.com/welcome/intentionholistichealth' // Supplements store
     };
     var REDIRECT_DELAY = 1500; // 1.5 seconds
 
-    // Helper function to show overlay and redirect
+    // Helper function to show Practice Better overlay and redirect
     function showPortalOverlay(destinationUrl) {
       // Create overlay
       var overlay = document.createElement('div');
@@ -99,6 +101,34 @@ document.addEventListener('DOMContentLoaded', function() {
       }, REDIRECT_DELAY);
     }
 
+    // Helper function to show Fullscript overlay and redirect
+    function showFullscriptOverlay(destinationUrl) {
+      var overlay = document.createElement('div');
+      overlay.className = 'portal-redirect-overlay';
+      overlay.innerHTML =
+        '<div class="portal-redirect-content">' +
+          '<img src="/images/logo.webp" alt="Intention Holistic Health" class="portal-redirect-logo">' +
+          '<h2 class="portal-redirect-title">Continuing to Your Supplements</h2>' +
+          '<div class="portal-redirect-dots"><span></span><span></span><span></span></div>' +
+          '<div class="portal-redirect-badge">' +
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">' +
+              '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>' +
+            '</svg>' +
+            '<span>Curated by Your Practitioner</span>' +
+          '</div>' +
+        '</div>';
+
+      document.body.appendChild(overlay);
+
+      setTimeout(function() {
+        overlay.classList.add('active');
+      }, 10);
+
+      setTimeout(function() {
+        window.location.href = destinationUrl;
+      }, REDIRECT_DELAY);
+    }
+
     // Default portal links (1:1 Wellness, HTMA, etc.)
     var portalLinks = document.querySelectorAll('[data-portal]');
     portalLinks.forEach(function(link) {
@@ -114,6 +144,24 @@ document.addEventListener('DOMContentLoaded', function() {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         showPortalOverlay(PORTAL_URLS.labReview);
+      });
+    });
+
+    // Patient Portal signin links (nav and footer)
+    var signinLinks = document.querySelectorAll('[data-portal-signin]');
+    signinLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        showPortalOverlay(PORTAL_URLS.signin);
+      });
+    });
+
+    // Fullscript supplement store links
+    var fullscriptLinks = document.querySelectorAll('[data-fullscript]');
+    fullscriptLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        showFullscriptOverlay(PORTAL_URLS.fullscript);
       });
     });
   })();
