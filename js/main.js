@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Portal URLs - update these when links change
     var PORTAL_URLS = {
       default: 'https://my.practicebetter.io/#/65f9b5add14abe8b539487a6/forms?f=661efbf14a1d3d6613c89cf0',
-      labReview: 'https://my.practicebetter.io/#/signin', // TODO: Replace with actual Lab Review intake form URL
+      labReview: 'https://my.practicebetter.io/#/65f9b5add14abe8b539487a6/forms?f=661efbf14a1d3d6613c89cf0', // Same intake form as services
       signin: 'https://my.practicebetter.io/#/signin', // Patient Portal signin page
       fullscript: 'https://us.fullscript.com/welcome/intentionholistichealth' // Supplements store
     };

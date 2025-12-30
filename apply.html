@@ -34,6 +34,7 @@
 
   <title>Apply for Consultation | Intention Holistic Health</title>
 
+  <link rel="canonical" href="https://www.intentionholistichealth.com/apply.html">
   <link rel="preload" href="/fonts/Poppins-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/css/main.css">
@@ -252,8 +253,9 @@
               </div>
             </div>
 
-            <form name="consultation-application" method="POST" action="/apply.html?success=application" data-netlify="true" class="apply-form">
+            <form name="consultation-application" method="POST" action="/apply.html?success=application" data-netlify="true" data-netlify-honeypot="bot-field" class="apply-form">
               <input type="hidden" name="form-name" value="consultation-application">
+              <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
               <div class="form-group">
                 <label for="fullname" class="form-label">Full Name *</label>

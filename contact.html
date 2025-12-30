@@ -32,10 +32,45 @@
   <meta property="og:title" content="Contact | Intention Holistic Health">
   <meta property="og:description" content="Reach out to connect with Alicia about wellness support and holistic health services.">
 
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How quickly will I hear back?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I typically respond to inquiries within 1-2 business days. If you're reaching out about becoming a client, I'll send you information about next steps and scheduling a discovery call."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I'm not in Kentucky. Can I still work with you?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All telehealth services require Kentucky residency due to licensure requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I book a free consultation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can apply to work together through the client portal, and I'll reach out to schedule a free 20-minute discovery call to discuss your goals and see if we're a good fit."
+        }
+      }
+    ]
+  }
+  </script>
+
   <title>Contact | Intention Holistic Health</title>
 
+  <link rel="canonical" href="https://www.intentionholistichealth.com/contact.html">
   <link rel="preload" href="/fonts/Poppins-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/fonts/BDScript-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/BDScript-subset.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/services-v2.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
@@ -155,8 +190,10 @@
 
           <!-- Contact Form -->
           <div>
-            <form name="contact" method="POST" action="/contact.html?success=true" data-netlify="true" data-validate class="contact-form">
+            <form name="contact" method="POST" action="/contact.html?success=true" data-netlify="true" data-netlify-honeypot="bot-field" data-validate class="contact-form">
               <input type="hidden" name="form-name" value="contact">
+              <!-- Honeypot field for spam protection -->
+              <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
               <div class="form-group">
                 <label for="name" class="form-label">Name *</label>
@@ -176,6 +213,13 @@
               <div class="form-group">
                 <label for="message" class="form-label">Message *</label>
                 <textarea id="message" name="message" class="form-textarea" required placeholder="Tell me a little about yourself and how I can help..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-checkbox-label">
+                  <input type="checkbox" name="newsletter_optin" value="yes" checked>
+                  <span>Send me wellness tips, resources, and updates from Intention Holistic Health</span>
+                </label>
               </div>
 
               <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" data-track-cta="send-message">Send Message</button>
