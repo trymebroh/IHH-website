@@ -54,6 +54,87 @@
   display: block;
 }
 
+/* Mobile hero image - hidden by default */
+.about-hero-image-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  /* Hide desktop image on mobile */
+  .about-hero-content > div:first-child {
+    display: none;
+  }
+
+  /* Show mobile image matching who-i-help-image-mobile styling */
+  .about-hero-image-mobile {
+    display: block;
+    width: 194px;
+    height: 259px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: var(--spacing-md) auto;
+  }
+
+  /* Center CTA button on mobile */
+  .about-hero .mt-md {
+    text-align: center;
+  }
+
+  /* Shadow under My Story section on mobile */
+  .about-passion {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Center "My Story" heading on mobile */
+  .about-passion-content h2 {
+    text-align: center;
+  }
+
+  /* Button layout in Why Intention section on mobile */
+  .bg-light .mt-lg {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .bg-light .mt-lg .btn {
+    margin-right: 0;
+  }
+
+  /* Center footer on mobile */
+  .footer-brand {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logos {
+    justify-content: center;
+  }
+
+  .footer-tagline {
+    text-align: center;
+    max-width: 240px;
+  }
+
+  .footer-social {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .footer-cta-buttons {
+    justify-content: center;
+  }
+}
+
 /* Meet Alicia / Intro Section */
 .about-intro .container {
   display: grid;
@@ -94,7 +175,7 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* A Passion For Holistic Healing */
+/* A Passion For Holistic Healing / My Story */
 .about-passion .container {
   display: grid;
   grid-template-columns: 1fr;

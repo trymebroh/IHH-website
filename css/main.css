@@ -1176,6 +1176,36 @@ p {
   font-size: var(--font-size-sm);
 }
 
+/* Footer mobile centering */
+@media (max-width: 767px) {
+  .footer-brand {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logos {
+    justify-content: center;
+  }
+
+  .footer-tagline {
+    text-align: center;
+    max-width: 240px;
+  }
+
+  .footer-social {
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .footer-cta-buttons {
+    justify-content: center;
+  }
+}
+
 /* -----------------------------------------
    HERO BANNER (Full-width image)
    ----------------------------------------- */
@@ -1208,7 +1238,7 @@ p {
 .hero-banner-v2 {
   width: 100%;
   margin-top: 80px; /* Account for fixed header */
-  padding: 3vw 8%;
+  padding: min(3vw, 39px) 0; /* Vertical padding only - no horizontal */
   background-color: var(--color-cream);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   position: relative;
@@ -1216,12 +1246,20 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.hero-banner-v2 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 /* Top headline - "HOLISTIC MOTHERHOOD" - spans full width */
 .hero-banner-headline-top {
   font-family: 'Playfair Display SC', 'Playfair Display', var(--font-heading);
-  font-size: 4.5vw;
+  font-size: min(4.5vw, 58.5px); /* Cap at 58.5px on wide screens */
   font-weight: 400;
   font-style: italic;
   text-transform: uppercase;
@@ -1231,38 +1269,35 @@ p {
   margin-bottom: 0.1em;
   line-height: 1.2;
   width: 100%;
-  max-width: 65vw;
+  max-width: 1260px; /* Hardcoded same as .container */
+  padding: 0 40px;
+  box-sizing: border-box;
   white-space: nowrap;
 }
 
 /* Two-column layout: image left, text right */
 .hero-banner-content {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 4%;
-  max-width: 65vw;
-  width: 100%;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr; /* Fixed 280px image column, flexible text column */
+  gap: 48px; /* Fixed gap */
+  align-items: start; /* Both columns anchor to top */
+  /* Container wrapper handles max-width, centering, and padding */
 }
 
 .hero-banner-image-wrapper {
-  flex: 0 0 32%;
-  min-width: 0; /* Allows flex item to shrink below content size */
-  align-self: flex-start;
+  /* Grid handles the 280px width */
 }
 
 .hero-banner-photo {
-  width: 100%;
-  height: auto;
   display: block;
-  object-fit: cover;
-  max-height: 33vw;
-  object-position: center top;
+  width: 100%; /* Fill the grid cell */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 12px;
 }
 
+
 .hero-banner-text {
-  flex: 1;
+  /* Grid handles the flexible width */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1272,7 +1307,7 @@ p {
 /* Bottom headline - "WELLNESS" - aligned with text column */
 .hero-banner-headline-bottom {
   font-family: 'Playfair Display SC', 'Playfair Display', var(--font-heading);
-  font-size: 4.5vw;
+  font-size: min(4.5vw, 58.5px); /* Cap at same size as "Holistic Motherhood" */
   font-weight: 400;
   font-style: italic;
   text-transform: uppercase;
@@ -1284,7 +1319,7 @@ p {
 
 .hero-banner-body {
   font-family: 'Glacial Indifference', 'Poppins', var(--font-body);
-  font-size: 1.4vw;
+  font-size: min(1.4vw, 18px); /* Cap at 18px (1.4% of 1260px) */
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -1295,28 +1330,109 @@ p {
   text-align: left;
 }
 
-/* Mobile: Hero banner fills width while maintaining desktop layout */
+/* Mobile: Hero banner responsive layout */
 @media (max-width: 767px) {
   .hero-banner-v2 {
-    padding: 3vw 2%; /* Reduce side padding to fill more width */
-    width: 100vw;
-    margin-left: calc(-50vw + 50%); /* Break out of container to full viewport width */
+    padding: 3vw 0;
+    width: 100%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-banner-v2 .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-banner-headline-top {
+    font-size: 7vw;
+    padding: 0 15px;
+    white-space: normal;
+    margin-bottom: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Flatten text container so children can be reordered */
+  .hero-banner-text {
+    display: contents;
+  }
+
+  /* Reorder: Wellness first, then image, then body, then script */
+  .hero-banner-headline-bottom {
+    order: -2;
+    font-size: 7vw;
+    margin-bottom: 0.2em;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-banner-image-wrapper {
+    order: -1;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .hero-banner-body {
+    order: 0;
+    font-size: 3.2vw;
+    white-space: normal;
+    text-align: center;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  .hero-banner-body br {
+    display: none;
+  }
+
+  .hero-banner-v2 .hero-banner-script {
+    order: 1;
+    font-size: 12vw;
+    text-align: center;
+    width: 100%;
   }
 }
 
 .hero-banner-script {
   font-family: 'Beautifully Delicious Script', cursive;
-  font-size: 4.9vw;
+  font-size: min(4.9vw, 76px); /* Cap font size on wide screens */
   font-weight: 400;
   color: var(--color-charcoal);
   font-style: normal;
   letter-spacing: 0.02em;
+  white-space: nowrap; /* Keep on single line */
 }
 
 /* -----------------------------------------
    LIFESTYLE-BRAND SECTION HEADERS
    (Script text with overlapping uppercase subtitle)
    ----------------------------------------- */
+/* Reduce top padding for sections with large script titles */
+.section.bg-cream:has(.section-header-lifestyle) {
+  padding-top: 14px !important;
+}
+
+@media (min-width: 768px) {
+  .section.bg-cream:has(.section-header-lifestyle) {
+    padding-top: 20px !important;
+  }
+}
+
 .section-header-lifestyle {
   position: relative;
   text-align: center;
@@ -1326,8 +1442,8 @@ p {
 .section-header-lifestyle .script-title {
   font-family: 'Beautifully Delicious Script', cursive;
   font-size: 16.8rem; /* 11.2rem * 1.5 = 50% more */
-  color: #B8BBA8; /* Darker sage for more contrast */
-  opacity: 0.65;
+  color: #969B8F; /* Darker sage for more contrast */
+  opacity: 0.75;
   line-height: 1;
   margin-bottom: 0;
   font-weight: 400;
@@ -1522,13 +1638,12 @@ p {
 
 .hero-image {
   position: absolute;
-  right: var(--spacing-xl);
+  left: 57%;
   top: 50%;
   transform: translateY(-50%);
-  width: 40%;
-  height: 70%;
-  object-fit: cover;
-  object-position: center bottom;
+  width: 35%;
+  height: auto;
+  max-width: 400px;
   border-radius: 24px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
@@ -1545,10 +1660,10 @@ p {
 
   .hero-image-mobile {
     display: block;
-    width: 120px;
-    height: 160px;
+    width: 194px;
+    height: 194px;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 85%;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin: var(--spacing-md) auto;
@@ -1556,6 +1671,10 @@ p {
 
   .hero-content {
     text-align: center;
+  }
+
+  .hero-text {
+    text-align: left;
   }
 
   .hero-cta-group {
@@ -1671,6 +1790,39 @@ p {
   max-width: 85%;
   display: block;
   margin: auto;
+}
+
+/* Who I Help mobile image - shown only on mobile, after headline */
+.who-i-help-image-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  /* Hide desktop image on mobile */
+  .who-i-help-image {
+    display: none;
+  }
+
+  /* Show mobile image matching hero-image-mobile styling */
+  .who-i-help-image-mobile {
+    display: block;
+    width: 194px;
+    height: 259px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: var(--spacing-md) auto;
+  }
+
+  /* Center "Learn More About Me" button on mobile */
+  .who-i-help-content > div:first-child {
+    text-align: center;
+  }
+
+  .who-i-help-content > div:first-child .btn {
+    display: inline-block;
+  }
 }
 
 /* Reduce padding for sections with side-by-side content */
@@ -2452,6 +2604,14 @@ p {
   transform: scale(1.05);
 }
 
+/* Contact page mobile button centering */
+@media (max-width: 767px) {
+  .contact-info .btn {
+    display: block;
+    text-align: center;
+  }
+}
+
 /* -----------------------------------------
    LEGAL PAGE STYLES
    ----------------------------------------- */
@@ -2892,5 +3052,382 @@ p {
   .cookie-btn {
     flex: 1;
     max-width: 150px;
+  }
+}
+
+/* -----------------------------------------
+   BOTTOM PROMO BAR
+   ----------------------------------------- */
+.promo-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--color-sage-green);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--spacing-lg);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.promo-bottom-bar:hover {
+  background: var(--color-sage-dark);
+}
+
+.promo-bottom-bar.dismissed {
+  display: none;
+}
+
+.promo-bar-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  max-width: 1200px;
+  width: 100%;
+  justify-content: center;
+}
+
+.promo-bar-thumbnail {
+  width: 45px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.promo-bar-badge {
+  background: var(--color-cream);
+  color: var(--color-sage-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.promo-bar-text {
+  color: var(--color-cream);
+  font-size: 0.95rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.promo-bar-cta {
+  background: transparent;
+  border: 1.5px solid var(--color-cream);
+  color: var(--color-cream);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.promo-bar-cta:hover {
+  background: var(--color-cream);
+  color: var(--color-sage-dark);
+}
+
+.promo-bar-dismiss {
+  display: none;
+}
+
+/* Tablet */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .promo-bottom-bar {
+    height: 55px;
+  }
+
+  .promo-bar-thumbnail {
+    width: 40px;
+    height: 50px;
+  }
+
+  .promo-bar-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .promo-bottom-bar {
+    height: 50px;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .promo-bar-content {
+    gap: var(--spacing-sm);
+  }
+
+  .promo-bar-thumbnail {
+    display: none;
+  }
+
+  .promo-bar-text {
+    font-size: 0.85rem;
+  }
+
+  .promo-bar-cta {
+    display: none;
+  }
+
+  .promo-bar-dismiss {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--color-cream);
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    opacity: 0.8;
+    flex-shrink: 0;
+    padding: 0;
+  }
+
+  .promo-bar-dismiss:hover {
+    opacity: 1;
+  }
+
+  .promo-bar-dismiss svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* -----------------------------------------
+   PROMO POPUP MODAL
+   ----------------------------------------- */
+.promo-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.promo-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.promo-modal {
+  background: var(--color-cream);
+  border-radius: 12px;
+  max-width: 420px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden; /* Clip content to rounded corners */
+  position: relative;
+  transform: translateY(20px);
+  transition: transform var(--transition-base);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inner scrollable container with overlay scrollbar (Apple-style) */
+.promo-modal-inner {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 90vh;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: transparent transparent; /* Firefox: hide by default */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Webkit overlay scrollbar - sits on top of content */
+.promo-modal-inner::-webkit-scrollbar {
+  width: 6px;
+  background: transparent;
+  position: absolute; /* Overlay on content */
+  right: 0;
+}
+
+.promo-modal-inner::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.promo-modal-inner::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+/* Show scrollbar on hover (desktop) or when scrolling */
+.promo-modal-inner:hover::-webkit-scrollbar-thumb,
+.promo-modal-inner:active::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.promo-modal-inner:hover {
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent; /* Firefox */
+}
+
+/* Ensure overlay behavior - content goes under scrollbar */
+.promo-modal-inner > * {
+  padding-right: 8px; /* Small padding so content doesn't hide under scrollbar */
+}
+
+.promo-modal-overlay.active .promo-modal {
+  transform: translateY(0);
+}
+
+.promo-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--color-white);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform var(--transition-fast);
+}
+
+.promo-modal-close:hover {
+  transform: scale(1.1);
+}
+
+.promo-modal-close svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-charcoal);
+}
+
+.promo-modal-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.promo-modal-content {
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.promo-modal-badge {
+  display: inline-block;
+  background: var(--color-sage-green);
+  color: var(--color-cream);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--spacing-sm);
+}
+
+.promo-modal-title {
+  font-family: var(--font-secondary);
+  font-size: 1.75rem;
+  color: var(--color-charcoal);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.2;
+}
+
+.promo-modal-subtitle {
+  font-style: italic;
+  color: var(--color-sage-dark);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.promo-modal-description {
+  color: var(--color-charcoal);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+}
+
+.promo-modal-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.promo-modal-cta-primary {
+  background: var(--color-sage-green);
+  color: var(--color-cream);
+  border: none;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  text-decoration: none;
+  display: block;
+}
+
+.promo-modal-cta-primary:hover {
+  background: var(--color-sage-dark);
+  color: var(--color-cream);
+}
+
+.promo-modal-cta-secondary {
+  background: transparent;
+  color: var(--color-sage-green);
+  border: 2px solid var(--color-sage-green);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  display: block;
+}
+
+.promo-modal-cta-secondary:hover {
+  background: var(--color-sage-green);
+  color: var(--color-cream);
+}
+
+/* Mobile modal adjustments */
+@media (max-width: 767px) {
+  .promo-modal {
+    max-width: 95%;
+    max-height: 85vh;
+  }
+
+  .promo-modal-content {
+    padding: var(--spacing-md);
+  }
+
+  .promo-modal-title {
+    font-size: 1.5rem;
+  }
+
+  .promo-modal-description {
+    font-size: 0.9rem;
   }
 }

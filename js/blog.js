@@ -445,11 +445,10 @@ Want more tips? Download the complimentary **Holistic Habits Checklist** for add
     date: '2024-10-15',
     author: 'Alicia Harrison, MSN, APRN, FNP-C',
     excerpt: 'Looking for a delicious and nutritious way to start your day? This smoothie bowl is packed with fiber, protein, and gut-friendly ingredients.',
-    image: '/images/blog/smoothie-bowl-new.webp',
-    thumbnail: '/images/blog/smoothie-bowl-new-small.webp',
-    cardAspectRatio: '56.22%',    // 900x506 image (16:9 like other posts)
-    imageAspectRatio: '56.22%',
-    cardImageStyle: 'object-position: center center;',
+    image: '/images/blog/smoothie-bowl-square.webp',
+    thumbnail: '/images/blog/smoothie-bowl-square-small.webp',
+    cardAspectRatio: '100%',    // 506x506 square image
+    imageAspectRatio: '100%',
     categories: ['recipes', 'breakfast', 'pcos'],
     content: `
 # Recipe: Probiotic-Rich Smoothie Bowl
@@ -855,6 +854,125 @@ function setupCategoryFiltering(posts) {
         blogPostsContainer.innerHTML = html;
       }
     });
+  });
+
+  // Mobile category dropdown
+  const mobileSelect = document.getElementById('mobile-category-select');
+  if (mobileSelect) {
+    mobileSelect.addEventListener('change', function() {
+      const category = this.value;
+
+      // Update sidebar active state too
+      categoryLinks.forEach(function(l) {
+        l.classList.remove('active');
+        if (l.dataset.category === category) {
+          l.classList.add('active');
+        }
+      });
+
+      const blogPostsContainer = document.getElementById('blog-posts');
+
+      // Filter posts
+      let filteredPosts = posts;
+      if (category !== 'all') {
+        filteredPosts = posts.filter(function(post) {
+          return post.categories.includes(category);
+        });
+      }
+
+      // Re-render
+      if (filteredPosts.length === 0) {
+        blogPostsContainer.innerHTML = '<p class="loading-message">No posts found in this category.</p>';
+      } else {
+        let html = '';
+        filteredPosts.forEach(function(post, index) {
+          const cardImgStyle = post.cardImageStyle ? ` style="${post.cardImageStyle}"` : '';
+          const aspectRatio = post.cardAspectRatio || '56.25%';
+          const linkStyle = ` style="padding-bottom: ${aspectRatio};"`;
+          const imgLoadAttr = index === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
+          const thumbImage = post.thumbnail || post.image.replace('.webp', '-small.webp');
+          html += `
+            <article class="blog-card">
+              <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link"${linkStyle}>
+                <img src="${thumbImage}" alt="${post.title}" class="blog-card-image"${cardImgStyle} width="400" height="225" ${imgLoadAttr} onerror="this.src='${post.image}'">
+              </a>
+              <div class="blog-card-body">
+                <span class="blog-card-date">${formatDate(post.date)}</span>
+                <h3 class="blog-card-title">
+                  <a href="/blog/post.html?post=${post.slug}" class="blog-card-link">${post.title}</a>
+                </h3>
+                <p class="blog-card-excerpt">${post.excerpt}</p>
+              </div>
+            </article>
+          `;
+        });
+        blogPostsContainer.innerHTML = html;
+      }
+    });
+  }
+}
+
+// Setup mobile search functionality
+function setupMobileSearch() {
+  const searchInput = document.getElementById('mobile-search-input');
+  const searchBtn = document.getElementById('mobile-search-btn');
+  const searchResults = document.getElementById('mobile-search-results');
+
+  if (!searchInput || !searchBtn || !searchResults) return;
+
+  function performMobileSearch(query) {
+    if (!query || query.trim().length < 2) {
+      searchResults.style.display = 'none';
+      return;
+    }
+
+    const searchTerms = query.toLowerCase().trim().split(/\s+/);
+    const results = [];
+
+    BLOG_POSTS.forEach(function(post) {
+      const searchableText = (post.title + ' ' + post.excerpt + ' ' + post.content).toLowerCase();
+      const allTermsFound = searchTerms.every(function(term) {
+        return searchableText.includes(term);
+      });
+
+      if (allTermsFound) {
+        results.push({ post: post });
+      }
+    });
+
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p class="search-no-results">No results found</p>';
+    } else {
+      let html = '<div class="search-results-list">';
+      results.slice(0, 5).forEach(function(result) {
+        html += `
+          <a href="/blog/post.html?post=${result.post.slug}" class="search-result-item">
+            <strong>${result.post.title}</strong>
+            <span>${result.post.excerpt.substring(0, 80)}...</span>
+          </a>
+        `;
+      });
+      html += '</div>';
+      searchResults.innerHTML = html;
+    }
+    searchResults.style.display = 'block';
+  }
+
+  searchBtn.addEventListener('click', function() {
+    performMobileSearch(searchInput.value);
+  });
+
+  searchInput.addEventListener('keyup', function(e) {
+    if (e.key === 'Enter') {
+      performMobileSearch(this.value);
+    }
+  });
+
+  // Hide results when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+      searchResults.style.display = 'none';
+    }
   });
 }
 
@@ -1376,6 +1494,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (document.getElementById('blog-posts')) {
     renderBlogListing();
     setupBlogSearch();
+    setupMobileSearch();
   } else if (document.getElementById('post-content')) {
     renderSinglePost();
   }
