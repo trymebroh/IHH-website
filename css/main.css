@@ -1836,6 +1836,13 @@ p {
   }
 }
 
+/* Reduce who-i-help padding on tablet (including iPad Air/Pro) */
+@media (min-width: 768px) and (max-width: 1366px) {
+  .section.who-i-help {
+    padding: var(--spacing-md) 0;
+  }
+}
+
 /* Is This You Section */
 .is-this-you {
   background-color: var(--color-light-cream);
@@ -2566,6 +2573,20 @@ p {
   }
 }
 
+/* Reduce contact hero padding on tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-hero {
+    min-height: auto;
+    padding-top: calc(80px + var(--spacing-md));
+    padding-bottom: var(--spacing-md);
+  }
+
+  .contact-hero-content {
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+  }
+}
+
 .contact-content {
   display: grid;
   grid-template-columns: 1fr;
@@ -3030,12 +3051,12 @@ p {
 }
 
 .cookie-btn-accept {
-  background: var(--color-sage-green);
+  background: #5d6b5d;
   color: var(--color-white);
 }
 
 .cookie-btn-accept:hover {
-  background: var(--color-sage-dark);
+  background: #4a574a;
 }
 
 .cookie-btn-decline {

@@ -97,8 +97,17 @@
         <div class="container">
           <div class="v3-hero-content">
             <div class="v3-hero-text">
-              <span class="v3-hero-badge">Kentucky Women Only | Telehealth | Limited Enrollment</span>
+              <span class="v3-hero-badge ir-badge-desktop">Kentucky Women Only | Telehealth | Limited Enrollment</span>
+              <div class="ir-badges-mobile">
+                <span class="v3-hero-badge">Kentucky Women Only</span>
+                <span class="v3-hero-badge">Telehealth | Limited Enrollment</span>
+              </div>
               <h1 class="v3-hero-title">Stop Guessing.<br><span>Start With Clarity.</span></h1>
+              <img src="/images/services/intentional-reset/intention-reset.webp"
+                   class="ir-hero-image-mobile"
+                   alt="The Intentional Health Reset"
+                   width="233" height="291"
+                   loading="eager">
               <p class="v3-hero-subtitle">A clinician-guided 7-component assessment that reveals what your body actually needs - so you can finally move forward with confidence.</p>
               <div class="v3-hero-cta">
                 <a href="https://my.practicebetter.io/#/signin" data-portal class="v3-btn v3-btn-primary" data-track-cta="hero-enroll">
@@ -329,6 +338,15 @@
             </div>
             <div class="v3-faq-item">
               <button class="v3-faq-question" onclick="toggleFaq(this)">
+                <h3>Are appointments in-person or virtual?</h3>
+                <span class="v3-faq-icon">+</span>
+              </button>
+              <div class="v3-faq-answer">
+                <p>All consultations are provided through secure telehealth from the comfort of your home.</p>
+              </div>
+            </div>
+            <div class="v3-faq-item">
+              <button class="v3-faq-question" onclick="toggleFaq(this)">
                 <h3>Is this a replacement for my primary care provider?</h3>
                 <span class="v3-faq-icon">+</span>
               </button>
@@ -361,15 +379,6 @@
               </button>
               <div class="v3-faq-answer">
                 <p>Your protocol is a written care plan tailored to your specific needs. It includes nutrition guidance, lifestyle recommendations, nervous system support strategies, and—if appropriate—targeted supplementation. Everything is prioritized so you know exactly where to start.</p>
-              </div>
-            </div>
-            <div class="v3-faq-item">
-              <button class="v3-faq-question" onclick="toggleFaq(this)">
-                <h3>Are appointments in-person or virtual?</h3>
-                <span class="v3-faq-icon">+</span>
-              </button>
-              <div class="v3-faq-answer">
-                <p>All consultations are provided through secure telehealth from the comfort of your home.</p>
               </div>
             </div>
           </div>
@@ -509,8 +518,8 @@
 
       steps.forEach(step => {
         step.addEventListener('click', function() {
-          steps.forEach(s => s.classList.remove('active'));
-          this.classList.add('active');
+          // Toggle only the clicked step, don't affect others
+          this.classList.toggle('active');
 
           const stepNum = this.dataset.step;
           if (typeof gtag !== 'undefined') {
@@ -523,10 +532,31 @@
       });
     }
 
+    // Auto-open timeline steps on scroll (all screen sizes)
+    function initTimelineAutoOpen() {
+      const steps = document.querySelectorAll('.ir-timeline-step');
+      if (!steps.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Add active class when step comes into view
+            entry.target.classList.add('active');
+          }
+        });
+      }, {
+        threshold: 0.5,
+        rootMargin: '-10% 0px -40% 0px'
+      });
+
+      steps.forEach(step => observer.observe(step));
+    }
+
     // Initialize on DOM ready
     document.addEventListener('DOMContentLoaded', function() {
       initQuizChecklist();
       initTimeline();
+      initTimelineAutoOpen();
 
       // Section tracking
       const sections = document.querySelectorAll('[data-track-section]');

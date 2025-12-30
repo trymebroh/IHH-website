@@ -66,7 +66,8 @@
   <!-- Preload critical resources -->
   <link rel="preload" href="/fonts/Poppins-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/images/services/horizontal-elements.webp" as="image">
+  <link rel="preload" href="/images/services/horizontal-elements-mobile.webp" as="image" media="(max-width: 767px)">
+  <link rel="preload" href="/images/services/horizontal-elements.webp" as="image" media="(min-width: 768px)">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/main.css">
@@ -82,7 +83,12 @@
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="Intention Holistic Health Home">
-        <img src="/images/logo2.webp" alt="Intention Holistic Health" width="192" height="75">
+        <img src="/images/logo2-small.webp"
+             srcset="/images/logo2-tiny.webp 192w,
+                     /images/logo2-small.webp 384w,
+                     /images/logo2.webp 640w"
+             sizes="192px"
+             alt="Intention Holistic Health" width="192" height="75">
       </a>
 
       <nav class="nav" aria-label="Main navigation">
@@ -132,11 +138,14 @@
               <span class="v3-hero-badge">Open to Men & Women</span>
               <span class="v3-hero-badge">Telehealth</span>
               <h1 class="v3-hero-title">Your Labs Say "Normal"<br><span>You Feel Anything But</span></h1>
-              <img src="/images/services/horizontal-elements.webp"
+              <img src="/images/services/horizontal-elements-mobile.webp"
+                   srcset="/images/services/horizontal-elements-mobile.webp 300w,
+                           /images/services/horizontal-elements.webp 950w"
+                   sizes="233px"
                    alt="Holistic health support"
                    class="v3-hero-image-mobile"
                    width="233" height="189"
-                   loading="eager">
+                   fetchpriority="high">
               <p class="v3-hero-subtitle">Get a functional interpretation of your lab work that goes beyond reference ranges—and finally understand what your body is trying to tell you.</p>
 
               <div class="v3-hero-cta">
@@ -153,7 +162,11 @@
             </div>
 
             <div class="v3-hero-image">
-              <img src="/images/services/horizontal-elements.webp" alt="Holistic health support" width="950" height="770" fetchpriority="high">
+              <img src="/images/services/horizontal-elements.webp"
+                   srcset="/images/services/horizontal-elements-mobile.webp 300w,
+                           /images/services/horizontal-elements.webp 950w"
+                   sizes="(max-width: 1023px) 300px, 950px"
+                   alt="Holistic health support" width="950" height="770" fetchpriority="high">
             </div>
           </div>
         </div>
@@ -198,11 +211,18 @@
         <div class="container">
           <div class="v3-solution-content">
             <div class="v3-solution-image">
-              <img src="/images/services/alicia-lab-review-story.webp" alt="Alicia Harrison, NP" width="950" height="1346" loading="lazy">
+              <img src="/images/services/alicia-lab-review-story.webp"
+                   srcset="/images/services/alicia-lab-review-story-mobile.webp 300w,
+                           /images/services/alicia-lab-review-story.webp 950w"
+                   sizes="(max-width: 1023px) 300px, 950px"
+                   alt="Alicia Harrison, NP" width="950" height="1346" loading="lazy">
             </div>
             <div class="v3-solution-text">
               <h2>There's More to the Story</h2>
-              <img src="/images/services/alicia-lab-review-story.webp"
+              <img src="/images/services/alicia-lab-review-story-mobile.webp"
+                   srcset="/images/services/alicia-lab-review-story-mobile.webp 300w,
+                           /images/services/alicia-lab-review-story.webp 950w"
+                   sizes="233px"
                    alt="Alicia Harrison, NP"
                    class="v3-solution-image-mobile"
                    width="233" height="330"

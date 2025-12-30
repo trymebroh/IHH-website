@@ -92,6 +92,11 @@
     text-align: center;
   }
 
+  /* Center "About Me" section label on mobile */
+  .about-hero .section-label {
+    text-align: center;
+  }
+
   /* Center "My Story" heading on mobile */
   .about-passion-content h2 {
     text-align: center;
@@ -616,5 +621,12 @@
   .born-intro,
   .born-closing {
     font-size: var(--font-size-base);
+  }
+}
+
+/* Tablet-specific adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about-hero {
+    padding-top: calc(80px + var(--spacing-lg));
   }
 }

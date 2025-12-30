@@ -707,6 +707,11 @@
   .v3-hero-content {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* Remove min-height on tablet to prevent extra space */
+  .v3-hero {
+    min-height: auto;
+  }
 }
 
 .v3-hero-text {
@@ -769,7 +774,11 @@
 
 .v3-hero-image {
   position: relative;
-  padding-bottom: var(--spacing-2xl); /* Space for stats bar below image */
+}
+
+/* Only add padding for stats bar when present (Intentional Reset) */
+.ir-v3-hero .v3-hero-image {
+  padding-bottom: var(--spacing-2xl);
 }
 
 .v3-hero-image img {
@@ -796,6 +805,11 @@
 }
 
 @media (max-width: 767px) {
+  /* Remove min-height on mobile to prevent extra space */
+  .v3-hero {
+    min-height: auto;
+  }
+
   /* Hide desktop images on mobile */
   .v3-hero-image {
     display: none;
@@ -813,6 +827,34 @@
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin: var(--spacing-md) auto;
+  }
+
+  /* Center hero text content on mobile */
+  .v3-hero-text {
+    text-align: center;
+  }
+
+  /* Stack badges on separate lines on mobile */
+  .v3-hero-badge {
+    display: block;
+    width: fit-content;
+    margin: 0 auto var(--spacing-xs);
+  }
+
+  .v3-hero-cta {
+    justify-content: center;
+  }
+
+  /* Hide trust badge on mobile */
+  .v3-hero-trust {
+    display: none;
+  }
+
+  /* Add subtle shadow to solution section on mobile */
+  .v3-solution {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   }
 
   /* Show mobile empathy image */
@@ -3055,6 +3097,10 @@
   .v3-empathy-image-wrap {
     display: none !important;
   }
+
+  .v3-empathy-text h2 {
+    text-align: center;
+  }
 }
 
 .v3-empathy-image {
@@ -3213,4 +3259,97 @@
   font-size: var(--font-size-sm);
   color: var(--color-medium-gray);
   line-height: 1.5;
+}
+
+/* ============================================
+   INTENTIONAL RESET - MOBILE STYLES
+   ============================================ */
+
+/* Hide mobile badges on desktop, show desktop badge */
+.ir-badges-mobile {
+  display: none;
+}
+
+.ir-badge-desktop {
+  display: inline-block;
+}
+
+/* Hide mobile hero image on desktop */
+.ir-hero-image-mobile {
+  display: none;
+}
+
+/* Show stacked badges on tablet and mobile, hide desktop badge */
+@media (max-width: 1023px) {
+  .ir-badges-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .ir-badges-mobile .v3-hero-badge {
+    display: block;
+    width: fit-content;
+    margin: 0;
+  }
+
+  .ir-badge-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+
+  /* Show mobile hero image below title */
+  .ir-hero-image-mobile {
+    display: block;
+    width: 233px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: var(--spacing-md) auto;
+  }
+
+  /* Remove extra padding at top of first section */
+  .ir-v3-hero {
+    padding-top: calc(80px + 1rem);
+  }
+
+  /* Center hero text on mobile */
+  .ir-v3-hero .v3-hero-text {
+    text-align: center;
+  }
+
+  /* Resize provider image to 233px on mobile */
+  .ir-v3-provider .ir-provider-image img {
+    max-width: 233px;
+  }
+
+  /* Center provider bio headings on mobile, but left-align body text */
+  .ir-provider-bio {
+    text-align: center;
+  }
+
+  .ir-provider-bio p {
+    text-align: left;
+  }
+
+  /* Center the "Learn more about my story" button */
+  .ir-provider-link {
+    justify-content: center;
+  }
+
+  /* Center provider credentials on mobile */
+  .ir-provider-credentials {
+    justify-content: center;
+  }
+}
+
+/* Tablet-specific adjustments for Intentional Reset */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ir-v3-hero {
+    padding-top: calc(80px + var(--spacing-md));
+  }
 }

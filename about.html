@@ -78,10 +78,11 @@
 
   <link rel="preload" href="/fonts/Poppins-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="/images/about/alicia-professional-medium.webp" as="image" type="image/webp"
-        media="(min-width: 769px)">
+  <!-- Preload hero image - small version for mobile, medium for tablet+ -->
   <link rel="preload" href="/images/about/alicia-professional-small.webp" as="image" type="image/webp"
-        media="(max-width: 768px)">
+        media="(max-width: 767px)">
+  <link rel="preload" href="/images/about/alicia-professional-medium.webp" as="image" type="image/webp"
+        media="(min-width: 768px)">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/about-v2.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">

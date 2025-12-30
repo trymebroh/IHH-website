@@ -688,7 +688,7 @@ Intention Holistic Health
 // -----------------------------------------
 
 const STANDARD_DISCLAIMER = `<div class="blog-disclaimer">
-  <h4 class="blog-disclaimer-title">Educational & Imagery Disclaimer</h4>
+  <h3 class="blog-disclaimer-title">Educational & Imagery Disclaimer</h3>
   <p>This content is for educational and informational purposes only and is not intended to diagnose, treat, cure, or prevent any disease. It does not replace individualized medical advice, diagnosis, or treatment from a licensed healthcare provider. Individual results may vary. Readers should consult their licensed healthcare provider regarding personal health concerns before making changes to diet, supplements, or lifestyle.</p>
   <p>Any individuals depicted in images on this website or associated content are models or stock photography subjects and are not patients, clients, or recipients of services from Intention Holistic Health. Images are used for illustrative purposes only and do not represent clinical relationships, medical outcomes, or specific health conditions.</p>
   <p>Intention Holistic Health, PLLC provides educational wellness guidance and, where applicable, nurse practitioner services within scope and licensure. <strong>Clinical services are available exclusively to Kentucky residents</strong> through formal provider-patient relationships.</p>
@@ -776,10 +776,14 @@ function renderBlogListing() {
     const imgLoadAttr = index === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
     // Use small thumbnail for cards (if available)
     const thumbImage = post.thumbnail || post.image.replace('.webp', '-small.webp');
+    const thumbImageXs = thumbImage.replace('-small.webp', '-small-xs.webp');
     html += `
       <article class="blog-card">
         <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link"${linkStyle}>
-          <img src="${thumbImage}" alt="${post.title}" class="blog-card-image" width="400" height="225" ${imgLoadAttr}${cardImgStyle} onerror="this.src='${post.image}'">
+          <img src="${thumbImage}"
+               srcset="${thumbImageXs} 300w, ${thumbImage} 400w"
+               sizes="(max-width: 767px) 300px, 400px"
+               alt="${post.title}" class="blog-card-image" width="400" height="225" ${imgLoadAttr}${cardImgStyle} onerror="this.src='${post.image}'">
         </a>
         <div class="blog-card-body">
           <p class="blog-card-date">${formatDate(post.date)}</p>
@@ -835,10 +839,14 @@ function setupCategoryFiltering(posts) {
           const imgLoadAttr = index === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
           // Use small thumbnail for cards
           const thumbImage = post.thumbnail || post.image.replace('.webp', '-small.webp');
+          const thumbImageXs = thumbImage.replace('-small.webp', '-small-xs.webp');
           html += `
             <article class="blog-card">
               <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link"${linkStyle}>
-                <img src="${thumbImage}" alt="${post.title}" class="blog-card-image" width="400" height="225" ${imgLoadAttr}${cardImgStyle} onerror="this.src='${post.image}'">
+                <img src="${thumbImage}"
+                     srcset="${thumbImageXs} 300w, ${thumbImage} 400w"
+                     sizes="(max-width: 767px) 300px, 400px"
+                     alt="${post.title}" class="blog-card-image" width="400" height="225" ${imgLoadAttr}${cardImgStyle} onerror="this.src='${post.image}'">
               </a>
               <div class="blog-card-body">
                 <p class="blog-card-date">${formatDate(post.date)}</p>
@@ -891,10 +899,14 @@ function setupCategoryFiltering(posts) {
           const linkStyle = ` style="padding-bottom: ${aspectRatio};"`;
           const imgLoadAttr = index === 0 ? 'fetchpriority="high"' : 'loading="lazy"';
           const thumbImage = post.thumbnail || post.image.replace('.webp', '-small.webp');
+          const thumbImageXs = thumbImage.replace('-small.webp', '-small-xs.webp');
           html += `
             <article class="blog-card">
               <a href="/blog/post.html?post=${post.slug}" class="blog-card-image-link"${linkStyle}>
-                <img src="${thumbImage}" alt="${post.title}" class="blog-card-image"${cardImgStyle} width="400" height="225" ${imgLoadAttr} onerror="this.src='${post.image}'">
+                <img src="${thumbImage}"
+                     srcset="${thumbImageXs} 300w, ${thumbImage} 400w"
+                     sizes="(max-width: 767px) 300px, 400px"
+                     alt="${post.title}" class="blog-card-image"${cardImgStyle} width="400" height="225" ${imgLoadAttr} onerror="this.src='${post.image}'">
               </a>
               <div class="blog-card-body">
                 <span class="blog-card-date">${formatDate(post.date)}</span>
@@ -1026,6 +1038,7 @@ function renderSinglePost() {
 
   // Render featured image with explicit dimensions to prevent CLS
   // Use fetchpriority="high" for LCP image (not lazy load)
+  // Use srcset for responsive loading - mobile gets smaller image
   const postImage = document.getElementById('post-image');
   if (postImage) {
     const customStyle = post.imageStyle ? ` style="${post.imageStyle}"` : '';
@@ -1033,7 +1046,12 @@ function renderSinglePost() {
     if (post.imageAspectRatio) {
       postImage.style.setProperty('--image-aspect-ratio', post.imageAspectRatio);
     }
-    postImage.innerHTML = `<img src="${post.image}" alt="${post.title}" width="1280" height="720" fetchpriority="high"${customStyle} onerror="this.parentElement.style.display='none'">`;
+    // Create mobile version path (if exists, will be used; if not, fallback to full)
+    const mobileImage = post.image.replace('.webp', '-mobile.webp');
+    postImage.innerHTML = `<img src="${post.image}"
+         srcset="${mobileImage} 500w, ${post.image} 1280w"
+         sizes="(max-width: 767px) 100vw, 900px"
+         alt="${post.title}" width="1280" height="720" fetchpriority="high"${customStyle} onerror="this.src='${post.image}'">`;
   }
 
   // Render content

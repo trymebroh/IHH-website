@@ -96,7 +96,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
 
   <!-- Preload LCP image for better performance -->
-  <link rel="preload" as="image" href="/images/hero-mother-baby.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/hero-mother-baby-small.webp" media="(max-width: 767px)">
+  <link rel="preload" as="image" href="/images/hero-mother-baby.webp" media="(min-width: 768px)">
 </head>
 <body>
   <!-- Skip to main content for accessibility -->
@@ -163,9 +164,13 @@
         <h1 class="hero-banner-headline-top">Holistic Motherhood <span class="sr-only">Wellness</span></h1>
         <div class="hero-banner-content">
         <div class="hero-banner-image-wrapper">
-          <img src="/images/hero-mother-baby.webp"
+          <img src="/images/hero-mother-baby-small.webp"
+               srcset="/images/hero-mother-baby-small.webp 300w,
+                       /images/hero-mother-baby.webp 800w"
+               sizes="(max-width: 767px) 250px, 300px"
                alt="Mother holding baby wrapped in cozy knit blanket"
-               class="hero-banner-photo">
+               class="hero-banner-photo"
+               width="300" height="300">
         </div>
         <div class="hero-banner-text">
           <p class="hero-banner-headline-bottom" aria-hidden="true">Wellness</p>
@@ -188,8 +193,8 @@
         <div class="hero-content">
           <h2 class="hero-title">HI! I'M ALICIA</h2>
           <p class="hero-subtitle">nurse practitioner | wellness educator | mom</p>
-          <img src="/images/photos/D08A6867.jpg"
-               alt="Alicia Harrison, Nurse Practitioner" class="hero-image-mobile" width="1200" height="1800" loading="lazy">
+          <img src="/images/photos/D08A6867-small.webp"
+               alt="Alicia Harrison, Nurse Practitioner" class="hero-image-mobile" width="300" height="450" loading="lazy">
           <p class="hero-text">
             If you're preparing for pregnancy, newly postpartum, or somewhere in between—and you're craving a more intentional, low-tox lifestyle to support your energy, hormones, and home—you're in the right place.
           </p>
@@ -219,8 +224,8 @@
           <div>
             <p class="section-label">Who I Help</p>
             <h2>Kentucky Women Ready to Approach Health + Motherhood Differently — With Clarity, Confidence, & Intention</h2>
-            <img src="/images/who-i-help-mother.webp"
-                 alt="Mother and child wellness" class="who-i-help-image-mobile" width="162" height="216" loading="lazy">
+            <img src="/images/who-i-help-mother-small.webp"
+                 alt="Mother and child wellness" class="who-i-help-image-mobile" width="194" height="259" loading="lazy">
             <p class="who-i-help-intro">Maybe you're…</p>
             <ul class="who-i-help-list">
               <li>Preparing your body for conception and want to support fertility and egg quality naturally</li>
