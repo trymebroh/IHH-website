@@ -133,6 +133,8 @@
 
   <link rel="preload" href="/fonts/Poppins-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/images/services/preparation-feels-doable-mobile.webp" as="image" media="(max-width: 767px)">
+  <link rel="preload" href="/images/services/preparation-feels-doable-small.webp" as="image" media="(min-width: 768px)">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/services-v2.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
@@ -201,11 +203,14 @@
               <span class="v3-hero-badge">Kentucky Women's Wellness</span>
               <span class="v3-hero-badge">Telehealth</span>
               <h1 class="v3-hero-title">Finally Feel Like <span>Yourself</span> Again</h1>
-              <img src="/images/services/preparation-feels-doable-small.webp"
+              <img src="/images/services/preparation-feels-doable-mobile.webp"
+                   srcset="/images/services/preparation-feels-doable-mobile.webp 300w,
+                           /images/services/preparation-feels-doable-small.webp 500w"
+                   sizes="233px"
                    alt="Women don't need more pressure. They need preparation that feels doable."
                    class="v3-hero-image-mobile"
                    width="233" height="291"
-                   loading="eager">
+                   fetchpriority="high">
               <p class="v3-hero-subtitle">Personalized hormone support and HTMA testing for women preparing for pregnancy, navigating postpartum, or simply ready to stop feeling exhausted and "off." Secure telehealth from the comfort of your home.</p>
 
               <div class="v3-hero-cta">
@@ -250,7 +255,10 @@
             </div>
             <div class="v3-empathy-text">
               <h2 class="v3-section-title">FEELING TIRED, HORMONALLY OFF, OR UNSURE HOW TO SUPPORT YOUR BODY?</h2>
-              <img src="/images/who-i-help-small.webp"
+              <img src="/images/who-i-help-mobile.webp"
+                   srcset="/images/who-i-help-mobile.webp 300w,
+                           /images/who-i-help-small.webp 500w"
+                   sizes="233px"
                    alt="Mother and child wellness"
                    class="v3-empathy-image-mobile"
                    width="233" height="157"

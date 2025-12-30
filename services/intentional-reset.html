@@ -37,6 +37,8 @@
 
   <link rel="preload" href="/fonts/Poppins-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/fonts/PlayfairDisplay-Regular-subset.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/images/services/intentional-reset/intention-reset-mobile.webp" as="image" media="(max-width: 767px)">
+  <link rel="preload" href="/images/services/intentional-reset/intention-reset.webp" as="image" media="(min-width: 768px)">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/services-v2.css">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
@@ -50,7 +52,12 @@
   <header class="header">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="Intention Holistic Health Home">
-        <img src="/images/logo2.webp" alt="Intention Holistic Health" width="192" height="75">
+        <img src="/images/logo2-small.webp"
+             srcset="/images/logo2-tiny.webp 192w,
+                     /images/logo2-small.webp 384w,
+                     /images/logo2.webp 640w"
+             sizes="192px"
+             alt="Intention Holistic Health" width="192" height="75">
       </a>
 
       <nav class="nav" aria-label="Main navigation">
@@ -103,11 +110,14 @@
                 <span class="v3-hero-badge">Telehealth | Limited Enrollment</span>
               </div>
               <h1 class="v3-hero-title">Stop Guessing.<br><span>Start With Clarity.</span></h1>
-              <img src="/images/services/intentional-reset/intention-reset.webp"
+              <img src="/images/services/intentional-reset/intention-reset-mobile.webp"
+                   srcset="/images/services/intentional-reset/intention-reset-mobile.webp 300w,
+                           /images/services/intentional-reset/intention-reset.webp 950w"
+                   sizes="233px"
                    class="ir-hero-image-mobile"
                    alt="The Intentional Health Reset"
                    width="233" height="291"
-                   loading="eager">
+                   fetchpriority="high">
               <p class="v3-hero-subtitle">A clinician-guided 7-component assessment that reveals what your body actually needs - so you can finally move forward with confidence.</p>
               <div class="v3-hero-cta">
                 <a href="https://my.practicebetter.io/#/signin" data-portal class="v3-btn v3-btn-primary" data-track-cta="hero-enroll">
@@ -122,7 +132,11 @@
               </div>
             </div>
             <div class="v3-hero-image">
-              <img src="/images/services/intentional-reset/intention-reset.webp" alt="The Intentional Health Reset" width="950" height="1188" fetchpriority="high">
+              <img src="/images/services/intentional-reset/intention-reset.webp"
+                   srcset="/images/services/intentional-reset/intention-reset-mobile.webp 300w,
+                           /images/services/intentional-reset/intention-reset.webp 950w"
+                   sizes="(max-width: 1023px) 300px, 950px"
+                   alt="The Intentional Health Reset" width="950" height="1188" fetchpriority="high">
               <div class="v3-hero-stats">
                 <div class="v3-hero-stat">
                   <div class="v3-hero-stat-number">7</div>
@@ -207,7 +221,11 @@
               <p><strong>Only then do we build a protocol</strong> - one that's intentional, appropriate, and supportive instead of overwhelming.</p>
             </div>
             <div class="v3-solution-image portrait">
-              <img src="/images/services/intentional-reset/solution-photo-new.webp" alt="Alicia Harrison - Holistic health assessment" width="850" height="1284" loading="lazy">
+              <img src="/images/services/intentional-reset/solution-photo-new.webp"
+                   srcset="/images/services/intentional-reset/solution-photo-new-mobile.webp 450w,
+                           /images/services/intentional-reset/solution-photo-new.webp 850w"
+                   sizes="(max-width: 767px) 233px, 425px"
+                   alt="Alicia Harrison - Holistic health assessment" width="850" height="1284" loading="lazy">
             </div>
           </div>
         </div>
@@ -536,12 +554,23 @@
     function initTimelineAutoOpen() {
       const steps = document.querySelectorAll('.ir-timeline-step');
       if (!steps.length) return;
+      const stepsViewed = new Set();
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             // Add active class when step comes into view
             entry.target.classList.add('active');
+
+            // Track step view (only first time)
+            const stepNum = entry.target.dataset.step;
+            if (!stepsViewed.has(stepNum) && typeof gtag !== 'undefined') {
+              stepsViewed.add(stepNum);
+              gtag('event', 'timeline_step_view', {
+                'page': 'intentional-reset',
+                'step': stepNum
+              });
+            }
           }
         });
       }, {
