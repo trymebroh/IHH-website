@@ -259,6 +259,20 @@ Use this style for section headings throughout service pages and landing pages w
 
 These are the specific fonts used in the hero banner design and should be used when recreating banner elements in HTML/CSS.
 
+**IMPORTANT: BDScript Subset Font**
+
+The Beautifully Delicious Script font uses a **subset** (`/fonts/BDScript-subset.ttf`) to reduce file size. When adding new text that uses this font (`.hero-banner-script`, `.script-title`, `.contact-hero-title`), you **MUST**:
+
+1. Check that all characters in the new text are included in the subset
+2. Current subset characters: `S T I P C A e r v i c s h n t o a l m p . (space)`
+3. If new characters are needed, regenerate the subset using:
+   ```bash
+   npx --yes glyphhanger --whitelist="STIPCA ervicshntolamp. " --subset=/fonts/BDScript-Regular.ttf --formats=ttf
+   ```
+4. Update the comment in `css/main.css` to reflect the new character set
+
+Missing characters will fall back to a generic cursive font, causing inconsistent rendering across devices.
+
 ### Brand Colors
 
 Only use colors from the official brand palette (see `/brand/Branding Board.pdf`):

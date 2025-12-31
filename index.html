@@ -795,13 +795,41 @@
       var banner = document.getElementById('cookie-consent');
       var acceptBtn = document.getElementById('cookie-accept');
       var declineBtn = document.getElementById('cookie-decline');
+      var promoBar = document.getElementById('promo-bar');
       var consent = localStorage.getItem('cookie_consent');
+
+      // Check if promo bar is visible (not dismissed)
+      function isPromoBarVisible() {
+        return promoBar && !promoBar.classList.contains('dismissed');
+      }
+
+      // Update cookie consent position based on promo bar visibility
+      function updateCookiePosition() {
+        if (isPromoBarVisible()) {
+          banner.classList.add('above-promo');
+        } else {
+          banner.classList.remove('above-promo');
+        }
+      }
 
       // Show banner if no consent decision yet
       if (!consent) {
         setTimeout(function() {
+          updateCookiePosition();
           banner.classList.add('show');
         }, 1000);
+      }
+
+      // Watch for promo bar dismissal
+      if (promoBar) {
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.attributeName === 'class') {
+              updateCookiePosition();
+            }
+          });
+        });
+        observer.observe(promoBar, { attributes: true });
       }
 
       // Accept cookies

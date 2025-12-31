@@ -87,7 +87,7 @@
 
 @font-face {
   font-family: 'Beautifully Delicious Script';
-  /* Subset: S T I P e r v i c s h n t o a l m p . (space) - all script text on site */
+  /* Subset: S T I P C A e r v i c s h n t o a l m p . (space) - all script text on site */
   src: url('../fonts/BDScript-subset.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
@@ -2987,12 +2987,29 @@ p {
   padding: var(--spacing-md) var(--spacing-lg);
   z-index: 10000;
   transform: translateY(100%);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), bottom 0.3s ease;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .cookie-consent.show {
   transform: translateY(0);
+}
+
+/* When both cookie consent and promo bar are visible, stack cookie consent above promo bar */
+.cookie-consent.above-promo {
+  bottom: 60px; /* Desktop promo bar height */
+}
+
+@media (max-width: 1024px) {
+  .cookie-consent.above-promo {
+    bottom: 55px; /* Tablet promo bar height */
+  }
+}
+
+@media (max-width: 767px) {
+  .cookie-consent.above-promo {
+    bottom: 50px; /* Mobile promo bar height */
+  }
 }
 
 .cookie-consent-inner {

@@ -941,10 +941,39 @@
       var banner = document.getElementById('cookie-consent');
       var acceptBtn = document.getElementById('cookie-accept');
       var declineBtn = document.getElementById('cookie-decline');
+      var promoBar = document.getElementById('promo-bar');
       var consent = localStorage.getItem('cookie_consent');
-      if (!consent) {
-        setTimeout(function() { banner.classList.add('show'); }, 1000);
+
+      function isPromoBarVisible() {
+        return promoBar && !promoBar.classList.contains('dismissed');
       }
+
+      function updateCookiePosition() {
+        if (isPromoBarVisible()) {
+          banner.classList.add('above-promo');
+        } else {
+          banner.classList.remove('above-promo');
+        }
+      }
+
+      if (!consent) {
+        setTimeout(function() {
+          updateCookiePosition();
+          banner.classList.add('show');
+        }, 1000);
+      }
+
+      if (promoBar) {
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.attributeName === 'class') {
+              updateCookiePosition();
+            }
+          });
+        });
+        observer.observe(promoBar, { attributes: true });
+      }
+
       acceptBtn.addEventListener('click', function() {
         localStorage.setItem('cookie_consent', 'accepted');
         gtag('consent', 'update', { 'analytics_storage': 'granted' });
