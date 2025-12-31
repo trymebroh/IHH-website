@@ -526,14 +526,53 @@ Explicitly allowed (for JS-rendered content):
 ### Netlify
 
 **Deployment:** Auto-deploys from `drafts-website-edits` branch
-**Forms:** Netlify Forms handles all form submissions
+**Forms:** Netlify Forms handles contact and application forms
 **Functions:** `/netlify/functions/` for serverless functions
 
 **Netlify Forms Used:**
 - Contact form (`contact.html`)
 - Application form (`apply.html`)
-- Newsletter signup (blog pages)
-- Exit-intent popup signup
+
+**Netlify Functions:**
+- `easter-egg-track.js` - Easter egg counter using Netlify Blobs
+- `subscribe.js` - MailerLite newsletter/lead magnet subscriptions
+
+### MailerLite Email Marketing
+
+**API Integration:** Newsletter and lead magnet forms submit to MailerLite via Netlify Function
+
+**Environment Variable Required:**
+- `MAILERLITE_API_KEY` - Must be set in Netlify dashboard (Site settings → Environment variables)
+
+**Subscriber Groups:**
+| Group | ID | Purpose |
+|-------|-----|---------|
+| Newsletter Subscribers | `175195722960864384` | General newsletter signups |
+| Holistic Habits Checklist | `175195632248554684` | Lead magnet signups |
+
+**Forms Using MailerLite:**
+| Location | Form Type | Groups Added To |
+|----------|-----------|-----------------|
+| Homepage newsletter section | `newsletter` | Newsletter Subscribers |
+| Homepage exit-intent popup | `lead-magnet` | Both groups (gets checklist + newsletter) |
+| Blog sidebar | `newsletter` | Newsletter Subscribers |
+| Blog bottom popup | `newsletter` | Newsletter Subscribers |
+
+**How It Works:**
+1. Form has `data-mailerlite` attribute and `data-form-type` (newsletter or lead-magnet)
+2. JavaScript in `main.js` intercepts form submission
+3. Sends to `/.netlify/functions/subscribe`
+4. Function adds subscriber to appropriate MailerLite group(s)
+5. MailerLite automation delivers lead magnet email (configured in MailerLite dashboard)
+
+**Adding New Newsletter Forms:**
+```html
+<form data-mailerlite data-form-type="newsletter">
+  <input type="email" name="email" required>
+  <button type="submit">Subscribe</button>
+  <p class="form-message" style="display:none;"></p>
+</form>
+```
 
 ### External Integrations
 
@@ -542,7 +581,7 @@ Explicitly allowed (for JS-rendered content):
 | Practice Better | Patient portal, scheduling | External link |
 | Fullscript | Supplements store | External link |
 | Google Analytics 4 | Analytics | JS tracking code |
-| Netlify Blobs | Easter egg tracking | Serverless function |
+| MailerLite | Email marketing, lead magnets | Netlify Function API |
 
 ### Cookie Consent
 

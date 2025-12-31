@@ -172,10 +172,10 @@
             <div class="sidebar-section">
               <h3 class="sidebar-heading">Stay Updated</h3>
               <p class="sidebar-text">Get holistic health tips delivered to your inbox.</p>
-              <form class="sidebar-form" name="blog-newsletter" method="POST" action="/blog/?subscribed=true" data-netlify="true">
-                <input type="hidden" name="form-name" value="blog-newsletter">
+              <form class="sidebar-form" name="blog-newsletter-sidebar" data-mailerlite data-form-type="newsletter">
                 <input type="email" name="email" class="form-input" placeholder="Your email" required autocomplete="email">
                 <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;">Subscribe</button>
+                <p class="form-message" style="display:none; margin-top: 0.5rem; font-size: 0.85rem;"></p>
               </form>
             </div>
 
@@ -267,10 +267,10 @@
         <h4>Stay Updated</h4>
         <p>Get holistic health tips delivered to your inbox.</p>
       </div>
-      <form class="blog-newsletter-form" name="blog-newsletter" method="POST" action="/blog/?subscribed=true" data-netlify="true">
-        <input type="hidden" name="form-name" value="blog-newsletter">
+      <form class="blog-newsletter-form" name="blog-newsletter-popup" data-mailerlite data-form-type="newsletter">
         <input type="email" name="email" placeholder="Your email" required autocomplete="email">
         <button type="submit">Subscribe</button>
+        <p class="form-message" style="display:none; margin-top: 0.5rem; font-size: 0.85rem;"></p>
       </form>
     </div>
   </div>

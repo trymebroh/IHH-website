@@ -574,4 +574,107 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // -----------------------------------------
+  // MAILERLITE NEWSLETTER FORMS
+  // -----------------------------------------
+  (function() {
+    var mailerliteForms = document.querySelectorAll('[data-mailerlite]');
+
+    mailerliteForms.forEach(function(form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var emailInput = form.querySelector('input[type="email"]');
+        var firstNameInput = form.querySelector('input[name="first-name"]');
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var messageEl = form.querySelector('.form-message');
+        var formType = form.getAttribute('data-form-type') || 'newsletter';
+
+        // Validate email
+        var email = emailInput ? emailInput.value.trim() : '';
+        if (!email || !email.includes('@')) {
+          showFormMessage(messageEl, 'Please enter a valid email address.', 'error');
+          return;
+        }
+
+        // Disable button and show loading state
+        var originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        // Build request data
+        var data = {
+          email: email,
+          formType: formType
+        };
+
+        if (firstNameInput && firstNameInput.value.trim()) {
+          data.firstName = firstNameInput.value.trim();
+        }
+
+        // Send to Netlify function
+        fetch('/.netlify/functions/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        })
+        .then(function(response) {
+          return response.json().then(function(result) {
+            return { ok: response.ok, data: result };
+          });
+        })
+        .then(function(response) {
+          if (response.ok && response.data.success) {
+            // Success!
+            showFormMessage(messageEl, response.data.message, 'success');
+            form.reset();
+
+            // Track successful subscription
+            if (typeof trackEvent === 'function') {
+              trackEvent('newsletter_subscribe', {
+                form_type: formType,
+                page_path: window.location.pathname
+              });
+            }
+
+            // For lead magnet popup, close after success
+            if (formType === 'lead-magnet') {
+              setTimeout(function() {
+                var popupOverlay = document.querySelector('.popup-overlay');
+                if (popupOverlay) {
+                  popupOverlay.classList.remove('active');
+                  document.body.style.overflow = '';
+                }
+              }, 2000);
+            }
+          } else {
+            // Error from API
+            showFormMessage(messageEl, response.data.error || 'Something went wrong. Please try again.', 'error');
+          }
+        })
+        .catch(function(error) {
+          console.error('Newsletter subscription error:', error);
+          showFormMessage(messageEl, 'Something went wrong. Please try again.', 'error');
+        })
+        .finally(function() {
+          // Re-enable button
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        });
+      });
+    });
+
+    function showFormMessage(el, message, type) {
+      if (!el) return;
+      el.textContent = message;
+      el.style.display = 'block';
+      el.style.color = type === 'error' ? '#c0392b' : '#27ae60';
+
+      // Auto-hide after 5 seconds
+      setTimeout(function() {
+        el.style.display = 'none';
+      }, 5000);
+    }
+  })();
+
 });

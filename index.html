@@ -430,11 +430,10 @@
         <p>
           Join my newsletter for holistic health tips, recipes, and updates on new offerings. Plus, get my free Holistic Habits Checklist!
         </p>
-        <form class="newsletter-form" name="newsletter" method="POST" action="/?subscribed=true" data-netlify="true" data-netlify-honeypot="bot-field" data-validate>
-          <input type="hidden" name="form-name" value="newsletter">
-          <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+        <form class="newsletter-form" name="newsletter" data-mailerlite data-form-type="newsletter">
           <input type="email" name="email" class="form-input" placeholder="Enter your email" required aria-label="Email address" autocomplete="email">
           <button type="submit" class="btn btn-secondary">Subscribe</button>
+          <p class="form-message" style="display:none; margin-top: 0.5rem;"></p>
         </form>
       </div>
     </section>
@@ -513,11 +512,11 @@
           <p class="popup-text">
             Here to start creating sustainable, intentional change? Grab the Holistic Habits Checklist as a first step!
           </p>
-          <form class="popup-form" name="popup-newsletter" method="POST" action="/?subscribed=true" data-netlify="true">
-            <input type="hidden" name="form-name" value="popup-newsletter">
+          <form class="popup-form" name="popup-newsletter" data-mailerlite data-form-type="lead-magnet">
             <input type="text" name="first-name" class="form-input" placeholder="First name" required aria-label="First name" autocomplete="given-name">
             <input type="email" name="email" class="form-input" placeholder="Email address" required aria-label="Email address" autocomplete="email">
             <button type="submit" class="btn btn-secondary" style="width: 100%;">Get Your Free Checklist</button>
+            <p class="form-message" style="display:none; margin-top: 0.5rem; text-align: center;"></p>
           </form>
         </div>
       </div>
