@@ -666,13 +666,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showFormMessage(el, message, type) {
       if (!el) return;
-      el.textContent = message;
-      el.style.display = 'block';
-      el.style.color = type === 'error' ? '#c0392b' : '#27ae60';
 
-      // Auto-hide after 5 seconds
+      // Set icon based on type
+      var icon = type === 'error' ? '✕' : '✓';
+      el.innerHTML = '<span class="form-message-icon">' + icon + '</span> ' + message;
+
+      // Apply styles
+      el.style.cssText = 'display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 8px; font-size: 0.9rem; opacity: 0; transform: translateY(-10px); transition: opacity 0.3s ease, transform 0.3s ease;';
+
+      if (type === 'error') {
+        el.style.background = '#fef2f2';
+        el.style.color = '#991b1b';
+        el.style.border = '1px solid #fecaca';
+      } else {
+        el.style.background = '#f0fdf4';
+        el.style.color = '#166534';
+        el.style.border = '1px solid #bbf7d0';
+      }
+
+      // Trigger animation
+      requestAnimationFrame(function() {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      });
+
+      // Auto-hide after 5 seconds with fade out
       setTimeout(function() {
-        el.style.display = 'none';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(-10px)';
+        setTimeout(function() {
+          el.style.display = 'none';
+        }, 300);
       }, 5000);
     }
   })();
