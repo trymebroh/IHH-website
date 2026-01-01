@@ -779,11 +779,14 @@ Run this audit when making significant changes:
 ### Key URLs
 
 - **Live Site:** https://www.intentionholistichealth.com
+- **Branch Deploy (Testing):** https://drafts-website-edits--intentionholistichealth.netlify.app
 - **GitHub Repo:** git@github.com:trymebroh/IHH-website.git
 - **Netlify Dashboard:** (via Alicia's account)
 - **GA4 Property:** G-3GFCR5ZRMZ
 - **Practice Better:** https://my.practicebetter.io
 - **Fullscript:** https://us.fullscript.com/welcome/intentionholistichealth
+
+**Note:** The branch deploy URL always shows the latest `drafts-website-edits` branch. Use this for testing before merging to main. Branch deploys are FREE (no Netlify credits).
 
 ### Contact Email
 

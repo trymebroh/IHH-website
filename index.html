@@ -838,12 +838,14 @@
           'analytics_storage': 'granted'
         });
         banner.classList.remove('show');
+        banner.classList.remove('above-promo');
       });
 
       // Decline cookies
       declineBtn.addEventListener('click', function() {
         localStorage.setItem('cookie_consent', 'declined');
         banner.classList.remove('show');
+        banner.classList.remove('above-promo');
       });
     })();
   </script>

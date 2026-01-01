@@ -668,10 +668,12 @@
         localStorage.setItem('cookie_consent', 'accepted');
         gtag('consent', 'update', { 'analytics_storage': 'granted' });
         banner.classList.remove('show');
+        banner.classList.remove('above-promo');
       });
       declineBtn.addEventListener('click', function() {
         localStorage.setItem('cookie_consent', 'declined');
         banner.classList.remove('show');
+        banner.classList.remove('above-promo');
       });
     })();
   </script>
