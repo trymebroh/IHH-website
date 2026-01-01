@@ -1,7 +1,7 @@
 # MailerLite Integration Checklist
 
 **Target Completion:** December 31, 2025
-**Status:** In Progress
+**Status:** ✅ COMPLETE (Website Integration)
 
 ---
 
@@ -39,12 +39,12 @@ To have email collection and freebie delivery working by tomorrow night, complet
 4. [ ] Replace newsletter form on blog pages
 5. [ ] Test form submission
 
-**Option C (More control, more technical): Netlify Function + API**
-1. [ ] Get MailerLite API key from Settings → Integrations → API
-2. [ ] Create `.env` file with: `MAILERLITE_API_KEY=your_key_here`
-3. [ ] Create Netlify function at `netlify/functions/subscribe.js`
-4. [ ] Update forms to submit to the Netlify function
-5. [ ] Test form submission
+**Option C (More control, more technical): Netlify Function + API** ✅ IMPLEMENTED
+1. [x] Get MailerLite API key from Settings → Integrations → API
+2. [x] Store API key in Netlify environment variables (Production, Deploy Previews, Branch deploys)
+3. [x] Create Netlify function at `netlify/functions/subscribe.js`
+4. [x] Update forms to submit to the Netlify function (homepage newsletter, homepage popup, blog sidebar, blog popup)
+5. [x] Test form submission - working on branch deploy
 
 ### Phase 5: CSP Header Update (If using embed)
 - [ ] Update `netlify.toml` Content-Security-Policy to allow MailerLite:
@@ -119,15 +119,15 @@ fetch('https://connect.mailerlite.com/api/subscribers', {
 
 ## Testing Checklist
 
-- [ ] Test homepage newsletter form
-- [ ] Test blog newsletter form
-- [ ] Test exit-intent popup form
-- [ ] Test contact form marketing opt-in
-- [ ] Verify lead magnet email is delivered
-- [ ] Verify subscriber appears in correct MailerLite group
+- [x] Test homepage newsletter form - ✅ Working
+- [x] Test blog newsletter form - ✅ Working
+- [x] Test exit-intent popup form (lead magnet) - ✅ Working
+- [ ] Test contact form marketing opt-in (still uses Netlify Forms)
+- [ ] Verify lead magnet email is delivered (requires MailerLite automation)
+- [x] Verify subscriber appears in correct MailerLite group - ✅ Confirmed
 - [ ] Test on mobile device
 - [ ] Test unsubscribe link works
 
 ---
 
-*Last updated: December 30, 2025*
+*Last updated: December 31, 2025*

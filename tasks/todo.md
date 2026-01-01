@@ -279,7 +279,7 @@ Rebuild the Intention Holistic Health website (currently on Kajabi) to a custom 
 ## Pending Tasks (Post-Build)
 
 ### Seasonal Updates
-- [ ] **Update Intentional Reset hero image** - Change "End of Year" text to "New Year" or similar seasonal messaging
+- [x] **Update Intentional Reset hero image** - Changed "End of Year" text to "New Year" or similar seasonal messaging ✅
   - File: `/images/services/intentional-reset/intention-reset.webp`
   - Also used in promo bar/modal on index.html, htma.html, services/services.html, services/lab-review.html
 
