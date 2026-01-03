@@ -575,6 +575,138 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // -----------------------------------------
+  // SCROLL MILESTONE TRACKING (25%, 50%, 75%, 100%)
+  // -----------------------------------------
+  (function() {
+    var scrollMilestones = [25, 50, 75, 100];
+    var milestonesReached = new Set();
+
+    function getScrollPercentage() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (docHeight === 0) return 100;
+      return Math.round((scrollTop / docHeight) * 100);
+    }
+
+    function checkScrollMilestones() {
+      var currentScroll = getScrollPercentage();
+
+      scrollMilestones.forEach(function(milestone) {
+        if (currentScroll >= milestone && !milestonesReached.has(milestone)) {
+          milestonesReached.add(milestone);
+          trackEvent('scroll_milestone', {
+            milestone_percent: milestone,
+            page_path: window.location.pathname,
+            page_title: document.title
+          });
+        }
+      });
+    }
+
+    // Throttled scroll handler
+    var scrollTimeout;
+    window.addEventListener('scroll', function() {
+      if (scrollTimeout) return;
+      scrollTimeout = setTimeout(function() {
+        scrollTimeout = null;
+        checkScrollMilestones();
+      }, 200);
+    }, { passive: true });
+  })();
+
+  // -----------------------------------------
+  // TIME ON PAGE THRESHOLDS (30s, 60s, 2min, 5min)
+  // -----------------------------------------
+  (function() {
+    var timeThresholds = [
+      { seconds: 30, label: '30_seconds' },
+      { seconds: 60, label: '1_minute' },
+      { seconds: 120, label: '2_minutes' },
+      { seconds: 300, label: '5_minutes' }
+    ];
+
+    timeThresholds.forEach(function(threshold) {
+      setTimeout(function() {
+        trackEvent('time_on_page', {
+          time_threshold: threshold.label,
+          seconds: threshold.seconds,
+          page_path: window.location.pathname,
+          page_title: document.title
+        });
+      }, threshold.seconds * 1000);
+    });
+  })();
+
+  // -----------------------------------------
+  // FORM FIELD TRACKING (Abandonment Analysis)
+  // -----------------------------------------
+  (function() {
+    var trackedForms = document.querySelectorAll('form');
+
+    trackedForms.forEach(function(form) {
+      var formName = form.getAttribute('name') || form.getAttribute('data-form') || 'unknown_form';
+      var formStarted = false;
+      var fieldsInteracted = new Set();
+
+      // Get all input fields
+      var fields = form.querySelectorAll('input, textarea, select');
+
+      fields.forEach(function(field) {
+        var fieldName = field.getAttribute('name') || field.getAttribute('id') || field.type;
+
+        // Track first interaction with form
+        field.addEventListener('focus', function() {
+          fieldsInteracted.add(fieldName);
+
+          // Track form start (first field focus)
+          if (!formStarted) {
+            formStarted = true;
+            trackEvent('form_start', {
+              form_name: formName,
+              first_field: fieldName,
+              page_path: window.location.pathname
+            });
+          }
+
+          // Track each field focus
+          trackEvent('form_field_focus', {
+            form_name: formName,
+            field_name: fieldName,
+            fields_completed: fieldsInteracted.size,
+            page_path: window.location.pathname
+          });
+        });
+      });
+
+      // Track form abandonment when user leaves page
+      window.addEventListener('beforeunload', function() {
+        if (formStarted && fieldsInteracted.size > 0) {
+          // Check if form was submitted (form will have a submit flag)
+          if (!form.dataset.submitted) {
+            // Use sendBeacon for reliable tracking on page exit
+            var data = {
+              form_name: formName,
+              fields_completed: fieldsInteracted.size,
+              last_field: Array.from(fieldsInteracted).pop(),
+              page_path: window.location.pathname
+            };
+
+            // Send via beacon if available
+            if (navigator.sendBeacon && typeof gtag === 'function') {
+              // gtag doesn't support sendBeacon directly, so we track on focus events instead
+            }
+          }
+        }
+      });
+
+      // Mark form as submitted
+      form.addEventListener('submit', function() {
+        form.dataset.submitted = 'true';
+      });
+    });
+  })();
+
+  // -----------------------------------------
   // MAILERLITE NEWSLETTER FORMS
   // -----------------------------------------
   (function() {

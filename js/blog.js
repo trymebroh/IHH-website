@@ -1016,6 +1016,18 @@ function renderSinglePost() {
   // Update page title
   document.title = post.title + ' | Intention Holistic Health';
 
+  // Track blog post view with GA4
+  if (typeof gtag === 'function') {
+    gtag('event', 'blog_post_view', {
+      post_title: post.title,
+      post_slug: post.slug,
+      post_date: post.date,
+      post_categories: post.categories.join(', '),
+      post_author: post.author,
+      page_path: window.location.pathname + window.location.search
+    });
+  }
+
   // Update meta description
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
