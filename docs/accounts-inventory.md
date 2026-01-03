@@ -1,6 +1,6 @@
 # IHH Accounts & Services Inventory
 
-**Last Updated:** January 3, 2026
+**Last Updated:** January 3, 2026 (added Pinterest, GBP)
 
 This file tracks all external accounts, services, and integrations used for Intention Holistic Health.
 
@@ -15,6 +15,7 @@ This file tracks all external accounts, services, and integrations used for Inte
 | **Google Cloud Platform** | Project: `IHH-Website-Analytics` | API access, service accounts | Workspace org |
 | **GA4 Service Account** | `ga4-reader@ihh-website-analytics.iam.gserviceaccount.com` | GA4 API authentication | JSON key in Netlify env |
 | **Google Search Console** | `www.intentionholistichealth.com` | SEO, search performance | Linked to GA4 |
+| **Google Business Profile** | Intention Holistic Health | Local SEO, Google Maps visibility | Alicia (admin) |
 
 ---
 
@@ -36,6 +37,19 @@ This file tracks all external accounts, services, and integrations used for Inte
 **MailerLite Groups:**
 - Newsletter Subscribers: `175195722960864384`
 - Holistic Habits Checklist: `175195632248554684`
+
+---
+
+## Social Media & Marketing
+
+| Platform | URL/Handle | Purpose | Status |
+|----------|------------|---------|--------|
+| **Pinterest** | [pinterest.com/intentionholistichealth](https://www.pinterest.com/intentionholistichealth/) | Visual content, blog traffic, SEO | Active (10 pins, 2 boards) |
+| **Instagram** | (linked in website footer) | Brand presence, engagement | Active |
+| **Facebook** | (linked in website footer) | Community, traffic source | Active |
+| **LinkedIn** | (linked in website footer) | Professional networking | Active |
+
+**Pinterest Optimization:** See `/docs/pinterest-gbp-optimization.md` for detailed recommendations.
 
 ---
 

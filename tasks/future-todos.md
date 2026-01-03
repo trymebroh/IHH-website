@@ -1,7 +1,7 @@
 # Future Todos & Deferred Items
 
 **Created:** December 30, 2025
-**Last Updated:** December 30, 2025
+**Last Updated:** January 3, 2026
 
 ---
 
@@ -46,9 +46,22 @@
 2. Check Coverage report for crawl errors
 3. Check Performance report for search queries, clicks, impressions
 
-### Google Business Profile
-**Status:** Not created
-**Action:** Set up profile for Kentucky telehealth services
+### Google Business Profile Optimization
+**Status:** Profile exists - needs optimization
+**Analysis:** `/docs/pinterest-gbp-optimization.md`
+
+**This Week (High Priority):**
+- [ ] Audit current profile completeness in GBP dashboard
+- [ ] Update description with keyword-rich copy (750 chars max)
+- [ ] Add all services with descriptions (HTMA, Lab Review, Mineral Insights, Intentional Reset, Signature)
+- [ ] Upload 5+ high-quality photos (headshot, logo, workspace)
+- [ ] Add appointment booking link (Practice Better or /apply.html)
+- [ ] Seed Q&A section with 3-4 common questions
+
+**Ongoing:**
+- [ ] Post weekly updates (blog summaries, wellness tips, offers)
+- [ ] Request reviews from satisfied clients (goal: 10+ in 6 months)
+- [ ] Respond to all reviews within 48 hours
 
 ### Services Hub Page (Option B)
 **Status:** Future enhancement
@@ -60,14 +73,31 @@
 - Move current packages/programs content to a new URL (e.g., `/services/packages.html`)
 **Benefit:** Better UX for visitors who land on `/services/` - gives them a navigation overview instead of jumping directly into package details
 
-### Pinterest Business Account Setup (User Task)
-**Status:** Not started
-**Action:** Alicia to complete:
-1. Create Pinterest Business account
-2. Claim website on Pinterest
-3. Enable Rich Pins
-4. Create pin graphics for blog posts
-5. Start pinning content
+### Pinterest Optimization
+**Status:** Profile exists - significantly underutilized (10 pins, 2 boards, 0 followers)
+**URL:** https://www.pinterest.com/intentionholistichealth/
+**Analysis:** `/docs/pinterest-gbp-optimization.md`
+
+**This Week (High Priority):**
+- [ ] Update bio with keywords: "HTMA, hormone health, mineral balancing, women's wellness, Kentucky NP"
+- [ ] Verify website is claimed on Pinterest
+- [ ] Create 6-8 new boards with keyword-rich descriptions:
+  - HTMA & Mineral Testing
+  - Hormone Health for Women
+  - Pregnancy & Preconception
+  - Postpartum Recovery
+  - Holistic Nutrition Tips
+  - Stress & Adrenal Support
+  - Sleep & Energy
+  - Wellness Inspiration
+- [ ] Create branded pin templates in Canva (1000×1500px)
+- [ ] Enable Rich Pins (requires meta tags - already on website)
+
+**Ongoing (Goal: 50+ pins/month):**
+- [ ] Pin 5-15 times per day (best times: 8-11 PM, Fri-Sun)
+- [ ] Turn each blog post into 3-5 pin variations
+- [ ] Create educational graphics (mineral facts, hormone tips)
+- [ ] Check Pinterest Analytics monthly for top performers
 
 ### Email List Growth & Content Marketing Plan
 **Status:** Not started
