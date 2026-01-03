@@ -42,7 +42,7 @@
 
 [[redirects]]
   from = "/services/htma-consulting.html"
-  to = "/services/services.html"
+  to = "/services/"
   status = 301
 
 [[redirects]]

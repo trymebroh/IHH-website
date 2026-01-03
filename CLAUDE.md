@@ -129,7 +129,7 @@ When adding new content to the site, **always ask about style preferences** befo
 |--------------------|---------|
 | HTMA, mineral testing, hair analysis | `/htma.html` (What is HTMA?) |
 | Lab work, blood tests, "normal" results | `/services/lab-review.html` |
-| Wellness support, hormone support | `/services/services.html` |
+| Wellness support, hormone support | `/services/` |
 | Getting started, booking | `/apply.html` or `/contact.html` |
 
 **When to suggest links:**
@@ -428,7 +428,7 @@ Blog posts use JavaScript rendering in `/js/blog.js`, so:
 
 **Services Dropdown:**
 - Sessions → `/services/lab-review.html`
-- Packages and Programs → `/services/services.html`
+- Packages and Programs → `/services/`
 - What is HTMA? → `/htma.html`
 
 **Mobile Navigation:**
@@ -451,8 +451,8 @@ The homepage presents services in three categories:
 | Type | Description | Links To |
 |------|-------------|----------|
 | **Sessions** | One-time consultations for quick clarity | `/services/lab-review.html` |
-| **Packages** | Structured offerings with defined scope | `/services/services.html` |
-| **Personalized Programs** | Ongoing, tailored patient-provider support | `/services/services.html` |
+| **Packages** | Structured offerings with defined scope | `/services/` |
+| **Personalized Programs** | Ongoing, tailored patient-provider support | `/services/` |
 
 **Homepage Card Copy:**
 1. **Sessions**: "Focused, one-time consultations designed to bring clarity to a specific question or concern — no long-term commitment required."
@@ -483,7 +483,7 @@ Homepage → Learn (HTMA page, Blog) → Service Page → Apply Page → Patient
 | robots.txt | `/robots.txt` | Implemented |
 | sitemap.xml | `/sitemap.xml` | Implemented |
 | LocalBusiness Schema | `/index.html` | Implemented |
-| Service Schema | `/services/services.html` | Implemented |
+| Service Schema | `/services/` | Implemented |
 | Article Schema | `/htma.html` | Implemented |
 | Person Schema | `/about.html` | Implemented |
 | FAQPage Schema | Multiple pages | Implemented |

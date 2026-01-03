@@ -40,6 +40,16 @@
 **Status:** Not created
 **Action:** Set up profile for Kentucky telehealth services
 
+### Services Hub Page (Option B)
+**Status:** Future enhancement
+**Context:** On January 3, 2026, we renamed `/services/services.html` to `/services/index.html` so `/services/` now works as a direct URL. This was "Option A" (quick fix).
+**Action (Option B):** Create a true Services Hub Page at `/services/index.html` that:
+- Acts as a "choose your path" entry point
+- Links to: Sessions, Packages/Programs, What is HTMA?
+- Provides overview of the 3-tier service structure (Sessions, Packages, Programs)
+- Move current packages/programs content to a new URL (e.g., `/services/packages.html`)
+**Benefit:** Better UX for visitors who land on `/services/` - gives them a navigation overview instead of jumping directly into package details
+
 ### Pinterest Business Account Setup (User Task)
 **Status:** Not started
 **Action:** Alicia to complete:
@@ -105,7 +115,7 @@
 ### Additional FAQPage Schema
 **Status:** Partially complete
 **Notes:** Added to contact.html. Could add to:
-- services/services.html (has FAQ section)
+- /services/ (has FAQ section)
 - services/lab-review.html (has FAQ section)
 - services/intentional-reset.html (has FAQ section)
 - htma.html (has FAQ section)

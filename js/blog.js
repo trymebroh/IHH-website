@@ -229,7 +229,7 @@ This is simply my story, and the practices that helped me feel supported and ali
 
 Preparing for an unmedicated birth wasn't about perfection—it was about intention. I focused on practices that supported my body, strengthened my mind, and grounded me spiritually. And while birth unfolded in its own way, these preparations helped me enter the experience feeling peaceful, equipped, and deeply connected to my baby and my Creator.
 
-If you're exploring pregnancy or preparing for birth and want guidance on building a nourishing foundation, [Intention Holistic Health offers support](/services/services.html) that meets you where you are in preconception, pregnancy, and postpartum. Learn more about [preparing your body for pregnancy](/blog/post.html?post=2024-11-15-body-first-home).
+If you're exploring pregnancy or preparing for birth and want guidance on building a nourishing foundation, [Intention Holistic Health offers support](/services/) that meets you where you are in preconception, pregnancy, and postpartum. Learn more about [preparing your body for pregnancy](/blog/post.html?post=2024-11-15-body-first-home).
 
 All my love,
 
@@ -338,7 +338,7 @@ Women who learn these foundations before pregnancy often feel more grounded, mor
 
 Preconception care does not need to be overwhelming. It's about reconnecting with the rhythms your physiology is already built upon and nourishing your body with intention.
 
-If you want personalized support during preconception, pregnancy, or postpartum, the [Intentional Mama Programs](/services/services.html) and [Lab Review Services](/services/lab-review.html) at Intention Holistic Health provide individualized guidance to honor your body's physiology and your season of life.
+If you want personalized support during preconception, pregnancy, or postpartum, the [Intentional Mama Programs](/services/) and [Lab Review Services](/services/lab-review.html) at Intention Holistic Health provide individualized guidance to honor your body's physiology and your season of life.
 
 Your body is the first home your baby will ever know. Caring for it with intention is an act of love that extends far beyond pregnancy — shaping the health of generations to come.
 
@@ -579,7 +579,7 @@ Your digestive system isn't isolated; it's intricately connected to overall heal
 
 ## Closing Thoughts
 
-If ready to deepen your digestive wellness journey while managing PCOS, reach out for [personalized one-on-one support](/services/services.html) at Intention Holistic Health. We'll explore strategies resonating with your unique body and goals.
+If ready to deepen your digestive wellness journey while managing PCOS, reach out for [personalized one-on-one support](/services/) at Intention Holistic Health. We'll explore strategies resonating with your unique body and goals.
 
 With love and digestive-healing energy,
 
