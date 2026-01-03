@@ -99,6 +99,13 @@ Netlify uses credit-based pricing. Each production deploy costs 15 credits.
 
 **DO NOT** push to main after every change. Let the user handle merges to main.
 
+## Branching Policy (Browser vs Local)
+
+If not 100% certain which instance we're in, ask the user.
+
+- Browser work: first push to `browser-coded-branch` only, then optionally to `drafts-website-edits` on request.
+- Local VS Code work: push to both `browser-coded-branch` and `drafts-website-edits` so browser stays current.
+
 ## Model Selection
 
 **Default Model:** claude-sonnet-4-5-20250929 (Sonnet 4.5)
