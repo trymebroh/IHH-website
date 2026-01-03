@@ -19,6 +19,29 @@ Update `session-notes/YYYY-MM-DD.md` at the end of each working session:
 
 **IMPORTANT**: Session notes MUST be updated before committing and pushing to GitHub. This is a prerequisite for any commit/push operation.
 
+## Accounts & Services Inventory
+
+**File:** `/docs/accounts-inventory.md`
+
+When creating or integrating ANY new external account or service, **immediately update the inventory file** with:
+- Service name
+- Account ID / property ID / relevant identifiers
+- Purpose
+- Who has access
+- Any API keys added to Netlify environment variables
+
+This includes but is not limited to:
+- Google services (Analytics, Cloud, Search Console, etc.)
+- Email marketing platforms
+- Payment processors
+- Third-party APIs
+- Hosting/deployment services
+- Client management tools
+
+**Before finishing a session that involved new accounts:** Verify the inventory is up to date.
+
+---
+
 ## Deployment Workflow
 
 **IMPORTANT: Only push to `drafts-website-edits` branch.**
