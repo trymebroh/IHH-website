@@ -23,18 +23,28 @@
 ## MEDIUM Priority
 
 ### GA4 Conversion Events Setup
-**Status:** Not started
-**Action:** Configure conversion events in GA4 Admin:
-- Form submissions (contact, apply, newsletter)
-- CTA clicks (apply buttons, portal links)
-- Section scroll depth
+**Status:** ✅ COMPLETE (January 3, 2026)
+**Completed:**
+- Key events marked: form_submit, cta_click, newsletter_subscribe
+- Data retention extended to 14 months
+- Google Signals enabled
+- GA4 API connected via Netlify Function
 
 ### Google Search Console
-**Status:** Not submitted
-**Action:**
-1. Verify website ownership
-2. Submit sitemap.xml
-3. Check for crawl errors
+**Status:** ✅ COMPLETE (January 3, 2026)
+**Completed:**
+- Property created: `https://intentionholistichealth.com` (non-www is canonical)
+- Linked to GA4
+- Sitemap submitted (12 pages discovered)
+
+**Follow-up tasks (check after Jan 5, 2026):**
+1. Request indexing for key pages via URL Inspection:
+   - `https://intentionholistichealth.com/`
+   - `https://intentionholistichealth.com/services/`
+   - `https://intentionholistichealth.com/htma.html`
+   - `https://intentionholistichealth.com/blog/`
+2. Check Coverage report for crawl errors
+3. Check Performance report for search queries, clicks, impressions
 
 ### Google Business Profile
 **Status:** Not created

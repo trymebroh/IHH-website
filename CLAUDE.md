@@ -42,6 +42,35 @@ This includes but is not limited to:
 
 ---
 
+## Analytics Reports
+
+**Template:** `/docs/analytics-report-template.md`
+
+When the user requests analytics (e.g., "Pull my analytics summary", "How's the funnel performing?", "Show me traffic"), generate a report following the standard template.
+
+**How to pull data:**
+```
+curl https://drafts-website-edits--intentionholistichealth.netlify.app/.netlify/functions/ga4-analytics?report=TYPE&days=N
+```
+
+Report types: `overview`, `pages`, `sources`, `events`, `daily`
+
+**Key metrics to always include:**
+- Traffic overview (users, sessions, bounce rate, avg duration)
+- Lead funnel performance (Homepage → Services → PB Click)
+- Top pages
+- Engagement depth (scroll milestones, time on page)
+- Traffic sources
+- Key events (cta_click, form_submit, etc.)
+- Friction watch (Services page metrics)
+
+**GA4 UI-only features** (cannot pull via API):
+- Funnel explorations
+- Path explorations
+- Audience sizes
+
+---
+
 ## Deployment Workflow
 
 **IMPORTANT: Only push to `drafts-website-edits` branch.**
