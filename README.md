@@ -78,6 +78,14 @@ A custom-built website for Intention Holistic Health PLLC - a holistic wellness 
 - Check Netlify dashboard for form submissions
 - SSL certificate is auto-provisioned
 
+## Branching and Preview
+
+See `WORKFLOW.md` for the full process. Short version:
+
+- Browser work: push to `browser-coded-branch` first, then optionally to `drafts-website-edits` for preview.
+- Local VS Code work: push to both `browser-coded-branch` and `drafts-website-edits`.
+- Draft preview URL: https://drafts-website-edits--intentionholistichealth.netlify.app
+
 ## Adding Blog Posts
 
 Blog posts are defined in `/js/blog.js` in the `BLOG_POSTS` array. To add a new post:

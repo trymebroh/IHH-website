@@ -14,3 +14,5 @@ Thumbs.db
 # Environment files
 .env
 .env.local
+# Lead magnets / freebies (attached via email, not public)
+archive/downloads/
