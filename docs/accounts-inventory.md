@@ -23,7 +23,7 @@ This file tracks all external accounts, services, and integrations used for Inte
 
 | Service | Account/ID | Purpose | Access |
 |---------|------------|---------|--------|
-| **Netlify** | Site: `intentionholistichealth` | Hosting, forms, functions | Alicia |
+| **Netlify** | Site: `intentionholistichealth` | Hosting, forms, functions, **DNS** | Alicia |
 | **GitHub** | Repo: `trymebroh/IHH-website` (Private) | Source code, version control | trymebroh |
 
 ---
@@ -34,9 +34,13 @@ This file tracks all external accounts, services, and integrations used for Inte
 |---------|------------|---------|--------|
 | **MailerLite** | Connected via API | Newsletter, lead magnets | API key in Netlify env |
 
+**Sender Email:** `alicia.harrison@intentionholistichealth.com`
+
 **MailerLite Groups:**
 - Newsletter Subscribers: `175195722960864384`
 - Holistic Habits Checklist: `175195632248554684`
+
+**Domain Authentication:** Configured via Netlify DNS (CNAME + 2 TXT records)
 
 ---
 
