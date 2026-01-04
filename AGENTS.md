@@ -136,6 +136,12 @@ Use `/model` to switch models based on the task phase:
 
 When adding new content to the site, **always ask about style preferences** before implementing:
 
+### User Input Preferences (Blog Posts)
+
+- The user will provide **plain-text** inputs only (no filenames, file paths, or code).
+- If any required blog details are missing, **suggest reasonable defaults** and ask for confirmation before finalizing.
+- When the user provides a non-WebP image, **convert it to optimized WebP** consistent with existing blog image standards.
+
 ### Available Blog Templates
 
 1. **Default Template** (`/blog/post.html`)
