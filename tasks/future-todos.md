@@ -1,7 +1,7 @@
 # Future Todos & Deferred Items
 
 **Created:** December 30, 2025
-**Last Updated:** January 3, 2026
+**Last Updated:** January 4, 2026
 
 ---
 
@@ -140,6 +140,10 @@
 ---
 
 ## LOW Priority / Optional Enhancements
+
+### VS Code Setup on Old Mac
+**Status:** Not started
+**Action:** Set up VS Code development environment on old Mac for local editing and Claude Code usage.
 
 ### Form reCAPTCHA
 **Status:** Deferred
