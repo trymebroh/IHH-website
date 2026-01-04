@@ -157,12 +157,12 @@
 - Preconception Planning Guide
 
 ### Additional FAQPage Schema
-**Status:** Partially complete
-**Notes:** Added to contact.html. Could add to:
-- /services/ (has FAQ section)
-- services/lab-review.html (has FAQ section)
-- services/intentional-reset.html (has FAQ section)
-- htma.html (has FAQ section)
+**Status:** ✅ COMPLETE (January 4, 2026)
+**Notes:** FAQPage schema now on all pages with FAQ sections:
+- /services/ ✅ (already had it)
+- /htma.html ✅ (already had it)
+- /services/lab-review.html ✅ (added Jan 4)
+- /services/intentional-reset.html ✅ (added Jan 4)
 
 ### AIO Optimizations
 **Status:** Deferred to Q1 2026
