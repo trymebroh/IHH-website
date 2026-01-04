@@ -1,5 +1,10 @@
 # Intention Holistic Health Website - Build Plan
 
+## Current Task Plan
+- [x] Update AGENTS.md with instructions to convert non-WebP images to optimized WebP for blog posts.
+- [x] Add instruction that user will provide plain-text inputs (no filenames/paths/code) and we should suggest defaults for missing details and confirm them.
+- [x] Record a review summary in tasks/todo.md after completing the updates.
+
 ## Project Summary
 Rebuild the Intention Holistic Health website (currently on Kajabi) to a custom HTML5/CSS3/JavaScript solution with Netlify hosting and a markdown-based blog system.
 
@@ -272,7 +277,7 @@ Rebuild the Intention Holistic Health website (currently on Kajabi) to a custom 
 ---
 
 ## Review Section
-*To be completed after implementation*
+* Review: Added blog input preferences to AGENTS.md, including plain-text-only inputs, default suggestion/confirmation behavior, and WebP conversion guidance.
 
 ---
 
