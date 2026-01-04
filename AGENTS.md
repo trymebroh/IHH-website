@@ -10,6 +10,16 @@ At every step, give me a high-level explanation of what you changed.
 Keep every change simple and minimal. Avoid big rewrites.
 At the end, add a review section in todo.md summarizing the changes.
 
+## Keeping Your Local Copy Up to Date
+
+**Before starting work**, run `git pull` in this folder to get the latest changes from GitHub. This ensures you're working with the most recent version of the codebase.
+
+```bash
+git pull
+```
+
+---
+
 ## Session Notes
 
 Update `session-notes/YYYY-MM-DD.md` at the end of each working session:
