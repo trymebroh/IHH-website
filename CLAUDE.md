@@ -738,16 +738,96 @@ When creating any new page, verify:
 
 ### New Blog Post Checklist
 
+**Content & Images:**
 ```
-[ ] Post added to blog.js posts array
+[ ] Post added to blog.js posts array (newest first)
 [ ] Featured image optimized (<200KB WebP)
 [ ] Image dimensions checked and aspect ratio set (see below)
+[ ] All images have descriptive alt text
+[ ] Image licensing verified (stock photo license, original, etc.)
+[ ] Image in /images/blog/ folder
 [ ] Categories assigned
 [ ] Internal links to relevant service pages
 [ ] Disclaimer at end of post
-[ ] No prohibited terminology
-[ ] Image in /images/blog/ folder
+[ ] No prohibited terminology (coach, mentor, consult)
 ```
+
+**SEO & Discoverability:**
+```
+[ ] Article JSON-LD schema added to blog.js post object (see below)
+[ ] Post added to sitemap.xml with proper URL
+[ ] Meta description set (150-160 chars)
+[ ] Open Graph tags verified (og:title, og:description, og:image)
+```
+
+**Quality Assurance:**
+```
+[ ] Lighthouse check run (performance 80+, accessibility 90+, SEO 90+)
+[ ] Homepage blog scroller verified (newest post appears)
+[ ] Related posts display correctly on blog listing
+[ ] GA4 tracking verified (page loads, section views fire)
+[ ] Mobile preview checked (images, text, CTAs display correctly)
+```
+
+**Optional - Promotion:**
+```
+[ ] Ask: Should this be emailed to newsletter subscribers?
+[ ] Ask: Pinterest-optimized image needed? (vertical 2:3 ratio)
+[ ] Ask: Request faster indexing via Search Console URL Inspection? (not required - Google auto-crawls sitemap)
+```
+
+### Blog Post JSON-LD Schema
+
+Each blog post in `blog.js` should include schema data for SEO/AIO:
+
+```javascript
+{
+  slug: 'post-slug',
+  title: 'Post Title',
+  // ... other properties
+  schema: {
+    datePublished: '2025-01-04',
+    dateModified: '2025-01-04',
+    author: 'Alicia Harrison, MSN, APRN, FNP-C',
+    description: 'Meta description for the post (150-160 chars)'
+  }
+}
+```
+
+The blog template (`post.html` or `post-superior.html`) should render this as JSON-LD in the `<head>`.
+
+### Adding Blog Posts to Sitemap
+
+When adding a new blog post, add an entry to `/sitemap.xml`:
+
+```xml
+<url>
+  <loc>https://www.intentionholistichealth.com/blog/post.html?slug=your-post-slug</loc>
+  <lastmod>2025-01-04</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+```
+
+### Lighthouse Check for Blog Posts
+
+Run a quick Lighthouse audit on the new post:
+
+```bash
+lighthouse https://drafts-website-edits--intentionholistichealth.netlify.app/blog/post.html?slug=your-post-slug --only-categories=performance,accessibility,seo --output=json --output-path=/dev/null --chrome-flags="--headless" 2>&1 | grep -E "(performance|accessibility|seo)"
+```
+
+Key targets:
+- Performance: 80+
+- Accessibility: 90+
+- SEO: 90+
+
+### Homepage Blog Scroller Verification
+
+After adding a new post, verify it appears in the homepage blog section:
+1. Check that `blog.js` posts array has the new post at the correct position (newest first)
+2. Load homepage and confirm the new post thumbnail/title appears in the blog scroller
+3. Click through to verify the link works
 
 ### Blog Image Aspect Ratios
 
