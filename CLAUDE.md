@@ -778,7 +778,7 @@ When creating any new page, verify:
 
 ### Blog Post JSON-LD Schema
 
-Each blog post in `blog.js` should include schema data for SEO/AIO:
+Each blog post in `blog.js` should include a `schema` object with a description:
 
 ```javascript
 {
@@ -786,15 +786,19 @@ Each blog post in `blog.js` should include schema data for SEO/AIO:
   title: 'Post Title',
   // ... other properties
   schema: {
-    datePublished: '2025-01-04',
-    dateModified: '2025-01-04',
-    author: 'Alicia Harrison, MSN, APRN, FNP-C',
-    description: 'Meta description for the post (150-160 chars)'
+    description: 'SEO meta description for the post (150-160 chars)'
   }
 }
 ```
 
-The blog template (`post.html` or `post-superior.html`) should render this as JSON-LD in the `<head>`.
+The `blog.js` file automatically generates a full Article schema using:
+- `title` → headline
+- `date` → datePublished/dateModified
+- `image` → image URL
+- `schema.description` → description (falls back to excerpt if not provided)
+- Author and publisher info are auto-populated
+
+The schema is dynamically injected into the `<head>` when the post loads.
 
 ### Adding Blog Posts to Sitemap
 

@@ -117,7 +117,10 @@ Intention Holistic Health provides educational wellness guidance and, where appl
         question: "What's the most important wellness habit to maintain during busy seasons?",
         answer: "Rest is one of the most impactful habits to protect. Sleep directly influences fertility, cortisol rhythms, metabolic health, and emotional wellbeing. Small efforts still matter—try keeping wake times similar from day to day, getting morning light exposure, and creating a simple wind-down cue before bed."
       }
-    ]
+    ],
+    schema: {
+      description: "Practical tips for maintaining wellness during the holidays without extremes. Learn how to stay grounded with simple anchors, food without guilt, and protected rest."
+    }
   },
   {
     slug: '2024-12-01-unmedicated-birth',
@@ -249,7 +252,10 @@ Alicia
         question: "Do I need a special class for unmedicated birth?",
         answer: "While not required, taking a class designed specifically for unmedicated birth can be incredibly valuable. These classes teach what's physiologically happening during labor, mental techniques, natural pain management tools, and ways your partner can support you. They also help build confidence that your body knows what to do."
       }
-    ]
+    ],
+    schema: {
+      description: "A nurse practitioner shares her personal journey preparing for unmedicated birth through classes, pelvic floor therapy, meditation, Scripture, and nourishment."
+    }
   },
   {
     slug: '2024-11-15-body-first-home',
@@ -360,7 +366,10 @@ Alicia
         question: "Do I need special supplements for preconception?",
         answer: "At minimum, begin a prenatal vitamin with methylated folate (5-MTHF) before conceiving. Up to 40% of the population doesn't efficiently convert synthetic folic acid. High-quality formulas include methylated folate, choline, minerals, and omega-3 fatty acids. HTMA testing can also help identify individual mineral needs."
       }
-    ]
+    ],
+    schema: {
+      description: "Learn the 6 foundations for preconception health: nourishment, minerals, movement, rest, reducing exposures, and prenatal vitamins to support fertility and pregnancy."
+    }
   },
   {
     slug: '2024-05-15-mental-health-pcos',
@@ -437,7 +446,10 @@ Want more tips? Download the complimentary **Holistic Habits Checklist** for add
         question: "Should I consider supplements for mood support?",
         answer: "Vitamin D and omega-3 fatty acids are two supplements with research supporting their role in mental health. Have your vitamin D levels checked and target 60+ ng/mL with appropriate D3+K2 supplementation. Omega-3s from fatty fish or quality supplements support brain health and reduce inflammation."
       }
-    ]
+    ],
+    schema: {
+      description: "9 practical tips for mental health support: hydration, sleep, sunlight, blood sugar, breathwork, grounding, vitamin D, omega-3s, and alcohol awareness for PCOS."
+    }
   },
   {
     slug: '2024-10-15-probiotic-smoothie-bowl',
@@ -504,7 +516,10 @@ Intention Holistic Health
         question: "Is this smoothie good for blood sugar balance?",
         answer: "Yes! This recipe is designed for blood sugar stability. The combination of protein (yogurt, hemp hearts), healthy fats (flax seeds, hemp hearts), and fiber (berries, vegetables, seeds) helps slow glucose absorption. Using low-glycemic berries like blueberries also supports steady blood sugar levels."
       }
-    ]
+    ],
+    schema: {
+      description: "A probiotic-rich smoothie bowl recipe with kefir, yogurt, flax seeds, and hemp hearts for gut health, protein, and blood sugar balance."
+    }
   },
   {
     slug: '2024-10-01-gut-health-pcos',
@@ -604,7 +619,10 @@ Clinical services at Intention Holistic Health PLLC serve Kentucky residents onl
         question: "Are probiotics necessary for PCOS?",
         answer: "While not strictly necessary, probiotic supplements (especially Lactobacillus and Bifidobacterium species) show therapeutic potential for PCOS. Studies suggest they may improve insulin sensitivity and menstrual regularity. However, probiotic-rich foods combined with prebiotic foods (garlic, onions, leeks) may be equally effective for many women."
       }
-    ]
+    ],
+    schema: {
+      description: "Explore the gut-PCOS connection: how your microbiota affects inflammation, insulin, hormones, and mental health, plus evidence-based strategies for gut wellness."
+    }
   },
   {
     slug: '2024-09-15-hormone-friendly-granola',
@@ -679,7 +697,10 @@ Intention Holistic Health
         question: "Can I substitute the maple syrup?",
         answer: "Yes! Honey is a great alternative and is already listed as an option in the recipe. For a lower-sugar version, you can reduce the sweetener amount or use a sugar-free alternative like monk fruit sweetener. The granola may be slightly less clumpy with less sweetener."
       }
-    ]
+    ],
+    schema: {
+      description: "A hormone-friendly granola recipe with nuts, seeds, and coconut—grain-free option available. Supports blood sugar balance and hormone health."
+    }
   }
 ];
 
@@ -752,6 +773,51 @@ function parseMarkdown(markdown) {
 function formatDate(dateString) {
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   return new Date(dateString).toLocaleDateString('en-US', options);
+}
+
+// Inject Article JSON-LD schema into the page head
+function injectArticleSchema(post) {
+  // Remove any existing article schema (in case of navigation)
+  const existingSchema = document.getElementById('article-schema');
+  if (existingSchema) {
+    existingSchema.remove();
+  }
+
+  // Build the Article schema
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    'headline': post.title,
+    'description': (post.schema && post.schema.description) ? post.schema.description : post.excerpt,
+    'image': 'https://www.intentionholistichealth.com' + post.image,
+    'datePublished': post.date,
+    'dateModified': post.date,
+    'author': {
+      '@type': 'Person',
+      'name': 'Alicia Harrison',
+      'jobTitle': 'Family Nurse Practitioner',
+      'url': 'https://www.intentionholistichealth.com/about.html'
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Intention Holistic Health',
+      'logo': {
+        '@type': 'ImageObject',
+        'url': 'https://www.intentionholistichealth.com/images/logo2.webp'
+      }
+    },
+    'mainEntityOfPage': {
+      '@type': 'WebPage',
+      '@id': 'https://www.intentionholistichealth.com/blog/post.html?post=' + post.slug
+    }
+  };
+
+  // Create and inject the script element
+  const scriptElement = document.createElement('script');
+  scriptElement.type = 'application/ld+json';
+  scriptElement.id = 'article-schema';
+  scriptElement.textContent = JSON.stringify(schema);
+  document.head.appendChild(scriptElement);
 }
 
 // -----------------------------------------
@@ -1031,8 +1097,13 @@ function renderSinglePost() {
   // Update meta description
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
-    metaDescription.setAttribute('content', post.excerpt);
+    // Use schema description if available, otherwise use excerpt
+    const description = (post.schema && post.schema.description) ? post.schema.description : post.excerpt;
+    metaDescription.setAttribute('content', description);
   }
+
+  // Inject Article JSON-LD schema for SEO
+  injectArticleSchema(post);
 
   // Render post header
   const postTitle = document.getElementById('post-title');

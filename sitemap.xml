@@ -67,6 +67,56 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://www.intentionholistichealth.com/blog/post.html?post=2024-12-15-holiday-wellness</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.intentionholistichealth.com/blog/post.html?post=2024-12-01-unmedicated-birth</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.intentionholistichealth.com/blog/post.html?post=2024-11-15-body-first-home</loc>
+    <lastmod>2024-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.intentionholistichealth.com/blog/post.html?post=2024-10-15-probiotic-smoothie-bowl</loc>
+    <lastmod>2024-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.intentionholistichealth.com/blog/post.html?post=2024-10-01-gut-health-pcos</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.intentionholistichealth.com/blog/post.html?post=2024-09-15-hormone-friendly-granola</loc>
+    <lastmod>2024-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.intentionholistichealth.com/blog/post.html?post=2024-05-15-mental-health-pcos</loc>
+    <lastmod>2024-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- Legal Pages -->
   <url>
     <loc>https://www.intentionholistichealth.com/legal/terms.html</loc>
