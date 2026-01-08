@@ -1,12 +1,8 @@
 [build]
   publish = "."
 
-# Redirect non-www to www (canonical domain)
-[[redirects]]
-  from = "https://intentionholistichealth.com/*"
-  to = "https://www.intentionholistichealth.com/:splat"
-  status = 301
-  force = true
+# NOTE: www/non-www redirect is handled in Netlify dashboard Domain Settings
+# Do NOT add redirect rules here for domain canonicalization - causes redirect loops
 
 [[headers]]
   for = "/*"
