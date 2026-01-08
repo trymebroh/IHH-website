@@ -1,6 +1,13 @@
 [build]
   publish = "."
 
+# Redirect non-www to www (canonical domain)
+[[redirects]]
+  from = "https://intentionholistichealth.com/*"
+  to = "https://www.intentionholistichealth.com/:splat"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
