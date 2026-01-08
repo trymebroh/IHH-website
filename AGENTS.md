@@ -872,4 +872,4 @@ Run this audit when making significant changes:
 - MSN - Master of Science in Nursing
 - APRN - Advanced Practice Registered Nurse
 - FNP-C - Family Nurse Practitioner - Board Certified
-- BHPCC - Board of Holistic Practitioners Certification Council
+- BHPCC - Brain Health Professional Coaching Certification

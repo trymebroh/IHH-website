@@ -114,13 +114,6 @@ curl -X PATCH "https://api.notion.com/v1/blocks/2e277f92-bf69-81fd-b227-e17198f2
 - `Mobile` - Working from Notion mobile app
 - `Manual` - Direct edits in Notion UI
 
-### CLAUDE.md Sync Workflow
-
-**After any edit to CLAUDE.md:**
-1. Prompt user: "CLAUDE.md was updated. Would you like to sync this to Notion?"
-2. If yes: Add session note entry documenting the CLAUDE.md changes
-3. User must confirm before any sync (prevents accidental overwrites)
-
 ### Accounts & Services Inventory
 
 When creating or integrating ANY new external account or service, **immediately add an entry to the Accounts Inventory database**:
@@ -630,15 +623,6 @@ Only use colors from the official brand palette (see `/brand/Branding Board.pdf`
 - Before merging any branch (including draft → live), explicitly confirm readiness with the requester/owner.
 - Ensure a rollback path exists (e.g., source branch retained or a pre-merge tag/commit reference recorded) so the merge can be reversed if issues arise.
 
-## Communication for Codex Users
-
-- Assume many users are non-technical. When explaining technical terms or steps, use clear, plain language and supportive analogies to make concepts approachable.
-- Remind Codex users to push their updates to GitHub if they haven't yet, so work doesn't get lost in the temporary workspace.
-- **Save/Backup Requests:** If the user asks to "save," "backup," or similar, clarify the intent:
-  - **Commit** = Create a save point (like a checkpoint in a video game)
-  - **Push** = Send it to the backup database/library (GitHub) so it's stored remotely
-  - Ask: "Would you like me to commit (create a save point) and push (send to the backup)?"
-
 ## Git Configuration
 
 - **Use SSH for GitHub pushes** (not HTTPS). The remote should be `git@github.com:trymebroh/IHH-website.git`
@@ -807,9 +791,9 @@ Homepage → Learn (HTMA page, Blog) → Service Page → Apply Page → Patient
 ```
 
 **Key Conversion Points:**
-1. **HTMA/Wellness Services:** Require application first → `/apply.html`
-2. **Lab Review:** Can book directly (no application required)
-3. **Intentional Reset:** Landing page only (direct link, not in nav)
+1. **HTMA/Wellness Services:** Redirect to Practice Better for booking
+2. **Lab Review:** Redirect to Practice Better for direct booking
+3. **Intentional Reset:** Landing page only (direct link, not in nav) → Practice Better
 
 ---
 
@@ -1220,4 +1204,4 @@ Run this audit when making significant changes:
 - MSN - Master of Science in Nursing
 - APRN - Advanced Practice Registered Nurse
 - FNP-C - Family Nurse Practitioner - Board Certified
-- BHPCC - Board of Holistic Practitioners Certification Council
+- BHPCC - Brain Health Professional Coaching Certification
