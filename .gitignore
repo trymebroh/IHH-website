@@ -11,8 +11,19 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Claude Code user settings (permissions, local config)
+.claude/
+
 # Environment files
 .env
 .env.local
+
 # Lead magnets / freebies (attached via email, not public)
 archive/downloads/
+
+# Internal documentation (stored in Notion - see CLAUDE.md for workflow)
+session-notes/
+tasks/
+
+# Sensitive account information (stored in Notion)
+docs/accounts-inventory.md

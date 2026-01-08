@@ -20,27 +20,76 @@ git pull
 
 ---
 
-## Session Notes
+## Notion-Based Documentation System
 
-Update `session-notes/YYYY-MM-DD.md` at the end of each working session:
-- **Completed**: What was accomplished this session
-- **Pending**: What remains to be done
-- **Notes**: Any relevant context for future sessions
+Internal documentation is stored in Notion (not git) for cross-device sync. The Notion page "AI Content System" (ID: `2df77f92-bf69-808a-80d5-e5929cf6160b`) contains:
 
-**IMPORTANT**: Session notes MUST be updated before committing and pushing to GitHub. This is a prerequisite for any commit/push operation.
+- **CLAUDE.md Sync** - Tracks when CLAUDE.md was last updated and by which device
+- **Session Notes** - Work session documentation
+- **Tasks/Todo** - Current task lists and project todos
+- **Accounts Inventory** - Service accounts and integrations
 
-## Accounts & Services Inventory
+### Session Start Checklist
 
-**File:** `/docs/accounts-inventory.md`
+**Before starting any work session**, perform these Notion checks:
 
-When creating or integrating ANY new external account or service, **immediately update the inventory file** with:
-- Service name
-- Account ID / property ID / relevant identifiers
-- Purpose
-- Who has access
-- Any API keys added to Netlify environment variables
+1. **Check for CLAUDE.md updates:**
+   ```
+   Search Notion for "AI Content System" page
+   Look for "=== CLAUDE.md SYNC ===" section
+   Compare "Last Updated" date with your local knowledge
+   If newer: Prompt user "CLAUDE.md was updated on [date] by [device].
+   Would you like to review the changes before proceeding?"
+   ```
 
-This includes but is not limited to:
+2. **Check for pending tasks:**
+   ```
+   Look for "=== TASKS/TODO ===" section
+   Review any pending items from previous sessions
+   ```
+
+3. **Check recent session notes:**
+   ```
+   Look for "=== SESSION NOTES ===" section
+   Review last 2-3 entries for context
+   ```
+
+### Session Notes (Notion)
+
+At the end of each working session, update session notes in Notion:
+
+```
+1. Search for "AI Content System" page (ID: 2df77f92-bf69-808a-80d5-e5929cf6160b)
+2. Find "=== SESSION NOTES ===" section
+3. Add a new bulleted item with format:
+   "[YYYY-MM-DD] [Device] | Completed: [summary] | Pending: [items] | Notes: [context]"
+```
+
+**IMPORTANT**: Session notes MUST be updated in Notion before committing and pushing to GitHub.
+
+### CLAUDE.md Sync Workflow
+
+**After any edit to CLAUDE.md:**
+1. Prompt user: "CLAUDE.md was updated. Would you like to sync this to Notion?"
+2. If yes: Update the "=== CLAUDE.md SYNC ===" section with new timestamp and device
+3. User must confirm before any sync (prevents accidental overwrites)
+
+**Before updating session notes:**
+1. Check Notion for CLAUDE.md updates from other devices
+2. If updates exist: Prompt user to review/pull changes first
+3. This ensures both devices stay in sync
+
+### Accounts & Services Inventory (Notion)
+
+When creating or integrating ANY new external account or service, **immediately update the Accounts Inventory in Notion**:
+
+```
+1. Search for "AI Content System" page
+2. Find "=== ACCOUNTS INVENTORY ===" section
+3. Add new service as a bulleted item with: Service name, ID/credentials reference, purpose, access
+```
+
+This includes:
 - Google services (Analytics, Cloud, Search Console, etc.)
 - Email marketing platforms
 - Payment processors
@@ -48,7 +97,11 @@ This includes but is not limited to:
 - Hosting/deployment services
 - Client management tools
 
-**Before finishing a session that involved new accounts:** Verify the inventory is up to date.
+**Before finishing a session that involved new accounts:** Verify the Notion inventory is up to date.
+
+### Notion MCP Configuration
+
+The `.mcp.json` file configures the Notion integration. It uses environment variable `${NOTION_TOKEN}` - each device must have `NOTION_TOKEN` set in their environment with a valid Notion API token.
 
 ---
 
