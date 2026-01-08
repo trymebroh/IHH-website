@@ -1,5 +1,18 @@
 # Claude.md - Project Instructions and Guardrails
 
+## Project Folders Structure
+
+**IMPORTANT:** There are TWO separate IHH project folders:
+
+| Folder | Path | Purpose |
+|--------|------|---------|
+| **Website** | `~/Intention-Holistic-Health-website` | Website codebase (HTML, CSS, JS, Netlify) |
+| **Business** | `~/Intention-Holistic-Health` | Business operations (finance, marketing strategy, CEO summit notes) |
+
+Both projects share Notion integration configuration. When updating documentation (especially `docs/notion-system-architecture.md`), sync changes to both folders.
+
+---
+
 ## Workflow
 
 First, think through the problem. Plan tasks using the TodoWrite tool (Claude Code's built-in task tracking).
@@ -69,6 +82,26 @@ At the end of each working session, create a new entry in the Session Notes data
 ```
 
 **IMPORTANT**: Session notes MUST be updated in Notion before committing and pushing to GitHub.
+
+### AI Content System Page Updates
+
+The AI Content System dashboard page has a **"Last Updated"** status field at the top. This MUST be updated whenever any changes are made to the page or its databases.
+
+**Format:** `Last Updated: [Month] [Day], [Year] at [H:MM] [AM/PM] CST | Updated By: [Environment]`
+
+**Example:** `Last Updated: January 8, 2026 at 1:15 PM CST | Updated By: Local VS Code`
+
+**When to update:**
+- After adding/editing entries in any database on the page
+- After reorganizing or cleaning up the page structure
+- After adding new databases or linked views
+- After any significant Notion changes during a session
+
+**Environment values:**
+- `Local VS Code` - Working from local VS Code with Claude Code
+- `Browser Codex` - Working from browser-based Codex
+- `Mobile` - Working from Notion mobile app
+- `Manual` - Direct edits in Notion UI
 
 ### CLAUDE.md Sync Workflow
 
