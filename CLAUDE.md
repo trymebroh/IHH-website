@@ -21,47 +21,51 @@ git pull
 
 ## Notion-Based Documentation System
 
-Internal documentation is stored in Notion (not git) for cross-device sync. The Notion page "AI Content System" (ID: `2df77f92-bf69-808a-80d5-e5929cf6160b`) contains:
+**Architecture Documentation:** `/docs/notion-system-architecture.md`
 
-- **CLAUDE.md Sync** - Tracks when CLAUDE.md was last updated and by which device
-- **Session Notes** - Work session documentation
-- **Tasks/Todo** - Current task lists and project todos
-- **Accounts Inventory** - Service accounts and integrations
+Internal documentation is stored in Notion (not git) for cross-device sync and professional project management. The system uses **linked databases** following Notion's official best practices.
+
+### System Overview
+
+**Dashboard Page:** "AI Content System" (ID: `2df77f92-bf69-808a-80d5-e5929cf6160b`)
+
+**Databases:**
+
+| Database | Purpose | Key Properties |
+|----------|---------|----------------|
+| **Session Notes** | Track work sessions across devices | Date, Environment, Status, Completed, Pending, Notes |
+| **Tasks & Projects** | Track actionable items with priority | Status, Priority, Category, Due Date, Assignee |
+| **Accounts Inventory** | Track external services and integrations | Category, Account ID, Status, Access, Last Verified |
 
 ### Session Start Checklist
 
-**Before starting any work session**, perform these Notion checks:
+**Before starting any work session:**
 
 1. **Check for CLAUDE.md updates:**
-   ```
-   Search Notion for "AI Content System" page
-   Look for "=== CLAUDE.md SYNC ===" section
-   Compare "Last Updated" date with your local knowledge
-   If newer: Prompt user "CLAUDE.md was updated on [date] by [device].
-   Would you like to review the changes before proceeding?"
-   ```
+   - Query Session Notes database for recent entries
+   - If CLAUDE.md was updated by another device, prompt user to review changes
 
 2. **Check for pending tasks:**
-   ```
-   Look for "=== TASKS/TODO ===" section
-   Review any pending items from previous sessions
-   ```
+   - Query Tasks & Projects database where Status != Done
+   - Review high-priority items first
 
 3. **Check recent session notes:**
-   ```
-   Look for "=== SESSION NOTES ===" section
-   Review last 2-3 entries for context
-   ```
+   - Review last 2-3 session entries for context
 
-### Session Notes (Notion)
+### Session Notes Workflow
 
-At the end of each working session, update session notes in Notion:
+At the end of each working session, create a new entry in the Session Notes database:
 
-```
-1. Search for "AI Content System" page (ID: 2df77f92-bf69-808a-80d5-e5929cf6160b)
-2. Find "=== SESSION NOTES ===" section
-3. Add a new bulleted item with format:
-   "[YYYY-MM-DD] [Device] | Completed: [summary] | Pending: [items] | Notes: [context]"
+```json
+{
+  "Session": "YYYY-MM-DD [Summary]",
+  "Date": "YYYY-MM-DD",
+  "Environment": "Local VS Code" | "Browser Codex" | "Mobile" | "Other",
+  "Status": "Done",
+  "Completed": "What was accomplished",
+  "Pending": "What remains to be done",
+  "Notes": "Context for future sessions"
+}
 ```
 
 **IMPORTANT**: Session notes MUST be updated in Notion before committing and pushing to GitHub.
@@ -70,22 +74,23 @@ At the end of each working session, update session notes in Notion:
 
 **After any edit to CLAUDE.md:**
 1. Prompt user: "CLAUDE.md was updated. Would you like to sync this to Notion?"
-2. If yes: Update the "=== CLAUDE.md SYNC ===" section with new timestamp and device
+2. If yes: Add session note entry documenting the CLAUDE.md changes
 3. User must confirm before any sync (prevents accidental overwrites)
 
-**Before updating session notes:**
-1. Check Notion for CLAUDE.md updates from other devices
-2. If updates exist: Prompt user to review/pull changes first
-3. This ensures both devices stay in sync
+### Accounts & Services Inventory
 
-### Accounts & Services Inventory (Notion)
+When creating or integrating ANY new external account or service, **immediately add an entry to the Accounts Inventory database**:
 
-When creating or integrating ANY new external account or service, **immediately update the Accounts Inventory in Notion**:
-
-```
-1. Search for "AI Content System" page
-2. Find "=== ACCOUNTS INVENTORY ===" section
-3. Add new service as a bulleted item with: Service name, ID/credentials reference, purpose, access
+```json
+{
+  "Service": "Service Name",
+  "Category": "Hosting" | "Analytics" | "Email" | "Payment" | "Social" | "Development" | etc.,
+  "Account ID": "Primary identifier",
+  "Purpose": "What it's used for",
+  "Access": ["Alicia (Owner)", "Developer", "API Only"],
+  "Status": "Active",
+  "Env Variable": "Related environment variable name if applicable"
+}
 ```
 
 This includes:
@@ -98,11 +103,178 @@ This includes:
 
 **Before finishing a session that involved new accounts:** Verify the Notion inventory is up to date.
 
-### Notion MCP Configuration
+### API Capabilities & Limitations
+
+#### Notion API Limitations (Permanent)
+
+These are Notion API limitations that require **manual UI steps**:
+
+| Operation | API Support | Manual Steps Required |
+|-----------|-------------|----------------------|
+| **Create new databases** | NO | Must create in Notion UI first |
+| **Status property options** | NO | Add options via Notion UI > Edit property |
+| **Select/Multi-select options** | Partial | Can use existing options, but new ones need UI |
+| **Database views** | NO | Must create views in Notion UI |
+| **Relation properties** | Partial | Create in UI, then API can use them |
+
+#### MCP Server Bug (Known Issue)
+
+The official Notion MCP server has a **serialization bug** affecting `create-page`, `update-page`, and `move-page` operations. Object parameters are double-stringified, causing validation errors.
+
+**Bug Status:**
+- [Issue #82](https://github.com/makenotion/notion-mcp-server/issues/82) - Parameter serialization bug
+- [Issue #3023](https://github.com/anthropics/claude-code/issues/3023) - Claude Code specific issue
+
+| MCP Operation | Status | Workaround |
+|---------------|--------|------------|
+| Query databases | ✅ Works | Use MCP tools |
+| Search | ✅ Works | Use MCP tools |
+| Get page/database | ✅ Works | Use MCP tools |
+| **Create page** | ❌ Broken | Use `notion-cli` |
+| **Update page** | ❌ Broken | Use `notion-cli` |
+| **Move page** | ❌ Broken | Use `notion-cli` |
+
+#### Workaround: notion-cli Tool
+
+A global CLI tool is installed at `~/.local/bin/notion-cli` that bypasses the MCP bug by making direct API calls.
+
+**Usage:**
+```bash
+# Create a page in a database
+notion-cli create-page <database-id> '{"Title": {"title": [{"text": {"content": "Page Name"}}]}}'
+
+# Update a page
+notion-cli update-page <page-id> '{"Status": {"status": {"name": "Done"}}}'
+
+# Query a database
+notion-cli query <database-id>
+
+# Search
+notion-cli search "query"
+
+# Help
+notion-cli help
+```
+
+**Property JSON formats:**
+```javascript
+// Title (required for most databases)
+{"title": [{"text": {"content": "My Title"}}]}
+
+// Rich Text
+{"rich_text": [{"text": {"content": "Some text"}}]}
+
+// Select
+{"select": {"name": "Option Name"}}
+
+// Multi-Select
+{"multi_select": [{"name": "Tag1"}, {"name": "Tag2"}]}
+
+// Status
+{"status": {"name": "Active"}}
+
+// Date
+{"date": {"start": "2026-01-08"}}
+
+// URL
+{"url": "https://example.com"}
+```
+
+**When to guide user through manual steps:**
+
+#### 1. Creating a New Database
+Walk user through Notion UI:
+1. Open parent page in Notion
+2. Type `/database` and select "Database - Full page"
+3. Name the database
+4. Add properties (see property types below)
+5. Set icon and description
+6. Share with integration: `...` menu → Connections → Add integration
+
+#### 2. Adding/Editing Property Options
+Status, Select, and Multi-select options must be created in UI:
+
+1. Click property header → "Edit property"
+2. Add options with names
+3. **Set colors** (API cannot set colors):
+   - Click the color dot next to each option
+   - Available colors: `default`, `gray`, `brown`, `orange`, `yellow`, `green`, `blue`, `purple`, `pink`, `red`
+
+**Color conventions for this project:**
+| Property Type | Option | Color |
+|---------------|--------|-------|
+| Priority | High | Red |
+| Priority | Medium | Yellow |
+| Priority | Low | Green |
+| Status | To-do group | Gray |
+| Status | In Progress group | Blue |
+| Status | Complete group | Green |
+| Environment | Local VS Code | Blue |
+| Environment | Browser Codex | Purple |
+| Environment | Mobile | Green |
+| Category | Legal | Orange |
+| Category | Technical | Blue |
+| Category | Content | Green |
+| Category | SEO | Purple |
+| Category | Marketing | Pink |
+| Access | Alicia (Owner) | Purple |
+| Access | Developer | Blue |
+| Access | API Only | Gray |
+
+#### 3. Setting Up Status Property Groups
+Status properties have special grouping (To-do, In Progress, Complete):
+
+1. Click Status property header → "Edit property"
+2. Add options under each group header
+3. Drag options between groups to reorganize
+4. Set colors for each option
+
+#### 4. Creating Relations Between Databases
+1. In source database, click `+` to add property
+2. Select "Relation"
+3. Choose target database
+4. Toggle "Show on [target]" for two-way relation
+5. Name the property on both sides
+
+#### 5. Creating Database Views
+Views cannot be created via API:
+
+1. Click `+` next to existing view tabs
+2. Choose view type: Table, Board, Calendar, List, Gallery, Timeline
+3. Configure:
+   - **Filter**: Click "Filter" → Add conditions
+   - **Sort**: Click "Sort" → Add sort rules
+   - **Group by**: (Board view) Select grouping property
+   - **Properties**: Show/hide columns
+
+**Recommended views per database:**
+| Database | View | Type | Filter/Config |
+|----------|------|------|---------------|
+| Session Notes | Recent | Table | Date = Past week |
+| Session Notes | Calendar | Calendar | By Date |
+| Tasks | Active | Board | Status ≠ Done, Group by Status |
+| Tasks | By Priority | Table | Sort by Priority |
+| Accounts | All | Table | None |
+| Accounts | By Category | Board | Group by Category |
+
+### MCP Configuration
 
 The `.mcp.json` file configures the Notion integration. It uses environment variable `${NOTION_TOKEN}` - each device must have `NOTION_TOKEN` set in their environment with a valid Notion API token.
 
-**Note:** The Notion MCP API currently only supports adding content as paragraphs or bulleted lists within existing pages - it cannot create sub-pages programmatically. If you need to reorganize content into sub-pages, use the Notion web UI directly.
+### Database IDs Reference
+
+| Database | ID |
+|----------|-----|
+| Session Notes | `2e277f92-bf69-80ed-a966-c331880b4dc2` |
+| Tasks & Projects | `2e277f92-bf69-80de-aab2-fdc2e1e8613c` |
+| Accounts Inventory | `2e277f92-bf69-802e-88c7-f0b2b097c011` |
+
+### Alternative Integrations
+
+If MCP bug is fixed or more capabilities are needed:
+- **Better Notion MCP** - 75% API coverage with optimized operations
+- **Direct API via Netlify Functions** - Full API access including database creation
+- **Zapier/Make.com** - No-code automation with full Notion connectors
 
 ---
 
