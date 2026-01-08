@@ -2,13 +2,12 @@
 
 ## Workflow
 
-First, think through the problem. Read the codebase and write a plan in tasks/todo.md
-The plan should be a checklist of todo items.
+First, think through the problem. Plan tasks using the TodoWrite tool (Claude Code's built-in task tracking).
 Check in with me before starting work—I'll verify the plan.
 Then, complete the todos one by one, marking them off as you go.
 At every step, give me a high-level explanation of what you changed.
 Keep every change simple and minimal. Avoid big rewrites.
-At the end, add a review section in todo.md summarizing the changes.
+At the end, update session notes in Notion summarizing the changes.
 
 ## Keeping Your Local Copy Up to Date
 
@@ -102,6 +101,8 @@ This includes:
 ### Notion MCP Configuration
 
 The `.mcp.json` file configures the Notion integration. It uses environment variable `${NOTION_TOKEN}` - each device must have `NOTION_TOKEN` set in their environment with a valid Notion API token.
+
+**Note:** The Notion MCP API currently only supports adding content as paragraphs or bulleted lists within existing pages - it cannot create sub-pages programmatically. If you need to reorganize content into sub-pages, use the Notion web UI directly.
 
 ---
 
@@ -746,7 +747,7 @@ Avoid definitive claims. Use qualifying language:
 ### Legal Pages
 
 Legal pages (`/legal/*.html`) require attorney review before changes.
-See `/tasks/legal-attorney-review.md` for pending items.
+See Notion "AI Content System" → Tasks/Todo section for pending legal review items.
 
 ### External Links (Global Rule)
 
