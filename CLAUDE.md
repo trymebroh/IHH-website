@@ -85,7 +85,18 @@ At the end of each working session, create a new entry in the Session Notes data
 
 ### AI Content System Page Updates
 
-The AI Content System dashboard page has a **"Last Updated"** status field at the top. This MUST be updated whenever any changes are made to the page or its databases.
+The AI Content System dashboard page has a **"Last Updated"** callout block at the top. This MUST be updated whenever any changes are made to the page or its databases.
+
+**Callout Block ID:** `2e277f92-bf69-81fd-b227-e17198f29b1d`
+
+**How to update:** Use the Notion API to update this specific block (not append new content):
+```bash
+curl -X PATCH "https://api.notion.com/v1/blocks/2e277f92-bf69-81fd-b227-e17198f29b1d" \
+  -H "Authorization: Bearer ${NOTION_TOKEN}" \
+  -H "Content-Type: application/json" \
+  -H "Notion-Version: 2022-06-28" \
+  -d '{"callout": {"rich_text": [{"text": {"content": "Last Updated: [DATE] at [TIME] CST | Updated By: [ENV]"}}]}}'
+```
 
 **Format:** `Last Updated: [Month] [Day], [Year] at [H:MM] [AM/PM] CST | Updated By: [Environment]`
 
