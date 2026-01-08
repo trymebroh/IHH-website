@@ -27,3 +27,6 @@ tasks/
 
 # Sensitive account information (stored in Notion)
 docs/accounts-inventory.md
+
+# Internal Notion architecture documentation
+docs/notion-system-architecture.md
