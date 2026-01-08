@@ -57,6 +57,74 @@
   to = "/blog/post.html"
   status = 200
 
+# ===========================================
+# Legacy URL Redirects (old site migration)
+# ===========================================
+
+# Old blog post URLs → new format
+[[redirects]]
+  from = "/blog/nourishing-your-body-with-grain-free-granola"
+  to = "/blog/post.html?post=2024-09-15-hormone-friendly-granola"
+  status = 301
+
+[[redirects]]
+  from = "/blog/demystifying-pcos"
+  to = "/blog/post.html?post=2024-10-01-gut-health-pcos"
+  status = 301
+
+[[redirects]]
+  from = "/blog/quench-your-thirst-hydration-hacks-for-my-pcos-pals"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/gut-health-and-pcos"
+  to = "/blog/post.html?post=2024-10-01-gut-health-pcos"
+  status = 301
+
+[[redirects]]
+  from = "/blog/mastering-your-metabolism-2"
+  to = "/blog/"
+  status = 301
+
+# Case sensitivity fixes
+[[redirects]]
+  from = "/Services"
+  to = "/services/"
+  status = 301
+
+[[redirects]]
+  from = "/Apply"
+  to = "/apply.html"
+  status = 301
+
+[[redirects]]
+  from = "/Freebie"
+  to = "/"
+  status = 301
+
+# Old Kajabi pages → new equivalents
+[[redirects]]
+  from = "/mb_terms_and_conditions_page"
+  to = "/legal/terms.html"
+  status = 301
+
+[[redirects]]
+  from = "/mb_privacy_page"
+  to = "/legal/privacy.html"
+  status = 301
+
+[[redirects]]
+  from = "/mb_shop_page-1"
+  to = "/services/"
+  status = 301
+
+# Junk/typo URLs
+[[redirects]]
+  from = "/Intentionholistichealth.com"
+  to = "/"
+  status = 301
+
 [build.processing]
   skip_processing = false
 
