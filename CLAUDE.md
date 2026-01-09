@@ -1,5 +1,9 @@
 # Claude.md - Project Instructions and Guardrails
 
+**Lookup Data:** See `CLAUDE-REFERENCE.md` for IDs, code snippets, and hex values.
+
+---
+
 ## Project Folders Structure
 
 **IMPORTANT:** There are TWO separate IHH project folders:
@@ -40,7 +44,7 @@ Internal documentation is stored in Notion (not git) for cross-device sync and p
 
 ### System Overview
 
-**Dashboard Page:** "AI Content System" (ID: `2df77f92-bf69-808a-80d5-e5929cf6160b`)
+**Dashboard Page:** "AI Content System" (see `CLAUDE-REFERENCE.md` for ID)
 
 **Databases:**
 
@@ -67,19 +71,7 @@ Internal documentation is stored in Notion (not git) for cross-device sync and p
 
 ### Session Notes Workflow
 
-At the end of each working session, create a new entry in the Session Notes database:
-
-```json
-{
-  "Session": "YYYY-MM-DD [Summary]",
-  "Date": "YYYY-MM-DD",
-  "Environment": "Local VS Code" | "Browser Codex" | "Mobile" | "Other",
-  "Status": "Done",
-  "Completed": "What was accomplished",
-  "Pending": "What remains to be done",
-  "Notes": "Context for future sessions"
-}
-```
+At the end of each working session, create a new entry in the Session Notes database. See `CLAUDE-REFERENCE.md` for the entry format.
 
 **IMPORTANT**: Session notes MUST be updated in Notion before committing and pushing to GitHub.
 
@@ -87,16 +79,7 @@ At the end of each working session, create a new entry in the Session Notes data
 
 The AI Content System dashboard page has a **"Last Updated"** callout block at the top. This MUST be updated whenever any changes are made to the page or its databases.
 
-**Callout Block ID:** `2e277f92-bf69-81fd-b227-e17198f29b1d`
-
-**How to update:** Use the Notion API to update this specific block (not append new content):
-```bash
-curl -X PATCH "https://api.notion.com/v1/blocks/2e277f92-bf69-81fd-b227-e17198f29b1d" \
-  -H "Authorization: Bearer ${NOTION_TOKEN}" \
-  -H "Content-Type: application/json" \
-  -H "Notion-Version: 2022-06-28" \
-  -d '{"callout": {"rich_text": [{"text": {"content": "Last Updated: [DATE] at [TIME] CST | Updated By: [ENV]"}}]}}'
-```
+**How to update:** Use the Notion API to update this specific block (not append new content). See `CLAUDE-REFERENCE.md` for the callout block ID and curl command.
 
 **Format:** `Last Updated: [Month] [Day], [Year] at [H:MM] [AM/PM] CST | Updated By: [Environment]`
 
@@ -116,19 +99,7 @@ curl -X PATCH "https://api.notion.com/v1/blocks/2e277f92-bf69-81fd-b227-e17198f2
 
 ### Accounts & Services Inventory
 
-When creating or integrating ANY new external account or service, **immediately add an entry to the Accounts Inventory database**:
-
-```json
-{
-  "Service": "Service Name",
-  "Category": "Hosting" | "Analytics" | "Email" | "Payment" | "Social" | "Development" | etc.,
-  "Account ID": "Primary identifier",
-  "Purpose": "What it's used for",
-  "Access": ["Alicia (Owner)", "Developer", "API Only"],
-  "Status": "Active",
-  "Env Variable": "Related environment variable name if applicable"
-}
-```
+When creating or integrating ANY new external account or service, **immediately add an entry to the Accounts Inventory database**. See `CLAUDE-REFERENCE.md` for the entry format.
 
 This includes:
 - Google services (Analytics, Cloud, Search Console, etc.)
@@ -175,47 +146,7 @@ The official Notion MCP server has a **serialization bug** affecting `create-pag
 
 A global CLI tool is installed at `~/.local/bin/notion-cli` that bypasses the MCP bug by making direct API calls.
 
-**Usage:**
-```bash
-# Create a page in a database
-notion-cli create-page <database-id> '{"Title": {"title": [{"text": {"content": "Page Name"}}]}}'
-
-# Update a page
-notion-cli update-page <page-id> '{"Status": {"status": {"name": "Done"}}}'
-
-# Query a database
-notion-cli query <database-id>
-
-# Search
-notion-cli search "query"
-
-# Help
-notion-cli help
-```
-
-**Property JSON formats:**
-```javascript
-// Title (required for most databases)
-{"title": [{"text": {"content": "My Title"}}]}
-
-// Rich Text
-{"rich_text": [{"text": {"content": "Some text"}}]}
-
-// Select
-{"select": {"name": "Option Name"}}
-
-// Multi-Select
-{"multi_select": [{"name": "Tag1"}, {"name": "Tag2"}]}
-
-// Status
-{"status": {"name": "Active"}}
-
-// Date
-{"date": {"start": "2026-01-08"}}
-
-// URL
-{"url": "https://example.com"}
-```
+See `CLAUDE-REFERENCE.md` for notion-cli commands and property JSON formats.
 
 **When to guide user through manual steps:**
 
@@ -300,11 +231,7 @@ The `.mcp.json` file configures the Notion integration. It uses environment vari
 
 ### Database IDs Reference
 
-| Database | ID |
-|----------|-----|
-| Session Notes | `2e277f92-bf69-80ed-a966-c331880b4dc2` |
-| Tasks & Projects | `2e277f92-bf69-80de-aab2-fdc2e1e8613c` |
-| Accounts Inventory | `2e277f92-bf69-802e-88c7-f0b2b097c011` |
+See `CLAUDE-REFERENCE.md` for all Notion database IDs.
 
 ### Alternative Integrations
 
@@ -607,16 +534,7 @@ Missing characters will fall back to a generic cursive font, causing inconsisten
 
 ### Brand Colors
 
-Only use colors from the official brand palette (see `/brand/Branding Board.pdf`):
-
-| Color | Hex | Usage |
-|-------|-----|-------|
-| Light Sage | `#CDCFC0` | Backgrounds, badges |
-| Warm Tan | `#D6C7B4` | Accents, buttons |
-| Taupe | `#AD9985` | Secondary accents |
-| Sage Green | `#8D9488` | Primary brand color |
-| Charcoal | `#4A4B49` | Text, dark elements |
-| Cream | `#F9F5F0` | Backgrounds, header |
+Only use colors from the official brand palette (see `/brand/Branding Board.pdf`). See `CLAUDE-REFERENCE.md` for hex values.
 
 ## Branch Merges
 
@@ -633,40 +551,19 @@ Only use colors from the official brand palette (see `/brand/Branding Board.pdf`
 
 ## Google Analytics 4 (GA4) Tracking
 
-**Measurement ID:** `G-3GFCR5ZRMZ`
+**Measurement ID:** See `CLAUDE-REFERENCE.md` for the GA4 measurement ID.
 
 ### Required for ALL New Pages
 
-Every new HTML page MUST include the GA4 tracking code in the `<head>` section:
-
-```html
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3GFCR5ZRMZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-3GFCR5ZRMZ');
-</script>
-```
+Every new HTML page MUST include the GA4 tracking code in the `<head>` section. See `CLAUDE-REFERENCE.md` for the tracking code snippet.
 
 ### Tracking Attributes for Funnel Analytics
 
 Add these data attributes to enable detailed funnel tracking:
+- `data-track-section` on key sections (hero, services-overview, pricing, faq)
+- `data-track-cta` on CTA buttons
 
-**Section Tracking** - Add to important page sections:
-```html
-<section data-track-section="hero">...</section>
-<section data-track-section="services-overview">...</section>
-<section data-track-section="pricing">...</section>
-<section data-track-section="faq">...</section>
-```
-
-**CTA Tracking** - Add to buttons and important links:
-```html
-<a href="/apply.html" class="btn" data-track-cta="apply-hero">Apply Now</a>
-<a href="/htma.html" data-track-cta="learn-htma">Learn More</a>
-```
+See `CLAUDE-REFERENCE.md` for HTML examples.
 
 ### Events Automatically Tracked
 
@@ -867,11 +764,7 @@ Explicitly allowed (for JS-rendered content):
 **Environment Variable Required:**
 - `MAILERLITE_API_KEY` - Must be set in Netlify dashboard (Site settings → Environment variables)
 
-**Subscriber Groups:**
-| Group | ID | Purpose |
-|-------|-----|---------|
-| Newsletter Subscribers | `175195722960864384` | General newsletter signups |
-| Holistic Habits Checklist | `175195632248554684` | Lead magnet signups |
+**Subscriber Groups:** See `CLAUDE-REFERENCE.md` for MailerLite group IDs.
 
 **Forms Using MailerLite:**
 | Location | Form Type | Groups Added To |
@@ -888,14 +781,7 @@ Explicitly allowed (for JS-rendered content):
 4. Function adds subscriber to appropriate MailerLite group(s)
 5. MailerLite automation delivers lead magnet email (configured in MailerLite dashboard)
 
-**Adding New Newsletter Forms:**
-```html
-<form data-mailerlite data-form-type="newsletter">
-  <input type="email" name="email" required>
-  <button type="submit">Subscribe</button>
-  <p class="form-message" style="display:none;"></p>
-</form>
-```
+**Adding New Newsletter Forms:** See `CLAUDE-REFERENCE.md` for the HTML template.
 
 ### External Integrations
 
@@ -1056,24 +942,11 @@ The schema is dynamically injected into the `<head>` when the post loads.
 
 ### Adding Blog Posts to Sitemap
 
-When adding a new blog post, add an entry to `/sitemap.xml`:
-
-```xml
-<url>
-  <loc>https://www.intentionholistichealth.com/blog/post.html?slug=your-post-slug</loc>
-  <lastmod>2025-01-04</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-```
+When adding a new blog post, add an entry to `/sitemap.xml`. See `CLAUDE-REFERENCE.md` for the XML template.
 
 ### Lighthouse Check for Blog Posts
 
-Run a quick Lighthouse audit on the new post:
-
-```bash
-lighthouse https://drafts-website-edits--intentionholistichealth.netlify.app/blog/post.html?slug=your-post-slug --only-categories=performance,accessibility,seo --output=json --output-path=/dev/null --chrome-flags="--headless" 2>&1 | grep -E "(performance|accessibility|seo)"
-```
+Run a quick Lighthouse audit on the new post. See `CLAUDE-REFERENCE.md` for the command.
 
 Key targets:
 - Performance: 80+
@@ -1185,23 +1058,10 @@ Run this audit when making significant changes:
 
 ### Key URLs
 
-- **Live Site:** https://www.intentionholistichealth.com
-- **Branch Deploy (Testing):** https://drafts-website-edits--intentionholistichealth.netlify.app
-- **GitHub Repo:** git@github.com:trymebroh/IHH-website.git
-- **Netlify Dashboard:** (via Alicia's account)
-- **GA4 Property:** G-3GFCR5ZRMZ
-- **Practice Better:** https://my.practicebetter.io
-- **Fullscript:** https://us.fullscript.com/welcome/intentionholistichealth
+See `CLAUDE-REFERENCE.md` for all key URLs (live site, branch deploy, GitHub, GA4, Practice Better, Fullscript).
 
 **Note:** The branch deploy URL always shows the latest `drafts-website-edits` branch. Use this for testing before merging to main. Branch deploys are FREE (no Netlify credits).
 
-### Contact Email
+### Contact & Credentials
 
-`info@intentionholistichealth.com`
-
-### Credentials (Alicia Harrison)
-
-- MSN - Master of Science in Nursing
-- APRN - Advanced Practice Registered Nurse
-- FNP-C - Family Nurse Practitioner - Board Certified
-- BHPCC - Brain Health Professional Coaching Certification
+See `CLAUDE-REFERENCE.md` for contact email and Alicia Harrison's credentials (MSN, APRN, FNP-C, BHPCC).
