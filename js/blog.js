@@ -7,6 +7,101 @@
 // For simplicity, we define posts here that can be easily updated
 const BLOG_POSTS = [
   {
+    slug: '2025-01-09-labs-normal-feel-off',
+    title: 'Why Your Labs Came Back "Normal" (But You Still Feel Off)',
+    date: '2025-01-09',
+    author: 'Alicia Harrison, MSN, APRN, FNP-C',
+    excerpt: 'You got your blood work done, waited for results, and everything looks "normal." But you don\'t feel normal. Your symptoms are real—here\'s why standard labs might not tell the whole story.',
+    image: '/images/blog/labs-normal-feel-off.png',
+    cardAspectRatio: '83.83%',
+    imageAspectRatio: '83.83%',
+    categories: ['wellness', 'foundations'],
+    content: `
+# Why Your Labs Came Back "Normal" (But You Still Feel Off)
+
+It is a scenario I see constantly in my practice.
+
+The story usually goes like this: You feel off. It's not just "tired"—it's a deep fatigue that sleep doesn't fix. Maybe you are noticing changes in your hair texture, your mood feels unstable, or you have brain fog that makes it hard to focus.
+
+You know something isn't right. So, you do the responsible thing: you see your primary care provider. You get blood work done. You wait.
+
+And then you get the notification: "Everything looks normal."
+
+But you don't feel normal.
+
+You might leave that appointment feeling confused or wondering if stress is the only culprit. I am writing this today to validate you: **Your symptoms are real.**
+
+However, the "normal" result on your lab report might not tell the whole story of your health.
+
+## Understanding Reference Ranges
+
+To understand why your labs might look "fine" even when you feel unwell, it is helpful to understand how standard reference ranges are often established.
+
+In the conventional medical model, reference ranges are generally based on a statistical bell curve of the population that utilizes that lab.
+
+- **The Goal of Standard Ranges:** These ranges are designed primarily to identify pathology (diagnosable disease states). They are excellent for flagging acute illnesses or organ failure.
+- **The Limitation:** Being "in range" simply means you do not currently meet the criteria for a specific disease diagnosis.
+
+However, the absence of disease does not always equal the presence of vitality.
+
+## The Approach: Normal vs. Optimal
+
+I view health through a functional lens. This means I am not just checking to see if you are "safe" from immediate danger; I am looking at how to support your body's function so you can feel your best.
+
+There is often a gap between "medically normal" and "functionally optimal."
+
+### Example 1: Thyroid Health
+
+- **The "Standard" View:** A standard TSH (Thyroid Stimulating Hormone) reference range is quite broad. If a patient falls within this wide range, they are typically considered to have normal thyroid function.
+- **The "Functional" View:** In functional medicine, we often observe that women report feeling their best—with better energy and mood—when their TSH falls within a much narrower, "optimal" range. A result that is technically "normal" but on the high end of the spectrum might still correlate with symptoms of fatigue for some women.
+
+### Example 2: Iron Stores (Ferritin)
+
+- **The "Standard" View:** Reference ranges for Ferritin (stored iron) can go quite low before flagging as "abnormal."
+- **The "Functional" View:** While a lower number might not indicate clinical anemia, it may not be sufficient to support optimal hair growth or sustained energy levels. We look at these numbers to ensure your body has the "reserves" it needs to thrive, not just survive.
+
+## Bridging the Gap
+
+Conventional medicine is essential for acute care and disease management. We need those standard protocols.
+
+But for chronic wellness—for supporting fertility, postpartum recovery, and daily energy—we often need to ask different questions.
+
+**Optimal health asks:**
+
+- Does the body have the nutrient density it needs?
+- Are we supporting the nervous system?
+- Is the gut absorbing nutrients effectively?
+
+## What To Do Next
+
+If you have been told your labs are "normal" but you continue to experience symptoms, it is okay to ask more questions.
+
+If you are looking for a different perspective on your health data, I offer [Functional Lab Reviews](/services/lab-review.html). This service allows us to review your existing labs through a functional lens to identify areas where your body may need more support.
+
+With love + intention,
+
+Alicia
+    `,
+    disclaimer: "The content provided in this article is for educational and informational purposes only and does not constitute medical advice, diagnosis, or treatment. It is not intended to establish a patient-provider relationship. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Do not disregard professional medical advice or delay in seeking it because of something you have read on this website. Alicia is a Family Nurse Practitioner licensed in Kentucky; services provided to clients outside of this jurisdiction are limited to wellness education.",
+    faqs: [
+      {
+        question: "Why do my labs come back normal when I feel unwell?",
+        answer: "Standard lab reference ranges are designed primarily to identify disease states, not to assess optimal function. Being 'in range' simply means you don't currently meet criteria for a specific disease diagnosis. However, the absence of disease doesn't always equal the presence of vitality—there's often a gap between 'medically normal' and 'functionally optimal.'"
+      },
+      {
+        question: "What is the difference between normal and optimal lab values?",
+        answer: "Normal ranges are broad and based on statistical averages of the population using that lab. Optimal ranges are narrower and focus on the levels where people typically feel their best. For example, a TSH that's technically 'normal' but on the high end might still correlate with fatigue symptoms for some women."
+      },
+      {
+        question: "What should I do if my labs are normal but I still have symptoms?",
+        answer: "It's okay to ask more questions. Consider seeking a functional perspective on your health data. A Functional Lab Review can help identify areas where your body may need more support, looking at whether you have optimal nutrient density, nervous system support, and effective gut absorption."
+      }
+    ],
+    schema: {
+      description: "Learn why your lab results might show 'normal' while you still feel off. Understand the difference between standard reference ranges and optimal functional ranges for thyroid, iron, and more."
+    }
+  },
+  {
     slug: '2024-12-15-holiday-wellness',
     title: 'Holiday Wellness for Women: Staying Grounded Without Extremes',
     date: '2024-12-15',

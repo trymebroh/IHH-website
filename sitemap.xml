@@ -69,6 +69,13 @@
 
   <!-- Blog Posts -->
   <url>
+    <loc>https://www.intentionholistichealth.com/blog/post.html?slug=2025-01-09-labs-normal-feel-off</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
     <loc>https://www.intentionholistichealth.com/blog/post.html?post=2024-12-15-holiday-wellness</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
