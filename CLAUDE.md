@@ -327,6 +327,48 @@ Netlify uses credit-based pricing. Each production deploy costs 15 credits.
 
 **DO NOT** push to main after every change. Let the user handle merges to main.
 
+## Cache Management & Browser Caching
+
+**IMPORTANT:** When updating JS, CSS, or images that affect user-facing functionality (e.g., booking URLs, CTAs, form behaviors), be aware of browser caching.
+
+### Current Cache Settings (netlify.toml)
+
+| Asset Type | Cache Duration | Revalidation | Notes |
+|------------|----------------|--------------|-------|
+| **Images** | 3 months | must-revalidate | Checks for updates on each request |
+| **Fonts** | 1 year | immutable | Never changes, safe to cache long-term |
+| **CSS** | 0 (always check) | must-revalidate | Always verifies freshness |
+| **JS** | 0 (always check) | must-revalidate | Always verifies freshness |
+| **HTML** | 0 (always check) | must-revalidate | Always verifies freshness |
+
+### How It Works
+
+- `must-revalidate` means browsers ask Netlify "has this changed?" before using cached version
+- Netlify responds with **304 Not Modified** (use cache) or **200 + new file** (download update)
+- Users get fresh content without hard refreshing
+
+### Proactive Checklist for URL/Behavior Changes
+
+When making changes to URLs, links, or JS behaviors that users might have cached:
+
+1. **JS-controlled URLs** (like `PORTAL_URLS` in main.js):
+   - Cache headers now handle this automatically
+   - No manual cache-busting needed
+
+2. **If users report stale content:**
+   - First verify the deploy went through on Netlify
+   - Confirm the file is correct on the CDN (fetch the raw file URL)
+   - If CDN is correct but users see old version → browser cache issue
+   - With current settings, a normal page refresh should fix it
+
+3. **Images that change frequently:**
+   - Consider using versioned filenames (e.g., `hero-v2.webp`) for critical images
+   - Or reduce cache time further in netlify.toml if needed
+
+### History
+
+- **2026-01-10:** Changed JS/CSS/HTML from `immutable` (1 year) to `must-revalidate` after booking URL update wasn't propagating to users. Images changed from 1 year to 3 months.
+
 ## Branching Policy (Browser vs Local)
 
 If not 100% certain which instance we're in, ask the user.
