@@ -1,0 +1,400 @@
+#!/usr/bin/env node
+
+/**
+ * notion-cli - Direct Notion API CLI (MCP Workaround)
+ *
+ * Bypasses the buggy Notion MCP server by making direct API calls.
+ * See: https://github.com/makenotion/notion-mcp-server/issues/82
+ *
+ * Usage:
+ *   notion-cli create-page <database-id> '<properties-json>'
+ *   notion-cli update-page <page-id> '<properties-json>'
+ *   notion-cli query <database-id> [filter-json]
+ *   notion-cli get-page <page-id>
+ *   notion-cli get-database <database-id>
+ *   notion-cli append-blocks <page-id> '<blocks-json>'
+ *   notion-cli search '<query>'
+ *
+ * Environment:
+ *   NOTION_TOKEN - Your Notion integration token (required)
+ *
+ * Examples:
+ *   notion-cli create-page abc123 '{"Name": {"title": [{"text": {"content": "Test"}}]}}'
+ *   notion-cli query abc123 '{"property": "Status", "status": {"equals": "Active"}}'
+ */
+
+const https = require('https');
+const fs = require('fs');
+const path = require('path');
+
+// Load token from environment or .env file
+function getToken() {
+  if (process.env.NOTION_TOKEN) {
+    return process.env.NOTION_TOKEN;
+  }
+
+  // Try to load from .env in current directory
+  const envPaths = [
+    path.join(process.cwd(), '.env'),
+    path.join(process.env.HOME, '.env'),
+  ];
+
+  for (const envPath of envPaths) {
+    if (fs.existsSync(envPath)) {
+      const content = fs.readFileSync(envPath, 'utf8');
+      const match = content.match(/NOTION_TOKEN=(.+)/);
+      if (match) {
+        return match[1].trim();
+      }
+    }
+  }
+
+  console.error('Error: NOTION_TOKEN not found in environment or .env file');
+  process.exit(1);
+}
+
+const NOTION_TOKEN = getToken();
+const NOTION_VERSION = '2022-06-28';
+
+// Make HTTP request to Notion API
+function notionRequest(method, endpoint, body = null) {
+  return new Promise((resolve, reject) => {
+    const options = {
+      hostname: 'api.notion.com',
+      port: 443,
+      path: `/v1${endpoint}`,
+      method: method,
+      headers: {
+        'Authorization': `Bearer ${NOTION_TOKEN}`,
+        'Notion-Version': NOTION_VERSION,
+        'Content-Type': 'application/json',
+      },
+    };
+
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          const json = JSON.parse(data);
+          if (res.statusCode >= 400) {
+            reject({ status: res.statusCode, ...json });
+          } else {
+            resolve(json);
+          }
+        } catch (e) {
+          reject({ error: 'Failed to parse response', data });
+        }
+      });
+    });
+
+    req.on('error', reject);
+
+    if (body) {
+      req.write(JSON.stringify(body));
+    }
+    req.end();
+  });
+}
+
+// Helper to build title property
+function buildTitle(text) {
+  return { title: [{ text: { content: text } }] };
+}
+
+// Helper to build rich text property
+function buildRichText(text) {
+  return { rich_text: [{ text: { content: text } }] };
+}
+
+// Helper to build select property
+function buildSelect(name) {
+  return { select: { name } };
+}
+
+// Helper to build multi-select property
+function buildMultiSelect(names) {
+  return { multi_select: names.map(name => ({ name })) };
+}
+
+// Helper to build status property
+function buildStatus(name) {
+  return { status: { name } };
+}
+
+// Helper to build date property
+function buildDate(start, end = null) {
+  const date = { start };
+  if (end) date.end = end;
+  return { date };
+}
+
+// Helper to build URL property
+function buildUrl(url) {
+  return { url };
+}
+
+// Helper to build number property
+function buildNumber(number) {
+  return { number };
+}
+
+// Helper to build checkbox property
+function buildCheckbox(checked) {
+  return { checkbox: checked };
+}
+
+// Commands
+const commands = {
+  'create-page': async (args) => {
+    if (args.length < 2) {
+      console.error('Usage: notion-cli create-page <database-id> \'<properties-json>\'');
+      process.exit(1);
+    }
+
+    const databaseId = args[0];
+    let properties;
+
+    try {
+      properties = JSON.parse(args[1]);
+    } catch (e) {
+      console.error('Error: Invalid JSON for properties');
+      console.error('Example: \'{"Name": {"title": [{"text": {"content": "Test"}}]}}\'');
+      process.exit(1);
+    }
+
+    const body = {
+      parent: { database_id: databaseId },
+      properties,
+    };
+
+    const result = await notionRequest('POST', '/pages', body);
+    console.log(JSON.stringify(result, null, 2));
+    return result;
+  },
+
+  'update-page': async (args) => {
+    if (args.length < 2) {
+      console.error('Usage: notion-cli update-page <page-id> \'<properties-json>\'');
+      process.exit(1);
+    }
+
+    const pageId = args[0];
+    let properties;
+
+    try {
+      properties = JSON.parse(args[1]);
+    } catch (e) {
+      console.error('Error: Invalid JSON for properties');
+      process.exit(1);
+    }
+
+    const body = { properties };
+    const result = await notionRequest('PATCH', `/pages/${pageId}`, body);
+    console.log(JSON.stringify(result, null, 2));
+    return result;
+  },
+
+  'query': async (args) => {
+    if (args.length < 1) {
+      console.error('Usage: notion-cli query <database-id> [filter-json] [--all]');
+      process.exit(1);
+    }
+
+    const databaseId = args[0];
+    const showAll = args.includes('--all');
+    const filterArg = args.find(a => a.startsWith('{'));
+
+    let body = {};
+    if (filterArg) {
+      try {
+        body.filter = JSON.parse(filterArg);
+      } catch (e) {
+        console.error('Error: Invalid JSON for filter');
+        process.exit(1);
+      }
+    }
+
+    const result = await notionRequest('POST', `/databases/${databaseId}/query`, body);
+
+    if (showAll) {
+      console.log(JSON.stringify(result, null, 2));
+    } else {
+      // Simplified output
+      const items = result.results.map(page => {
+        const props = {};
+        for (const [key, value] of Object.entries(page.properties)) {
+          if (value.title) {
+            props[key] = value.title.map(t => t.plain_text).join('');
+          } else if (value.rich_text) {
+            props[key] = value.rich_text.map(t => t.plain_text).join('');
+          } else if (value.select) {
+            props[key] = value.select?.name;
+          } else if (value.multi_select) {
+            props[key] = value.multi_select.map(s => s.name);
+          } else if (value.status) {
+            props[key] = value.status?.name;
+          } else if (value.date) {
+            props[key] = value.date?.start;
+          } else if (value.url) {
+            props[key] = value.url;
+          } else if (value.number !== undefined) {
+            props[key] = value.number;
+          } else if (value.checkbox !== undefined) {
+            props[key] = value.checkbox;
+          }
+        }
+        return { id: page.id, ...props };
+      });
+      console.log(JSON.stringify(items, null, 2));
+    }
+    return result;
+  },
+
+  'get-page': async (args) => {
+    if (args.length < 1) {
+      console.error('Usage: notion-cli get-page <page-id>');
+      process.exit(1);
+    }
+
+    const result = await notionRequest('GET', `/pages/${args[0]}`);
+    console.log(JSON.stringify(result, null, 2));
+    return result;
+  },
+
+  'get-database': async (args) => {
+    if (args.length < 1) {
+      console.error('Usage: notion-cli get-database <database-id>');
+      process.exit(1);
+    }
+
+    const result = await notionRequest('GET', `/databases/${args[0]}`);
+    console.log(JSON.stringify(result, null, 2));
+    return result;
+  },
+
+  'append-blocks': async (args) => {
+    if (args.length < 2) {
+      console.error('Usage: notion-cli append-blocks <page-id> \'<blocks-json>\'');
+      process.exit(1);
+    }
+
+    const pageId = args[0];
+    let children;
+
+    try {
+      children = JSON.parse(args[1]);
+    } catch (e) {
+      console.error('Error: Invalid JSON for blocks');
+      process.exit(1);
+    }
+
+    const body = { children: Array.isArray(children) ? children : [children] };
+    const result = await notionRequest('PATCH', `/blocks/${pageId}/children`, body);
+    console.log(JSON.stringify(result, null, 2));
+    return result;
+  },
+
+  'search': async (args) => {
+    if (args.length < 1) {
+      console.error('Usage: notion-cli search \'<query>\' [--pages|--databases]');
+      process.exit(1);
+    }
+
+    const body = { query: args[0] };
+
+    if (args.includes('--pages')) {
+      body.filter = { property: 'object', value: 'page' };
+    } else if (args.includes('--databases')) {
+      body.filter = { property: 'object', value: 'database' };
+    }
+
+    const result = await notionRequest('POST', '/search', body);
+    console.log(JSON.stringify(result, null, 2));
+    return result;
+  },
+
+  'help': () => {
+    console.log(`
+notion-cli - Direct Notion API CLI (MCP Workaround)
+
+Bypasses the buggy Notion MCP server by making direct API calls.
+
+COMMANDS:
+  create-page <database-id> '<properties-json>'
+      Create a new page in a database
+
+  update-page <page-id> '<properties-json>'
+      Update an existing page's properties
+
+  query <database-id> [filter-json] [--all]
+      Query a database. Use --all for full response
+
+  get-page <page-id>
+      Get a page by ID
+
+  get-database <database-id>
+      Get database schema
+
+  append-blocks <page-id> '<blocks-json>'
+      Append content blocks to a page
+
+  search '<query>' [--pages|--databases]
+      Search Notion
+
+PROPERTY HELPERS (for building JSON):
+  Title:       {"title": [{"text": {"content": "My Title"}}]}
+  Rich Text:   {"rich_text": [{"text": {"content": "Some text"}}]}
+  Select:      {"select": {"name": "Option Name"}}
+  Multi-Select: {"multi_select": [{"name": "Tag1"}, {"name": "Tag2"}]}
+  Status:      {"status": {"name": "Active"}}
+  Date:        {"date": {"start": "2026-01-08"}}
+  URL:         {"url": "https://example.com"}
+  Checkbox:    {"checkbox": true}
+
+ENVIRONMENT:
+  NOTION_TOKEN    Your Notion integration token (or set in .env file)
+
+EXAMPLES:
+  # Create a page with title
+  notion-cli create-page abc123 '{"Name": {"title": [{"text": {"content": "Test"}}]}}'
+
+  # Query with filter
+  notion-cli query abc123 '{"property": "Status", "status": {"equals": "Active"}}'
+
+  # Search for databases
+  notion-cli search "Tasks" --databases
+
+MORE INFO:
+  This tool works around: https://github.com/makenotion/notion-mcp-server/issues/82
+`);
+  },
+};
+
+// Main
+async function main() {
+  const args = process.argv.slice(2);
+
+  if (args.length === 0) {
+    commands.help();
+    process.exit(0);
+  }
+
+  const command = args[0];
+  const commandArgs = args.slice(1);
+
+  if (!commands[command]) {
+    console.error(`Unknown command: ${command}`);
+    console.error('Run "notion-cli help" for usage');
+    process.exit(1);
+  }
+
+  try {
+    await commands[command](commandArgs);
+  } catch (error) {
+    console.error('Error:', JSON.stringify(error, null, 2));
+    process.exit(1);
+  }
+}
+
+main();
