@@ -1057,6 +1057,80 @@ Run this audit when making significant changes:
 
 ---
 
+## Safari Developer Tools (Mac)
+
+This device uses Safari on macOS. Developer tools work differently than Chrome on Windows.
+
+### Key Shortcuts
+
+| Action | Shortcut |
+|--------|----------|
+| Hard Refresh (clear cache) | `Command + Option + R` |
+| Open Developer Tools | `Command + Option + I` |
+| Reload Page | `Command + R` |
+
+### One-Time Setup: Enable Developer Menu
+
+Before using Developer Tools, you must enable the Develop menu:
+
+1. Open Safari → **Settings** (or Preferences)
+2. Click the **Advanced** tab
+3. Check **"Show Develop menu in menu bar"**
+4. Close Settings
+
+You should now see "Develop" in the Safari menu bar.
+
+### Opening Developer Tools
+
+1. Press `Command + Option + I`
+   - OR: Click **Develop** menu → **Show Web Inspector**
+2. The Web Inspector panel opens (usually at bottom of window)
+
+### Checking for JavaScript Errors
+
+When a page isn't loading correctly:
+
+1. Open Developer Tools (`Command + Option + I`)
+2. Click the **Console** tab (in the Web Inspector toolbar)
+3. Look for **red error messages**
+4. Errors show:
+   - The error message (what went wrong)
+   - The file and line number (where it happened)
+5. Copy the error text to share for debugging
+
+### Inspecting Network Requests
+
+To check if files are loading:
+
+1. Open Developer Tools (`Command + Option + I`)
+2. Click the **Network** tab
+3. Refresh the page (`Command + R`)
+4. Look for:
+   - **Red entries** = failed to load
+   - **Status codes**: 200 = success, 404 = not found, 500 = server error
+5. Click any entry to see details
+
+### Clearing Cache Manually
+
+If hard refresh doesn't work:
+
+1. Click **Develop** menu → **Empty Caches**
+2. Then refresh with `Command + R`
+
+Or clear all website data:
+1. Safari → **Settings** → **Privacy**
+2. Click **Manage Website Data**
+3. Search for the site and click **Remove**
+
+### Viewing Page Source
+
+1. Right-click anywhere on the page
+2. Select **Inspect Element**
+3. The Elements tab shows the HTML structure
+4. Use the arrow tool to hover over elements and see their code
+
+---
+
 ## Quick Reference
 
 ### Key URLs
