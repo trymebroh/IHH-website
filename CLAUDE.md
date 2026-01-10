@@ -71,7 +71,35 @@ Internal documentation is stored in Notion (not git) for cross-device sync and p
 
 ### Session Notes Workflow
 
-At the end of each working session, create a new entry in the Session Notes database. See `CLAUDE-REFERENCE.md` for the entry format.
+Session notes are organized **by date** (one entry per day), not by individual sessions. Each entry is updated throughout the day as work progresses.
+
+**Format:**
+- **Title:** `YYYY-MM-DD` (e.g., `2026-01-09`)
+- **Completed:** Timestamped list of actions in chronological order
+- **Pending:** Bullet list of remaining items
+- **Notes:** Context for future sessions
+
+**Completed field format:**
+```
+HH:MM AM/PM — Action taken
+HH:MM AM/PM — Next action taken
+```
+
+**Example:**
+```
+6:45 PM — Tested Notion & MailerLite MCP servers (both working)
+6:50 PM — Updated .mcp.json in all 3 project folders
+7:00 PM — Committed and pushed changes to GitHub
+
+8:10 PM — Optimized blog image with responsive versions
+8:30 PM — Committed/pushed to drafts-website-edits
+```
+
+**Workflow:**
+1. At start of session, check if a note exists for today's date
+2. If exists → update the existing note (append new timestamped items)
+3. If not → create new note titled with today's date
+4. Update throughout the session, not just at the end
 
 **IMPORTANT**: Session notes MUST be updated in Notion before committing and pushing to GitHub.
 
