@@ -336,7 +336,7 @@ Netlify uses credit-based pricing. Each production deploy costs 15 credits.
 | Asset Type | Cache Duration | Revalidation | Notes |
 |------------|----------------|--------------|-------|
 | **Images** | 3 months | must-revalidate | Checks for updates on each request |
-| **Fonts** | 1 year | immutable | Never changes, safe to cache long-term |
+| **Fonts** | 3 months | must-revalidate | Checks for updates on each request |
 | **CSS** | 0 (always check) | must-revalidate | Always verifies freshness |
 | **JS** | 0 (always check) | must-revalidate | Always verifies freshness |
 | **HTML** | 0 (always check) | must-revalidate | Always verifies freshness |
@@ -367,7 +367,7 @@ When making changes to URLs, links, or JS behaviors that users might have cached
 
 ### History
 
-- **2026-01-10:** Changed JS/CSS/HTML from `immutable` (1 year) to `must-revalidate` after booking URL update wasn't propagating to users. Images changed from 1 year to 3 months.
+- **2026-01-10:** Changed JS/CSS/HTML from `immutable` (1 year) to `must-revalidate` after booking URL update wasn't propagating to users. Images and fonts changed from 1 year to 3 months with must-revalidate.
 
 ## Branching Policy (Browser vs Local)
 

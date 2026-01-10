@@ -22,11 +22,11 @@
   [headers.values]
     Cache-Control = "public, max-age=7776000, must-revalidate"
 
-# Cache fonts for 1 year (rarely change)
+# Cache fonts for 3 months with revalidation
 [[headers]]
   for = "/fonts/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=7776000, must-revalidate"
 
 # Cache CSS and JS with revalidation (may change with updates)
 # Browsers check if file changed, use cache if unchanged
