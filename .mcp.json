@@ -9,9 +9,13 @@
     },
     "mailerlite": {
       "type": "http",
-      "url": "https://mcp.mailerlite.com/mcp",
-      "headers": {
-        "Authorization": "Bearer ${MAILERLITE_API_KEY}"
+      "url": "https://mcp.mailerlite.com/mcp"
+    },
+    "google-calendar": {
+      "command": "npx",
+      "args": ["-y", "@cocal/google-calendar-mcp"],
+      "env": {
+        "GOOGLE_OAUTH_CREDENTIALS": "${GOOGLE_CALENDAR_CREDENTIALS}"
       }
     }
   }
