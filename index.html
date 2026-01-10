@@ -536,17 +536,24 @@
           .sort((a, b) => new Date(b.date) - new Date(a.date))
           .slice(0, 5);
 
-        // Render the cards
-        blogPreview.innerHTML = latestPosts.map(post => `
+        // Render the cards with optimized responsive images
+        blogPreview.innerHTML = latestPosts.map(post => {
+          const smallImage = post.image.replace('.webp', '-small.webp');
+          const smallXsImage = post.image.replace('.webp', '-small-xs.webp');
+          return `
           <div class="card">
-            <img src="${post.image}" alt="${post.title}" class="card-image" loading="lazy">
+            <img src="${smallImage}"
+                 srcset="${smallXsImage} 300w, ${smallImage} 400w"
+                 sizes="(max-width: 767px) 300px, 400px"
+                 alt="${post.title}" class="card-image" loading="lazy"
+                 onerror="this.src='${post.image}'">
             <div class="card-body">
               <h3 class="card-title">${post.title}</h3>
               <p class="card-text">${post.excerpt}</p>
               <a href="/blog/post.html?post=${post.slug}" class="btn btn-outline">Continue Reading</a>
             </div>
-          </div>
-        `).join('');
+          </div>`;
+        }).join('');
 
         // Re-initialize carousel arrows after content loads
         const blogCarousel = document.querySelector('.blog-carousel');

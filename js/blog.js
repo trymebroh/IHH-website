@@ -12,7 +12,7 @@ const BLOG_POSTS = [
     date: '2025-01-09',
     author: 'Alicia Harrison, MSN, APRN, FNP-C',
     excerpt: 'You got your blood work done, waited for results, and everything looks "normal." But you don\'t feel normal. Your symptoms are real—here\'s why standard labs might not tell the whole story.',
-    image: '/images/blog/labs-normal-feel-off.png',
+    image: '/images/blog/labs-normal-feel-off.webp',
     cardAspectRatio: '83.83%',
     imageAspectRatio: '83.83%',
     categories: ['wellness', 'foundations'],

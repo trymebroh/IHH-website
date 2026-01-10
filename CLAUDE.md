@@ -881,11 +881,16 @@ When creating any new page, verify:
 **Content & Images:**
 ```
 [ ] Post added to blog.js posts array (newest first)
-[ ] Featured image optimized (<200KB WebP)
-[ ] Image dimensions checked and aspect ratio set (see below)
+[ ] Featured image optimized with ALL 4 responsive versions (see "Blog Image Optimization Workflow" below):
+    - filename.webp (900px, <50KB) - blog post desktop
+    - filename-mobile.webp (500px, <20KB) - blog post mobile
+    - filename-small.webp (400px, <15KB) - cards desktop
+    - filename-small-xs.webp (300px, <10KB) - cards mobile
+[ ] Image dimensions checked and aspect ratio set in blog.js (cardAspectRatio, imageAspectRatio)
 [ ] All images have descriptive alt text
 [ ] Image licensing verified (stock photo license, original, etc.)
-[ ] Image in /images/blog/ folder
+[ ] All 4 image versions in /images/blog/ folder
+[ ] Source image removed from root directory
 [ ] Categories assigned
 [ ] Internal links to relevant service pages
 [ ] Disclaimer at end of post
@@ -915,6 +920,112 @@ When creating any new page, verify:
 [ ] Ask: Pinterest-optimized image needed? (vertical 2:3 ratio)
 [ ] Ask: Request faster indexing via Search Console URL Inspection? (not required - Google auto-crawls sitemap)
 ```
+
+**Post-Publishing Cleanup (after user merges to main or says "publish"):**
+```
+[ ] Remove any leftover source images from root directory (e.g., "Untitled design.png")
+[ ] Verify all blog images are in /images/blog/ folder only
+[ ] Confirm no untracked temporary files remain
+```
+
+### Blog Image Optimization Workflow
+
+**IMPORTANT:** Blog images must be optimized for responsive loading. The site uses these images in THREE locations:
+1. **Blog post page** - Featured image (full + mobile versions)
+2. **Blog index page** - Card thumbnails (small + small-xs versions)
+3. **Homepage carousel** - Recent posts section (small + small-xs versions)
+
+#### Required Image Versions
+
+For each blog post, create these 4 optimized WebP versions:
+
+| File Suffix | Width | Use Case | Target Size |
+|-------------|-------|----------|-------------|
+| `.webp` | 900px | Blog post (desktop) | <50KB |
+| `-mobile.webp` | 500px | Blog post (mobile) | <20KB |
+| `-small.webp` | 400px | Cards (desktop) | <15KB |
+| `-small-xs.webp` | 300px | Cards (mobile) | <10KB |
+
+#### Image Optimization Steps
+
+1. **Get the source image** (usually uploaded to root directory as "Untitled design.png" or similar)
+
+2. **Check dimensions and calculate aspect ratio:**
+   ```bash
+   cd "/Users/aliciaharrison/Desktop/VSCode Projects/IHH-website"
+   python3 -c "from PIL import Image; img=Image.open('SOURCE_IMAGE.png'); print(f'Size: {img.size}, Aspect: {img.size[1]/img.size[0]*100:.2f}%')"
+   ```
+
+3. **Create all responsive versions:**
+   ```bash
+   cd "/Users/aliciaharrison/Desktop/VSCode Projects/IHH-website/images/blog" && python3 << 'EOF'
+   from PIL import Image
+   import os
+
+   # Load original image (adjust path as needed)
+   original = Image.open('../../SOURCE_IMAGE.png')
+   basename = 'your-post-slug'  # Change to match blog post slug
+
+   sizes = {
+       f'{basename}.webp': 900,
+       f'{basename}-mobile.webp': 500,
+       f'{basename}-small.webp': 400,
+       f'{basename}-small-xs.webp': 300,
+   }
+
+   for filename, target_width in sizes.items():
+       ratio = original.size[1] / original.size[0]
+       target_height = int(target_width * ratio)
+       resized = original.resize((target_width, target_height), Image.LANCZOS)
+
+       # Handle transparency
+       if resized.mode in ('RGBA', 'P'):
+           background = Image.new('RGB', resized.size, (255, 255, 255))
+           if resized.mode == 'P':
+               resized = resized.convert('RGBA')
+           background.paste(resized, mask=resized.split()[3] if len(resized.split()) == 4 else None)
+           resized = background
+
+       resized.save(filename, 'WEBP', quality=80)
+       print(f"Created {filename}: {target_width}x{target_height}, {os.path.getsize(filename)/1024:.1f}KB")
+   EOF
+   ```
+
+4. **Update blog.js post entry:**
+   ```javascript
+   {
+     slug: 'your-post-slug',
+     image: '/images/blog/your-post-slug.webp',  // Must be .webp
+     cardAspectRatio: 'XX.XX%',   // Calculate: (height/width)*100
+     imageAspectRatio: 'XX.XX%',  // Same value
+     // ... other properties
+   }
+   ```
+
+5. **Delete source image from root directory:**
+   ```bash
+   rm "/Users/aliciaharrison/Desktop/VSCode Projects/IHH-website/SOURCE_IMAGE.png"
+   ```
+
+#### How Responsive Images Work
+
+The codebase automatically uses the correct image version:
+
+**Blog post page (`blog.js` lines 1227-1232):**
+- Replaces `.webp` with `-mobile.webp` for srcset
+- Mobile devices load 15KB instead of 41KB
+
+**Blog index cards (`blog.js` lines 939-947):**
+- Replaces `.webp` with `-small.webp` for thumbnail
+- Creates `-small-xs.webp` variant for mobile srcset
+
+**Homepage carousel (`index.html` lines 540-549):**
+- Same logic as blog index cards
+- Uses `-small.webp` and `-small-xs.webp` with srcset
+
+#### Fallback Behavior
+
+All image tags include `onerror="this.src='${post.image}'"` which falls back to the full-size image if a responsive version is missing. However, always create all 4 versions to ensure optimal performance.
 
 ### Blog Post JSON-LD Schema
 
