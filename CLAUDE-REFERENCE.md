@@ -161,6 +161,17 @@ Report types: `overview`, `pages`, `sources`, `events`, `daily`
 | Newsletter Subscribers | `175195722960864384` |
 | Holistic Habits Checklist | `175195632248554684` |
 
+### MailerLite Authentication
+
+If MailerLite API returns "Unauthenticated":
+1. Go to: **MailerLite Dashboard → Integrations → Developer API**
+2. Copy the API token
+3. Update in `~/.zshrc` (Mac) or `~/.bashrc` (Linux/WSL):
+   ```bash
+   export MAILERLITE_API_KEY="your_new_token_here"
+   ```
+4. Restart terminal or run `source ~/.zshrc`
+
 ### GA4 Measurement ID
 
 `G-3GFCR5ZRMZ`
