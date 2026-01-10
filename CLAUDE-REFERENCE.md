@@ -113,9 +113,11 @@ notion-cli help
 
 ### Sitemap Entry Template
 
+**IMPORTANT:** Blog URLs use `?post=` parameter (not `?slug=`).
+
 ```xml
 <url>
-  <loc>https://www.intentionholistichealth.com/blog/post.html?slug=your-post-slug</loc>
+  <loc>https://www.intentionholistichealth.com/blog/post.html?post=your-post-slug</loc>
   <lastmod>2025-01-04</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>

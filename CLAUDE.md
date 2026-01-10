@@ -944,6 +944,9 @@ The schema is dynamically injected into the `<head>` when the post loads.
 
 When adding a new blog post, add an entry to `/sitemap.xml`. See `CLAUDE-REFERENCE.md` for the XML template.
 
+**IMPORTANT:** Blog post URLs use the `?post=` parameter, NOT `?slug=`. The correct format is:
+`/blog/post.html?post=your-post-slug`
+
 ### Lighthouse Check for Blog Posts
 
 Run a quick Lighthouse audit on the new post. See `CLAUDE-REFERENCE.md` for the command.
