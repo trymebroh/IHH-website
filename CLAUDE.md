@@ -972,7 +972,7 @@ When creating any new page, verify:
 [ ] Article JSON-LD schema added to blog.js post object (see below)
 [ ] Post added to sitemap.xml with proper URL
 [ ] Meta description set (150-160 chars)
-[ ] Open Graph tags verified (og:title, og:description, og:image)
+[ ] Post metadata added to Edge Function (see "Social Preview Edge Function" below)
 ```
 
 **Quality Assurance:**
@@ -997,6 +997,28 @@ When creating any new page, verify:
 [ ] Verify all blog images are in /images/blog/ folder only
 [ ] Confirm no untracked temporary files remain
 ```
+
+### Social Preview Edge Function
+
+Blog posts use JavaScript rendering, which means social media crawlers (Facebook, LinkedIn, Twitter) cannot see the actual content. The Edge Function at `/netlify/edge-functions/blog-og-tags.js` injects proper Open Graph tags server-side.
+
+**When adding a new blog post, also add its metadata to the Edge Function:**
+
+```javascript
+// In /netlify/edge-functions/blog-og-tags.js, add to BLOG_POSTS object:
+'your-post-slug': {
+  title: 'Your Post Title',
+  excerpt: 'Your 1-2 sentence excerpt for social previews...',
+  image: '/images/blog/your-image.webp'
+}
+```
+
+**Testing social previews:**
+- Facebook: https://developers.facebook.com/tools/debug/
+- Twitter: https://cards-dev.twitter.com/validator
+- LinkedIn: https://www.linkedin.com/post-inspector/
+
+**If you forget this step:** Social shares will show the generic site title/description instead of the specific blog post content.
 
 ### Blog Image Optimization Workflow
 
