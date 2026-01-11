@@ -1002,7 +1002,7 @@ When creating any new page, verify:
 
 Blog posts use JavaScript rendering, which means social media crawlers (Facebook, LinkedIn, Twitter) cannot see the actual content. The Edge Function at `/netlify/edge-functions/blog-og-tags.js` injects proper Open Graph tags server-side.
 
-**When adding a new blog post, also add its metadata to the Edge Function:**
+**IMPORTANT FOR CLAUDE:** When adding a new blog post to `blog.js`, you MUST also add the post metadata to the Edge Function. This is part of the standard blog post workflow - do not skip this step.
 
 ```javascript
 // In /netlify/edge-functions/blog-og-tags.js, add to BLOG_POSTS object:
@@ -1013,12 +1013,10 @@ Blog posts use JavaScript rendering, which means social media crawlers (Facebook
 }
 ```
 
-**Testing social previews:**
+**Testing social previews (after deploy):**
 - Facebook: https://developers.facebook.com/tools/debug/
 - Twitter: https://cards-dev.twitter.com/validator
 - LinkedIn: https://www.linkedin.com/post-inspector/
-
-**If you forget this step:** Social shares will show the generic site title/description instead of the specific blog post content.
 
 ### Blog Image Optimization Workflow
 
